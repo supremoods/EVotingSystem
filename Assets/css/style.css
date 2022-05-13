@@ -1,0 +1,416 @@
+#root{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+
+}
+
+.navbar{
+    background-color: #045de9;
+    background-image: linear-gradient(90deg, #045de9 0%, #09c6f9 74%);
+    padding:15px 50px;
+    color:white;
+    width: 100%;
+}
+
+.logo_section{
+    display: flex;
+    justify-content: flex-start; 
+}
+
+
+.logo_img{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    height:50px;
+
+}
+
+.logo_img img{
+    height: 100%;
+    width: 100%;
+}
+
+.logo_title{
+    width: 271px;
+    height:50px;
+    display:flex;
+    align-items: center;
+    justify-content:flex-start;
+
+}
+
+.logo_title h1{
+    font-style: italic;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 25px;
+    text-overflow: wrap;
+}
+.layout_wrapper{
+    width: 100%;
+    background-color: #ffffff;
+    background-image: linear-gradient(125deg, #ffffff 0%, #e7ebff 74%);
+    height: calc(100vh - 54px);
+}
+.content_wrapper{
+    position:relative;
+    display: grid;
+    grid-template-columns: 35% 65%;
+    overflow: hidden;
+    height: 100%;
+    transition: all .5s ease-in-out;
+}
+.login_wrapper{
+    display: flex;
+    border-radius: 0% 5% 5% 0%;
+    justify-content: center;
+    align-items:center;
+    height:100%;
+    background-color: #e7eff9;
+    overflow: hidden;
+    background-image: linear-gradient(315deg, #e7eff9 0%, #cfd6e6 74%);
+    box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+
+
+.login_card{
+    align-items: center;
+    flex-direction:column;
+    display:flex;
+    background: var(--gray2);
+    width:458px;
+    height: 716px;
+    border-radius: 15px;
+    -webkit-box-shadow: -4px 6px 13px 4px rgba(0,0,0,0.33);
+    -moz-box-shadow: -4px 6px 13px 4px rgba(0,0,0,0.33);
+    box-shadow: -4px 6px 13px 4px rgba(0,0,0,0.33);
+}
+
+.login_card .login_logo{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    height:120px;
+    margin:71px 0em;
+}
+
+.login_card .login_logo img{
+    width: 100%;
+    height: 100%;
+}
+
+.textField_wrapper label{
+    font-size: 14px;
+    color: var(--gray6);
+}
+.textField_wrapper .inputContainer{
+    position: relative;
+    padding:7px 0;
+}
+
+.textField_wrapper .inputContainer span{
+    position: absolute;
+    background: var(--gray1);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 7px;
+    font-size: 21px;
+    padding: 7px 15px;
+    color:var(--G16);
+}
+
+.textField_wrapper .inputContainer input{
+    border-radius: 10px;
+    background: var(--gray3);
+    border:none;
+    outline: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    height: 35px;
+    font-size:14px;
+    width:357px;
+    color: var(--gray6);
+    padding-left:60px;
+}
+.btn_wrapper{
+    padding:31.5px 0;
+}
+
+.btn_wrapper button{
+    color: var(--L1);
+    font-weight: 700;
+    border: none;
+    padding: 9px 0px;
+    border-radius: 10px;
+    background-color: #045de9;
+    background-image: linear-gradient(90deg, #045de9 0%, #09c6f9 74%);
+    width:357px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    opacity:1;
+    transition: all .5s ease-in-out;
+}
+
+.btn_wrapper button:hover{
+    transition: all .5s ease-in-out;
+    background-image: linear-gradient(270deg, #045de9 0%, #09c6f9 74%);
+    opacity:0.8;
+
+}
+.sublink{
+    font-size: 14px;
+    padding:5px 0;
+    color:#8E8E8E;
+}
+.sublink span{
+    font-weight: 700;
+}
+
+.sublink span:hover{
+    color:#63a4ff;
+}
+.sublink .forgot_password{
+    text-decoration: underline;
+}
+.sublink .forgot_password:hover{
+    color:#63a4ff;
+    
+}
+
+.desc_wrapper{
+    position: relative;
+    height:100%;
+    padding:56px;
+    overflow: hidden;
+}
+
+.desc_wrapper .desc_img{
+    position: absolute;
+    left: 50%;
+    bottom:0;
+    height: 600px;
+    transform: translate(-50%, 0%);
+    transition: all .5s ease-in-out;
+    
+}
+
+.desc_wrapper .shape{
+    position: absolute;
+    bottom:0;
+    left: 50%;
+    border-radius: 656px;
+    height: 600px;
+    width: 1100px;
+    transform: translate(-50%, 70%);
+    background: rgba(211, 219, 236, 0.872);
+    transition: all .5s ease-in-out;
+}
+
+.desc_wrapper .shape2{
+    position: absolute;
+    top:0;
+    right:0;
+    border-radius: 656px;
+    height: 900px;
+    width: 1100px;
+    z-index:0;
+    transform: translate(70%, -50%);
+    background: rgba(206, 226, 255, 0.872);
+}
+.desc_wrapper .desc_header h1{
+    font-size:30px;
+    color: black;
+}
+
+.desc_wrapper .desc_about{
+    width: 870px;
+    transition: all .5s ease-in-out;
+}
+.desc_wrapper .desc_about pre{
+    position: relative;
+    color: var(--gray6);
+    padding:20px 0;
+    font-size: 14px;
+    z-index:299;
+    white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+.footer_wrapper{
+    background: var(--gray2);
+    height: 100px;
+    background-color: #045de9;
+    background-image: linear-gradient(320deg, #045de9 0%, #09c6f9 74%);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right:2em;
+}
+
+.footer_wrapper .nav_footer{
+    display:flex;
+}
+
+.footer_wrapper .nav_footer .link_footer{
+   text-decoration: none;
+   padding:10px;
+   list-style-type: none;
+   font-size: 14px;
+   color: var(--L1);
+}
+
+/* responsiveness */
+
+@media only screen and (max-width: 1500px){
+    .content_wrapper{
+        grid-template-columns: 35% 65%;
+        transition: all .5s ease-in-out;
+    }
+
+    .login_card{
+
+        transform: scale(.9);
+        transition: all .5s ease-in-out;
+    }
+    .desc_wrapper .desc_img{
+        height: 500px;  
+        transition: all .5s ease-in-out;
+    }
+
+    .desc_wrapper .shape{
+        height: 600px;
+        width: 800px;
+        transition: all .5s ease-in-out;
+    }
+
+    .desc_wrapper .desc_about{
+        width: 770px;
+        transition: all .5s ease-in-out;
+    }
+}
+
+@media only screen and (max-width: 1280px){
+    .content_wrapper{
+        grid-template-columns: 35% 65%;
+        transition: all .5s ease-in-out;
+    }
+
+    .login_card{
+
+        transform: scale(.8);
+        transition: all .5s ease-in-out;
+    }
+    .desc_wrapper .desc_img{
+        height: 400px;  
+        transition: all .5s ease-in-out;
+    }
+
+    .desc_wrapper .shape{
+        height: 500px;
+        width: 800px;
+        transition: all .5s ease-in-out;
+    }
+
+    .desc_wrapper .desc_about{
+        width: 670px;
+        transition: all .5s ease-in-out;
+    }
+}
+
+@media only screen and (max-width: 1024px){
+    .content_wrapper{
+        grid-template-columns: 100%;
+        transition: all .5s ease-in-out;
+    }
+
+    .login_card{
+        transform: scale(1.3);
+        transition: all .5s ease-in-out;
+    }
+    .desc_wrapper{
+        display: none;
+    }
+    .login_wrapper{
+
+        border-radius: 0% ;
+    }
+
+}
+
+@media only screen and (max-width: 834px){
+    .content_wrapper{
+        grid-template-columns: 100%;
+        transition: all .5s ease-in-out;
+    }
+
+    .login_card{
+        transform: scale(1.2);
+        transition: all .5s ease-in-out;
+    }
+
+}
+
+@media only screen and (max-width: 820px){
+
+
+    .login_card{
+        transform: scale(1);
+        transition: all .5s ease-in-out;
+    }
+
+}
+
+@media only screen and (max-width: 375px){
+
+    .login_card{
+
+        width:300px;
+        height: 516px;
+        border-radius: 15px;
+        object-fit: cover;
+    }
+
+    .login_card .login_logo{
+        height:100px;
+        margin:20px 0em;
+    }
+
+    .textField_wrapper label, .sublink{
+        font-size: 12px;
+    }
+
+    .textField_wrapper .inputContainer input,
+    .btn_wrapper button{
+        width:257px;
+    }
+    .logo_title{
+        width: 371px;
+        height:50px;
+
+    
+    }
+    .footer_wrapper {
+        height:150px;
+        justify-content: flex-start;
+        padding: 2em;
+    }
+    .footer_wrapper .nav_footer{
+        display:inline;
+ 
+    
+    }
+    .footer_wrapper .nav_footer .link_footer{
+        padding: 1px;
+    }
+    
+
+}
+
