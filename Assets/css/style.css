@@ -296,6 +296,33 @@
         transition: all .5s ease-in-out;
     }
 }
+@media only screen and (max-width: 1366px){
+    .content_wrapper{
+        grid-template-columns: 35% 65%;
+        transition: all .5s ease-in-out;
+    }
+
+    .login_card{
+
+        transform: scale(.9);
+        transition: all .5s ease-in-out;
+    }
+    .desc_wrapper .desc_img{
+        height: 500px;  
+        transition: all .5s ease-in-out;
+    }
+
+    .desc_wrapper .shape{
+        height: 600px;
+        width: 800px;
+        transition: all .5s ease-in-out;
+    }
+
+    .desc_wrapper .desc_about{
+        width: 770px;
+        transition: all .5s ease-in-out;
+    }
+}
 
 @media only screen and (max-width: 1280px){
     .content_wrapper{
