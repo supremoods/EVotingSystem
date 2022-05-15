@@ -7,10 +7,10 @@
 
 .navbar{
     position: fixed;
-    background-color: #045de9;
-    background-image: linear-gradient(90deg, #045de9 0%, #09c6f9 74%);
+    background-color: #f1f4fc;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
     padding:10px 20px;
-    color:white;
+    color:var(--L7);
     width: 100%;
     display: flex;
     z-index: 1;
@@ -34,6 +34,7 @@
     border-radius:14px;
     border:none;
     padding:10px;
+    background:#d7dff1;
 }
 .navbar .search_bar_wrapper .search_bar i{
     position: absolute;
@@ -46,7 +47,6 @@
     display: flex;
     justify-content: flex-start; 
 
-    
 }
 .logo_img{
     position: relative;
@@ -78,6 +78,13 @@
     font-size: 30px;
     line-height: 25px;
     text-overflow: wrap;
+    background-color: #2a2a72;
+    background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
 }
 .profile_wrapper{
     position: relative;
@@ -108,10 +115,10 @@
     position: absolute;
     right: 0;
     margin-top: 1px;
-    background-color: #ffffff;
-    background-image: linear-gradient(125deg, #ffffff 0%, #e7ebff 74%);
+    background-color: #f1f4fc;
+
     border-radius: 5px;
-    border: 1px solid #09c6f9;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     display: flex;
     flex-direction: column;
     width:300px;
@@ -141,7 +148,8 @@
 }
 
 .profile_content .line{
-    background: #09c5f94d;
+    background:#d7dff1;
+
     height: 2px;
     margin:10px 0;
     border-radius: 10px;
@@ -183,7 +191,7 @@
     background-color: #045de9;
     background-image: linear-gradient(360deg, #045de9 0%, #09c6f9 74%);
     padding: 5px;
-    color: #e7ebff;
+    color: #f1f4fc;
     border-radius: 50%;
     margin-right: 10px;
 }
@@ -191,7 +199,7 @@
 .layout_wrapper{
     display: flex;
     margin-top: 70px;
-    background-color: #eff1ff;
+    background-color: #d7dff1;
     
 }
 
@@ -201,7 +209,6 @@
     left: 0;
     width: 300px;
     height: calc(100vh - 70px);
-
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -248,11 +255,11 @@
     margin-right: 10px;
     width: 40px;
     height: 40px;
-    background-color: #045de9;
     font-size: 30px;
+    background-color: #045de9;
     background-image: linear-gradient(360deg, #045de9 0%, #09c6f9 74%);
     padding: 5px;
-    color: var(--L1);
+    color: #f1f4fc;
     border-radius: 50%;
     margin-right: 10px;
 }
@@ -272,7 +279,6 @@
 
 
 .content_wrapper .forum_wrapper{
-    border: 1px solid #09c6f9;   
 }
 
 .forum_wrapper .forum_post_wrapper{
@@ -291,28 +297,15 @@
     margin: 10px;
     color: var(--gray7);
     font-size: 14px;
-    background-color: #e3eafa;
-    /* border: 1px solid #09c6f9; */
-    width: 680px;
-    border-radius: 10px;
-}
-
-.forum_wrapper .forum_post_wrapper .status_feed_wrapper{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    margin: 10px;
-    color: var(--gray7);
-    font-size: 14px;
-    background-color: #e3eafa;
+    background-color: #f1f4fc;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
     width: 680px;
     border-radius: 10px;
 }
 
 
 .forum_wrapper .forum_post_wrapper .status_post_wrapper .line{
-    background: #09c5f94d;
+    background:#d7dff1;
     height: 2px;
     width: 100%;
     margin:10px 0;
@@ -341,7 +334,7 @@
     border-radius: 10px;
     border: none;
     padding: 7px;
-    background: #d4e2fa;
+    background: #d7dff1;
     font-size: 14px;
     color: var(--gray7);
 }
@@ -401,11 +394,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
     margin: 10px;
     color: var(--gray7);
     font-size: 14px;
-    background-color: #e3eafa;
+    background-color: #f1f4fc;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
     width: 680px;
     border-radius: 10px;
 }
