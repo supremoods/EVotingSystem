@@ -13,6 +13,7 @@
     color:white;
     width: 100%;
     display: flex;
+    z-index: 1;
   
 }
 .navbar .search_bar_wrapper{
@@ -186,10 +187,12 @@
     border-radius: 50%;
     margin-right: 10px;
 }
+
 .layout_wrapper{
     display: flex;
     margin-top: 70px;
     background-color: #eff1ff;
+    
 }
 
 .layout_wrapper .sidebar{
@@ -252,7 +255,6 @@
     color: var(--L1);
     border-radius: 50%;
     margin-right: 10px;
-    
 }
 
 
@@ -262,7 +264,7 @@
     margin-left: 300px;
     display: grid;
     grid-template-columns: 75% 25%;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     transition: all .5s ease-in-out;
 }
@@ -275,6 +277,7 @@
 
 .forum_wrapper .forum_post_wrapper{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 10px;
@@ -285,10 +288,34 @@
     flex-direction: column;
     align-items: center;
     padding: 10px;
+    margin: 10px;
     color: var(--gray7);
     font-size: 14px;
-    background-color: #d5e0f8;
+    background-color: #e3eafa;
+    /* border: 1px solid #09c6f9; */
     width: 680px;
+    border-radius: 10px;
+}
+
+.forum_wrapper .forum_post_wrapper .status_feed_wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: 10px;
+    color: var(--gray7);
+    font-size: 14px;
+    background-color: #e3eafa;
+    width: 680px;
+    border-radius: 10px;
+}
+
+
+.forum_wrapper .forum_post_wrapper .status_post_wrapper .line{
+    background: #09c5f94d;
+    height: 2px;
+    width: 100%;
+    margin:10px 0;
     border-radius: 10px;
 }
 
@@ -303,7 +330,6 @@
 .forum_wrapper .forum_post_wrapper .status_post_wrapper .status_post_input .status_input{
 
     width: 100%;
- 
     border-radius: 5px;
     font-size: 14px;
     color: var(--gray7);
@@ -315,10 +341,11 @@
     border-radius: 10px;
     border: none;
     padding: 7px;
-    background: #cbd4e7;
+    background: #d4e2fa;
     font-size: 14px;
     color: var(--gray7);
 }
+
 .forum_wrapper .forum_post_wrapper .status_post_wrapper .status_post_input .profile_icon{
     width: 40px;
     height: 40px;
@@ -336,7 +363,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 10px;
     color: var(--gray7);
     font-size: 14px;
     border-radius: 5px;
@@ -354,6 +380,7 @@
     background-color: #045de9;
     background-image: linear-gradient(90deg, #045de9 0%, #09c6f9 74%);
     color: var(--L1);
+
 }
 .forum_wrapper .forum_post_wrapper .status_post_wrapper  .status_post_btn button{
     width: 100%;
@@ -361,9 +388,85 @@
     border-radius: 10px;
     border: none;
     font-size: 14px;
-    color: var(--gray7);
+    color: var(--L1);
     font-weight: 700;
-    background-color: #acbad8;
+    background-color: #045de9;
+    background-image: linear-gradient(90deg, #045de9 0%, #09c6f9 74%);
+    opacity: .5;
+    cursor: pointer;
+}
+
+/* feed wrapper */
+.forum_wrapper .forum_post_wrapper .status_feed_wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: 10px;
+    color: var(--gray7);
+    font-size: 14px;
+    background-color: #e3eafa;
+    width: 680px;
+    border-radius: 10px;
+}
+
+.forum_wrapper .forum_post_wrapper .status_feed_wrapper .status_feed_profile{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+
+}
+
+.forum_wrapper .forum_post_wrapper .status_feed_wrapper .status_feed_profile .profile_icon{
+    width: 40px;
+    height: 40px;
+    margin-right: 5px;
+}
+.forum_wrapper .forum_post_wrapper .status_feed_wrapper .status_feed_profile .profile_icon img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 100%;
+    border:2px solid var(--green5);
+}
+
+.forum_wrapper .forum_post_wrapper .status_feed_wrapper .status_feed_profile .profile_desc{
+    line-height: 20px;
+    
+}
+
+.forum_wrapper .forum_post_wrapper .status_feed_wrapper .status_feed_profile .profile_desc p{
+    color:var(--gray6);
+    font-size: 12px;
+}
+
+.forum_wrapper .forum_post_wrapper .status_feed_wrapper .status_feed_content .status_feed_desc pre{
+    padding: 0px 10px 10px 10px;
+    position: relative;
+    color: var(--gray7);
+    font-size: 12px;
+    white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */ 
+}
+
+
+.forum_wrapper .forum_post_wrapper .status_feed_wrapper .status_feed_content .status_feed_img{
+    width: 100%;
+    height: 100%px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.forum_wrapper .forum_post_wrapper .status_feed_wrapper .status_feed_content .status_feed_img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
 }
 .content_wrapper .forum_ads{
 
