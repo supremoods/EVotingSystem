@@ -20,7 +20,6 @@
 .navbar .nav_links{
     display: flex;
     flex-direction: row;
-    margin-left:9%;
     align-items: center;
     width: 100%;
 }
@@ -76,7 +75,7 @@
     align-items: center;
     justify-content: flex-start;
     padding:0 10px;
-    width: 26%;
+    width: 48%;
 }
 .navbar .search_bar_wrapper .search_bar{
     position: relative;
@@ -332,22 +331,23 @@
 
 /*content wrapper*/
 
+
+
 .layout_wrapper .content_wrapper{
-    margin-left: 300px;
-    display: grid;
-    grid-template-columns: 75% 25%;
-    height: 100%;
-    width: 100%;
+
+    margin-left:28.4%;
+    display: flex;
     transition: all .5s ease-in-out;
+    width: 100%;
+
 }
 
-
-
-.content_wrapper .forum_wrapper{
-}
 
 .forum_wrapper .forum_post_wrapper{
+    position: relative;
     display: flex;
+
+
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -615,8 +615,56 @@ background: #eaecee;
 }
 
 .content_wrapper .forum_ads{
+    position: fixed;
+    right: 0;
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+}
+
+
+.content_wrapper .forum_ads .ads_wrapper .candidates_img{
+    display: flex;
+    width: 350px;
+    background:#fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow:rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px
+}
+.content_wrapper .forum_ads .ads_wrapper .candidates_img .ads_desc{
+    width: 50%;
+    padding:10px;
+}
+.content_wrapper .forum_ads .ads_wrapper .candidates_img .ads_desc p{
+    color: var(--gray7);
+    font-size: 12px;
+}
+.content_wrapper .forum_ads .ads_wrapper .candidates_img .candidates_slides{
+    width:200px;
+    display: none;
 
 }
+.content_wrapper .forum_ads .ads_wrapper .candidates_img .candidates_slides img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.content_wrapper .forum_ads .ads_wrapper .candidates_img .dot_wrapper{
+    display: none;
+}
+
+  
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+  
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+  
+
 /* footer */
 
 .footer_wrapper{
@@ -642,4 +690,113 @@ background: #eaecee;
 
 .footer_wrapper .nav_footer .link_footer:hover{
     color: #045de9;
+}
+
+
+/*responsiveness*/
+
+@media only screen and (max-width: 1500px){
+    .navbar .search_bar_wrapper {
+        width: 32%;
+    }
+    .navbar .search_bar_wrapper .search_bar input[type="text"] {
+        width: 200px;
+    }
+    .layout_wrapper .content_wrapper {
+        margin-left: 22.4%;
+    }
+
+}
+
+@media only screen and (max-width: 1400px){
+    .layout_wrapper .content_wrapper {
+        margin-left: 19.4%;
+    }
+    .navbar .search_bar_wrapper .search_bar input[type="text"] {
+        width: 169px;
+    }
+    .navbar .search_bar_wrapper {
+        width: 25.5%;
+    }
+}
+
+@media only screen and (max-width: 1400px){
+    .layout_wrapper .sidebar {
+        display: none;
+    }
+    .layout_wrapper .content_wrapper {
+        margin-left: 9.4%;
+    }
+    .content_wrapper .forum_ads .ads_wrapper .candidates_img {
+        width: 433px;
+    }
+    .navbar .search_bar_wrapper .search_bar input[type="text"] {
+        width: 169px;
+    }
+    .navbar .search_bar_wrapper {
+        width: 25.5%;
+    }
+}
+
+@media only screen and (max-width: 1280px){
+    .layout_wrapper .content_wrapper {
+        margin-left: 5.4%;
+    }
+}
+
+@media only screen and (max-width: 1230px){
+    .layout_wrapper .content_wrapper {
+        margin-left: 3.4%;
+    }
+}
+
+@media only screen and (max-width: 1200px){
+    .layout_wrapper .content_wrapper {
+        margin-left: 1.0%;
+    }
+}
+
+@media only screen and (max-width: 1170px){
+    .content_wrapper .forum_ads .ads_wrapper .candidates_img {
+        width: 400px;
+    }
+}
+
+@media only screen and (max-width: 1135px){
+    .layout_wrapper .content_wrapper {
+        margin-left: 0;
+    }
+    .content_wrapper .forum_ads .ads_wrapper .candidates_img {
+        width: 380px;
+    }
+}
+
+@media only screen and (max-width: 1110px){
+
+    .content_wrapper .forum_ads .ads_wrapper .candidates_img {
+        width: 350px;
+    }
+}
+
+@media only screen and (max-width: 1080px){
+    .content_wrapper .forum_ads .ads_wrapper .candidates_img {
+        width: 340px;
+    }
+}
+
+
+@media only screen and (max-width: 1060px){
+    .content_wrapper .forum_ads .ads_wrapper .candidates_img {
+        width: 320px;
+    }
+}
+
+@media only screen and (max-width: 1024px){
+    .content_wrapper .forum_ads {
+        display: none;
+    }
+    .layout_wrapper .content_wrapper {
+        display: flex;
+        justify-content: center;
+    }
 }
