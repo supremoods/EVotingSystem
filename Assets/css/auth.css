@@ -8,11 +8,14 @@
 }
 
 .navbar{
-    background-color: #045de9;
-    background-image: linear-gradient(90deg, #045de9 0%, #09c6f9 74%);
-    padding:15px 50px;
-    color:white;
+    position: fixed;
+    background-color: #ffff;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    padding:5px 20px;
+    color:var(--L7);
     width: 100%;
+    display: flex;
+    z-index: 1;
 }
 
 .logo_section{
@@ -24,20 +27,19 @@
 .logo_img{
     position: relative;
     display: flex;
-    align-items: center;
-    justify-content:center;
-    height:50px;
-
+    height:60px;
+    width:50px;
 }
-
 .logo_img img{
     height: 100%;
     width: 100%;
 }
 
+
 .logo_title{
     width: 271px;
-    height:50px;
+    height:60px;
+    padding-left:10px;
     display:flex;
     align-items: center;
     justify-content:flex-start;
@@ -50,11 +52,19 @@
     font-size: 30px;
     line-height: 25px;
     text-overflow: wrap;
+    background-color: #2a2a72;
+    background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
 }
 .layout_wrapper{
+    margin-top: 70px;
     width: 100%;
-    background-color: #ffffff;
-    background-image: linear-gradient(125deg, #ffffff 0%, #e7ebff 74%);
+    background-color: #f4f5f7;
+
     height: calc(100vh - 54px);
 }
 .content_wrapper{
@@ -71,9 +81,8 @@
     justify-content: center;
     align-items:center;
     height:100%;
-    background-color: #e7eff9;
+    background-color: #eaecee;
     overflow: hidden;
-    background-image: linear-gradient(315deg, #e7eff9 0%, #cfd6e6 74%);
     box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.25);
 
 }
@@ -83,7 +92,7 @@
     align-items: center;
     flex-direction:column;
     display:flex;
-    background: var(--gray2);
+    background: #ffff;
     width:458px;
     height: 716px;
     border-radius: 15px;
@@ -97,8 +106,8 @@
     display: flex;
     align-items: center;
     justify-content:center;
-    height:120px;
-    margin:71px 0em;
+    height:260px;
+    margin:40px 0em;
 }
 
 .login_card .login_logo img{

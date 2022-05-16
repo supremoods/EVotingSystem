@@ -7,20 +7,76 @@
 
 .navbar{
     position: fixed;
-    background-color: #f1f4fc;
+    background-color: #ffff;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-    padding:10px 20px;
+    padding:5px 20px;
     color:var(--L7);
     width: 100%;
     display: flex;
     z-index: 1;
   
 }
+
+.navbar .nav_links{
+    display: flex;
+    flex-direction: row;
+    margin-left:9%;
+    align-items: center;
+    width: 100%;
+}
+.navbar .nav_links .navbar_item_wrapper{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 690px;
+}
+
+.navbar .nav_links .navbar_item_wrapper .navbar_item .navbar_item_icon span{
+    font-size:2rem;
+}
+
+
+.navbar .nav_links .navbar_item_wrapper .navbar_item{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin:0 5px;
+    padding:10px;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+
+}
+
+
+
+.navbar .nav_links .navbar_item_wrapper .navbar_item.active{
+    color:#0892e4;
+}
+
+.navbar .nav_links .navbar_item_wrapper .navbar_item.active::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    border-radius: 20px;
+    background-color: #0892e4;
+    top: 0;
+    margin-top: 38%;
+    transition: all 0.3s ease-in-out;
+}
+.navbar .nav_links .navbar_item_wrapper .navbar_item:hover{
+    width: 100%;
+    background-color: #eaecee;
+}
 .navbar .search_bar_wrapper{
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    width: 100%;
+    justify-content: flex-start;
+    padding:0 10px;
+    width: 26%;
 }
 .navbar .search_bar_wrapper .search_bar{
     position: relative;
@@ -33,12 +89,13 @@
 .navbar .search_bar_wrapper .search_bar input[type="text"]{
     border-radius:14px;
     border:none;
-    padding:10px;
-    background:#d7dff1;
+    padding:10px 10px 10px 35px;
+    background:#f4f5f7;
+
 }
 .navbar .search_bar_wrapper .search_bar i{
     position: absolute;
-    right: 0;
+    left: 0;
     padding:0 10px;
     font-size: 20px;
     color: #045de9;
@@ -48,22 +105,29 @@
     justify-content: flex-start; 
 
 }
-.logo_img{
+/* .logo_img{
     position: relative;
     display: flex;
     align-items: center;
     justify-content:center;
     height:50px;
 
-}
+} */
 
+.logo_img{
+    position: relative;
+    display: flex;
+    height:60px;
+    width:50px;
+}
 .logo_img img{
     height: 100%;
     width: 100%;
 }
 
 .logo_title{
-    width: 271px;
+    width: 160px;
+    padding-left:10px;
     height:50px;
     display:flex;
     align-items: center;
@@ -90,6 +154,7 @@
     position: relative;
     width: 34%;
     display: flex;
+    align-items: center;
     justify-content: flex-end;
 
 }
@@ -115,8 +180,7 @@
     position: absolute;
     right: 0;
     margin-top: 1px;
-    background-color: #f1f4fc;
-
+    background-color: #fff;
     border-radius: 5px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     display: flex;
@@ -179,10 +243,11 @@
     justify-content: flex-start;
     color:var(--gray6);
     padding:15px 10px;
+    cursor: pointer;
 }
 
 .profile_content .profile_content_item:hover{
-    background-color: #ced5fa;
+    background-color: #eaecee;
     border-radius: 10px;
     transition: all ease .35s;
 }
@@ -199,7 +264,7 @@
 .layout_wrapper{
     display: flex;
     margin-top: 70px;
-    background-color: #d7dff1;
+    background-color: #f4f5f7;
     
 }
 
@@ -233,7 +298,7 @@
 }
 
 .layout_wrapper .sidebar .sidebar_item:hover{
-    background-color: #ced5fa;
+    background-color: #eaecee;
     border-radius: 10px;
     transition: all ease .35s;
 }
@@ -259,7 +324,7 @@
     background-color: #045de9;
     background-image: linear-gradient(360deg, #045de9 0%, #09c6f9 74%);
     padding: 5px;
-    color: #f1f4fc;
+    color: #ffff;
     border-radius: 50%;
     margin-right: 10px;
 }
@@ -297,7 +362,7 @@
     margin: 10px;
     color: var(--gray7);
     font-size: 14px;
-    background-color: #f1f4fc;
+    background-color: #ffff;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
     width: 680px;
     border-radius: 10px;
@@ -333,7 +398,7 @@
     border-radius: 10px;
     border: none;
     padding: 7px;
-    background: #d7dff1;
+    background: #f4f5f7;
     font-size: 14px;
     color: var(--gray7);
 }
@@ -368,7 +433,7 @@
 
 .forum_wrapper .forum_post_wrapper .status_post_wrapper  .status_post_btn button:hover{
     transition: all .35s ease;
-    opacity: 1;
+    opacity: .7;
     background-color: #045de9;
     background-image: linear-gradient(90deg, #045de9 0%, #09c6f9 74%);
     color: var(--L1);
@@ -384,7 +449,7 @@
     font-weight: 700;
     background-color: #045de9;
     background-image: linear-gradient(90deg, #045de9 0%, #09c6f9 74%);
-    opacity: .5;
+    opacity: 1;
     cursor: pointer;
 }
 
@@ -396,7 +461,7 @@
     margin: 10px;
     color: var(--gray7);
     font-size: 14px;
-    background-color: #f1f4fc;
+    background-color: #ffff;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
     width: 680px;
     border-radius: 10px;
@@ -461,30 +526,94 @@
 }
 .forum_wrapper .forum_post_wrapper .status_feed_wrapper .status_feed_comment{
     width: 100%;
+    display: flex;
+    justify-content: center;
+    padding:10px 0;
 }
 
-.forum_wrapper .forum_post_wrapper .status_feed_wrapper .line{
-    height: 2px;
-    margin:10px 10px;
-    width: 095%;
-    background: #d7dff1;
-}
+
 .forum_wrapper .forum_post_wrapper .status_feed_wrapper .status_feed_comment .status_feed_btn{
+    width: 100%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-around;
+    border-bottom:1px solid #acb1bd;
+    border-top:1px solid #c6cddd;
+    cursor: pointer;
+    margin:0 10px;
+    
 }
 
 .forum_wrapper .forum_post_wrapper .status_feed_wrapper .status_feed_comment .status_feed_btn .btn{
     display: flex;
-    justify-content: flex-start;
-    padding:0 10px 10px 10px;
+    width: 100%;
+    justify-content: center;
+    padding:10px;
+    border-radius: 5px;
     color:#5c606e;
+    transition: all .35s ease;
 }
+
+.forum_wrapper .forum_post_wrapper .status_feed_wrapper .status_feed_comment .status_feed_btn .btn:hover{
+background: #eaecee;
+}
+
 .forum_wrapper .forum_post_wrapper .status_feed_wrapper .status_feed_comment .status_feed_btn .btn p{
     font-size: 12px;
-    
     color:#5c606e;
 }
+
+
+.forum_wrapper .forum_post_wrapper .status_feed_wrapper .status_feed_comment_input{
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    padding: 10px;
+}
+.forum_wrapper .forum_post_wrapper .status_feed_wrapper .status_feed_comment_input .profile_icon{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin-right: 5px;
+}
+
+.forum_wrapper .forum_post_wrapper .status_feed_wrapper .status_feed_comment_input .profile_icon::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-left:25px;
+    width: 35%;
+    height: 35%;
+    background-color: var(--A1);
+    border-radius: 100%;
+    border:2px solid var(--L2);
+    opacity: 1;
+    transition: all .35s ease;
+}
+
+.forum_wrapper .forum_post_wrapper .status_feed_wrapper .status_feed_comment_input .profile_icon img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 100%;
+
+}
+.forum_wrapper .forum_post_wrapper .status_feed_wrapper .status_feed_comment_input .comment_input {
+    width: 100%;
+}
+
+.forum_wrapper .forum_post_wrapper .status_feed_wrapper .status_feed_comment_input .comment_input input[type="text"]{
+    width: 100%;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    padding: 10px;
+    background: #f4f5f7;
+    font-size: 14px;
+    color: var(--gray7);
+}
+
 .content_wrapper .forum_ads{
 
 }
