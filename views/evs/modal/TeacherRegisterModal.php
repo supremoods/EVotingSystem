@@ -1,7 +1,16 @@
-<div class="register_wrapper">
+<div class="register_wrapper teacher">
     <div class="register_card">
         <div class="header_title">
-            <h1>Teacher Registration</h1>
+            <div>
+                <h1>Teacher Registration</h1>
+            </div>
+            <div>
+                <!-- close button -->
+                <div class="close_btn">
+                    <span class="material-symbols-outlined" onclick="teacherRegister()">close</span>
+                </div>
+
+            </div>
         </div>
         <div class="line">
 

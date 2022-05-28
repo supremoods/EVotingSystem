@@ -3,7 +3,7 @@
     display: none;
 }
 
-.register_wrapper.modal{
+.student.modal{
     position: absolute;
     display: flex;
     justify-content: center;
@@ -11,7 +11,16 @@
     height:100%;
     background-color: rgba(31, 31, 31, 0.795);
     width: 100%;
+}
 
+.teacher.modal{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    height:100%;
+    background-color: rgba(31, 31, 31, 0.795);
+    width: 100%;
 }
 
 
@@ -33,7 +42,18 @@
     font-weight: bold;
     color: var(--gray10);
     margin:20px;
-   
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.register_card .header_title .close_btn{
+    cursor: pointer;
+    color: var(--gray10);
+    font-size: 30px;
+    font-weight: bold;
+    margin:0;
+    padding:0;
 }
 
 .register_card .header_title h1{
@@ -218,7 +238,14 @@
     font-weight: bold;
     /* color: var(--gray10); */
     margin:20px;
-   
+    display: flex;
+    justify-content: space-between;
+}
+
+.cpm_card .header_title .close_btn{
+    color: var(--gray10);
+    font-size: 30px;
+    cursor: pointer;
 }
 .cpm_card .header_title h1{
     background-color: var(--blue4);

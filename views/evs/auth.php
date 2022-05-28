@@ -46,8 +46,8 @@
                                     <button value="submit">Login</button>
                                 </div>
                             </form>
-                            <div class="sublink">
-                                <p>Don't have an account? <span><a href="">Register</a></span></p>
+                            <div class="sublink" onclick="cpmModal()">
+                                <p>Don't have an account? <span>Register</span></p>
                             </div>
                             <div class="sublink">
                                <a class="forgot_password" href="">Forgot Password?</a>
@@ -75,6 +75,7 @@
         <?php   include('views/evs/modal/TeacherRegisterModal.php'); ?>
         <?php   include('views/evs/modal/cpmModal.php'); ?>
     </div>
+    <script src="./vendor/js/app.js"></script>
 </body>
 </html>
     

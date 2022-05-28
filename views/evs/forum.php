@@ -248,7 +248,7 @@ Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis asperiores 
     </div>
 
     <!-- call app js -->
-    <script src="./vendor/js/app.js"></script>
+    <script src="./vendor/js/forum.js"></script>
 
 </body>
 </html>

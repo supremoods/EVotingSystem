@@ -1,7 +1,16 @@
-<div class="register_wrapper">
+<div class="register_wrapper student">
     <div class="register_card">
         <div class="header_title">
-            <h1>Student Registration</h1>
+            <div>
+                <h1>Student Registration</h1>
+            </div>
+            <div>
+                <!-- close button -->
+                <div class="close_btn">
+                    <span class="material-symbols-outlined" onclick="studentRegister()">arrow_back_ios</span>
+                </div>
+
+            </div>
         </div>
         <div class="line">
 
