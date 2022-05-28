@@ -1,3 +1,4 @@
+
 function profileContent(){
     let dropdown = document.querySelector('.profile_content');
     dropdown.classList.toggle('active');
@@ -22,3 +23,10 @@ function showSlides() {
   dots[slideIndex-1].className += " activeDots";
   setTimeout(showSlides, 3000); // Change image every 3 seconds
 }
+
+
+
+
+
+
+

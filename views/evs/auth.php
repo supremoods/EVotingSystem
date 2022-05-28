@@ -1,32 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Assets/css/auth.css">
-    <link rel="stylesheet" href="Assets/css/root.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./vendor/css/header.css" />
+    <link rel="stylesheet" href="./vendor/css/auth.css" />
+    <link rel="stylesheet" href="./vendor/css/modal.css" />
+    <link rel="stylesheet" href="./vendor/css/root.css" />
+    <link rel="stylesheet" href="./vendor/css/footer.css" />
+    <link rel="shortcut icon" href="Assets/img/evs_logo_blue.png" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet" />
     <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
     <title>EVS | Login</title>
 </head>
+
 <body>
     <div id="root">
-        <nav class ="navbar">
-            <div class="logo_section">
-                <div class="logo_img">
-                    <img src="Assets/img/evs_logo_blue.png" alt="">
-                </div>
-                <div class="logo_title">
-                    <h1> E-VOTING SYSTEM </h1>
-                </div>
-            </div>
-        </nav>
+        <?php   include('views/templates/header.php'); ?>
         <div class="layout_wrapper">
             <div class="content_wrapper">
                 <div class="login_wrapper">
                     <div class="login_card">
                         <div class="login_logo">
-                            <img src="Assets/img/evs_logo_blue.png" alt="" >
+                            <img src="./vendor/img/logo/evs_logo_blue.png" alt="" >
                         </div>
                         <div class="login_input_form">
                             <form method="post">
@@ -66,21 +64,17 @@
                     </div>
                     <div class="shape"></div>
                     <div class="shape2"></div>
-                    <img class="desc_img"src="Assets/img/election_illus.png" alt="" srcset="">
-                    
+                    <img class="desc_img" src="./vendor/img/election_illus.png" alt="" srcset="">
                 </div>
             </div>
-        
-            <footer class="footer_wrapper">
-                <ul class="nav_footer">
-                    <li class="link_footer"><a href="">About</a></li>
-                    <li class="link_footer"><a href="">Developers</a></li>
-                    <li class="link_footer"><a href="">Terms of Services</a></li>
-                    <li class="link_footer"><a href="">Privacy Policy</a></li>
-                </ul>
-            </footer>
+
+            <?php   include('views/templates/footer.php'); ?>
+
         </div>
+        <?php   include('views/evs/modal/StudentRegisterModal.php'); ?>
+        <?php   include('views/evs/modal/TeacherRegisterModal.php'); ?>
+        <?php   include('views/evs/modal/cpmModal.php'); ?>
     </div>
-   
 </body>
 </html>
+    

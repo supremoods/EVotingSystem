@@ -1,0 +1,287 @@
+
+.register_wrapper{
+    display: none;
+}
+
+.register_wrapper.modal{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    height:100%;
+    background-color: rgba(31, 31, 31, 0.795);
+    width: 100%;
+
+}
+
+
+.register_card{
+    flex-direction:column;
+    display:flex;
+    flex-wrap: wrap;
+    background: var(--gray1);
+    max-width:100%;
+    max-height:100%;
+    border-radius: 15px;
+    -webkit-box-shadow: -4px 6px 13px 4px rgba(0,0,0,0.33);
+    -moz-box-shadow: -4px 6px 13px 4px rgba(0,0,0,0.33);
+    box-shadow: -4px 6px 13px 4px rgba(0,0,0,0.33);
+}
+
+.register_card .header_title{
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--gray10);
+    margin:20px;
+   
+}
+
+.register_card .header_title h1{
+    background-color: var(--blue4);
+    background-image: linear-gradient(315deg, var(--blue4) 0%, var(--blue1) 74%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+}
+
+.register_card .line{
+    width:100%;
+    height:2px;
+    background-color: var(--gray6);
+}
+
+.register_input_form{
+    display:flex;
+    margin:20px;
+}
+
+.col .reg_field_wrapper{
+    display:flex;
+    flex-direction: column;
+    padding:20px;
+}
+
+
+.reg_field_wrapper input{
+    border-radius: 10px;
+    background: var(--gray3);
+    border:none;
+    outline: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    height: 45px;
+    font-size:14px;
+    width:357px;
+    color: var(--gray6);
+    padding-left:20px;
+}
+
+.register_input_form .col .reg_field_wrapper label{
+    font-size: 14px;
+    line-height: 30px;
+}
+
+.register_input_form .col .reg_field_wrapper .upload_btn{
+    padding:10px 0px;
+}
+
+.register_input_form .col .reg_field_wrapper .upload_btn button{
+    color: var(--gray1);
+    font-weight: 700;
+    border: none;
+    padding: 9px 0px;
+    border-radius: 10px;
+    background-color: #045de9;
+    background-image: linear-gradient(90deg, #045de9 0%, #09c6f9 74%);
+    width:357px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    opacity:1;
+    transition: all .5s ease-in-out;
+}
+
+.register_input_form .col .reg_field_wrapper .upload_btn button:hover{
+    transition: all .5s ease-in-out;
+    background-image: linear-gradient(270deg, #045de9 0%, #09c6f9 74%);
+    opacity:0.8;
+}
+
+
+.register_input_form .col .reg_field_wrapper .inputContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+   
+}
+.register_input_form .col .reg_field_wrapper .inputContainer .profile_container{
+    position: relative;
+    width: 150px;
+    height:150px;
+    background: var(--gray3);
+    border-radius: 50%;
+    padding:5px;
+    
+}
+
+
+.register_input_form .col .reg_field_wrapper .inputContainer .profile_container span{
+    position: absolute;
+    bottom:0;
+    right:0;
+    background-color: var(--blue4);
+    background-image: linear-gradient(315deg, var(--blue4) 0%, var(--blue1) 74%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+    font-size:42px;
+}
+
+
+.register_input_form .col .reg_field_wrapper .inputContainer .profile_container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+.submit_btn{
+    display: flex;
+    justify-content: flex-end;
+    padding:20px 40px;
+    margin-bottom: 10px;
+
+}
+
+.submit_btn button{
+    color: var(--gray1);
+    font-weight: 700;
+    border: none;
+    padding: 9px 0px;
+    border-radius: 10px;
+    background-color: #045de9;
+    background-image: linear-gradient(90deg, #045de9 0%, #09c6f9 74%);
+    width:300px;
+    font-size: 16px;
+    height:50px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    opacity:1;
+    transition: all .5s ease-in-out;
+}
+
+.submit_btn button:hover{
+    transition: all .5s ease-in-out;
+    background-image: linear-gradient(270deg, #045de9 0%, #09c6f9 74%);
+    opacity:0.8;
+}
+
+
+
+/* modal for choose profession: css */
+
+.cpm_wrapper{
+    display: none;
+}
+
+.cpm_wrapper.modal{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    height:100%;
+    background-color: rgba(31, 31, 31, 0.795);
+    width: 100%;
+
+}
+
+
+.cpm_card{
+    flex-direction:column;
+    display:flex;
+    flex-wrap: wrap;
+    background: var(--gray1);
+    max-width:100%;
+    max-height:100%;
+    border-radius: 15px;
+    -webkit-box-shadow: -4px 6px 13px 4px rgba(0,0,0,0.33);
+    -moz-box-shadow: -4px 6px 13px 4px rgba(0,0,0,0.33);
+    box-shadow: -4px 6px 13px 4px rgba(0,0,0,0.33);
+}
+
+.cpm_card .header_title{
+    font-size: 30px;
+    font-weight: bold;
+    /* color: var(--gray10); */
+    margin:20px;
+   
+}
+.cpm_card .header_title h1{
+    background-color: var(--blue4);
+    background-image: linear-gradient(315deg, var(--blue4) 0%, var(--blue1) 74%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+}
+
+.cpm_card .line{
+    width:100%;
+    height:2px;
+    background-color: var(--gray6);
+}
+
+.cpm_card .cpm_btn_container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin:20px;
+}
+
+.student_btn,.teacher_btn{
+    display: flex;
+    justify-content: flex-end;
+    padding:20px 40px;
+    margin-bottom: 10px;
+
+}
+
+
+.student_btn button,
+.teacher_btn button{
+    color: var(--gray1);
+    font-weight: 700;
+    border: none;
+    padding: 9px 0px;
+    border-radius: 10px;
+    background-color: #045de9;
+    background-image: linear-gradient(90deg, #045de9 0%, #09c6f9 74%);
+    width:300px;
+    font-size: 16px;
+    height:50px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    opacity:1;
+    transition: all .5s ease-in-out;
+}
+.teacher_btn button{
+    background-color: #ef5734;
+    background-image: linear-gradient(315deg, #ef5734 0%, #ffcc2f 74%);
+}
+
+.student_btn button:hover{
+    transition: all .5s ease-in-out;
+    background-image: linear-gradient(270deg, #045de9 0%, #09c6f9 74%);
+    opacity:0.8;
+}
+
+.teacher_btn button:hover{
+    transition: all .5s ease-in-out;
+    background-image: linear-gradient(90deg, #ef5734 0%, #ffcc2f 74%);
+    opacity:0.8;
+}
