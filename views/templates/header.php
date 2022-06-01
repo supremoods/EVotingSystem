@@ -1,7 +1,10 @@
+<?php
+    require_once("{$_SERVER['DOCUMENT_ROOT']}/model/SqlQuery.php");
+?>
 <nav class="navbar">
     <div class="logo_section">
         <div class="logo_img">
-            <img src="./vendor/img/logo/evs_logo_blue.png" alt="" >
+            <img src="../../vendor/img/logo/evs_logo_blue.png" alt="" >
         </div>
         <div class="logo_title">
             <h1> E-VOTING SYSTEM </h1>
@@ -9,8 +12,14 @@
     </div>
 
     <?php
+        //start session
+        session_start();
         //login session
-        if(!isset($_SESSION['user_id'])){
+        if(isset($_SESSION['userAccount'])){
+            // object of SqlQuery class
+            $sqlQuery = new SqlQuery('', '', '', '', '', '', '', '', '', '', '', '', '', '');
+            // call the selectUserAccount method
+            $sqlQuery->selectUserAccount($_SESSION['userAccount']);
     ?>
     <div class="search_bar_wrapper">
         <div class="search_bar">
@@ -46,15 +55,15 @@
     <div class="profile_wrapper">
         <div class="pwpc">
             <div class="profile_icon" onclick="profileContent()">
-                <img src="./vendor/img/profile_pic/profile.jpg" alt="" />
+                <img src="../../vendor/img/profile_pic/<?= $sqlQuery->getImageSrc()?>" alt="" />
             </div>
             <div class="profile_content">
                 <div class="profile_content_item">
                     <div class="profile_icon">
-                        <img src="./vendor/img/profile_pic/profile.jpg" alt="" />
+                        <img src="../../vendor/img/profile_pic/<?= $sqlQuery->getImageSrc()?>" alt="" />
                     </div>
                     <div class="profile_desc">
-                        <h1 class="username">John Lappay</h1>
+                        <h1 class="username"><?= $sqlQuery->getFirstName().' '.$sqlQuery->getLastName()?></h1>
                         <p>See Your Profile</p>
                     </div>
                 </div>
@@ -67,7 +76,7 @@
                     <span class="material-icons">help</span>
                     <p>Help & Support</p>
                 </div>
-                <div class="profile_content_item">
+                <div class="profile_content_item logout">
                     <span class="material-icons">logout</span>
                     <p>Logout</p>
                 </div>

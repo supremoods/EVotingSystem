@@ -3,6 +3,7 @@
     class UserAccount {
         // Properties
         public $id;
+        public $image_src;
         public $userLevel;
         public $university;
         public $universityID;
@@ -17,8 +18,9 @@
         public $time_stamp_out;
 
         // Constructor
-        public function __construct($id, $userLevel ,$university, $universityID ,$userID, $first_name, $middle_name, $last_name, $email, $passw, $status, $time_stamp_in, $time_stamp_out) {
+        public function __construct($id, $image_src, $userLevel ,$university, $universityID ,$userID, $first_name, $middle_name, $last_name, $email, $passw, $status, $time_stamp_in, $time_stamp_out) {
             $this->id = $id;
+            $this->image_src = $image_src;
             $this->userLevel = $userLevel;
             $this->university = $university;
             $this->universityID = $universityID;
@@ -38,6 +40,10 @@
         // Methods
         public function getId() {
             return $this->id;
+        }
+
+        public function getImageSrc() {
+            return $this->image_src;
         }
 
         public function getUserLevel() {
@@ -94,6 +100,10 @@
             $this->id = $id;
         }
 
+        public function setImageSrc($image_src) {
+            $this->image_src = $image_src;
+        }
+
         public function setUserLevel($userLevel) {
             $this->userLevel = $userLevel;
         }
@@ -142,10 +152,6 @@
             $this->time_stamp_out = $time_stamp_out;
         }
 
-        // To string
-        public function __toString() {
-            return "UserAccount: " . $this->id . " " . $this->university . " " . $this->studentID . " " . $this->first_name . " " . $this->middle_name . " " . $this->last_name . " " . $this->email . " " . $this->passw . " " . $this->status . " " . $this->time_stamp_in . " " . $this->time_stamp_out;
-        }
     
 
     }

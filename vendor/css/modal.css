@@ -3,7 +3,7 @@
     display: none;
 }
 
-.student.modal{
+.register_wrapper.modal{
     position: absolute;
     display: flex;
     justify-content: center;
@@ -13,15 +13,6 @@
     width: 100%;
 }
 
-.teacher.modal{
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items:center;
-    height:100%;
-    background-color: rgba(31, 31, 31, 0.795);
-    width: 100%;
-}
 
 
 .register_card{
@@ -82,12 +73,51 @@
     flex-direction: column;
     padding:20px;
 }
+.search-input {
+    position: relative;
+}
+
+.search-input .autocom-box{
+    position: absolute;
+    top: 100px;
+    right: 0;
+    padding: 0;
+    opacity: 0;
+    width: 100%;
+    pointer-events: none;
+    max-height: 280px;
+    overflow-y: scroll;
+    background-color: var(--gray1);
+}
 
 
+.search-input.active .autocom-box{
+    padding: 10px 8px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.autocom-box li{
+    list-style: none;
+    padding: 8px 12px;
+    display: none;
+    width: 100%;
+    cursor: default;
+    border-radius: 3px;
+}
+
+.search-input.active .autocom-box li{
+    display: block;
+}
+
+.autocom-box li:hover{
+    background: #efefef;
+}
+  
 .reg_field_wrapper input{
     border-radius: 10px;
     background: var(--gray3);
-    border:none;
+    border:1px solid var(--gray2);
     outline: none;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     height: 45px;

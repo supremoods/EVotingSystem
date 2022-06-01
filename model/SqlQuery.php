@@ -2,7 +2,7 @@
     // SqlQuery.php
 
     // require once database connection
-    require_once('config/ConfigDB.php');
+    require_once($_SERVER['DOCUMENT_ROOT'].'../config/ConfigDB.php');
 
     // require once the class UserAccount
     require_once('UserAccount.php');
@@ -16,6 +16,7 @@
         // constructor
         public function __construct(
             $id, 
+            $image_src,
             $userLevel, 
             $university, 
             $universityID, 
@@ -31,6 +32,7 @@
             ) {
             parent::__construct(
                 $id,
+                $image_src,
                 $userLevel, 
                 $university, 
                 $universityID, 
@@ -46,11 +48,8 @@
             );
         }
 
-        // to string
-        public function __toString() {
-            return "SqlQuery: " . $this->id . " " . $this->userLevel . " " . $this->university . " " . $this->universityID . " " . $this->userID . " " . $this->first_name . " " . $this->middle_name . " " . $this->last_name . " " . $this->email . " " . $this->passw . " " . $this->status . " " . $this->time_stamp_in . " " . $this->time_stamp_out;
-        }
 
+ 
     
         // Insert a new userAccount into the database
         public function insertUserAccount() {
@@ -59,6 +58,7 @@
 
             $sql = "INSERT INTO user_account (
                 id, 
+                image_src,
                 user_level, 
                 university, 
                 university_id, 
@@ -73,6 +73,7 @@
                 time_stamp_out
                 ) VALUES (
                     $this->id,
+                    '$this->image_src',
                     '$this->userLevel', 
                     '$this->university', 
                     '$this->universityID', 
@@ -90,11 +91,9 @@
             $result = $database->dbConnection()->query($sql);
             if ($result) {
                 // if the query is successful, return true
-                echo "Inserted successfully!";
                 return true;
             } else {
                 // if the query is not successful, return false
-                echo "Error: " . $sql . "<br>" . $database->dbConnection()->error;
                 return false;
             }
         }
@@ -122,30 +121,73 @@
         }
 
         // Select a userAccount from the database
-        public function selectUserAccount() {
-
+        public function verifyUserAccount() {
             // create a new database object
             $database = new Database();
 
-            $sql = "SELECT * FROM user_account WHERE id = '$this->id'";
+            $sql = "SELECT * FROM user_account WHERE user_id = '$this->userID'";
+
             $result = $database->dbConnection()->query($sql);
             if ($result) {
                 // if the query is successful, return true
-                echo "Selected successfully!";
-                return $result;
+                if ($result->num_rows > 0) {
+                    while($row = $result->fetch_assoc()) {
+                        if(password_verify($this->passw, $row['passw'])){
+                            // decrypt the password
+                            return true;
+                        }else{
+                            return false;
+                        }
+                    }
+                } else {
+                    return false;
+                }
             } else {
-                // if the query is not successful, return false
-                echo "Error: " . $sql . "<br>" . $database->dbConnection()->error;
                 return false;
             }
 
+        }
+
+        // Select a userAccount from the database
+        public function selectUserAccount($user_id) {
+            // create a new database object
+            $database = new Database();
+            $this->setUserID($user_id);
+
+            $sql = "SELECT * FROM user_account WHERE user_id = '$this->userID'";
+
+            $result = $database->dbConnection()->query($sql);
+            if ($result) {
+                // if the query is successful, return true
+                if ($result->num_rows > 0) {
+                    while($row = $result->fetch_assoc()) {
+                        // decrypt the password
+                        $this->id = $row['id'];
+                        $this->image_src = $row['image_src'];
+                        $this->userLevel = $row['user_level'];
+                        $this->university = $row['university'];
+                        $this->universityID = $row['university_id'];
+                        $this->userID = $row['user_id'];
+                        $this->first_name = $row['first_name'];
+                        $this->middle_name = $row['middle_name'];
+                        $this->last_name = $row['last_name'];
+                        $this->email = $row['email'];
+                        $this->passw = $row['passw'];
+                        $this->status = $row['status'];
+                        $this->time_stamp_in = $row['time_stamp_in'];
+                        $this->time_stamp_out = $row['time_stamp_out'];
+                    }
+                } else {
+                    return false;
+                }
+            } else {
+                return false;
+            }
 
         }
 
 
         // print all rows userAccounts in the database
-
-        
 
         // Select all userAccounts from the database
         public function selectAllUserAccounts() {
@@ -175,6 +217,7 @@
                     echo "<table>";
                     echo "<tr>";
                     echo "<td>" . $row['id'] . "</td>";
+                    echo "<td>" . $row['image_src'] . "</td>";
                     echo "<td>" . $row['user_level'] . "</td>";
                     echo "<td>" . $row['university'] . "</td>";
                     echo "<td>" . $row['university_id'] . "</td>";

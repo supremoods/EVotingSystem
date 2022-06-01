@@ -26,3 +26,8 @@ function showSlides() {
 
 
 
+//onclick in logout button
+$('.logout').click(function(){
+  alert("Logout Successful");
+  window.location.href = "../../controller/LogoutController.php";
+});
