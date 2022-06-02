@@ -1,4 +1,7 @@
-
+function loadModal(){
+    let loadModal = document.querySelector('.modal_load_wrapper');
+    loadModal.classList.toggle('modal');
+}
 
 
 // function clear the input box after submit button is clicked
@@ -61,6 +64,12 @@ $(document).ready(function(){
             dataType: "JSON",
             processData:false,
             contentType:false,
+            beforeSend: function(){
+                loadModal();
+            },
+            complete: function(){
+                loadModal();
+            },
             success:function(data){
                 console.log(data);
                 const message = {message: "success"};

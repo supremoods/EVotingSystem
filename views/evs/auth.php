@@ -72,6 +72,7 @@
             <?php include '../templates/footer.php' ; ?>
 
         </div>
+        <?php   include('../evs/modal/modal_load.php'); ?>
         <?php   include('../evs/modal/RegisterModal.php'); ?>
         <?php   include('../evs/modal/cpmModal.php'); ?>
     </div>
