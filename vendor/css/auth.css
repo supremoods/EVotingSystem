@@ -185,12 +185,18 @@
     color: var(--gray6);
     padding:20px 0;
     font-size: 14px;
-    z-index:0;
+    z-index:1;
     white-space: pre-wrap;       /* Since CSS 2.1 */
     white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
     white-space: -pre-wrap;      /* Opera 4-6 */
     white-space: -o-pre-wrap;    /* Opera 7 */
     word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+@media only screen and (max-height: 768px){
+    .login_card {
+        transform: scale(.8);
+    }
 }
 
 @media only screen and (max-width: 1500px){
@@ -200,7 +206,6 @@
     }
 
     .login_card{
-
         transform: scale(.9);
         transition: all .5s ease-in-out;
     }
@@ -221,60 +226,28 @@
     }
 }
 @media only screen and (max-width: 1366px){
-    .content_wrapper{
-        grid-template-columns: 35% 65%;
-        transition: all .5s ease-in-out;
-    }
+
 
     .login_card{
-
-        transform: scale(.9);
-        transition: all .5s ease-in-out;
-    }
-    .desc_wrapper .desc_img{
-        height: 500px;  
-        transition: all .5s ease-in-out;
-    }
-
-    .desc_wrapper .shape{
-        height: 600px;
-        width: 800px;
-        transition: all .5s ease-in-out;
-    }
-
-    .desc_wrapper .desc_about{
-        width: 770px;
-        transition: all .5s ease-in-out;
-    }
-}
-
-@media only screen and (max-width: 1280px){
-    .content_wrapper{
-        grid-template-columns: 35% 65%;
-        transition: all .5s ease-in-out;
-    }
-
-    .login_card{
-
         transform: scale(.8);
-        transition: all .5s ease-in-out;
     }
+
     .desc_wrapper .desc_img{
         height: 400px;  
-        transition: all .5s ease-in-out;
     }
-
     .desc_wrapper .shape{
         height: 500px;
         width: 800px;
-        transition: all .5s ease-in-out;
     }
 
     .desc_wrapper .desc_about{
         width: 670px;
-        transition: all .5s ease-in-out;
+        font-size: 14px;
     }
+
 }
+
+
 
 @media only screen and (max-width: 1024px){
     .content_wrapper{
