@@ -54,6 +54,7 @@ $('input#confirmPassword').keyup(function(){
 
 
 $(document).ready(function(){
+
     $("#getUserData").on("submit",function(e){
         e.preventDefault();
         var form_data = new FormData(this);     
@@ -104,17 +105,21 @@ $(document).ready(function(){
             dataType: "JSON",
             processData:false,
             contentType:false,
+            beforeSend: function(){
+                loadModal();
+            },
+            complete: function(){
+                loadModal();
+            },
             success:function(data){
                 console.log(data);
                 const status = {status: "success"};
                 if(JSON.stringify(data) == JSON.stringify(status)){
                     loginClearInput();
-                    alert("Login Successful");
                     window.location.href = "forum.php";
                 }else{
                    console.log(data);
                    loginClearInput();
-                   alert("Login Failed");
                 }
             }     
         });
