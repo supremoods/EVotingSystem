@@ -12,8 +12,6 @@
     </div>
 
     <?php
-        //start session
-        session_start();
         //login session
         if(isset($_SESSION['userAccount'])){
             // object of SqlQuery class

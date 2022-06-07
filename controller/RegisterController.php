@@ -1,7 +1,7 @@
 <?php
     // requre_once SqlQuery.php
 
-    require_once ('../model/SqlQuery.php');
+    require_once ('model/SqlQuery.php');
 
 
     // jump to this part

@@ -59,7 +59,7 @@ $(document).ready(function(){
         e.preventDefault();
         var form_data = new FormData(this);     
         $.ajax({
-            url : "../../controller/RegisterController.php",
+            url : "register",
             method: "POST",
             data: form_data,
             dataType: "JSON",
@@ -99,7 +99,7 @@ $(document).ready(function(){
         e.preventDefault();
         var form_data = new FormData(this);     
         $.ajax({
-            url : "../../controller/LoginController.php",
+            url : "login",
             method: "POST",
             data: form_data,
             dataType: "JSON",
@@ -116,7 +116,7 @@ $(document).ready(function(){
                 const status = {status: "success"};
                 if(JSON.stringify(data) == JSON.stringify(status)){
                     loginClearInput();
-                    window.location.href = "forum.php";
+                    window.location.href = "forum";
                 }else{
                    console.log(data);
                    loginClearInput();

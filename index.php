@@ -1,7 +1,24 @@
 <?php
-    // call another page using script
+
+require_once("{$_SERVER['DOCUMENT_ROOT']}/router.php");
+
+// ##################################################
+// ##################################################
+// ##################################################
+
+// Static GET
+// In the URL -> http://localhost
+// The output -> Index
+get('/', 'views/evs/auth.php');
 
 
-   echo "<script>window.location.href='views/evs/auth.php'</script>";
+get('/forum', 'views/evs/forum.php');
 
-?>
+post('/populate', 'controller/populateUniversity.php');
+
+post('/register', 'controller/RegisterController.php');
+
+post('/login', 'controller/LoginController.php');
+
+// The 404.php has access to $_GET and $_POST
+any('/404','views/evs/404.php');

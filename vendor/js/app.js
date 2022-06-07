@@ -51,7 +51,7 @@ function uploadImage(){
 let suggestions = [];
 
 var xhr = new XMLHttpRequest();
-xhr.open('POST', "../../controller/populateUniversity.php");
+xhr.open('POST', "populate");
 xhr.onload = function(){
   var universityArr = this.response;
   universityArr = JSON.parse(universityArr); //convert string to object

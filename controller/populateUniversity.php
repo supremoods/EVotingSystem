@@ -1,6 +1,6 @@
 <?php
     // require once database connection
-    require_once('../config/ConfigDB.php');
+    require_once('config/ConfigDB.php');
 
     // Create a new Database object
     $database = new Database();

@@ -1,6 +1,6 @@
 <?php
 // Path: controller\LoginController.php
-    require_once ('../model/SqlQuery.php');
+    require_once ('model/SqlQuery.php');
     // Class Login Controller
     class LoginController extends SqlQuery {
 
@@ -34,7 +34,6 @@
         // call the checkUserAccount method
         if($loginController->verifyUserAccount()){
             // start session
-            session_start();
             // set session variables
             $_SESSION['userAccount'] = $loginController->getUserID();
             echo json_encode(array(

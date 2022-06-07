@@ -2,7 +2,7 @@
     // SqlQuery.php
 
     // require once database connection
-    require_once($_SERVER['DOCUMENT_ROOT'].'../config/ConfigDB.php');
+    require_once('config/ConfigDB.php');
 
     // require once the class UserAccount
     require_once('UserAccount.php');
