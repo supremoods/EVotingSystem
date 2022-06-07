@@ -12,44 +12,6 @@
     // Class SqlQuery
 
     class SqlQuery extends UserAccount {
-
-        // constructor
-        public function __construct(
-            $id, 
-            $image_src,
-            $userLevel, 
-            $university, 
-            $universityID, 
-            $userID, 
-            $first_name, 
-            $middle_name, 
-            $last_name, 
-            $email, 
-            $passw, 
-            $status, 
-            $time_stamp_in, 
-            $time_stamp_out
-            ) {
-            parent::__construct(
-                $id,
-                $image_src,
-                $userLevel, 
-                $university, 
-                $universityID, 
-                $userID, 
-                $first_name, 
-                $middle_name, 
-                $last_name, 
-                $email, 
-                $passw, 
-                $status, 
-                $time_stamp_in, 
-                $time_stamp_out
-            );
-        }
-
-
- 
     
         // Insert a new userAccount into the database
         public function insertUserAccount() {
@@ -72,20 +34,20 @@
                 time_stamp_in, 
                 time_stamp_out
                 ) VALUES (
-                    $this->id,
+                    NULL,
                     '$this->image_src',
                     '$this->userLevel', 
                     '$this->university', 
                     '$this->universityID', 
-                    $this->userID, 
+                    NULL, 
                     '$this->first_name', 
                     '$this->middle_name', 
                     '$this->last_name', 
                     '$this->email', 
                     '$this->passw', 
-                    $this->status, 
-                    $this->time_stamp_in, 
-                    $this->time_stamp_out
+                    NULL, 
+                    NULL, 
+                    NULL
                     )";
           
             $result = $database->dbConnection()->query($sql);
@@ -97,8 +59,6 @@
                 return false;
             }
         }
-
-
 
         // Delete a userAccount from the database
         public function deleteUserAccount() {
@@ -135,21 +95,40 @@
                         if(password_verify($this->passw, $row['passw'])){
                             // decrypt the password
                             return true;
-                        }else{
-                            return false;
                         }
                     }
-                } else {
-                    return false;
-                }
-            } else {
-                return false;
-            }
+                } 
+            } 
 
+            return false;
         }
 
         // Select a userAccount from the database
-        public function selectUserAccount($user_id) {
+        public function verifyAdmin() {
+            // create a new database object
+            $database = new Database();
+
+            $sql = "SELECT * FROM admin WHERE user_id = '$this->userID'";
+
+            $result = $database->dbConnection()->query($sql);
+            if ($result) {
+                // if the query is successful, return true
+                if ($result->num_rows > 0) {
+                    while($row = $result->fetch_assoc()) {
+                        if(strcmp($this->passw, $row['password']) == 0){
+                            // decrypt the password
+                            return true;
+                        }
+                    }
+                } 
+            }
+
+            return false;
+        }
+
+
+        // Select a userAccount from the database
+        public function fetchUserInfo($user_id) {
             // create a new database object
             $database = new Database();
             $this->setUserID($user_id);
@@ -177,66 +156,32 @@
                         $this->time_stamp_in = $row['time_stamp_in'];
                         $this->time_stamp_out = $row['time_stamp_out'];
                     }
-                } else {
-                    return false;
-                }
-            } else {
-                return false;
+                } 
             }
-
         }
 
+        // Select a userAdmin from the database
 
-        // print all rows userAccounts in the database
-
-        // Select all userAccounts from the database
-        public function selectAllUserAccounts() {
-
-            // create a new database object
+        public function fetchAdminInfo($user_id){
             $database = new Database();
-            $sql = "SELECT * FROM user_account";
-            $result = mysqli_query($database->dbConnection(),$sql);
+            $this->setUserID($user_id);
+
+            $sql = "SELECT * FROM admin WHERE user_id = '$this->userID'";
+
+            $result = $database->dbConnection()->query($sql);
+
             if ($result) {
                 // if the query is successful, return true
-                echo "Selected successfully!";
-                return $result;
-            } else {
-                // if the query is not successful, return false
-                echo "Error: " . $sql . "<br>" . $database->dbConnection()->error;
-                return false;
-            }
-
+                if ($result->num_rows > 0) {
+                    while($row = $result->fetch_assoc()) {
+                        // decrypt the password
+                        $this->image_src = $row['img'];
+                        $this->userID = $row['user_id'];
+                        $this->passw = $row['password'];
+                    }
+                } 
+            } 
         }
-
-        // display all user_account table
-
-        public function displayAll(){
-            $result = $this->selectAllUserAccounts();
-            if(mysqli_num_rows($result) > 0){
-                while($row = mysqli_fetch_assoc($result)){
-                    echo "<table>";
-                    echo "<tr>";
-                    echo "<td>" . $row['id'] . "</td>";
-                    echo "<td>" . $row['image_src'] . "</td>";
-                    echo "<td>" . $row['user_level'] . "</td>";
-                    echo "<td>" . $row['university'] . "</td>";
-                    echo "<td>" . $row['university_id'] . "</td>";
-                    echo "<td>" . $row['user_id'] . "</td>";
-                    echo "<td>" . $row['first_name'] . "</td>";
-                    echo "<td>" . $row['middle_name'] . "</td>";
-                    echo "<td>" . $row['last_name'] . "</td>";
-                    echo "<td>" . $row['email'] . "</td>";
-                    echo "<td>" . $row['passw'] . "</td>";
-                    echo "<td>" . $row['status'] . "</td>";
-                    echo "<td>" . $row['time_stamp_in'] . "</td>";
-                    echo "<td>" . $row['time_stamp_out'] . "</td>";
-                    echo "</tr>";
-                    echo "</table>";
-                }
-
-            }
-        }
-    
     }
 
 ?>

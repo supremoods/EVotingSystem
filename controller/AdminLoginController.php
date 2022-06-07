@@ -1,9 +1,8 @@
 <?php
-// Path: controller\LoginController.php
+
     require_once ('model/SqlQuery.php');
-    // Class Login Controller
-    class LoginController extends SqlQuery {
-            
+
+    class AdminLoginController extends SqlQuery{
         // check properties if they are empty
         public function checkProperties() {
             if (
@@ -17,30 +16,34 @@
         }
         
         public function login(){
+
             if ($this->checkProperties()) {
                 // call the checkUserAccount method
-                if($this->verifyUserAccount()){
+                if($this->verifyAdmin()){
                     // set session variables
-                    $_SESSION['userAccount'] = $this->getUserID();
+                    $_SESSION['userAdmin'] = $this->getUserID();
                     return true;
                 }
             }
+            
             return false;
         }
         
-
     }
+
 
     $userId = $_POST['userID'];
     $passw = $_POST['passWord'];
 
-    // object of the class LoginController empty constructor
-    $loginController = new LoginController();
+    // object of the class AdminLoginController empty constructor
 
-    $loginController->setUserID($userId);
-    $loginController->setPassw($passw);
+    $adminLoginController = new AdminLoginController();
 
-    if($loginController->login()){
+    $adminLoginController->setUserID($userId);
+    $adminLoginController->setPassw($passw);
+
+   
+    if($adminLoginController->login()){
         echo json_encode(array(
             "status" => "success"
         ));
@@ -49,6 +52,6 @@
             "status" => "failed"
         ));
     }
-   
+
 
 ?>

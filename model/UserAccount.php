@@ -17,24 +17,6 @@
         public $time_stamp_in;
         public $time_stamp_out;
 
-        // Constructor
-        public function __construct($id, $image_src, $userLevel ,$university, $universityID ,$userID, $first_name, $middle_name, $last_name, $email, $passw, $status, $time_stamp_in, $time_stamp_out) {
-            $this->id = $id;
-            $this->image_src = $image_src;
-            $this->userLevel = $userLevel;
-            $this->university = $university;
-            $this->universityID = $universityID;
-            $this->userID = $userID;
-            $this->first_name = $first_name;
-            $this->middle_name = $middle_name;
-            $this->last_name = $last_name;
-            $this->email = $email;
-            $this->passw = $passw;
-            $this->status = $status;
-            $this->time_stamp_in = $time_stamp_in;
-            $this->time_stamp_out = $time_stamp_out;
-
-        }
 
 
         // Methods

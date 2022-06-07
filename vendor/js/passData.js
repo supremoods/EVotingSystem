@@ -51,10 +51,7 @@ $('input#confirmPassword').keyup(function(){
     checkPassword();
 });
 
-
-
 $(document).ready(function(){
-
     $("#getUserData").on("submit",function(e){
         e.preventDefault();
         var form_data = new FormData(this);     
