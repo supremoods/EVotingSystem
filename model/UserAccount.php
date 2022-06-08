@@ -1,6 +1,7 @@
 <?php
     // Class User Account
     class UserAccount {
+
         // Properties
         public $id;
         public $image_src;
@@ -16,7 +17,6 @@
         public $status;
         public $time_stamp_in;
         public $time_stamp_out;
-
 
 
         // Methods
@@ -134,12 +134,7 @@
             $this->time_stamp_out = $time_stamp_out;
         }
 
-    
-
     }
-
-
-
 
 ?>
 

@@ -8,8 +8,6 @@
         public $username;
         public $password;
         
-
-
         // Constructor
         public function __construct($id, $userId, $username, $password) {
             $this->id = $id;
