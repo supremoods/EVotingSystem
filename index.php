@@ -13,7 +13,9 @@ get('/', 'views/evs/auth.php');
 
 get('/admin', 'views/evs/admin/auth.php');
 
-get('/admin/dashboard', 'views/evs/admin/index.php');
+get('/admin/$page', 'views/evs/admin/index.php');
+
+get('/logout', 'controller/LogoutController.php');
 
 get('/forum', 'views/evs/forum.php');
 
@@ -24,6 +26,8 @@ post('/register', 'controller/RegisterController.php');
 post('/login', 'controller/LoginController.php');
 
 post('/adminlogin', 'controller/AdminLoginController.php');
+
+post('/adminController', 'controller/AdminController.php');
 
 // The 404.php has access to $_GET and $_POST
 any('/404','views/evs/404.php');

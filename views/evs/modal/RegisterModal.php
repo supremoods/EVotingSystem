@@ -24,7 +24,7 @@
                         <label for="userID">Profile Picture</label>
                         <div class="inputContainer">
                             <div class="profile_container">
-                                <img class="uploaded_Profile" src="vendor/img/avatar.svg" alt="" >
+                                <img class="uploaded_Profile" src="vendor/img/profile_pic/avatar.svg" alt="" >
                                 <span class="material-symbols-outlined">add_photo_alternate</span>
                             </div>
                         </div>

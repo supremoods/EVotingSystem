@@ -49,6 +49,6 @@ $(document).ready(function(){
 //onclick in logout button
 $('.logout').click(function(){
     alert("Logout Successful");
-    window.location.href = "../../controller/LogoutController.php";
-  });
+    window.location.href = "/logout";
+});
    
