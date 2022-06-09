@@ -193,11 +193,14 @@
     word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
 
-@media only screen and (max-height: 768px){
+
+
+@media (max-height: 700px) {
     .login_card {
-        transform: scale(.8);
+        transform: scale(.4);
     }
 }
+  
 
 @media only screen and (max-width: 1500px){
     .content_wrapper{
