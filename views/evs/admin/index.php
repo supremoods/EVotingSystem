@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../vendor/css/admin_style/style.css"/>
     <link rel="stylesheet" href="../vendor/css/admin_style/sidebar.css"/>
     <link rel="stylesheet" href="../vendor/css/admin_style/dashboard.css"/>
+    <link rel="stylesheet" href="../vendor/css/admin_style/elections.css"/>
     <link rel="stylesheet" href="../vendor/css/root.css" />
     <title>ADMIN | EVS</title>
     <link rel="shortcut icon" href="../vendor/img/logo/evs_logo_blue.png" type="image/x-icon" />
