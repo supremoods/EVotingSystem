@@ -2,7 +2,7 @@
     if($page == "dashboard"){
         include_once("views/evs/admin/dashboard.php");
     }else if($page == "elections" ){
-        echo "elections";
+        include_once("views/evs/admin/elections.php");
     }else if($page == "user_information"){
         echo "user information";
     }elseif($page == "facilitator"){

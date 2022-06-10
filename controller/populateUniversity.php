@@ -19,12 +19,6 @@
     if ($num == 0) {
         echo "No universities found!";
     } else {
-        // if there are rows in the database, display them
-        // while ($row = mysqli_fetch_assoc($result)) {
-        //     echo $row['university'] . "<br>";
-        // }
-        
-        // echo json_encode($row);
 
         // pass the rows to array
         $universityList = array();
