@@ -1,4 +1,5 @@
-.elections_wrapper{
+.u_elections_wrapper{
+    position: relative;
     width: 100%;
     height: 100%;
     padding: 20px;
@@ -6,15 +7,339 @@
     overflow-y: scroll;
 }
 
-.elections_wrapper .elections_header{
+.u_elections_wrapper .u_elections_header{
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.elections_wrapper .elections_header .elections_header_title{
+.u_elections_wrapper .u_elections_header .u_elections_header_title{
     font-size: 2rem;
     font-weight: bold;
     color: var(--blue3);
     margin-bottom: 20px;
+}
+
+.request-elections-modal-btn{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    padding:0 10px;
+    margin-bottom: 10px;
+}
+
+.request-elections-modal-btn .btn{
+    display: flex;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--gray1);
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.3);
+    color: rgb(255, 88, 88);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.u_election_body{
+    display: flex;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: var(--gray1);
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}   
+
+.u_election_body .u_election_list_content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+}
+
+.u_election_body .u_election_list_content .u_election_list_item{
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--gray1);
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+    column-gap: 10px;
+}
+
+.u_election_list_item .u_items{
+    padding: 0px 10px;
+}
+
+.u_election_list_item_content{
+    font-size:14px;
+}
+
+.election_filter{
+    display: flex;
+    justify-content: flex-end;
+}
+.election_filter .filter-wrapper{
+    display: none;
+    opacity: 0;
+    width: 100%;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+    gap: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.select-menu{
+    position: relative;
+    width: 350px;
+}
+
+
+.select-menu-status{
+    position: relative;
+    width: 150px;
+}
+
+.select-menu .select-btn,
+.select-menu-status .select-btn-status{
+    display: flex;
+    height: 55px;
+    background: linear-gradient(to left, var(--blue1) 0%, var(--blue4) 100%);
+    color: var(--gray1);
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 400;
+    border-radius: 8px;
+    align-items: center;
+    cursor: pointer;
+    justify-content: space-between;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.select-btn .down,
+.select-btn-status .down-status{
+    font-size: 25px;
+    transition: 0.3s;
+}
+
+.select-btn .sBtn-text,
+.select-btn-status .sBtn-text-status{
+    font-size:14px;
+    font-weight: bold;
+}
+
+.select-menu.active .select-btn .down,
+.select-menu-status.active .select-btn-status .down-status{
+    transform: rotate(-180deg);
+}
+.select-menu .options,
+.select-menu-status .options-status{
+    position: absolute;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.select-menu.active .options{
+    display: block;
+    opacity: 0;
+    animation-name: fadeInUp;
+    -webkit-animation-name: fadeInUp;
+    animation-duration: 0.4s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 0.4s;
+    -webkit-animation-fill-mode: both;
+}
+
+.select-menu-status.active .options-status{
+    display: block;
+    opacity: 0;
+    animation-name: fadeInUpStatus;
+    -webkit-animation-name: fadeInUpStatus;
+    animation-duration: 0.4s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 0.4s;
+    -webkit-animation-fill-mode: both;
+}
+
+.options .option,
+.options-status .optionStatus{
+    display: flex;
+    height: 55px;
+    cursor: pointer;
+    padding: 0 16px;
+    border-radius: 8px;
+    align-items: center;
+    background: #fff;
+}
+.options .option:hover,
+.options-status .optionStatus:hover{
+    background: #f2f2f2;
+}
+
+.option .option-text,
+.optionStatus .option-text-status{
+    font-size: 14px;
+    color: #333;
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translate3d(0, 30px, 0);
+    }
+    to {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUpStatus {
+    from {
+        transform: translate3d(0, 30px, 0);
+    }
+    to {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+
+
+/* date-picker input*/
+
+.date-picker input{
+    outline: none;
+    width: 100%;
+    height: 55px;
+    background: var(--gray1);
+    border-radius: 8px;
+    border: none;
+    font-weight: bold;
+    padding: 0 16px;
+    font-size: 14px;
+    font-weight: 400;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.filter-label{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.filter-label label{
+    font-size: 14px;
+    color: var(--gray7);
+}
+
+.filter-icon{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    color: var(--gray7);
+    justify-content: flex-end;
+    margin-bottom: 20px;
+    padding: 0 10px;
+}
+
+.filter-icon span{
+    display: flex;
+    text-align: center;
+    background: var(--gray1);
+    font-size: 34px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.filter-wrapper.active{
+    display: flex;
+    opacity: 0;
+    animation-name: fadeInleft;
+    -webkit-animation-name: fadeInleft;
+    animation-duration: 0.4s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 0.4s;
+    -webkit-animation-fill-mode: both;
+}
+
+@keyframes fadeInleft {
+    from {
+        transform: translate3d(30px, 0, 0);
+    }
+    to {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+
+.request-elections-modal{
+    display: none;
+}
+
+.request-elections-modal.modal{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    background: rgba(0, 0, 0, 0.548);
+    height: 100%;
+    opacity: 0;
+    animation-name: fadeInDown;
+    -webkit-animation-name: fadeInDown;
+    animation-duration: 0.4s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 0.4s;
+    -webkit-animation-fill-mode: both;
+}
+
+@keyframes fadeInDown {
+    from {
+        transform: translate3d(0, 0, 100%);
+    }
+    to {
+        transform: translate3d(-50%, -50%, 0);
+        opacity: 1;
+    }
+}
+
+
+
+.elections-modal-container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem;
+    
+}
+
+.election-modal{
+    background: var(--gray1);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.btn-modal-exit{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding:10px 0;
+    color: var(--gray1);
+}
+
+.btn-modal-exit span{
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
 }

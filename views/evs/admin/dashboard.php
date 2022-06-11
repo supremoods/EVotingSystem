@@ -106,22 +106,13 @@
                                     <p>Technological University of the Philippines</p>
                                 </div>
                                 <div class="timeframe">
-                                    <div class="date_start">
-                                        <div class="date_start_icon">
+                                    <div class="date_event">
+                                        <div class="date_event_icon">
                                             <span class="material-icons">date_range</span>
                                         </div>
-                                        <div class="date_start_content">
-                                            <p>Start Date</p>
-                                            <p>12/12/12</p>
-                                        </div>
-                                    </div>
-                                    <div class="date_end">
-                                        <div class="date_end_icon">
-                                            <span class="material-icons">date_range</span>
-                                        </div>
-                                        <div class="date_end_content">
-                                            <p>End Date</p>
-                                            <p>12/12/12</p>
+                                        <div class="date_event_content">
+                                            <p>Date : 07/10/22</p>
+                                            <p>8:00 AM - 8:00 PM</p>
                                         </div>
                                     </div>
                                 </div>
@@ -133,24 +124,16 @@
                                     <p>Technological University of the Philippines</p>
                                 </div>
                                 <div class="timeframe">
-                                    <div class="date_start">
-                                        <div class="date_start_icon">
+                                    <div class="date_event">
+                                        <div class="date_event_icon">
                                             <span class="material-icons">date_range</span>
                                         </div>
-                                        <div class="date_start_content">
-                                            <p>Start Date</p>
-                                            <p>12/12/12</p>
+                                        <div class="date_event_content">
+                                            <p>Date : 07/10/22</p>
+                                            <p>8:00 AM - 8:00 PM</p>
                                         </div>
                                     </div>
-                                    <div class="date_end">
-                                        <div class="date_end_icon">
-                                            <span class="material-icons">date_range</span>
-                                        </div>
-                                        <div class="date_end_content">
-                                            <p>End Date</p>
-                                            <p>12/12/12</p>
-                                        </div>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -160,22 +143,13 @@
                                     <p>Technological University of the Philippines</p>
                                 </div>
                                 <div class="timeframe">
-                                    <div class="date_start">
-                                        <div class="date_start_icon">
+                                    <div class="date_event">
+                                        <div class="date_event_icon">
                                             <span class="material-icons">date_range</span>
                                         </div>
-                                        <div class="date_start_content">
-                                            <p>Start Date</p>
-                                            <p>12/12/12</p>
-                                        </div>
-                                    </div>
-                                    <div class="date_end">
-                                        <div class="date_end_icon">
-                                            <span class="material-icons">date_range</span>
-                                        </div>
-                                        <div class="date_end_content">
-                                            <p>End Date</p>
-                                            <p>12/12/12</p>
+                                        <div class="date_event_content">
+                                            <p>Date : 07/10/22</p>
+                                            <p>8:00 AM - 8:00 PM</p>
                                         </div>
                                     </div>
                                 </div>
