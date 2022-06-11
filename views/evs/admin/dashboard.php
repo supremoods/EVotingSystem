@@ -133,7 +133,6 @@
                                             <p>8:00 AM - 8:00 PM</p>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>

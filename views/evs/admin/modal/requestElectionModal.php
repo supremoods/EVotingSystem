@@ -1,60 +1,60 @@
 <div class="request-elections-modal">
     <div class="elections-modal-container">
-        <div class="btn-modal-exit" onclick="loadRequestModal()">
+        <div class="btn-modal-exit" onclick="loadRequestModal()" >
             <span class="material-icons">close</span>
         </div>
         <div class="election-modal">
             <div class="election_filter">
-                <div class="filter-wrapper">
+                <div class="filter-wrapper" id="filter-wrapper-modal">
                     <div class="date-picker">
                         <div class="filter-label">
                             <label for="">Date</label>
                         </div>
                         <input type="date" name="date" id="date">
                     </div>
-                    <div class="select-menu-status">
+                    <div class="select-menu-status select-menu-status-modal">
                         <div class="filter-label">
                             <label for="">Status</label>
                         </div>
-                        <div class="select-btn-status">
-                            <span class="sBtn-text-status">All</span>
+                        <div class="select-btn-status select-btn-status-modal">
+                            <span class="sBtn-text-status sBtn-text-status-modal">All</span>
                             <span class="down-status material-icons">keyboard_arrow_down</span>
                         </div>
                         <ul class="options-status">
-                            <li class="optionStatus">
+                            <li class="optionStatus option-status-modal">
                                 <span class="option-text-status">Ongoing</span>
                             </li>
-                            <li class="optionStatus">
+                            <li class="optionStatus option-status-modal">
                                 <span class="option-text-status">Ended</span>
                             </li>
                         </ul>
                     </div>
-                    <div class="select-menu">
+                    <div class="select-menu select-menu-modal">
                         <div class="filter-label">
                             <label for="">University</label>
                         </div>
-                        <div class="select-btn">
-                            <span class="sBtn-text">All</span>
+                        <div class="select-btn select-btn-modal">
+                            <span class="sBtn-text sBtn-text-modal">All</span>
                             <span class="down material-icons">keyboard_arrow_down</span>
                         </div>
                         <ul class="options">
-                            <li class="option">
+                            <li class="option option-modal">
                                 <span class="option-text">Technological University of the Philippines</span>
                             </li>
-                            <li class="option">
+                            <li class="option option-modal">
                                 <span class="option-text">University of the Philippines</span>
                             </li>
-                            <li class="option">
+                            <li class="option option-modal">
                                 <span class="option-text">Ateneo De Manila</span>
                             </li>
-                            <li class="option">
+                            <li class="option option-modal">
                                 <span class="option-text">Pamantasan ng Lungsod ng Maynila</span>
                             </li>
                         </ul>
                     </div>
                 </div>
                 
-                <div class="filter-icon">
+                <div class="filter-icon" id="filter-icon-modal">
                     <span class="material-icons">filter_list</span>
                 </div>
             </div>
