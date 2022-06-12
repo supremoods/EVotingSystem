@@ -1,0 +1,188 @@
+.student_wrapper {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: scroll;
+}
+
+.student_wrapper .student_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px;
+    padding-right: 15px;
+}
+
+.student_wrapper .student_request .student_request_button{
+    color: var(--blue3);
+    font-size: 30px;
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px;
+}
+
+.student_wrapper  .student_request .student_request_button:hover {
+    color: var(--blue1);
+    cursor: pointer;
+}
+
+.student_wrapper .student_header .student_header_title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--blue3);
+}
+
+.student_wrapper .student_body .student_users {
+    background: var(--gray2);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+}
+
+.student_wrapper .student_body .student_users .search_student {
+    width: 100%;
+    position: relative;
+    display: flex;
+}
+
+.student_wrapper .student_body .student_users .search_wrap .search_student .search_button {
+    width: 40px;
+    height: 25px;
+    border: none;
+    background-color: var(--blue3);
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.student_wrapper .student_body .student_users .search_wrap .search_student .search_button:hover {
+    background-color: var(--blue2);
+    color: rgb(8, 8, 8);
+}
+
+.student_wrapper .student_body .student_users .search_wrap .search_student .search_term {
+    width: 300px;
+    border: 1px solid var(--blue3);
+    border-right: none;
+    padding: 5px;
+    height: 25px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+}
+
+.student_wrapper .student_body .student_users .year_course_wrap {
+
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.student_wrapper .student_body .student_users .year_course_wrap .student_year_wrap {
+    position: relative;
+    margin-left: 15px;
+}
+
+.student_wrapper .student_body .student_users .year_course_wrap .student_year_wrap .year_dropdown .dropbtn {
+    background-color: var(--blue3);
+    color: white;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    min-width: 160px;
+    height: 25px;
+    border-radius: 10px;
+}
+
+.student_wrapper .student_body .student_users .year_course_wrap .student_year_wrap .year_dropdown {
+    position: relative;
+    display: inline-block;
+    font-size: 15px;
+    color: #fff;
+}
+
+.student_wrapper .student_body .student_users .year_course_wrap .student_year_wrap .year_dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: var(--gray2);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    font-size: 15px;
+}
+
+.student_wrapper .student_body .student_users .year_course_wrap .student_year_wrap .year_dropdown .dropdown-content a {
+    color: black;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    font-size: 15px;
+}
+
+.student_wrapper .student_body .student_users .year_course_wrap .student_year_wrap .year_dropdown .dropdown-content a:hover {
+    background-color: #f1f1f1
+}
+
+.student_wrapper .student_body .student_users .year_course_wrap .student_year_wrap .year_dropdown .year_dropdown:hover .dropdown-content {
+    display: block;
+}
+.student_wrapper .student_body .student_users .year_course_wrap .student_year_wrap .year_dropdown .year_dropdown:hover .dropbtn {
+    background-color: var(--blue3);
+}
+
+.student_wrapper .student_body .student_list{
+    margin-top: 50px;
+
+}
+
+.student_wrapper .student_body .student_list .student_list_body{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+.student_wrapper .student_body .student_list .student_list_body:hover {
+    background-color: var(--gray2);
+}
+
+.student_wrapper .student_body .student_list .student_list_body .student_icon{
+    color: var(--blue3);
+    /* background-color: var(--gray1);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); */
+    font-size: 20px;
+}
+
+.student_wrapper .student_body .student_list .student_list_body .student_name {
+    width: 200px;
+    border:none;
+}
+
+.student_wrapper .student_body .student_list .student_list_body .student_course {
+ 
+    border: none;
+}
+
+.student_wrapper .student_body .student_list .student_list_body .student_year{
+    
+    border: none;
+}
+
+.student_wrapper .student_body .student_list .student_list_body .student_view .student_view_button{
+    background-color: var(--blue3);
+    color: white;
+    width: 50px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.student_wrapper .student_body .student_list .student_list_body .student_view .student_view_button:hover {
+    background-color: var(--blue1);
+}

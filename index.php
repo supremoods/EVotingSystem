@@ -15,7 +15,9 @@ get('/admin', 'views/evs/admin/auth.php');
 
 get('/admin/$page', 'views/evs/admin/index.php');
 
-get('/facilitator', 'views/evs/facilitator/index.php');
+get('/facilitator', 'views/evs/facilitator/auth.php');
+
+get('/facilitator/$page', 'views/evs/facilitator/index.php');
 
 get('/logout', 'controller/LogoutController.php');
 

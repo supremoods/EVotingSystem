@@ -1,0 +1,155 @@
+.account_setting_wrapper {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    /* margin-top: 10px;
+    margin-left: 50px; */
+}
+
+.account_setting_wrapper .account_setting_body .user_Account .profile_container_name .user_Account_details_1{
+    font-size: .75rem;
+    padding-left: 10px;
+}
+
+.account_setting_wrapper .account_setting_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px;
+    padding-right: 15px;
+}
+
+.account_setting_wrapper .account_setting_body .user_Account .profile_container .profile_icon .material-symbols-outlined {
+    color: var(--blue3);
+    font-size: 60px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+}
+
+.account_setting_wrapper .account_setting_body .user_Account .profile_container_name .user_Account_details {
+    padding-left: 10px;
+}
+
+.account_setting_wrapper .account_setting_header .account_setting_header_title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--blue3);
+}
+
+.account_setting_wrapper .account_setting_body .user_Account {
+    background: var(--gray2);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    height: 100px;
+    width: 75%;
+   
+}
+
+.account_setting_wrapper .account_setting_body .second_user_Account {
+    background: var(--gray2);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    
+    height: 52%;
+    width: 75%;
+
+}
+
+.account_setting_wrapper .account_setting_body .user_Account {
+    background: var(--gray2);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    height: 100px;
+
+}
+
+.account_setting_wrapper .account_setting_body{
+    height: 500px;
+    margin-left: 75px;  
+}
+
+.account_setting_wrapper .account_setting_body .second_user_Account .profile_container_label{
+    display: flex;
+    padding:5px;
+    
+}
+
+.account_setting_wrapper .account_setting_body .second_user_Account .profile_container_label:hover{
+    background-color: var(--gray3);
+}
+
+.button_container{
+    display: flex;
+    justify-content: space-evenly;
+    padding-right: 15px;
+   color:var(--blue3);
+   
+}
+
+
+
+.account_setting_wrapper .account_setting_body .second_user_Account .profile_container_label .profile_container_label_edit{
+    padding-right: 10px;
+    width: 50%;
+}
+
+.account_setting_wrapper .account_setting_body .second_user_Account .profile_container_label .profile_container_label_edit:hover {
+    color: var(--blue1);
+    cursor: pointer;
+}
+
+.account_setting_wrapper .account_setting_body .second_user_Account .profile_container_label .profile_container_label_save {
+    /* padding-right: 10px; */
+    width: 50%;
+}
+
+.account_setting_wrapper .account_setting_body .second_user_Account .profile_container_label .profile_container_label_save:hover {
+    color: var(--blue1);
+    cursor: pointer;
+}
+
+.account_setting_wrapper .account_setting_body .second_user_Account .profile_container_label .profile_container_label_name{
+    padding-left: 10px;
+    
+    width: 30%;
+}
+
+.account_setting_wrapper .account_setting_body .second_user_Account .profile_container_label .profile_container_label_value{
+    align-items: center;
+    width: 60%;
+ 
+}
+
+.account_setting_wrapper .account_setting_body .second_user_Account .profile_container_label .profile_container_label_value .value{
+    border:none;
+    background: inherit;
+    width: 100%;
+}
+
+.account_setting_wrapper .account_setting_body .second_user_Account .profile_container_label .profile_container_label_value .value:hover {
+    border: none;
+    background-color: var(--gray3);
+}
+
+.account_setting_wrapper .account_setting_body .second_user_Account .profile_container_label .profile_container_label_value .value:active {
+    outline: none;
+    border: 0px solid;
+    background-color: inherit;
+}
+
+.account_setting_wrapper .account_setting_body .second_user_Account .profile_container_label .profile_container_label_value .value:focus {
+    outline: none;
+    border: 0px solid;
+    background-color: inherit;
+}

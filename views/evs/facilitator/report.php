@@ -7,9 +7,7 @@
     <link rel="stylesheet" href="../vendor/css/admin_style/header.css"/>
     <link rel="stylesheet" href="../vendor/css/admin_style/style.css"/>
     <link rel="stylesheet" href="../vendor/css/admin_style/sidebar.css"/>
-    <link rel="stylesheet" href="../vendor/css/facilitator_style/students.css"/>
-    <link rel="stylesheet" href="../vendor/css/facilitator_style/account_settings.css"/>
-    <link rel="stylesheet" href="../vendor/css/facilitator_style/forum.css"/>
+    <link rel="stylesheet" href="../vendor/css/admin_style/dashboard.css"/>
     <link rel="stylesheet" href="../vendor/css/root.css" />
     <title>FACILITATOR | EVS</title>
     <link rel="shortcut icon" href="../vendor/img/logo/evs_logo_blue.png" type="image/x-icon" />
@@ -22,15 +20,28 @@
       <div class="layout_wrapper">
         <?php require_once("views/templates/facisidebar.php"); ?>
         <div class="content">
-         <?php require_once("views/evs/facilitator/routeContent.php"); ?>
+              <div class="dashboard_wrappper">
+                <div class="dashboard_header">
+                    <div class="dashboard_header_title">
+                        <h1>Report</h1>
+                    </div>
+                </div>
+
+                <div class="dashboard_body">
+                    <div class="dashboard_users">
+                       <h4>Report</h4>
+                    </div>
+                </div>
+          
+      </div>
         </div>
       </div>
-       
+      
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="../vendor/js/facilitator.js"></script>
+  <script src="../vendor/js/admin.js"></script>
 </body>
 </html>
