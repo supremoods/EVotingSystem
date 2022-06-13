@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<?php
+    if(!isset($_SESSION['userAdmin'])){
+        header("Location: /admin");
+    }
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">

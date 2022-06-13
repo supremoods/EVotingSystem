@@ -1,3 +1,8 @@
+<?php
+    if(isset($_SESSION['userAdmin'])){
+        header("Location: /admin/dashboard");
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

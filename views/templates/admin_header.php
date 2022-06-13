@@ -18,7 +18,6 @@
             $sqlQuery = new SqlQuery();
             // call the fetchAdminInfo method
             $sqlQuery->fetchAdminInfo($_SESSION['userAdmin']);
-
     ?>
     <div class="profile_wrapper">
         <div class="pwpc">
