@@ -61,7 +61,7 @@
             </div>
         </div>
         
-        <div class="filter-icon">
+        <div class="filter-icon" id="filter-icon">
             <span class="material-icons">filter_list</span>
         </div>
     </div>
