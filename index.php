@@ -2,7 +2,6 @@
 
 require_once("{$_SERVER['DOCUMENT_ROOT']}/router.php");
 
-<<<<<<< Updated upstream
 // ##################################################
 // ##################################################
 // ##################################################
@@ -36,8 +35,6 @@ post('/adminController', 'controller/AdminController.php');
 
 // The 404.php has access to $_GET and $_POST
 any('/404','views/evs/404.php');
-=======
-   echo "<script>window.location.href='views/evs/auth.php'</script>";
+//    echo "<script>window.location.href='views/evs/auth.php'</script>";
     
 ?>
->>>>>>> Stashed changes

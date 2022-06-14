@@ -9,23 +9,22 @@
 
     <div class="dashboard_body">
         <div class="dashboard_filter">
-            <div class="select-menu">
-                <div class="select-btn">
-                    <span class="sBtn-text">All</span>
+            <div class="select-menu select-menu-univ">
+                <div class="select-btn select-btn-univ">
+                    <span class="sBtn-text sBtn-text-univ">All</span>
                     <span class="down material-icons">keyboard_arrow_down</span>
                 </div>
-
                 <ul class="options">
-                    <li class="option">
+                    <li class="option option-univ">
                         <span class="option-text">Technological University of the Philippines</span>
                     </li>
-                    <li class="option">
+                    <li class="option option-univ">
                         <span class="option-text">University of the Philippines</span>
                     </li>
-                    <li class="option">
+                    <li class="option option-univ">
                         <span class="option-text">Ateneo De Manila</span>
                     </li>
-                    <li class="option">
+                    <li class="option option-univ">
                         <span class="option-text">Pamantasan ng Lungsod ng Maynila</span>
                     </li>
                 </ul>
@@ -154,7 +153,6 @@
                                 </div>
                             </div>
                         </div>
-                       
                     </div>
                     <div class="btn_view_more_wrapper">
                         <div class="btn_view_more">  
@@ -162,7 +160,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
             <div class="right_item">
                 <div class="election_request_wrapper">
