@@ -1,0 +1,69 @@
+.adminsidebar {
+    position: fixed;
+    margin-top: 200px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 250px;
+    background: white;
+    box-shadow: 1px 1px 1px 1px #c6c6c6e0;
+}
+.adminsidebar ul a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 55px;
+    font-size: 12px;
+    color: black;
+    padding-left: 35px;
+    box-sizing: border-box;
+    margin-top: 50px;
+    
+
+}
+
+.content_wrapper{
+    height:500px;
+}
+
+.adminsidebar i {
+    color: #045de9;
+    margin-right: 15px;
+}
+
+ul li:hover a {
+    padding-left: 50px;
+    transition: .3s;
+    border-left: 2px solid white;
+
+}
+
+.content_wrapper {
+    margin-top: 7%;
+    display: flex;
+    transition: all .5s ease-in-out;
+
+
+}
+
+.main-wrapper {
+    padding: 30px;
+    margin: 30px;
+    margin-left: 20%;
+    border: 1px solid black;
+    width: 90%;
+}
+
+#search-user {
+    background-color: rgb(52, 52, 69);
+    width: 100%;
+    padding: 5px;
+}
+
+#userlist {
+    padding: 1%;
+    position:relative;
+}
+
+
+

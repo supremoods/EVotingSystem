@@ -4,7 +4,7 @@
 
     class Database {
         // Properties
-        public $host = "localhost:3308";
+        public $host = "localhost";
         public $user = "root";
         public $pass = "";
         public $db = "evs";
