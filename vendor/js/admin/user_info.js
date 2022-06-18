@@ -1,17 +1,17 @@
-const optionSelectYear = document.querySelector(".select-year"),
-  selectBtnYear = optionSelectYear.querySelector(".select-btn-year"),
-  optionYear = optionSelectYear.querySelectorAll(".option-year"),
-  sBtnTextYear = optionSelectYear.querySelector(".sBtn-text-year");
+const optionSelectPrivillage = document.querySelector(".select-privillage"),
+  selectBtnPrivillage = optionSelectPrivillage.querySelector(".select-btn-privillage"),
+  optionPrivillage = optionSelectPrivillage.querySelectorAll(".option-privillage"),
+  sBtnTextPrivillage = optionSelectPrivillage.querySelector(".sBtn-text-privillage");
 
-selectBtnYear.addEventListener("click", () =>
-  optionSelectYear.classList.toggle("active")
+selectBtnPrivillage.addEventListener("click", () =>
+  optionSelectPrivillage.classList.toggle("active")
 );
 
-optionYear.forEach((option) => {
+optionPrivillage.forEach((option) => {
   option.addEventListener("click", () => {
     let selectedOption = option.querySelector(".option-text").innerText;
-    sBtnTextYear.innerText = selectedOption;
-    optionSelectYear.classList.remove("active");
+    sBtnTextPrivillage.innerText = selectedOption;
+    optionSelectPrivillage.classList.remove("active");
   });
 });
 

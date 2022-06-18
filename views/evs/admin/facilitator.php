@@ -1,22 +1,26 @@
-<div class="user-info-wrapper">
-    <div class="user-info-header">
-        <div class="user-info-header-title">
-            <h1>User Information</h1>
+<div class="facilitator-wrapper">
+    <div class="facilitator-header">
+        <div class="facilitator-header-title">
+            <h1>Facilitator</h1>
         </div>
     </div>
-
-    <div class="user-list-body">
+    <div class="request-facilitator-modal-btn">
+        <button class="btn btn-request-facilitator" onclick="loadRequestModal()">
+            <span class="material-icons">notifications</span>Facilitator Request
+        </button>
+    </div>
+    <div class="facilitator-list-body">
         <!-- filter section -->
-        <div class="user-list-header">
-            <div class="search-user">
-                <div class="search-user-input">
-                    <input type="text" placeholder="Search user">
+        <div class="facilitator-list-header">
+            <div class="search-facilitator">
+                <div class="search-facilitator-input">
+                    <input type="text" placeholder="Search facilitator">
                 </div>
-                <div class="search-user-icon">
+                <div class="search-facilitator-icon">
                     <span class="material-icons">search</span>
                 </div>
             </div>
-            <div class="user-filter">
+            <div class="facilitator-filter">
                 <div class="select-menu select-privillage">
                     <div class="filter-label">
                         <label for="">Privillage</label>
@@ -63,109 +67,109 @@
         </div>
         <!-- end of filter section -->
 
-        <!-- user list -->
-        <div class="user-list-content">
-            <div class="user-list-content-items">
-                    <div class="user-list-content-items-wrapper header">
-                        <div class="user-list-content-item-header">
-                            <p>User ID</p>
+        <!-- facilitator list -->
+        <div class="facilitator-list-content">
+            <div class="facilitator-list-content-items">
+                    <div class="facilitator-list-content-items-wrapper header">
+                        <div class="facilitator-list-content-item-header">
+                            <p>facilitator ID</p>
                         </div>
-                        <div class="user-list-content-item-header">
+                        <div class="facilitator-list-content-item-header">
                             <p>Name</p>
                         </div>
-                        <div class="user-list-content-item-header">
+                        <div class="facilitator-list-content-item-header">
                             <P>Privellage</P>
                         </div>
-                        <div class="user-list-content-item-header">
+                        <div class="facilitator-list-content-item-header">
                             <p>University</p>
                         </div>
-                        <div class="user-list-content-item-header">
+                        <div class="facilitator-list-content-item-header">
                             <p>Action</p>
                         </div>
                     </div>
-                <div class="user-list-content-items-wrapper">
-                    <div class="user-list-content-items-container">
-                        <div class="user-list-content-item-row">
-                            <p>User ID</p>
+                <div class="facilitator-list-content-items-wrapper">
+                    <div class="facilitator-list-content-items-container">
+                        <div class="facilitator-list-content-item-row">
+                            <p>facilitator ID</p>
                         </div>
-                        <div class="user-list-content-item-row">
+                        <div class="facilitator-list-content-item-row">
                             <p>Name</p>
                         </div>
-                        <div class="user-list-content-item-row">
+                        <div class="facilitator-list-content-item-row">
                             <p>Privillage</p>
                         </div>
-                        <div class="user-list-content-item-row">
+                        <div class="facilitator-list-content-item-row">
                             <p>University</p>
                         </div>
-                        <div class="user-list-content-item-row">
+                        <div class="facilitator-list-content-item-row">
                             <p>Action</p>
                         </div>
                     </div>
-                    <div class="user-list-content-items-container">
-                        <div class="user-list-content-item-row">
-                            <p>User ID</p>
+                    <div class="facilitator-list-content-items-container">
+                        <div class="facilitator-list-content-item-row">
+                            <p>facilitator ID</p>
                         </div>
-                        <div class="user-list-content-item-row">
+                        <div class="facilitator-list-content-item-row">
                             <p>Name</p>
                         </div>
-                        <div class="user-list-content-item-row">
+                        <div class="facilitator-list-content-item-row">
                             <p>Privillage</p>
                         </div>
-                        <div class="user-list-content-item-row">
+                        <div class="facilitator-list-content-item-row">
                             <p>University</p>
                         </div>
-                        <div class="user-list-content-item-row">
+                        <div class="facilitator-list-content-item-row">
                             <p>Action</p>
                         </div>
                     </div>
-                    <div class="user-list-content-items-container">
-                        <div class="user-list-content-item-row">
-                            <p>User ID</p>
+                    <div class="facilitator-list-content-items-container">
+                        <div class="facilitator-list-content-item-row">
+                            <p>facilitator ID</p>
                         </div>
-                        <div class="user-list-content-item-row">
+                        <div class="facilitator-list-content-item-row">
                             <p>Name</p>
                         </div>
-                        <div class="user-list-content-item-row">
+                        <div class="facilitator-list-content-item-row">
                             <p>Privillage</p>
                         </div>
-                        <div class="user-list-content-item-row">
+                        <div class="facilitator-list-content-item-row">
                             <p>University</p>
                         </div>
-                        <div class="user-list-content-item-row">
+                        <div class="facilitator-list-content-item-row">
                             <p>Action</p>
                         </div>
                     </div>
-                    <div class="user-list-content-items-container">
-                        <div class="user-list-content-item-row">
-                            <p>User ID</p>
+                    <div class="facilitator-list-content-items-container">
+                        <div class="facilitator-list-content-item-row">
+                            <p>facilitator ID</p>
                         </div>
-                        <div class="user-list-content-item-row">
+                        <div class="facilitator-list-content-item-row">
                             <p>Name</p>
                         </div>
-                        <div class="user-list-content-item-row">
+                        <div class="facilitator-list-content-item-row">
                             <p>Privillage</p>
                         </div>
-                        <div class="user-list-content-item-row">
+                        <div class="facilitator-list-content-item-row">
                             <p>University</p>
                         </div>
-                        <div class="user-list-content-item-row">
+                        <div class="facilitator-list-content-item-row">
                             <p>Action</p>
                         </div>
                     </div>
-                    <div class="user-list-content-items-container">
-                        <div class="user-list-content-item-row">
-                            <p>User ID</p>
+                    <div class="facilitator-list-content-items-container">
+                        <div class="facilitator-list-content-item-row">
+                            <p>facilitator ID</p>
                         </div>
-                        <div class="user-list-content-item-row">
+                        <div class="facilitator-list-content-item-row">
                             <p>Name</p>
                         </div>
-                        <div class="user-list-content-item-row">
+                        <div class="facilitator-list-content-item-row">
                             <p>Privillage</p>
                         </div>
-                        <div class="user-list-content-item-row">
+                        <div class="facilitator-list-content-item-row">
                             <p>University</p>
                         </div>
-                        <div class="user-list-content-item-row">
+                        <div class="facilitator-list-content-item-row">
                             <p>Action</p>
                         </div>
                     </div>
@@ -173,4 +177,8 @@
             </div>
         </div>
     </div>
+    <!-- end of facilitator list -->
+
+    <!-- modal facilitator -->
+    <?php require_once("views/evs/admin/modal/facilitatorRequestModal.php"); ?>
 </div>

@@ -25,7 +25,7 @@
             echo "../vendor/css/admin_style/facilitator.css";
             $jsFile = "facilitator.js";
         }else if($page=="account_setting"){
-            echo "../vendor/css/admin_style/account_setting.css";
+            echo "../vendor/css/admin_style/accountSetting.css";
             $jsFile = "account_setting.js";
         }
     ?>"/>

@@ -1,0 +1,21 @@
+.account-setting-wrapper{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: scroll;
+}
+
+.account-setting-wrapper .account-setting-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.account-setting-wrapper .account-setting-container .account-setting-header{
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--blue3);
+    margin-bottom: 20px;
+}

@@ -12,6 +12,7 @@
 }
 
 .layout_wrapper .content{
+    position: relative;
     height: calc(100vh - 70px);
     margin-left:300px;
     background-color: var(--gray2);

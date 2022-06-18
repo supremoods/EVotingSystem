@@ -6,8 +6,8 @@
     }else if($page == "user_information"){
         include_once("views/evs/admin/user_information.php");
     }elseif($page == "facilitator"){
-        echo "facilitator";
+        include_once("views/evs/admin/facilitator.php");
     }elseif($page == "account_setting"){
-        echo "account setting";
+        include_once("views/evs/admin/accountSettings.php");
     }
 ?>
