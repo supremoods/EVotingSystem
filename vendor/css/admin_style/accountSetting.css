@@ -1,5 +1,4 @@
 .account-setting-wrapper{
-    position: relative;
     width: 100%;
     height: 100%;
     padding: 20px;
@@ -18,4 +17,442 @@
     font-weight: bold;
     color: var(--blue3);
     margin-bottom: 20px;
+}
+
+
+
+.admin-content{
+    padding: 2.5rem;
+    background: var(--gray1);
+    border-radius: 10px;
+    margin:6rem 2rem 2rem 2rem;
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+
+.admin-list-content{
+    padding: 2.5rem;
+    background: var(--gray1);
+    border-radius: 10px;
+    margin:0 2rem;
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+.admin-content-items{
+    margin-top:3em;
+}
+
+.admin-content-items .admin-content-items-wrapper.header,
+.admin-list-content-items .admin-list-content-items-wrapper.header{
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr;
+    background: var(--gray1);
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--gray7);
+    padding: 1em;
+    margin:20px 0;
+}
+
+.admin-content-items-wrapper,
+.admin-list-content-items-wrapper{
+    background: var(--gray1);
+    border-radius: 10px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+.admin-content-items-container,
+.admin-list-content-items-container{
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr;
+    flex-wrap: wrap;
+    padding: 1em;
+    font-size: 14px;
+    color: var(--gray7);
+    transition: all 0.3s ease-in-out;
+}
+
+.admin-list-content-items-container{
+    margin-top:3em;
+}
+
+.admin-content-items-container:hover,
+.admin-list-content-items-container:hover{
+    background: var(--gray2);
+    border-radius: 10px;
+}
+
+.avatar{
+    width: 150px;
+    height: 150px;
+    margin-right: 10px;
+    position: absolute;
+    top: -5rem;
+    left: 40px;
+    border-radius: 50%;
+    background: linear-gradient(to top, var(--blue4) 0%, var(--blue1) 100%);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    
+}
+
+.avatar img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: var(--gray1);
+}
+
+.update-avatar-btn-wrapper{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    border-radius: 50%;
+    color: var(--gray1);
+    justify-content: flex-end;
+    align-items: center;
+    overflow: hidden;
+    left: 0;
+}
+
+.update-avatar-btn{
+    display: flex;
+    width: 100%;
+    height: 50%;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to top, var(--blue4) 0%, rgba(58, 58, 58, 0) 100%);
+    padding: 20px;
+    opacity: 0;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    padding: 5px;
+}
+
+.update-avatar-text p{
+    text-align: center;
+    font-weight: bold;
+    width: 100%;
+}
+
+
+.update-avatar-btn-wrapper:hover .update-avatar-btn{
+    opacity: 1;
+}
+
+
+.admin-list-content-item-row.avatar-item{
+    position: relative;
+}
+
+.avatar-admin{
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    bottom: 6px;
+    left: 10px; 
+    border-radius: 50%;
+    background: linear-gradient(to top, var(--blue4) 0%, var(--blue2) 100%);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    padding: 2px;
+}
+
+.avatar-admin img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: var(--gray1);
+}
+
+.delete{
+    color: var(--red1);
+    background: var(--gray1);
+    border-radius: 10px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    cursor: pointer;
+}
+
+.delete:hover{
+    background: var(--red1);
+    color: var(--gray1);
+}
+
+.add-admin-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 2rem 20px 2rem;
+}
+
+
+.add-admin-btn button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--A1);
+    background: var(--gray1);
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+}
+
+.add-admin-btn button:hover{
+    background: var(--A1);
+    color: var(--gray1);
+}
+
+
+.admin-content-item-row .edit{
+    color: var(--A1);
+    background: var(--gray1);
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.admin-content-item-row .edit:hover{
+    background: var(--A1);
+    color: var(--gray1);
+}
+
+.edit-admin-credential-wrapper,
+.add-admin-credential-wrapper{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(37, 37, 37, 0.76);
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    z-index: -99;
+}
+
+
+.edit-admin-credential-wrapper.active,
+.add-admin-credential-wrapper.active{
+    opacity: 1;
+    z-index: 99;
+}
+
+.edit-user-id p,
+.add-user-id p{
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--gray7);
+}
+
+.edit-admin-credential-card,
+.add-admin-credential-card{
+	background: var(--gray1);
+	padding: 10px;
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+	height: 400px;
+    width: 300px;
+	display: flex;
+	flex-direction: column;
+}
+
+hr{
+    margin:1rem 10px;
+    color: var(--gray3);
+}
+
+
+.card-item{
+    display: flex;
+    flex-direction: column; 
+    padding: 10px;
+}
+
+.card-item p{
+    margin-bottom: 5px;
+}
+
+
+.card-item input[type=text],
+.card-item input[type=password]{
+    width: 100%;
+    outline: none;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid var(--gray1);
+    background: var(--gray2);
+    color: var(--gray7);
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.edit-admin-credential-btn,
+.add-admin-credential-btn{
+    padding: 10px;
+}
+
+.edit-admin-credential-btn button,
+.add-admin-credential-btn button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--blue2);
+    background: var(--gray1);
+    border: none;
+    height: 50px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.edit-admin-credential-btn button:hover,
+.add-admin-credential-btn button:hover{
+    background: var(--blue2);
+    color: var(--gray1);
+}
+
+.confirm-password {
+    flex: 1;
+}
+
+.close-btn-item{
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+}
+
+
+.add-header{
+    padding: 0 10px;
+    font-weight: bold;
+    color: var(--gray7);
+}
+.error,
+.new-error{
+    display: none;
+}
+
+.error.active,
+.new-error.active{
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: var(--red1);
+}
+
+
+.card-item .add-password[type="password"].active,
+.card-item .add-confirm-password[type="password"].active,
+.card-item .new-admin-password[type="password"].active,
+.card-item .new-confirm-password[type="password"].active{
+    border: 1px solid var(--red1);
+}
+
+.card-item #password[type="password"]{
+    padding-right: 50px;
+}
+
+
+#passwordInput,
+#new-passwordInput{
+    position: relative;
+}
+
+#passwordInput #showHide,
+#new-passwordInput #new-showHide{
+    font-size: 12px;
+    font-weight: 600;
+    position: absolute;
+    color:red;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    user-select: none;
+}
+
+#passwordStrength,
+#new-passwordStrength{
+      width: 30%;
+      height: 5px;
+      margin: 5px 0;
+      display: none;
+}
+
+#passwordStrength span,
+#new-passwordStrength span{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: lightgrey;
+    border-radius: 5px;
+}
+
+#passwordStrength span:nth-child(2),
+#new-passwordStrength span:nth-child(2){
+    margin: 0 3px;
+}
+
+#passwordStrength span.active:before,
+#new-passwordStrength span.active:before{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+}
+
+#passwordStrength span#poor:before,
+#new-passwordStrength span#new-poor:before{
+    background-color: #ff4757;
+}
+
+#passwordStrength span#weak:before,
+#new-passwordStrength span#new-weak:before{
+    background-color: orange;
+}
+
+#passwordStrength span#strong:before,
+#new-passwordStrength span#new-strong:before{
+    background-color: #23ad5c;
+}
+
+#passwordInfo,
+#new-passwordInfo{
+    font-size: 12px;
+}
+
+#passwordInfo #poor,
+#new-passwordInfo #new-poor{
+    color: red;
+}
+
+#passwordInfo #weak,
+#new-passwordInfo #new-weak{
+    color: orange;
+}
+
+#passwordInfo #strong,
+#new-passwordInfo #new-strong{
+    color: green;
 }

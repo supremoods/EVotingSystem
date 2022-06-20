@@ -33,6 +33,15 @@ post('/adminlogin', 'controller/AdminLoginController.php');
 
 post('/adminController', 'controller/AdminController.php');
 
+post('/addAdmin', 'controller/addAdmin.php');
+post('/editAdmin', 'controller/editAdmin.php');
+
+route('/loadAdminList', 'controller/loadAdminList.php');
+
+route('/deleteAdmin', 'controller/deleteAdmin.php');
+
+
+
 // The 404.php has access to $_GET and $_POST
 any('/404','views/evs/404.php');
 //    echo "<script>window.location.href='views/evs/auth.php'</script>";

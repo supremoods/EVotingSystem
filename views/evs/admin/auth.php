@@ -35,14 +35,14 @@
                                     <div class="textField_wrapper">
                                         <label for="userID">User ID</label>
                                         <div class="inputContainer">
-                                            <span class="material-symbols-outlined">person</span>
+                                            <span class="material-icons">person</span>
                                             <input id="userID" name="userID" type="text" placeholder="Input your user id" required>
                                         </div>
                                     </div>
                                     <div class="textField_wrapper">
                                         <label for="passWord">Password</label>
                                         <div class="inputContainer">
-                                            <span class="material-symbols-outlined">key</span>
+                                            <span class="material-icons">key</span>
                                             <input id="passWord" name="passWord" type="password" placeholder="Input your password" required>
                                         </div>
                                     </div>

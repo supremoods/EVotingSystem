@@ -41,7 +41,6 @@
             }else{
                 echo json_encode(array('message' => 'failed'));
             }
-           
         }
 
         // setters for the path

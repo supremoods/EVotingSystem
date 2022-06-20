@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>EVS | Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="vendor/css/header.css" />
     <link rel="stylesheet" href="vendor/css/auth.css" />
@@ -11,10 +11,8 @@
     <link rel="stylesheet" href="vendor/css/root.css" />
     <link rel="stylesheet" href="vendor/css/footer.css" />
     <link rel="shortcut icon" href="vendor/img/logo/evs_logo_blue.png" type="image/x-icon" />
-  
     <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet" />
     <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
-    <title>EVS | Login</title>
 </head>
 
 <body>
@@ -32,14 +30,14 @@
                                 <div class="textField_wrapper">
                                     <label for="userID">User ID</label>
                                     <div class="inputContainer">
-                                        <span class="material-symbols-outlined">person</span>
+                                        <span class="material-icons">person</span>
                                         <input id="userID" name="userID" type="text" placeholder="Input your user id" required>
                                     </div>
                                 </div>
                                 <div class="textField_wrapper">
                                     <label for="passWord">Password</label>
                                     <div class="inputContainer">
-                                        <span class="material-symbols-outlined">key</span>
+                                        <span class="material-icons">key</span>
                                         <input id="passWord" name="passWord" type="password" placeholder="Input your password" required>
                                     </div>
                                 </div>

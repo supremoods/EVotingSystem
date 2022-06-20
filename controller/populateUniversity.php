@@ -29,11 +29,5 @@
         // encode the array to json
         print_r (json_encode($universityList));
 
-
-        $arr = array(
-            'name' => $name,
-            'university' => $university,
-            'universityID' => $universityID
-        );
     }
 ?>

@@ -7,6 +7,8 @@
     // require once the class UserAccount
     require_once('UserAccount.php');
 
+   
+
     // Extends SqlQuery class from UserAccount.php
 
     // Class SqlQuery
@@ -115,8 +117,9 @@
                 // if the query is successful, return true
                 if ($result->num_rows > 0) {
                     while($row = $result->fetch_assoc()) {
-                        if(strcmp($this->passw, $row['password']) == 0){
+                        if(password_verify($this->passw, $row['password'])){
                             // decrypt the password
+                            $this->setId($row['id']);
                             return true;
                         }
                     }
@@ -182,6 +185,86 @@
                 } 
             } 
         }
+
+
+        // Select all userAdmin from the database
+        public function fetchAllUserAdmin() {
+            // create a new database object
+            $database = new Database();
+            
+            $sql = "SELECT * FROM admin";
+
+            $result = $database->dbConnection()->query($sql);
+
+            return $result;
+        }
+
+        // insert a new userAdmin into the database
+        public function insertUserAdmin($user_id, $password) {
+            // create a new database object
+            $database = new Database();
+
+            $sql = "INSERT INTO admin (
+                id, 
+                img,
+                user_id, 
+                password
+                ) VALUES (
+                    NULL,
+                    'avatar.svg',
+                    '$user_id', 
+                    '$password'
+                    )";
+          
+            $result = $database->dbConnection()->query($sql);
+            if ($result) {
+                // if the query is successful, return true
+                return true;
+            } else {
+                // if the query is not successful, return false
+                return false;
+            }
+        }
+
+        public function deleteUserAdmin($admin_ID) {
+
+            // create a new database object
+            $database = new Database();
+
+            $sql = "DELETE FROM admin WHERE id = '$admin_ID'";
+            $result = $database->dbConnection()->query($sql);
+            if ($result) {
+                // if the query is successful, return true
+                echo "Deleted successfully!";
+                return true;
+            } else {
+                // if the query is not successful, return false
+                echo "Error: " . $sql . "<br>" . $database->dbConnection()->error;
+                return false;
+            }
+
+        }
+
+        public function updateUserAdmin($admin_ID, $user_id, $password) {
+
+            // create a new database object
+            $database = new Database();
+
+            $sql = "UPDATE admin SET user_id = '$user_id', password = '$password' WHERE id = '$admin_ID'";
+
+            $result = $database->dbConnection()->query($sql);
+            if ($result) {
+                // if the query is successful, return true
+                echo "Updated successfully!";
+                return true;
+            } else {
+                // if the query is not successful, return false
+                echo "Error: " . $sql . "<br>" . $database->dbConnection()->error;
+                return false;
+            }
+
+        }
+
     }
 
 ?>

@@ -5,20 +5,11 @@
         // Properties
         public $id;
         public $userId;
-        public $username;
         public $password;
-        
-        // Constructor
-        public function __construct($id, $userId, $username, $password) {
-            $this->id = $id;
-            $this->userId = $userId;
-            $this->username = $username;
-            $this->password = $password;
-            
-        }
-        
-        // Methods
-        
+        public $imgageSrc;
+        public $status;
+        public $timeStampIn;
+        public $timeStampOut;
         // Getters
 
         public function getId() {
@@ -29,12 +20,24 @@
             return $this->userId;
         }
 
-        public function getUsername() {
-            return $this->username;
-        }
-
         public function getPassword() {
             return $this->password;
+        }
+
+        public function getImgageSrc() {
+            return $this->imgageSrc;
+        }
+
+        public function getStatus() {
+            return $this->status;
+        }
+
+        public function getTimeStampIn() {
+            return $this->timeStampIn;
+        }
+
+        public function getTimeStampOut() {
+            return $this->timeStampOut;
         }
 
         // Setters
@@ -47,19 +50,26 @@
             $this->userId = $userId;
         }
 
-        public function setUsername($username) {
-            $this->username = $username;
-        }
-
         public function setPassword($password) {
             $this->password = $password;
         }
-        
-        // To string
 
-        public function __toString() {
-            return "Admin: " . $this->id . " " . $this->userId . " " . $this->username . " " . $this->password;
+        public function setImgageSrc($imgageSrc) {
+            $this->imgageSrc = $imgageSrc;
         }
+
+        public function setStatus($status) {
+            $this->status = $status;
+        }
+
+        public function setTimeStampIn($timeStampIn) {
+            $this->timeStampIn = $timeStampIn;
+        }
+
+        public function setTimeStampOut($timeStampOut) {
+            $this->timeStampOut = $timeStampOut;
+        }
+
     }
 
 

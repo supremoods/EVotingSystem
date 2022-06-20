@@ -1,6 +1,7 @@
 <?php
 
     require_once ('model/SqlQuery.php');
+    require_once('model/Admin.php');
 
     class AdminLoginController extends SqlQuery{
         // check properties if they are empty
@@ -22,6 +23,7 @@
                 if($this->verifyAdmin()){
                     // set session variables
                     $_SESSION['userAdmin'] = $this->getUserID();
+                    $_SESSION['id'] = $this->getId();
                     return true;
                 }
             }
@@ -38,6 +40,7 @@
     // object of the class AdminLoginController empty constructor
 
     $adminLoginController = new AdminLoginController();
+     
 
     $adminLoginController->setUserID($userId);
     $adminLoginController->setPassw($passw);
