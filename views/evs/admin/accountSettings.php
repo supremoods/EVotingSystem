@@ -14,12 +14,12 @@
                     </div>
                 </div>
             </div>
-            <img src="../vendor/img/profile_pic/<?= $sqlQuery->getImageSrc()?>" alt="" />
+            <img src="../vendor/img/profile_pic/<?= $adminSqlQuery->getImageSrc()?>" alt="" />
         </div>
         <div class="admin-content-items">
             <div class="admin-content-items-wrapper header">
                 <div class="admin-content-item-header">
-                    <p>User ID</p>
+                    <p>User Name</p>
                 </div>
                 <div class="admin-content-item-header">
                     <p>Password</p>
@@ -30,23 +30,6 @@
             </div>
             <div class="admin-content-items-wrapper">
                 <div class="admin-content-items-container">
-                    <div class="admin-content-item-row">
-                        <p><?= $sqlQuery->getUserID()?></p>
-                    </div>
-                    <div class="admin-content-item-row">
-                        <?php
-                            //unhashed passw
-                            $asterisk = strlen($sqlQuery->getpassw());
-                        ?>
-                        <p>
-                            <?php for($i = 0; $i < $asterisk; $i++){
-                                echo '*';
-                            }?>
-                        </p>
-                    </div>
-                    <div class="admin-content-item-row" onclick="editAccount()">
-                        <span class="edit material-icons-outlined">edit</span>
-                    </div>
                 </div>
             </div>
         </div>

@@ -1,10 +1,10 @@
 <?php
-    // create a new instance of the SQLQuery class
-    include_once("model/SqlQuery.php");
+    // create a new instance of the adminSqlQuery class
+    include_once("model/AdminSqlQuery.php");
 
-    $sqlQuery = new SqlQuery();
+    $adminSqlQuery = new AdminSqlQuery();
 
-    $result = $sqlQuery->fetchAllUserAdmin();
+    $result = $adminSqlQuery->fetchAllUserAdmin();
     
     if($result){
         if($result->num_rows > 0){
@@ -18,7 +18,7 @@
             </div> 
         </div>
         <div class="admin-list-content-item-row">
-            <p><?= $row['user_id'] ?></p>
+            <p><?= $row['username'] ?></p>
         </div>
         <div class="admin-list-content-item-row">
             <span class="delete material-icons">delete</span>

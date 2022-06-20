@@ -1,14 +1,14 @@
 <?php
 
     // Path: controller\addAdmin.php
-    require_once("model/SqlQuery.php");
+    require_once("model/AdminSqlQuery.php");
 
-    $user_id = $_POST['user_id'];
+    $username = $_POST['username'];
     $password = $_POST['password'];
     $encryptPass = password_hash($password, PASSWORD_DEFAULT);
-    $sqlQuery = new SQLQuery();
+    $AdminSqlQuery = new AdminSQLQuery();
    
-    if($sqlQuery->insertUserAdmin($user_id, $encryptPass)){
+    if($AdminSqlQuery->insertUserAdmin($username, $encryptPass)){
         echo json_encode(array("status" => "success"));
     }else{
         echo json_encode(array("status" => "error"));

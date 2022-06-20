@@ -1,11 +1,11 @@
 <?php
-    include_once("model/SqlQuery.php");
-    $sqlQuery = new SqlQuery();
+    include_once("model/AdminSqlQuery.php");
+    $AdminSqlQuery = new AdminSqlQuery();
 
     $admin_ID = $_REQUEST['id'];
 
     // delete admin
-    if($sqlQuery->deleteUserAdmin($admin_ID)){
+    if($AdminSqlQuery->deleteUserAdmin($admin_ID)){
         echo json_encode(array("status" => "success"));
     }else{
         echo json_encode(array("status" => "error"));

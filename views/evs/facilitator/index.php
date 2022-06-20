@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../vendor/css/admin_style/header.css"/>
+    <link rel="stylesheet" href="../vendor/css/facilitator_style/header.css" />
     <link rel="stylesheet" href="../vendor/css/admin_style/style.css"/>
     <link rel="stylesheet" href="../vendor/css/admin_style/sidebar.css"/>
     <link rel="stylesheet" href="../vendor/css/facilitator_style/students.css"/>
@@ -18,7 +18,7 @@
 </head>
 <body>
   <div id="root">
-      <?php require_once("views/templates/admin_header.php"); ?>
+      <?php require_once("views/templates/faci_header.php"); ?>
       <div class="layout_wrapper">
         <?php require_once("views/templates/facisidebar.php"); ?>
         <div class="content">
@@ -31,6 +31,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="../vendor/js/facilitator.js"></script>
+  <script src="../vendor/js/facilitator/facilitator.js"></script>
 </body>
 </html>

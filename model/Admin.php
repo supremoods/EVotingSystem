@@ -4,9 +4,9 @@
     class Admin {
         // Properties
         public $id;
-        public $userId;
+        public $username;
         public $password;
-        public $imgageSrc;
+        public $imageSrc;
         public $status;
         public $timeStampIn;
         public $timeStampOut;
@@ -16,16 +16,16 @@
             return $this->id;
         }
 
-        public function getUserId() {
-            return $this->userId;
+        public function getUserName() {
+            return $this->username;
         }
 
         public function getPassword() {
             return $this->password;
         }
 
-        public function getImgageSrc() {
-            return $this->imgageSrc;
+        public function getImageSrc() {
+            return $this->imageSrc;
         }
 
         public function getStatus() {
@@ -46,16 +46,16 @@
             $this->id = $id;
         }
 
-        public function setUserId($userId) {
-            $this->userId = $userId;
+        public function setUserName($username) {
+            $this->username = $username;
         }
 
         public function setPassword($password) {
             $this->password = $password;
         }
 
-        public function setImgageSrc($imgageSrc) {
-            $this->imgageSrc = $imgageSrc;
+        public function setImageSrc($imageSrc) {
+            $this->imageSrc = $imageSrc;
         }
 
         public function setStatus($status) {

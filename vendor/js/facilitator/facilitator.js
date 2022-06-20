@@ -8,10 +8,8 @@ function loadModal() {
     loadModal.classList.toggle('modal');
 }
 
-
 function loadContent(content) {
     window.location.href = content;
-
 }
 
 $('.logout').click(function () {

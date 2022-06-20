@@ -1,11 +1,10 @@
-
 <div class="sidebar">
     <div class="sidebar_item">
         <div class="profile_icon">
-            <img src="../vendor/img/profile_pic/<?= $sqlQuery->getImageSrc()?>" alt="" />
+            <img src="../vendor/img/profile_pic/<?= $facilitatorSqlQuery->getImageSrc()?>" alt="" />
         </div>
         <div class="sidebar_item_content">
-            <p><?= $sqlQuery->getUserID()?></p>
+            <p><?= $facilitatorSqlQuery->getFirstName()." ".$facilitatorSqlQuery->getLastName()?></p>
         </div>
     </div>
     <div class="sidebar_item" data-page="dashboard" onclick="loadContent(this.dataset.page)">

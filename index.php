@@ -29,17 +29,36 @@ post('/register', 'controller/RegisterController.php');
 
 post('/login', 'controller/LoginController.php');
 
-post('/adminlogin', 'controller/AdminLoginController.php');
 
-post('/adminController', 'controller/AdminController.php');
+#---------------------- admin routing --------------------#
 
-post('/addAdmin', 'controller/addAdmin.php');
-post('/editAdmin', 'controller/editAdmin.php');
+post('/adminlogin', 'controller/adminController/AdminLoginController.php');
 
-route('/loadAdminList', 'controller/loadAdminList.php');
+post('/adminController', 'controller/adminController/AdminController.php');
 
-route('/deleteAdmin', 'controller/deleteAdmin.php');
+post('/addAdmin', 'controller/adminController/addAdmin.php');
 
+post('/editAdmin', 'controller/adminController/editAdmin.php');
+
+route('/loadAdminInfo', 'controller/adminController/loadAdmin.php');
+
+route('/loadAdminList', 'controller/adminController/loadAdminList.php');
+
+route('/deleteAdmin', 'controller/adminController/deleteAdmin.php');
+
+// #---------------------- end --------------------#
+
+// #---------------------- facilitator routing --------------------#
+
+post('/facilitatorLogin', 'controller/facilitator/LoginController.php');
+
+
+
+
+
+
+
+// #---------------------- end --------------------#
 
 
 // The 404.php has access to $_GET and $_POST

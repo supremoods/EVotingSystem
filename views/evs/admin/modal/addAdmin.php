@@ -8,7 +8,7 @@
                 <p>Add Admin</p>
             </div>
             <div class="add-user-id card-item">
-                <input class="user_id" type="text" name="user_id" placeholder="User ID" required>
+                <input class="user_id" type="text" name="username" placeholder="User ID" required>
             </div>
             <hr>
             <div class="new-password card-item">

@@ -20,10 +20,12 @@ function error(){
 }
 
 function clearInput(){
-    let textBox = document.querySelector('.password');
+    let textBox = document.querySelector('.add-password');
+    let textBoxConfirm = document.querySelector('.add-confirm-password');
     let user_id = document.querySelector('.user_id');
 
     textBox.value = '';
+    textBoxConfirm.value = '';
     user_id.value = '';
 }
 
@@ -63,6 +65,11 @@ function validatePassword(){
 $(document).ready(function(){
     $(".admin-list-content-items-load").load("/loadAdminList");
 });
+
+$(document).ready(function(){
+    $(".admin-content-items-container").load("/loadAdminInfo");
+});
+
 
 
 function deleteAdmin(id){
@@ -369,11 +376,12 @@ $(document).ready(function(){
                     console.log(data);
                     const message = {status: "success"};
                     if(JSON.stringify(data) == JSON.stringify(message)){
-                        clearInput();
-                        addAdmin();
-                    }else{
-                        console.log(data);
-                        console.log("validatePassword");
+                        clearInputEdit();
+                        $(".admin-content-items-container").load("/loadAdminInfo");
+                        $("#load-username").load("/admin/account_setting #load-username");
+                        $(".profile_wrapper").load("/admin/account_setting #pwpc");
+
+                        editAccount();
                     }
                 },
                 error: function (request, status, error) {

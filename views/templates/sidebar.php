@@ -2,10 +2,10 @@
 <div class="sidebar">
     <div class="sidebar_item">
         <div class="profile_icon">
-            <img src="../vendor/img/profile_pic/<?= $sqlQuery->getImageSrc()?>" alt="" />
+            <img src="../vendor/img/profile_pic/<?= $adminSqlQuery->getImageSrc()?>" alt="" />
         </div>
-        <div class="sidebar_item_content">
-            <p><?= $sqlQuery->getUserID()?></p>
+        <div class="sidebar_item_content" id="load-username">
+            <p><?= $adminSqlQuery->getUserName()?></p>
         </div>
     </div>
     <div class="sidebar_item" data-page="dashboard" onclick="loadContent(this.dataset.page)">

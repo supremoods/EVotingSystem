@@ -1,14 +1,14 @@
 <?php
 
-    require_once ('model/SqlQuery.php');
-    require_once('model/Admin.php');
+    require_once ('model/AdminSqlQuery.php');
 
-    class AdminLoginController extends SqlQuery{
+
+    class AdminLoginController extends AdminSqlQuery{
         // check properties if they are empty
         public function checkProperties() {
             if (
-                !empty($this->getUserID()) &&
-                !empty($this->getPassw())
+                !empty($this->getUserName()) &&
+                !empty($this->getPassword())
               ) {
                 return true;
             }else{
@@ -22,8 +22,7 @@
                 // call the checkUserAccount method
                 if($this->verifyAdmin()){
                     // set session variables
-                    $_SESSION['userAdmin'] = $this->getUserID();
-                    $_SESSION['id'] = $this->getId();
+                    $_SESSION['userAdmin'] = $this->getUserName();
                     return true;
                 }
             }
@@ -34,7 +33,7 @@
     }
 
 
-    $userId = $_POST['userID'];
+    $username = $_POST['username'];
     $passw = $_POST['passWord'];
 
     // object of the class AdminLoginController empty constructor
@@ -42,8 +41,8 @@
     $adminLoginController = new AdminLoginController();
      
 
-    $adminLoginController->setUserID($userId);
-    $adminLoginController->setPassw($passw);
+    $adminLoginController->setUsername($username);
+    $adminLoginController->setPassword($passw);
 
    
     if($adminLoginController->login()){

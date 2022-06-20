@@ -5,8 +5,8 @@
                 <span class="material-icons" onclick="editAccount()">close</span>
             </div>
             <div class="edit-user-id card-item">
-                <p>User ID</p>
-                <input type="text" class="edit_user_id" name="user_id" value="<?= $sqlQuery->getUserID()?>">
+                <p>Username</p>
+                <input type="text" class="edit_user_id" name="username" value="<?= $adminSqlQuery->getUserName()?>">
             </div>
             <hr>
             <div class="new-password card-item">

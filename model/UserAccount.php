@@ -18,7 +18,6 @@
         public $time_stamp_in;
         public $time_stamp_out;
 
-
         // Methods
         public function getId() {
             return $this->id;

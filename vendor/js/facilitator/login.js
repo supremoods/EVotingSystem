@@ -1,15 +1,10 @@
-function profileContent(){
-    let dropdown = document.querySelector('.profile_content');
-    dropdown.classList.toggle('active');
-}
-
 function loadModal(){
     let loadModal = document.querySelector('.modal_load_wrapper');
     loadModal.classList.toggle('modal');
 }
 
 function loginClearInput(){
-    $('#userID').val("");
+    $('#username').val("");
     $('#passWord').val("");
 }
 
@@ -19,7 +14,7 @@ $(document).ready(function(){
         e.preventDefault();
         var form_data = new FormData(this);     
         $.ajax({
-            url : "adminlogin",
+            url : "facilitatorLogin",
             method: "POST",
             data: form_data,
             dataType: "JSON",
@@ -36,7 +31,7 @@ $(document).ready(function(){
                 const status = {status: "success"};
                 if(JSON.stringify(data) == JSON.stringify(status)){
                     loginClearInput();
-                    window.location.href = "admin/dashboard";
+                    window.location.href = "facilitator/dashboard";
                 }else{
                     loginClearInput();
                     alert("Login Failed");
@@ -46,9 +41,4 @@ $(document).ready(function(){
     });
 });
 
-//onclick in logout button
-$('.logout').click(function(){
-    alert("Logout Successful");
-    window.location.href = "/logout";
-});
-   
+
