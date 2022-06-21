@@ -408,8 +408,7 @@ function triggerUpload(){
     changeAvatar.click();
 }
 
-function UploadImage() {
-                          
+function UploadImage() {               
     changeAvatar.addEventListener("change", function(){
         const file = this.files[0];
         if(file){
@@ -422,9 +421,6 @@ function UploadImage() {
           submitBtn.click();
         } 
     });
-    
-
-
 }   
 
 $(document).ready(function(){

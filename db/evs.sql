@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3308
--- Generation Time: Jun 08, 2022 at 02:09 PM
+-- Generation Time: Jun 21, 2022 at 03:12 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.6
 
@@ -29,17 +29,22 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `admin` (
   `id` int(11) NOT NULL,
-  `user_id` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `img` varchar(255) NOT NULL
+  `img` varchar(255) NOT NULL,
+  `status` varchar(50) DEFAULT NULL,
+  `timeStampIn` timestamp NULL DEFAULT NULL,
+  `timeStampOut` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`id`, `user_id`, `password`, `img`) VALUES
-(1, 'admin', 'admin', 'avatar.svg');
+INSERT INTO `admin` (`id`, `username`, `password`, `img`, `status`, `timeStampIn`, `timeStampOut`) VALUES
+(1, 'admin', 'admin', 'avatar.svg', NULL, NULL, NULL),
+(6, 'supremo', '$2y$10$UwV.P8l.ZyGPs.T1x73sSuDIUulhiRYfjKDdeZxQPWz5M6nnkr15m', '278638696_4916507031801233_787450432618075058_n.jpg', 'active', '2022-06-21 06:43:25', NULL),
+(10, 'Supremood', '$2y$10$JfQ2bXFiCVcWQ7jidbrF5eTeeDlOJ9TTgEPvh9CxSALGUaKk6nF1K', 'avatar.svg', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -2497,8 +2502,8 @@ CREATE TABLE `user_account` (
   `email` varchar(100) NOT NULL,
   `passw` varchar(100) NOT NULL,
   `status` varchar(50) DEFAULT NULL,
-  `time_stamp_in` timestamp(6) NULL DEFAULT NULL,
-  `time_stamp_out` timestamp(6) NULL DEFAULT NULL
+  `time_stamp_in` timestamp NULL DEFAULT NULL,
+  `time_stamp_out` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -2506,8 +2511,8 @@ CREATE TABLE `user_account` (
 --
 
 INSERT INTO `user_account` (`id`, `image_src`, `user_level`, `university`, `university_id`, `user_id`, `first_name`, `middle_name`, `last_name`, `email`, `passw`, `status`, `time_stamp_in`, `time_stamp_out`) VALUES
-(47, '264165739_4501303539988253_4768271605685310825_n.jpg', 'Teacher', 'Technological University of the Philippines-Manila', 'TUPM-19-2343', 'T-EVS-99-2312', 'John', 'Along', 'Lappay', 'lappay.john@gmail.com', '$2y$10$jY62yzpanFfhvKNxu9bKAOe0A26AlZb3GE7V3hKgnGI/BboqF3uZu', NULL, NULL, NULL),
-(48, '278916317_4916460165139253_5743181954266378845_n.jpg', 'Teacher', 'University of the Philippines-Diliman', 'UPD-19-2343', 'T-EVS-19-2312', 'JOHN', 'ALONG', 'LAPPAY', 'lappay.john@gmail.com', '$2y$10$.CVeTjhjxCypLNRFlyZNUOB0ofmHpnl9h.ZIROnIOVxmiGaP8Gd9K', NULL, NULL, NULL),
+(47, '264165739_4501303539988253_4768271605685310825_n.jpg', 'Teacher', 'Technological University of the Philippines-Manila', 'TUPM-19-2343', 'T-EVS-99-2312', 'John', 'Along', 'Lappay', 'lappay.john@gmail.com', '$2y$10$jY62yzpanFfhvKNxu9bKAOe0A26AlZb3GE7V3hKgnGI/BboqF3uZu', NULL, '2022-06-21 05:14:20', '2022-06-21 06:30:11'),
+(48, '278916317_4916460165139253_5743181954266378845_n.jpg', 'Teacher', 'University of the Philippines-Diliman', 'UPD-19-2343', 'T-EVS-19-2312', 'JOHN', 'ALONG', 'LAPPAY', 'lappay.john@gmail.com', '$2y$10$.CVeTjhjxCypLNRFlyZNUOB0ofmHpnl9h.ZIROnIOVxmiGaP8Gd9K', NULL, '2022-06-20 16:09:02', NULL),
 (49, '278638696_4916507031801233_787450432618075058_n.jpg', 'Teacher', 'Technological Institute of the Philippines-Manila', 'TUPM-19-2343', NULL, 'John', 'Along', 'Lappay', 'lappay.john@gmail.com', '$2y$10$/07GZC0mX6wWWD8s7YhIhOXHAav4MUKOOhUmKliReXF41wHAIarlG', NULL, NULL, NULL),
 (50, '278638696_4916507031801233_787450432618075058_n.jpg', 'Teacher', 'Technological Institute of the Philippines-Manila', 'TUPM-19-2343', NULL, 'John', 'Along', 'Lappay', 'lappay.john@gmail.com', '$2y$10$cgrIGAuGaD3FkKx5nQmrGe5R1Fojp4ePmTKXtwoo./UE5ohItV6re', NULL, NULL, NULL),
 (51, '278638696_4916507031801233_787450432618075058_n.jpg', 'Teacher', 'Technological Institute of the Philippines-Manila', 'TUPM-19-2343', NULL, 'John', 'Along', 'Lappay', 'lappay.john@gmail.com', '$2y$10$01a8q/EaZ5EUOVX0ghCqWuCPFZsNCfb08p/9IA6ef.3LgT7kl45Wq', NULL, NULL, NULL);
@@ -2520,7 +2525,8 @@ INSERT INTO `user_account` (`id`, `image_src`, `user_level`, `university`, `univ
 -- Indexes for table `admin`
 --
 ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`);
 
 --
 -- Indexes for table `university`
@@ -2542,7 +2548,7 @@ ALTER TABLE `user_account`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `university`
