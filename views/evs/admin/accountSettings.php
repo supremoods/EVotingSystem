@@ -8,13 +8,17 @@
     <div class="admin-content">
         <div class="avatar">
             <div class="update-avatar-btn-wrapper">
-                <div class="update-avatar-btn">
+                <div class="update-avatar-btn" onclick="triggerUpload()">
                     <div class="update-avatar-text">
                         <p>Update<br>Avatar</p>
                     </div>
                 </div>
             </div>
-            <img src="../vendor/img/profile_pic/<?= $adminSqlQuery->getImageSrc()?>" alt="" />
+            <img id="admin-avatar" src="../vendor/img/profile_pic/<?= $adminSqlQuery->getImageSrc()?>" alt="" />
+            <form method="post" enctype="multipart/form-data" id="upload-avatar"> 
+            <input id="change-avatar" name="image" type="file" onclick="UploadImage()" accept="image/*" hidden>
+                <button id="submit-btn" name="submit" type="submit" hidden>Submit</button>
+            </form>
         </div>
         <div class="admin-content-items">
             <div class="admin-content-items-wrapper header">

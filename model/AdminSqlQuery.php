@@ -176,6 +176,24 @@
 
             return $result;
         }
+
+        // update avatar of userAdmin in the database
+        public function updateAvatar($admin_ID, $imageSrc) {
+            // create a new database object
+            $database = new Database();
+            
+            $sql = "UPDATE admin SET img = '$imageSrc' WHERE id = '$admin_ID'";
+
+            $result = $database->dbConnection()->query($sql);
+            if ($result) {
+                // if the query is successful, return true
+                $this->fetchAdminInfo($admin_ID);
+                return true;
+            } else {
+                // if the query is not successful, return false
+                return false;
+            }
+        }
     
 
     }

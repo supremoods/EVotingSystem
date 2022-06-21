@@ -70,6 +70,13 @@ $(document).ready(function(){
     $(".admin-content-items-container").load("/loadAdminInfo");
 });
 
+$(document).ready(function(){
+    $("#pwpc").load("/loadUserNameNavbar");
+});
+
+$(document).ready(function(){
+    $(".load-info").load("/loadUserNameSidebar");
+});
 
 
 function deleteAdmin(id){
@@ -378,9 +385,8 @@ $(document).ready(function(){
                     if(JSON.stringify(data) == JSON.stringify(message)){
                         clearInputEdit();
                         $(".admin-content-items-container").load("/loadAdminInfo");
-                        $("#load-username").load("/admin/account_setting #load-username");
-                        $(".profile_wrapper").load("/admin/account_setting #pwpc");
-
+                        $(".load-info").load("/loadUserNameSidebar");
+                        $("#pwpc").load("/loadUserNameNavbar");
                         editAccount();
                     }
                 },
@@ -392,3 +398,55 @@ $(document).ready(function(){
     });
 });
 
+// upload image section
+
+let changeAvatar = document.querySelector('#change-avatar');
+let adminAvatar = document.querySelector('#admin-avatar');
+let submitBtn = document.querySelector('#submit-btn');
+
+function triggerUpload(){
+    changeAvatar.click();
+}
+
+function UploadImage() {
+                          
+    changeAvatar.addEventListener("change", function(){
+        const file = this.files[0];
+        if(file){
+          const reader = new FileReader();
+          reader.onload = function(){
+            const result = reader.result;
+            adminAvatar.src = result;
+          }
+          reader.readAsDataURL(file);
+          submitBtn.click();
+        } 
+    });
+    
+
+
+}   
+
+$(document).ready(function(){
+    $("#upload-avatar").on("submit",function(e){
+        e.preventDefault();
+        var form_data = new FormData(this); 
+        $.ajax({
+            url : "/uploadAvatar",
+            method: "POST",
+            data: form_data,
+            dataType: "JSON",
+            processData:false,
+            contentType:false,
+            success:function(data){
+                console.log(data);
+                $(".load-info").load("/loadUserNameSidebar");
+                $("#pwpc").load("/loadUserNameNavbar");
+            },
+            error: function (request, status, error) {
+                console.log(request.responseText);
+            } 
+        });
+        
+    });
+});

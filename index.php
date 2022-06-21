@@ -11,10 +11,6 @@ require_once("{$_SERVER['DOCUMENT_ROOT']}/router.php");
 // The output -> Index
 get('/', 'views/evs/auth.php');
 
-get('/admin', 'views/evs/admin/auth.php');
-
-get('/admin/$page', 'views/evs/admin/index.php');
-
 get('/facilitator', 'views/evs/facilitator/auth.php');
 
 get('/facilitator/$page', 'views/evs/facilitator/index.php');
@@ -31,6 +27,9 @@ post('/login', 'controller/LoginController.php');
 
 
 #---------------------- admin routing --------------------#
+get('/admin', 'views/evs/admin/auth.php');
+
+get('/admin/$page', 'views/evs/admin/index.php');
 
 post('/adminlogin', 'controller/adminController/AdminLoginController.php');
 
@@ -40,11 +39,17 @@ post('/addAdmin', 'controller/adminController/addAdmin.php');
 
 post('/editAdmin', 'controller/adminController/editAdmin.php');
 
-route('/loadAdminInfo', 'controller/adminController/loadAdmin.php');
+post('/uploadAvatar', 'controller/adminController/uploadAvatar.php');
 
-route('/loadAdminList', 'controller/adminController/loadAdminList.php');
+route('/loadAdminInfo', 'controller/adminController/loadElement/loadAdmin.php');
 
-route('/deleteAdmin', 'controller/adminController/deleteAdmin.php');
+route('/loadAdminList', 'controller/adminController/loadElement/loadAdminList.php');
+
+route('/deleteAdmin', 'controller/adminController/loadElement/deleteAdmin.php');
+
+route('/loadUserNameSidebar', 'controller/adminController/loadElement/loadUserNameSidebar.php');
+
+route('/loadUserNameNavbar', 'controller/adminController/loadElement/loadUserNameNavbar.php');
 
 // #---------------------- end --------------------#
 
