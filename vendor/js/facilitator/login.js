@@ -30,13 +30,13 @@ $(document).ready(function(){
                 console.log(data);
                 const status = {status: "success"};
                 if(JSON.stringify(data) == JSON.stringify(status)){
-                    loginClearInput();
-                    window.location.href = "facilitator/dashboard";
+                   loginClearInput();
+                   window.location.href = "facilitator/dashboard";
                 }else{
                     loginClearInput();
                     alert("Login Failed");
                 }
-            }     
+            }
         });
     });
 });

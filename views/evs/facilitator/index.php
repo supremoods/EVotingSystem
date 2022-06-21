@@ -1,3 +1,9 @@
+<?php
+  if(!isset($_SESSION['userID'])){
+    header("location:/facilitator");
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,9 +13,28 @@
     <link rel="stylesheet" href="../vendor/css/facilitator_style/header.css" />
     <link rel="stylesheet" href="../vendor/css/admin_style/style.css"/>
     <link rel="stylesheet" href="../vendor/css/admin_style/sidebar.css"/>
-    <link rel="stylesheet" href="../vendor/css/facilitator_style/students.css"/>
-    <link rel="stylesheet" href="../vendor/css/facilitator_style/account_settings.css"/>
-    <link rel="stylesheet" href="../vendor/css/facilitator_style/forum.css"/>
+    <link rel="stylesheet" href="<?php 
+        if($page=="dashboard"){
+            echo "../vendor/css/facilitator_style/dashboard.css";
+            $jsFile = "dashboard.js";
+        }else if($page=="elections"){
+            echo "../vendor/css/facilitator_style/students.css";
+            $jsFile = "elections.js";
+        }else if($page=="students"){
+            echo "../vendor/css/facilitator_style/students.css";
+            $jsFile = "students.js";
+        }else if($page=="report"){
+            echo "../vendor/css/facilitator_style/report.css";
+            $jsFile = "report.js";
+        }else if($page=="forum"){
+            echo "../vendor/css/facilitator_style/forum.css";
+            $jsFile = "forum.js";
+        }else if($page=="account_setting"){
+            echo "../vendor/css/facilitator_style/account_settings.css";
+            $jsFile = "account_settings.js";
+        }
+    ?>"/>
+
     <link rel="stylesheet" href="../vendor/css/root.css" />
     <title>FACILITATOR | EVS</title>
     <link rel="shortcut icon" href="../vendor/img/logo/evs_logo_blue.png" type="image/x-icon" />

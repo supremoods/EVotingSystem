@@ -53,10 +53,11 @@
                         if(password_verify($this->passw, $row['passw'])){
 
                             $this->setId($row['id']);
-                
+                            $_SESSION['userID'] = $this->getUserID();
                             $_SESSION['facilitatorID'] = $this->getId();
-                            
+    
                             $this->updateLogIn();
+
                             return true;
                         }
                     }
@@ -80,6 +81,29 @@
                 return true;
             } else {
                 // if the query is not successful, return false
+                return false;
+            }
+        }
+
+        // update logs of facilitator out the database
+        public function updateLogOut($facilitatorID) {
+            // create a new database object
+            $database = new Database();
+
+            $sql = "UPDATE user_account SET time_stamp_out = NOW() WHERE id = '$facilitatorID'";
+
+            $result = $database->dbConnection()->query($sql);
+            if ($result) {
+                // if the query is successful, return true
+                $this->fetchFacilitatorInfo($this->id);
+                echo "updated";
+ 
+                return true;
+            } else {
+                // if the query is not successful, return false
+                // show error message
+                echo "error";
+
                 return false;
             }
         }

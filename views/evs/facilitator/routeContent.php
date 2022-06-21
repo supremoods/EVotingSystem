@@ -8,14 +8,14 @@ else if ($page == "elections") {
 else if ($page == "students") {
     include_once("views/evs/facilitator/students.php");
 }
-elseif ($page == "report") {
+else if ($page == "report") {
     echo "report";
 }
-elseif ($page == "forum") {
+else if ($page == "forum") {
     include_once("views/evs/facilitator/forum.php");
 }
 
-elseif($page == "account_setting"){
+else if($page == "account_setting"){
     include_once("views/evs/facilitator/account_settings.php");
 }
 

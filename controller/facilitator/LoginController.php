@@ -22,7 +22,7 @@
                 // call the checkUserAccount method
                 if($this->verifyFacilitator()){
                     // set session variables
-                    $_SESSION['userID'] = $this->getUserID();
+               //     $_SESSION['userID'] = $this->getUserID();
                     return true;
                 }
             }

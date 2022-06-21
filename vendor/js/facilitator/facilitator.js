@@ -13,7 +13,16 @@ function loadContent(content) {
 }
 
 $('.logout').click(function () {
-    alert("Logout Successful");
-    window.location.href = "/logout";
+    $.ajax({
+        url: '/facilitatorLogout',
+        type: 'GET',
+        success: function (data) {
+            console.log(data);
+            window.location.href = '/facilitator';
+        },
+        error: function (request, status, error) {
+            console.log(request.responseText);
+        } 
+    });
 });
 

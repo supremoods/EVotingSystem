@@ -48,15 +48,12 @@ route('/deleteAdmin', 'controller/adminController/deleteAdmin.php');
 
 // #---------------------- end --------------------#
 
+
 // #---------------------- facilitator routing --------------------#
 
 post('/facilitatorLogin', 'controller/facilitator/LoginController.php');
 
-
-
-
-
-
+get('/facilitatorLogout', 'controller/facilitator/LogoutController.php');
 
 // #---------------------- end --------------------#
 
