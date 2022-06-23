@@ -194,7 +194,9 @@
 
 
 .facilitator-list-content-items .facilitator-list-content-items-wrapper.header{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 5px;
     justify-content: space-between;
     background: var(--gray1);
     border-radius: 10px;
@@ -214,19 +216,94 @@
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
 }
 
-.facilitator-list-content-items-container{
+.loading{
+    display:none;
+}
+
+.loading.hide{
     display: flex;
-    flex-wrap: wrap;
+}
+
+.load-facilitators.hide{
+    display: flex;
+    background: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.facilitator-list-content-items-container{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 5px;
+    background: var(--gray3);
     justify-content: space-between;
-    padding: 1em;
+    border-radius: 10px;
     font-size: 14px;
     color: var(--gray7);
+    overflow: hidden;
     transition: all 0.3s ease-in-out;
 }
 
+.facilitator-list-content-items .facilitator-list-content-items-wrapper.request-modal,
+.facilitator-list-content-items-container.request-modal{
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.facilitator-list-content-item-row{
+    background: var(--gray1);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    padding: 1em;
+}
+
+.action-col{
+    display: flex;
+    justify-content: center;
+}
+
 .facilitator-list-content-items-container:hover{
-    background: var(--gray2);
+    background: var(--blue2);
     border-radius: 10px;
+}
+
+.facilitator-list-content-item-header{
+    display: flex;
+    justify-content: center;
+}
+.facilitator-list-content-item-row{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.facilitator-list-content-item-row .action-btn{
+    height: 30px;
+    width: 30px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    background: var(--gray1);
+    cursor: pointer;
+}
+
+.facilitator-list-content-item-row .action-view{
+    height: 30px;
+    width: 60px;
+    color: var(--blue3);
+    font-weight: bold;
+}
+
+.facilitator-list-content-item-row .action-delete{
+    color: var(--red1);
+}
+
+.action-view:hover{
+    background: var(--blue3);
+    color: var(--gray1);
+}
+
+.action-delete:hover{
+    background: var(--red1);
+    color: var(--gray1);
 }
 
 .facilitator-list-modal{
@@ -273,6 +350,10 @@
 }
 
 .close-btn{
+    display:none;
+}
+.close-btn.active{
+    display: block;
     position: absolute;
     z-index: 55;
     color: #fff;
@@ -285,4 +366,97 @@
 .select-privillage-modal{
     position: relative;
     width: 200px;
+}
+
+.facilitator-profile-wrapper{
+    opacity: 0;
+    z-index: -1;
+}
+
+.facilitator-profile-wrapper.modal{
+    position: absolute;
+    background: rgba(14, 14, 14, 0.781);
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    opacity: 1;
+    z-index: 99;
+}
+
+.facilitator-profile-card{
+    background: var(--gray1);
+    border-radius: 10px;
+    padding: 2em;
+    width: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.facilitator-profile-card .facilitator-avatar{
+    position: relative;
+    height:150px;
+    width:150px;
+    border-radius:50%;
+    background: var(--gray1);
+}
+
+.facilitator-avatar .online-status{
+    position: absolute;
+    bottom: 10px;
+    right: 5px;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    border: 2px solid var(--gray1);
+    background: var(--A1);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.facilitator-avatar .online-status.active{
+    background: var(--gray6);
+}
+
+
+.facilitator-avatar img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    border: 5px solid var(--gray1);
+}
+
+.facilitator-info-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2em;
+    width: 100%;
+}
+.facilitator-info-list .facilitator-info-list-item{
+    margin-bottom: 1em;
+    padding: 10px;
+    width: 100%;
+    background: var(--gray1);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color:var(--gray7);
+}
+
+.close-btn-card{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 2rem;
+    cursor: pointer;
+    color: var(--gray1);
 }

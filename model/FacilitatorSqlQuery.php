@@ -37,6 +37,32 @@
                 }
             }
         }
+        // fetch all facilitator
+        public function fetchAllFacilitator() {
+            $database = new Database();
+            $sql = "SELECT * FROM user_account WHERE user_id IS NOT NULL AND user_level = 'Facilitator'";
+
+            $result = $database->dbConnection()->query($sql);
+
+            if ($result) {
+                // if the query is successful, return true
+                return $result;
+            }
+        }
+
+        // fetch all facilitator
+        public function fetchAllFacilitatorRequest() {
+            $database = new Database();
+            $sql = "SELECT * FROM user_account WHERE user_id IS NULL AND user_level = 'Facilitator'";
+
+            $result = $database->dbConnection()->query($sql);
+
+            if ($result) {
+                // if the query is successful, return true
+                return $result;
+            }
+        }
+
 
         // verify the facilitator account
         public function verifyFacilitator() {
@@ -72,7 +98,7 @@
             // create a new database object
             $database = new Database();
 
-            $sql = "UPDATE user_account SET time_stamp_in = NOW() WHERE id = '$this->id'";
+            $sql = "UPDATE user_account SET time_stamp_in = NOW(), status = 'active' WHERE id = '$this->id'";
 
             $result = $database->dbConnection()->query($sql);
             if ($result) {
@@ -90,7 +116,7 @@
             // create a new database object
             $database = new Database();
 
-            $sql = "UPDATE user_account SET time_stamp_out = NOW() WHERE id = '$facilitatorID'";
+            $sql = "UPDATE user_account SET time_stamp_out = NOW(), status = 'inactive' WHERE id = '$facilitatorID'";
 
             $result = $database->dbConnection()->query($sql);
             if ($result) {
@@ -105,6 +131,33 @@
                 echo "error";
 
                 return false;
+            }
+        }
+
+        // fetch all university field with no duplicate
+        public function universityItemFaci() {
+            // create a new database object
+            $database = new Database();
+
+            $sql = "SELECT DISTINCT university FROM user_account WHERE user_id IS NOT NULL AND user_level = 'Facilitator'";
+            
+            $result = $database->dbConnection()->query($sql);
+            if ($result) {
+                // if the query is successful, return true
+                return $result;
+            }
+        }
+
+        public function universityItemFaciRequest() {
+            // create a new database object
+            $database = new Database();
+
+            $sql = "SELECT DISTINCT university FROM user_account WHERE user_id IS NULL AND user_level = 'Facilitator'";
+
+            $result = $database->dbConnection()->query($sql);
+            if ($result) {
+                // if the query is successful, return true
+                return $result;
             }
         }
 

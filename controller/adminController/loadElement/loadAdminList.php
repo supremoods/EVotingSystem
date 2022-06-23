@@ -9,6 +9,7 @@
     if($result){
         if($result->num_rows > 0){
             while($row = $result->fetch_assoc()){
+                if($row['id'] != $_SESSION['id']){
 ?>
 <div class="admin-list-content-items-wrapper" data-id="<?= $row['id']?>" onclick="deleteAdmin(this.dataset.id)">
     <div class="admin-list-content-items-container">
@@ -26,6 +27,7 @@
     </div>
 </div>
 <?php
+                }
             }
         }
     }

@@ -33,6 +33,8 @@ get('/admin/$page', 'views/evs/admin/index.php');
 
 post('/adminlogin', 'controller/adminController/AdminLoginController.php');
 
+post('/logout', 'controller/adminController/LogoutController.php');
+
 post('/adminController', 'controller/adminController/AdminController.php');
 
 post('/addAdmin', 'controller/adminController/addAdmin.php');
@@ -41,7 +43,17 @@ post('/editAdmin', 'controller/adminController/editAdmin.php');
 
 post('/uploadAvatar', 'controller/adminController/uploadAvatar.php');
 
+route('/loadUFR', 'controller/adminController/loadElement/loadUniversityItemFaciRequest.php');
+
+route('/loadUF', 'controller/adminController/loadElement/loadUniversityItemFaci.php');
+
 route('/loadAdminInfo', 'controller/adminController/loadElement/loadAdmin.php');
+
+route('/loadFacilitatorProfile', 'controller/adminController/loadElement/loadFacilitatorProfile.php');
+
+route('/loadFacilitatorList', 'controller/adminController/loadElement/loadFacilitator.php');
+
+route('/loadFacilitatorListRequest', 'controller/adminController/loadElement/loadFacilitatorRequest.php');
 
 route('/loadAdminList', 'controller/adminController/loadElement/loadAdminList.php');
 

@@ -29,7 +29,7 @@
         <span class="material-icons">help</span>
         <p>Help & Support</p>
     </div>
-    <div class="profile_content_item logout">
+    <div class="profile_content_item logout" onclick="logout()">
         <span class="material-icons">logout</span>
         <p>Logout</p>
     </div>

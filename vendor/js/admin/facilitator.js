@@ -1,20 +1,3 @@
-const optionSelectPrivillage = document.querySelector(".select-privillage"),
-  selectBtnPrivillage = optionSelectPrivillage.querySelector(".select-btn-privillage"),
-  optionPrivillage = optionSelectPrivillage.querySelectorAll(".option-privillage"),
-  sBtnTextPrivillage = optionSelectPrivillage.querySelector(".sBtn-text-privillage");
-
-selectBtnPrivillage.addEventListener("click", () =>
-  optionSelectPrivillage.classList.toggle("active")
-);
-
-optionPrivillage.forEach((option) => {
-  option.addEventListener("click", () => {
-    let selectedOption = option.querySelector(".option-text").innerText;
-    sBtnTextPrivillage.innerText = selectedOption;
-    optionSelectPrivillage.classList.remove("active");
-  });
-});
-
 const optionMenu = document.querySelector(".select-menu-univ"),
     selectBtn = optionMenu.querySelector(".select-btn-univ"),
     options = optionMenu.querySelectorAll(".option-univ"),
@@ -32,22 +15,6 @@ options.forEach((option) => {
     });
 });
 
-const optionSelectPrivillageModal = document.querySelector(".select-privillage-modal"),
-  selectBtnPrivillageModal = optionSelectPrivillageModal.querySelector(".select-btn-privillage-modal"),
-  optionPrivillageModal = optionSelectPrivillageModal.querySelectorAll(".option-privillage-modal"),
-  sBtnTextPrivillageModal = optionSelectPrivillageModal.querySelector(".sBtn-text-privillage-modal");
-
-selectBtnPrivillageModal.addEventListener("click", () =>
-    optionSelectPrivillageModal.classList.toggle("active")
-);
-
-optionPrivillageModal.forEach((option) => {
-  option.addEventListener("click", () => {
-    let selectedOption = option.querySelector(".option-text").innerText;
-    sBtnTextPrivillageModal.innerText = selectedOption;
-    optionSelectPrivillageModal.classList.remove("active");
-  });
-});
 
 const optionMenuModal = document.querySelector(".select-menu-univ-modal"),
     selectBtnModal = optionMenuModal.querySelector(".select-btn-univ-modal"),
@@ -70,9 +37,73 @@ optionsModal.forEach((option) => {
 function loadRequestModal(){
     let requestModal = document.querySelector('.facilitator-list-modal');
     let contentModal = document.querySelector('.content');
+    let closeBtn  = document.querySelector('.close-btn');
+    closeBtn.classList.toggle('active');
     requestModal.classList.toggle('modal');
     contentModal.classList.toggle('modal');
+    $(".load-UFR").load("/loadUFR");
+    $(".load-facilitator-req").load("/loadFacilitatorListRequest");
 }
 
 
+function loadFacilitatorProfile(id){
+  let facilitatorProfile = document.querySelector('.facilitator-profile-wrapper');
+  facilitatorProfile.classList.toggle('modal');
 
+  $('.facilitator-profile-card').load('/loadFacilitatorProfile/',{
+    id: id
+  });
+}
+
+function loadFacilitatorProfileNP(){
+  let facilitatorProfile = document.querySelector('.facilitator-profile-wrapper');
+  facilitatorProfile.classList.toggle('modal');
+}
+
+//
+window.onload = function(){
+  //hide the preloader
+  preloader()
+  
+}
+$(document).ready(function(){
+  $(".load-facilitators").load("/loadFacilitatorList");
+});
+
+
+$(document).ready(function(){
+  $(".load-UF").load("/loadUF");
+});
+
+
+var isOnDiv = false;
+
+
+$(".load-facilitators").mouseenter(
+  function(){
+    isOnDiv = true;
+    console.log(isOnDiv);
+  }
+);
+
+$(".load-facilitators").mouseleave(
+  function(){
+    isOnDiv = false;
+    console.log(isOnDiv);
+  }
+);
+
+
+setInterval(function(){
+  if(!isOnDiv){
+    $(".load-facilitators").load("/loadFacilitatorList");
+  }
+}, 500);
+
+function preloader(){
+  let facilitatorWrapper = document.querySelector('.load-facilitators');
+  let loading = document.querySelector('.loading');
+
+  facilitatorWrapper.classList.toggle('hide');
+  loading.classList.toggle('hide');
+}

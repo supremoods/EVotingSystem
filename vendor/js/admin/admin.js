@@ -7,10 +7,26 @@ function loadContent(content){
    window.location.href = content;
 }
 
-$('.logout').click(function(){
-    alert("Logout Successful");
-    window.location.href = "/logout";
+
+$(document).ready(function(){
+    $("#pwpc").load("/loadUserNameNavbar");
 });
-   
 
+$(document).ready(function(){
+    $(".load-info").load("/loadUserNameSidebar");
+});
 
+function logout(){
+    $.ajax({
+        url: '/logout',
+        type: 'GET',
+        success: function (data) {
+            console.log(data);
+            window.location.href = '/admin';
+        },
+        error: function (request, status, error) {
+            console.log(request.responseText);
+        } 
+    });
+
+}
