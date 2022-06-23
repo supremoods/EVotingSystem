@@ -5,12 +5,12 @@
             <div class="header_title">
                 <div>
                     <h1 id="profession"></h1>
-                    <input type="text" class="profession" name="profession" hidden>
+                    <input type="text" class="profession" name="privillage" hidden>
                 </div>
                 <div>
                     <!-- close button -->
                     <div class="close_btn">
-                        <span class="material-symbols-outlined" onclick="studentRegister()">arrow_back_ios</span>
+                        <span class="material-icons" onclick="studentRegister()">arrow_back_ios</span>
                     </div>
 
                 </div>
@@ -25,7 +25,7 @@
                         <div class="inputContainer">
                             <div class="profile_container">
                                 <img class="uploaded_Profile" src="vendor/img/profile_pic/avatar.svg" alt="" >
-                                <span class="material-symbols-outlined">add_photo_alternate</span>
+                                <span class="material-icons">add_photo_alternate</span>
                             </div>
                         </div>
                         <div class="upload_btn" onclick="triggerUpload()">

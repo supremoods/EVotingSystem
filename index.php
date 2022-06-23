@@ -61,6 +61,8 @@ route('/deleteAdmin', 'controller/adminController/loadElement/deleteAdmin.php');
 
 route('/loadUserNameSidebar', 'controller/adminController/loadElement/loadUserNameSidebar.php');
 
+route('/preloader', 'controller/adminController/loadElement/preloader.php');
+
 route('/loadUserNameNavbar', 'controller/adminController/loadElement/loadUserNameNavbar.php');
 
 // #---------------------- end --------------------#

@@ -57,7 +57,7 @@
 
     $img_src = $_FILES['image']['name'];
     $path = "vendor/img/profile_pic/".basename($img_src);
-    $profession = $_POST['profession'];
+    $profession = $_POST['privillage'];
     $university = $_POST['university'];
     $universityID = $_POST['universityId'];
     $first_name = $_POST['fName'];

@@ -197,7 +197,7 @@
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     column-gap: 5px;
-    justify-content: space-between;
+
     background: var(--gray1);
     border-radius: 10px;
     font-size: 14px;
@@ -213,6 +213,7 @@
 .facilitator-list-content-items-wrapper{
     background: var(--gray1);
     border-radius: 10px;
+    justify-content: center;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
 }
 
@@ -296,6 +297,11 @@
     color: var(--red1);
 }
 
+.preloader{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
 .action-view:hover{
     background: var(--blue3);
     color: var(--gray1);

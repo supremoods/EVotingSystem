@@ -1,3 +1,4 @@
+var isOnDiv = false;
 const optionMenu = document.querySelector(".select-menu-univ"),
     selectBtn = optionMenu.querySelector(".select-btn-univ"),
     options = optionMenu.querySelectorAll(".option-univ"),
@@ -41,21 +42,26 @@ function loadRequestModal(){
     closeBtn.classList.toggle('active');
     requestModal.classList.toggle('modal');
     contentModal.classList.toggle('modal');
+    $(".load-facilitator-req").empty();
+    $(".load-facilitator-req").append(preloaderProfile());
     $(".load-UFR").load("/loadUFR");
     $(".load-facilitator-req").load("/loadFacilitatorListRequest");
 }
 
 
 function loadFacilitatorProfile(id){
+  isOnDiv = false;
   let facilitatorProfile = document.querySelector('.facilitator-profile-wrapper');
   facilitatorProfile.classList.toggle('modal');
-
-  $('.facilitator-profile-card').load('/loadFacilitatorProfile/',{
+  $('.facilitator-profile-card').empty();
+  $('.facilitator-profile-card').append(preloaderProfile());
+  $('.facilitator-profile-card').load('/loadFacilitatorProfile',{
     id: id
   });
 }
 
 function loadFacilitatorProfileNP(){
+  isOnDiv = false;
   let facilitatorProfile = document.querySelector('.facilitator-profile-wrapper');
   facilitatorProfile.classList.toggle('modal');
 }
@@ -66,6 +72,7 @@ window.onload = function(){
   preloader()
   
 }
+
 $(document).ready(function(){
   $(".load-facilitators").load("/loadFacilitatorList");
 });
@@ -74,9 +81,6 @@ $(document).ready(function(){
 $(document).ready(function(){
   $(".load-UF").load("/loadUF");
 });
-
-
-var isOnDiv = false;
 
 
 $(".load-facilitators").mouseenter(
@@ -98,7 +102,7 @@ setInterval(function(){
   if(!isOnDiv){
     $(".load-facilitators").load("/loadFacilitatorList");
   }
-}, 500);
+}, 100000);
 
 function preloader(){
   let facilitatorWrapper = document.querySelector('.load-facilitators');
@@ -106,4 +110,11 @@ function preloader(){
 
   facilitatorWrapper.classList.toggle('hide');
   loading.classList.toggle('hide');
+}
+
+
+function preloaderProfile(){
+  var preloader = '<div class="preloader"><img src="../vendor/img/loader/Eclipse-1s-200px.gif" alt="" srcset=""></div>';
+
+  return preloader;
 }
