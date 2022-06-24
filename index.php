@@ -11,6 +11,8 @@ require_once("{$_SERVER['DOCUMENT_ROOT']}/router.php");
 // The output -> Index
 get('/', 'views/evs/auth.php');
 
+get('/registration/$privillage', 'views/evs/account/registration.php');
+
 get('/facilitator', 'views/evs/facilitator/auth.php');
 
 get('/facilitator/$page', 'views/evs/facilitator/index.php');
@@ -25,6 +27,13 @@ post('/register', 'controller/RegisterController.php');
 
 post('/login', 'controller/LoginController.php');
 
+#---------------------- registration routing --------------------#
+
+post('/form1','controller/registrationController/form1.php');
+
+post('/form2','controller/registrationController/form2.php');
+
+post('/form3','controller/registrationController/form3.php');
 
 #---------------------- admin routing --------------------#
 get('/admin', 'views/evs/admin/auth.php');

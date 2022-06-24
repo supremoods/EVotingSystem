@@ -7,7 +7,7 @@
             <div>
                 <!-- close button -->
                 <div class="close_btn">
-                    <span class="material-symbols-outlined" onclick="cpmModal()">close</span>
+                    <span class="material-icons" onclick="cpmModal()">close</span>
                 </div>
 
             </div>
