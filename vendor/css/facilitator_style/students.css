@@ -1,4 +1,4 @@
-.student_wrapper {
+.account-setting-wrapper {
     width: 100%;
     height: 100%;
     padding: 20px;
@@ -6,183 +6,473 @@
     overflow-y: scroll;
 }
 
-.student_wrapper .student_header {
+.account-setting-wrapper .account-setting-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    padding: 10px;
-    padding-right: 15px;
 }
 
-.student_wrapper .student_request .student_request_button{
+.account-setting-wrapper .account-setting-container .account-setting-header {
+    font-size: 2rem;
+    font-weight: bold;
     color: var(--blue3);
-    font-size: 30px;
-    display: flex;
-    justify-content: flex-end;
-    margin: 10px;
+    margin-bottom: 20px;
 }
 
-.student_wrapper  .student_request .student_request_button:hover {
-    color: var(--blue1);
+.account-setting-wrapper .student_request{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    padding: 0 2.5rem;
+    margin-bottom: 10px;
+}
+
+.account-setting-wrapper .student_request .student_request_button{
+    display: flex;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        background-color: var(--gray1);
+        box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.3);
+        color: rgb(255, 88, 88);
+        font-weight: bold;
+        cursor: pointer;
+}
+
+.account-setting-wrapper  .student_request .student_request_button:hover {
+    color: rgb(245, 136, 136);
     cursor: pointer;
 }
 
-.student_wrapper .student_header .student_header_title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--blue3);
+.search-student {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 500px;
 }
 
-.student_wrapper .student_body .student_users {
-    background: var(--gray2);
+.search-student .search-student-input input[type="text"] {
+    outline: none;
+    width: 100%;
     padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--gray1);
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.3);
+    color: var(--gray7);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.search-student .search-student-icon {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 6px;
+    border-radius: 5px;
+    border: none;
+    background: linear-gradient(to left, var(--blue1) 0%, var(--blue4) 100%);
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.3);
+    color: var(--gray1);
+    font-weight: bold;
+    cursor: pointer;
+}
+.student-list-content-items-wrapper {
+    background: var(--gray1);
     border-radius: 10px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 50%);
+}
+.student-list-header {
     display: flex;
+    justify-content: space-between;
+    padding: 0 2.5rem;
+}
+
+.student-filter {
+    display: flex;
+    gap: 1em;
+}
+
+.filter-label {
+    width: 100%;
+    display: flex;
+}
+
+.filter-label label {
+    font-size: 14px;
+    color: var(--gray7);
+}
+
+.select-course {
+    position: relative;
+    width: 350px;
+}
+
+.select-year {
+    position: relative;
+    width: 150px;
+}
+
+.select-year {
+    position: relative;
+    width: 200px;
+}
+
+.select-btn {
+    display: flex;
+    height: 40px;
+    background: linear-gradient(to left, var(--blue1) 0%, var(--blue4) 100%);
+    color: var(--gray1);
+    padding: 20px;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 8px;
+    align-items: center;
+    cursor: pointer;
+    justify-content: space-between;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.select-btn .down {
+    font-size: 25px;
+    transition: 0.3s;
+}
+
+.select-btn .sBtn-text {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.select-menu.active .select-btn .down {
+    transform: rotate(-180deg);
+}
+
+.select-menu .options {
+    position: absolute;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.select-menu.active .options {
+    display: block;
+    opacity: 0;
+    animation-name: fadeInUp;
+    -webkit-animation-name: fadeInUp;
+    animation-duration: 0.4s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 0.4s;
+    -webkit-animation-fill-mode: both;
+}
+
+.options .option {
+    display: flex;
+    height: 55px;
+    cursor: pointer;
+    padding: 0 16px;
+    border-radius: 8px;
+    align-items: center;
+    background: #fff;
+}
+
+.options .option:hover {
+    background: #f2f2f2;
+}
+
+.option .option-text {
+    font-size: 14px;
+    color: #333;
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translate3d(0, 30px, 0);
+    }
+
+    to {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+.student-list-content {
+    padding: 0 2.5rem;
+}
+
+
+.student-list-content-items .student-list-content-items-wrapper.header {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        column-gap: 5px;
+        justify-content: space-between;
+        background: var(--gray1);
+        border-radius: 10px;
+        font-size: 14px;
+        font-weight: bold;
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+        font-size: 14px;
+        font-weight: bold;
+        color: var(--gray7);
+        padding: 1em;
+        margin: 20px 0;
+}
+
+.student-list-content-item-header{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.loading {
+    display: none;
+}
+
+.loading.hide {
+    display: flex;
+}
+
+.load-facilitators.hide {
+    display: flex;
+    background: none;
+    justify-content: center;
     align-items: center;
 }
 
-.student_wrapper .student_body .student_users .search_student {
-    width: 100%;
-    position: relative;
+.student-list-content-items-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 5px;
+    background: var(--gray3);
+    justify-content: space-between;
+    border-radius: 10px;
+    font-size: 14px;
+    color: var(--gray7);
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.student-list-content-items .student-list-content-items-wrapper.request-modal,
+.student-list-content-items-container.request-modal {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.student-list-content-item-row {
+    background: var(--gray1);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    padding: 1em;
+}
+
+.action-col {
     display: flex;
+    justify-content: center;
 }
 
-.student_wrapper .student_body .student_users .search_wrap .search_student .search_button {
-    width: 40px;
-    height: 25px;
-    border: none;
-    background-color: var(--blue3);
-    text-align: center;
-    color: #fff;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-    font-size: 15px;
-}
-
-.student_wrapper .student_body .student_users .search_wrap .search_student .search_button:hover {
-    background-color: var(--blue2);
-    color: rgb(8, 8, 8);
-}
-
-.student_wrapper .student_body .student_users .search_wrap .search_student .search_term {
-    width: 300px;
-    border: 1px solid var(--blue3);
-    border-right: none;
-    padding: 5px;
-    height: 25px;
-    border-radius: 5px 0 0 5px;
-    outline: none;
-    color: #9DBFAF;
-}
-
-.student_wrapper .student_body .student_users .year_course_wrap {
-
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.student_wrapper .student_body .student_users .year_course_wrap .student_year_wrap {
-    position: relative;
-    margin-left: 15px;
-}
-
-.student_wrapper .student_body .student_users .year_course_wrap .student_year_wrap .year_dropdown .dropbtn {
-    background-color: var(--blue3);
-    color: white;
-    font-size: 15px;
-    border: none;
-    cursor: pointer;
-    min-width: 160px;
-    height: 25px;
+.student-list-content-items-container:hover {
+    background: var(--blue2);
     border-radius: 10px;
 }
 
-.student_wrapper .student_body .student_users .year_course_wrap .student_year_wrap .year_dropdown {
-    position: relative;
-    display: inline-block;
-    font-size: 15px;
-    color: #fff;
-}
-
-.student_wrapper .student_body .student_users .year_course_wrap .student_year_wrap .year_dropdown .dropdown-content {
-    display: none;
-    position: absolute;
-    right: 0;
-    background-color: var(--gray2);
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    font-size: 15px;
-}
-
-.student_wrapper .student_body .student_users .year_course_wrap .student_year_wrap .year_dropdown .dropdown-content a {
-    color: black;
-    padding: 10px;
-    text-decoration: none;
-    display: block;
-    font-size: 15px;
-}
-
-.student_wrapper .student_body .student_users .year_course_wrap .student_year_wrap .year_dropdown .dropdown-content a:hover {
-    background-color: #f1f1f1
-}
-
-.student_wrapper .student_body .student_users .year_course_wrap .student_year_wrap .year_dropdown .year_dropdown:hover .dropdown-content {
-    display: block;
-}
-.student_wrapper .student_body .student_users .year_course_wrap .student_year_wrap .year_dropdown .year_dropdown:hover .dropbtn {
-    background-color: var(--blue3);
-}
-
-.student_wrapper .student_body .student_list{
-    margin-top: 50px;
-
-}
-
-.student_wrapper .student_body .student_list .student_list_body{
+.student-list-content-item-header {
     display: flex;
-    justify-content: space-evenly;
-    padding: 10px;
+    justify-content: center;
 }
 
-.student_wrapper .student_body .student_list .student_list_body:hover {
-    background-color: var(--gray2);
+.student-list-content-item-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.student_wrapper .student_body .student_list .student_list_body .student_icon{
+.student-list-content-item-row .action-btn {
+    height: 30px;
+    width: 30px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    background: var(--gray1);
+    cursor: pointer;
+}
+
+.student-list-content-item-row .action-view {
+    height: 30px;
+    width: 60px;
     color: var(--blue3);
-    /* background-color: var(--gray1);
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); */
-    font-size: 20px;
+    font-weight: bold;
 }
 
-.student_wrapper .student_body .student_list .student_list_body .student_name {
-    width: 200px;
-    border:none;
+.student-list-content-item-row .action-delete {
+    color: var(--red1);
 }
 
-.student_wrapper .student_body .student_list .student_list_body .student_course {
- 
-    border: none;
+.action-view:hover {
+    background: var(--blue3);
+    color: var(--gray1);
 }
 
-.student_wrapper .student_body .student_list .student_list_body .student_year{
-    
-    border: none;
+.action-delete:hover {
+    background: var(--red1);
+    color: var(--gray1);
 }
 
-.student_wrapper .student_body .student_list .student_list_body .student_view .student_view_button{
-    background-color: var(--blue3);
-    color: white;
-    width: 50px;
-    border: none;
-    cursor: pointer;
+.student-list-modal {
+    display: none;
+    opacity: 0;
+}
+
+.content::before {
+    display: none;
+    opacity: 0;
+}
+
+.student-list-modal.modal {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    transform: translate(-50%, -50%);
+    z-index: 56;
+    background-color: var(--gray2);
+    padding: 2em 0;
     border-radius: 10px;
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
 }
 
-.student_wrapper .student_body .student_list .student_list_body .student_view .student_view_button:hover {
-    background-color: var(--blue1);
+.content.modal::before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gray10);
+    opacity: 0.9;
+    z-index: 55;
+}
+
+.facilitator-list-content-modal {
+    max-height: 500px;
+    overflow-y: scroll;
+}
+
+.close-btn {
+    display: none;
+}
+
+.close-btn.active {
+    display: block;
+    position: absolute;
+    z-index: 55;
+    color: #fff;
+    top: 0;
+    right: 0;
+    padding: 2rem;
+    cursor: pointer
+}
+
+.select-privillage-modal {
+    position: relative;
+    width: 200px;
+}
+
+.facilitator-profile-wrapper {
+    opacity: 0;
+    z-index: -1;
+}
+
+.facilitator-profile-wrapper.modal {
+    position: absolute;
+    background: rgba(14, 14, 14, 0.781);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    z-index: 99;
+}
+
+.facilitator-profile-card {
+    background: var(--gray1);
+    border-radius: 10px;
+    padding: 2em;
+    width: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.facilitator-profile-card .facilitator-avatar {
+    position: relative;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background: var(--gray1);
+}
+
+.facilitator-avatar .online-status {
+    position: absolute;
+    bottom: 10px;
+    right: 5px;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    border: 2px solid var(--gray1);
+    background: var(--A1);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.facilitator-avatar .online-status.active {
+    background: var(--gray6);
+}
+
+
+.facilitator-avatar img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    border: 5px solid var(--gray1);
+}
+
+.facilitator-info-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2em;
+    width: 100%;
+}
+
+.facilitator-info-list .facilitator-info-list-item {
+    margin-bottom: 1em;
+    padding: 10px;
+    width: 100%;
+    background: var(--gray1);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--gray7);
+}
+
+.close-btn-card {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 2rem;
+    cursor: pointer;
+    color: var(--gray1);
 }

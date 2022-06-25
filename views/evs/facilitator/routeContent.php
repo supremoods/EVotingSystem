@@ -3,7 +3,7 @@ if ($page == "dashboard") {
     include_once("views/evs/facilitator/dashboard.php");
 }
 else if ($page == "elections") {
-    echo "elections";
+    include_once("views/evs/facilitator/elections.php");
 }
 else if ($page == "students") {
     include_once("views/evs/facilitator/students.php");

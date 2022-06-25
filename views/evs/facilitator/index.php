@@ -18,7 +18,7 @@
             echo "../vendor/css/facilitator_style/dashboard.css";
             $jsFile = "dashboard.js";
         }else if($page=="elections"){
-            echo "../vendor/css/facilitator_style/students.css";
+            echo "../vendor/css/facilitator_style/elections.css";
             $jsFile = "elections.js";
         }else if($page=="students"){
             echo "../vendor/css/facilitator_style/students.css";
@@ -56,6 +56,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="../vendor/js/facilitator/<?=$jsFile?>"></script>
   <script src="../vendor/js/facilitator/facilitator.js"></script>
 </body>
 </html>

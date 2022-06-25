@@ -1,174 +1,139 @@
 <!-- studunt lits layout-->
 
-<div class="student_wrapper">
-    <div class="student_header">
-        <div class="student_header_title">
-            <h4>Student Lists</h4>
+<div class="account-setting-wrapper">
+    <div class="account-setting-container">
+        <div class="account-setting-header">
+            <p>Student Lists</p>
         </div>
     </div>
     
     <div class="student_request" onclick="student_request_modal()">
       <div class="student_request_button" onclick="student_request_modal()">
-        <span class="material-symbols-outlined">notifications</span>
+        <span class="material-symbols-outlined">notifications</span>Student Request
       </div>
     </div>
 
     <div class="student_body">
-        <div class="student_users">
-            
-          <div class="search_wrap">
-              <div class="search_student">
-                  <input type="text" class="search_term" placeholder="Search Student">
-                  <button type="submit" class="search_button">
-                    <span class="material-symbols-outlined">search</span>
-                </button>
-              </div>
-          </div>
-          
-          <div class="year_course_wrap">
-            <div class="student_year_wrap">
-              <div class="year_dropdown">
-                <button class="dropbtn" >Year</button>
-                <div class="dropdown-content">
-                  <a href="#">1st Year</a>
-                  <a href="#">2nd Year/a>
-                  <a href="#">3rd Year</a>
-                  <a href="#">4th Year</a>
+        <!-- filter section -->
+        <div class="student-list-header">
+            <div class="search-student">
+                <div class="search-student-input">
+                    <input type="text" placeholder="Search Student">
                 </div>
-              </div>
+                <div class="search-student-icon">
+                    <span class="material-icons">search</span>
+                </div>
             </div>
-
-            <div class="student_year_wrap">
-                <div class="year_dropdown">
-                  <button class="dropbtn" >Course</button>
-                  <div class="dropdown-content">
-                    <a href="#">BSIT</a>
-                    <a href="#">BSCS/a>
-                    <a href="#">BSIT</a>
-                    <a href="#">BSIT</a>
-                  </div>
-                </div>  
+            <div class="student-filter">
+                <div class="select-menu select-year">
+                    <div class="filter-label">
+                        <label for="">Year</label>
+                    </div>
+                    <div class="select-btn select-btn-year">
+                        <span class="sBtn-text sBtn-text-year">All</span>
+                        <span class="down material-icons">keyboard_arrow_down</span>
+                    </div>
+                    <ul class="options">
+                        <li class="option option-year">
+                            <span class="option-text">2022</span>
+                        </li>
+                        <li class="option option-year">
+                            <span class="option-text">2021</span>
+                        </li>
+                         <li class="option option-year">
+                            <span class="option-text">2020</span>
+                        </li>
+                         <li class="option option-year">
+                            <span class="option-text">2019</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="select-menu select-course">
+                    <div class="filter-label">
+                        <label for="">Course</label>
+                    </div>
+                    <div class="select-menu select-menu-course">
+                        <div class="select-btn select-btn-course">
+                            <span class="sBtn-text sBtn-text-course">All</span>
+                            <span class="down material-icons">keyboard_arrow_down</span>
+                        </div>
+                        <ul class="options">
+                            <li class="option option-course">
+                                <span class="option-text">Technological University of the Philippines</span>
+                            </li>
+                            <li class="option option-course">
+                                <span class="option-text">University of the Philippines</span>
+                            </li>
+                            <li class="option option-course">
+                                <span class="option-text">Ateneo De Manila</span>
+                            </li>
+                            <li class="option option-course">
+                                <span class="option-text">Pamantasan ng Lungsod ng Maynila</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
-      </div>
+        <!-- end of filter section -->
 
-      <div class="student_list">
-          <div class="student_list_body">
-              <div class="student_icon">
-                  <span class="material-symbols-outlined">account_circle</span>
-              </div>
+    <!-- student list -->
+        <div class="student-list-content">
+            <div class="student-list-content-items">
+                    <div class="student-list-content-items-wrapper header">
+                        <div class="student-list-content-item-header">
+                            <p>Student ID</p>
+                        </div>
+                        <div class="student-list-content-item-header">
+                            <p>Name</p>
+                        </div>
+                        <div class="student-list-content-item-header">
+                                <p>Course</p>
+                            </div>
+                        <div class="student-list-content-item-header">
+                            <p>College</p>
+                        </div>
+                        <div class="student-list-content-item-header">
+                            <p>Status</p>
+                        </div>
+                        <div class="student-list-content-item-header">
+                            <p>Action</p>
+                        </div>
+                    </div>
+                   
+                    <div class="student-list-content-items-wrapper load-facilitators hide">
+                        <div class="student-list-content-items-container">
+                            <div class="student-list-content-item-row">
+                                <p>TUPM-19-2306</p>
+                            </div>
+                            <div class="student-list-content-item-row">
+                                <p>Ma. Sandra P. Cueto</p>
+                            </div>
+                            <div class="student-list-content-item-row">
+                                <p>Bachelor of Science in Information Technology</p>
+                            </div>
+                            <div class="student-list-content-item-row">
+                                <p>College of Science</p>
+                            </div>
+                            <div class="student-list-content-item-row">
+                                <p>active</p>
+                            </div>
+                            <div class="student-list-content-item-row action-col">
+                                <button class="action-btn action-delete">
+                                    <span class="material-icons">delete</span>
+                                </button>
+                                <button class="action-btn action-view" >
+                                    <span>view</span>
+                                </button>
+                            </div>
+                        </div>                      
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end of student list -->
 
-              <div class="student_name">
-                  <p>Ma. Sanda P. Cueto </p>
-              </div>
-
-              <div class="student_course">
-                  <p>BSIT </p>
-              </div>
-
-              <div class="student_year">
-                  <p>4th Year </p>
-              </div>
-
-              <div class="student_view">
-                  <button class="student_view_button">view</button>
-              </div>
-
-          </div>
-
-          <div class="student_list_body">
-              <div class="student_icon">
-                  <span class="material-symbols-outlined">account_circle</span>
-              </div>
-
-              <div class="student_name">
-                  <p>Ma. Sanda P. Cueto </p>
-              </div>
-
-              <div class="student_course">
-                  <p>BSIT </p>
-              </div>
-
-              <div class="student_year">
-                  <p>4th Year </p>
-              </div>
-
-              <div class="student_view">
-                  <button class="student_view_button">view</button>
-              </div>
-
-          </div>
-
-          <div class="student_list_body">
-              <div class="student_icon">
-                  <span class="material-symbols-outlined">account_circle</span>
-              </div>
-
-              <div class="student_name">
-                  <p>Ma. Sanda P. Cueto </p>
-              </div>
-
-              <div class="student_course">
-                  <p>BSIT </p>
-              </div>
-
-              <div class="student_year">
-                  <p>4th Year </p>
-              </div>
-
-              <div class="student_view">
-                  <button class="student_view_button">view</button>
-              </div>
-
-          </div>
-
-          <div class="student_list_body">
-              <div class="student_icon">
-                  <span class="material-symbols-outlined">account_circle</span>
-              </div>
-
-              <div class="student_name">
-                  <p>Ma. Sanda P. Cueto </p>
-              </div>
-
-              <div class="student_course">
-                  <p>BSIT </p>
-              </div>
-
-              <div class="student_year">
-                  <p>4th Year </p>
-              </div>
-
-              <div class="student_view">
-                  <button class="student_view_button">view</button>
-              </div>
-
-          </div>
-
-          <div class="student_list_body">
-              <div class="student_icon">
-                  <span class="material-symbols-outlined">account_circle</span>
-              </div>
-
-              <div class="student_name">
-                  <p>Ma. Sanda P. Cueto </p>
-              </div>
-
-              <div class="student_course">
-                  <p>BSIT </p>
-              </div>
-
-              <div class="student_year">
-                  <p>4th Year </p>
-              </div>
-
-              <div class="student_view">
-                  <button class="student_view_button" >view</button>
-              </div>
-
-          </div>
-
-          </div>
       </div>
         
     </div>
