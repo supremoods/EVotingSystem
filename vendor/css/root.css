@@ -6,7 +6,6 @@
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
   max-width: 100%;
-
 }
 
 
@@ -32,6 +31,10 @@
     --red1: #fd5555;
     --red2: #ff0000;
     --A1: #05cc47;
+    --green1: #36d887;
+    --green2: #00b300;
+    --yellow1: #ffc400;
+
 }
 
 

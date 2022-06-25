@@ -17,7 +17,7 @@
 
     // if there are no rows in the database, display a message
     if ($num == 0) {
-        echo "No universities found!";
+      //  echo "No universities found!";
     } else {
 
         // pass the rows to array

@@ -10,19 +10,11 @@ function cpmModal(){
 }
 
 function studentRegister(){
-  let studentRegister = document.querySelector('.register_wrapper');
-  studentRegister.classList.toggle('modal');
-  document.querySelector("#profession").textContent = "Student Registration";
-  document.querySelector(".profession").value = "Student";
-  cpmModal();
+    window.location.href = "/registration/student";
 }
 
 function teacherRegister(){
-  let studentRegister = document.querySelector('.register_wrapper');
-  studentRegister.classList.toggle('modal');
-  document.querySelector(".profession").value = "Teacher";
-  document.querySelector("#profession").textContent = "Teacher Registration";
-  cpmModal();
+    window.location.href = "/registration/facilitator";
 }
 
 const profileContainer = document.querySelector(".uploaded_Profile");
@@ -33,7 +25,6 @@ function triggerUpload(){
 }
 
 function uploadImage(){
-
   uploadProfile.addEventListener("change", function(){
         const file = this.files[0];
         if(file){

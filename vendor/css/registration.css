@@ -1,0 +1,392 @@
+#root{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Google Sans","Noto Sans Myanmar UI",arial,sans-serif;
+}
+
+.form-1{
+    position:absolute;
+    right: 0;
+    transition: all 0.2s ease-in-out;
+    width:100%;
+    opacity: 1;
+}
+
+.form-1.to-left{
+    position:absolute;
+    right: 100%;
+    opacity: 0;
+}
+
+
+.form-2{
+    position:absolute;
+    left: 100%;
+    width:100%;
+    transition: all 0.2s ease-in-out;
+    opacity: 0;
+}
+
+.form-2.from-right{
+    position:absolute;
+    left: 0;
+    opacity: 1;
+}
+
+.form-2.to-left{
+    position:absolute;
+    left: -100%;
+    opacity: 1;
+}
+
+.form-3{
+    position:absolute;
+    left: 100%;
+    width:100%;
+    transition: all 0.2s ease-in-out;
+    opacity: 0;
+}
+
+.form-3.from-right{
+    position:absolute;
+    left: 0;
+    opacity: 1;
+}
+
+
+
+
+
+.registration-wrapper{
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.5);
+    padding: 48px 40px 40px;
+    height: 615px;
+    width: 450px;
+}
+
+.container-form-slide{
+    position: relative;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+.evs-logo-container{
+    margin-bottom: 1rem;
+}
+.evs-logo-container .evs-logo{
+    position: relative;
+    height: 70px;
+    width: 70px;
+}
+
+.evs-logo-container .evs-logo img {
+    height: 100%;
+    width: 100%;
+}
+
+.registration-header{
+    margin-bottom: 2rem;
+}
+
+.registration-header h1{
+    font-size: 24px;
+    font-weight:100;
+}
+.Fields-wrapper{
+    margin-bottom: 1.5rem;
+}
+.Fields{
+    display:flex;
+    position: relative;
+    height: 36px;
+    gap: 10px;
+}
+
+.Fieldset{
+    position: relative;
+    height:100%;
+    width: 100%;
+}
+
+
+.Fieldset .autocom-box {
+	position: absolute;
+	padding: 0;
+	opacity: 0;
+	width: 95%;
+	pointer-events: none;
+	max-height: 230px;
+	overflow-y: scroll;
+	background-color: var(--gray1);
+	box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.5);
+	left: 10px;
+	top: 49px;
+}
+
+
+.Fieldset.active .autocom-box{
+    padding: 10px 8px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.autocom-box li{
+    font-size: 14px;
+    list-style: none;
+    padding: 8px 12px;
+    display: none;
+    width: 100%;
+    cursor: default;
+    border-radius: 3px;
+}
+
+.Fieldset.active .autocom-box li{
+    display: block;
+}
+
+.autocom-box li:hover{
+    background: #efefef;
+}
+  
+.Fieldset input{
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: solid 1px #20212452;
+    background:none;
+}
+
+
+.Fieldset .placeholder{
+    position: absolute;
+    top: 6px;
+    left: 10px;
+    color: var(--gray7);
+    font-size: 14px;
+    z-index: -1;
+    transition: 0.1s;
+}
+
+
+.Fields-hint{
+    font-size: 11px;
+    margin-left: 10px;
+    margin-top: 2px;
+    color: var(--gray7);
+
+}
+
+
+.Fieldset input:focus{
+    outline: none;
+    border: solid 2px var(--blue4);
+    background:none;
+}
+
+.Fieldset input:focus ~ .placeholder{
+    top: -10px;
+    color: var(--blue4);
+    background: white;
+    font-size: 12px;
+    padding: 0 5px;
+    z-index: 0;
+}
+
+.Fieldset input:valid ~ .placeholder{
+    top: -10px;
+    background: white;
+    font-size: 12px;
+    padding: 0 5px;
+    z-index: 0;
+}
+
+.Fieldset .first-name.active,
+.Fieldset .last-name.active,
+.Fieldset .university.active,
+.Fieldset .password.active,
+.Fieldset .confirm.active,
+.Fieldset .university-id.active,
+.Fieldset .university-name.active,
+.Fieldset .college-department.active,
+.Fieldset .university-id-img.active,
+.Fieldset .course.active{
+    border: solid 1px var(--red1);
+}
+
+.Fieldset .password.strong{
+    border: solid 1px var(--green1);
+}
+.Fieldset .password.weak{
+    border: solid 1px var(--red1);
+}
+.Fieldset .password.medium{
+    border: solid 1px var(--yellow1);
+}
+
+
+.Fieldset input:focus ~ .placeholder-pass.strong{
+    color: var(--green1);
+}
+.Fieldset input:focus ~ .placeholder-pass.weak{
+    color: var(--red1);
+}
+.Fieldset input:focus ~ .placeholder-pass.medium{
+    color: var(--yellow1);
+}
+
+
+.Fieldset input.active:focus{
+    outline: none;
+    border: solid 2px var(--red1);
+    background:none;
+}
+
+.Fieldset input.active:focus ~ .placeholder{
+    top: -10px;
+    color: var(--red1);
+    background: white;
+    font-size: 12px;
+    padding: 0 5px;
+    z-index: 0;
+}
+
+.Fieldset input.active:valid ~ .placeholder{
+    top: -10px;
+    background: white;
+    font-size: 12px;
+    padding: 0 5px;
+    z-index: 0;
+}
+
+hr{
+    color: var(--gray1);
+    margin: 1.5rem 0;
+}
+
+.show-password-switch{
+    display: flex;
+    gap: 10px;
+}
+
+.show-password-switch p{
+    font-size: 14px;
+    color: var(--gray7);
+}
+
+.fields-show-password{
+    margin:10px 0;
+    margin-bottom: 3rem;
+}
+
+.show-password-switch input[type="checkbox"]{
+    height: 20px;
+    width: 20px;
+}
+
+.fields-button{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.sign-in-btn button,
+.form-2-back button,
+.form-3-back button{
+    border: none;
+    background: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--blue4);
+    cursor: pointer;
+}
+
+.next-btn button{
+    font-size: 14px;
+    width: 100px;
+    height: 36px;
+    border: none;
+    border-radius: 5px;
+    background: var(--blue4);
+    color: var(--gray1);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.1s;
+}
+
+
+.next-btn button:hover{
+    background: var(--blue5);
+}
+
+.hint-error.strong{
+    color: var(--green1);
+}
+
+.hint-error.weak{
+    color: var(--red1);
+}
+
+.hint-error.medium{
+    color: var(--yellow1);
+}
+
+.hint-error{
+    color: var(--red1);
+    font-size: 12px;
+    margin-top: 2px;
+    display: none;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.hint-error.active{
+    display: flex;
+}
+
+.error-svg-icon{
+    display: flex;
+    align-items: center;
+}
+
+
+.univ-id-container{
+    height:100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.university-id-img-container{
+    height: 200px;
+    width: 300px;
+    background: var(--gray2);
+    border-radius: 10px;
+    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.5);
+    margin-bottom: 10px;
+}
+
+
+.university-id-img-container img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.univ-id-container .Fieldset {
+    position: relative;
+    display: flex;
+
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
