@@ -24,14 +24,15 @@
                     </div>
                     <div class="registration-form">
                         <form method="post" id="register-form-1">
+                            <input type="text" name="privillage" value="<?=$privillage?>"hidden>
                             <div class="Fields-wrapper">
                                 <div class="Fields">
                                     <div class="Fieldset">
-                                        <input type="text" id="first-name" class="first-name" required="" autocomplete="off">
+                                        <input type="text" id="first-name" name="first-name" class="first-name" required="" autocomplete="off">
                                         <label class="placeholder">First Name</label>
                                     </div>
                                     <div class="Fieldset">
-                                        <input type="text" id="last-name" class="last-name" required="" autocomplete="off">
+                                        <input type="text" id="last-name"  name="last-name" class="last-name" required="" autocomplete="off">
                                         <label class="placeholder">Last Name</label>
                                     </div>
                                 </div>
@@ -50,7 +51,7 @@
                             <div class="Fields-wrapper">
                                 <div class="Fields">
                                     <div class="Fieldset">
-                                        <input type="text" id="university" class="university" required="" autocomplete="off">
+                                        <input type="text" id="university"  name="university" class="university" required="" autocomplete="off">
                                         <label class="placeholder">University Email</label>
                                     </div>
                                 </div>
@@ -74,7 +75,7 @@
                             <div class="Fields-wrapper">
                                 <div class="Fields">
                                     <div class="Fieldset">
-                                        <input type="password" id="password" class="password" required="" autocomplete="off">
+                                        <input type="password" id="password" name="password" class="password" required="" autocomplete="off">
                                         <label class="placeholder placeholder-pass">Password</label>
                                     </div>
                                     <div class="Fieldset">
@@ -121,10 +122,12 @@
                     </div>
                     <div class="registration-form">
                         <form method="post" id="register-form-2">
+
+                            <input type="text" name="privillage" value="<?=$privillage?>"hidden>
                             <div class="Fields-wrapper">
                                 <div class="Fields">
                                     <div class="Fieldset">
-                                        <input type="text" id="university-id" class="university-id" required="" autocomplete="off">
+                                        <input type="text" name="university-id" id="university-id" class="university-id" required="" autocomplete="off">
                                         <label class="placeholder">University ID</label>
                                     </div>
                                 </div>
@@ -143,7 +146,7 @@
                             <div class="Fields-wrapper">
                                 <div class="Fields">
                                     <div class="Fieldset field-Univ">
-                                        <input type="text" id="university-name" class="university-name" required="" autocomplete="off">
+                                        <input type="text" name="university-name" id="university-name" class="university-name" required="" autocomplete="off">
                                         <label class="placeholder">University Name</label>
                                         <div class="autocom-box">
                                             <!-- here list are inserted from javascript -->
@@ -166,9 +169,12 @@
                  
                             <div class="Fields-wrapper">
                                 <div class="Fields">
-                                    <div class="Fieldset">
-                                        <input type="text" id="college-department" class="college-department" required="" autocomplete="off">
+                                    <div class="Fieldset field-dept">
+                                        <input type="text" name="college-department" id="college-department" class="college-department" required="" autocomplete="off">
                                         <label class="placeholder">College Department</label>
+                                        <div class="autocom-box">
+                                            <!-- here list are inserted from javascript -->
+                                        </div>
                                     </div>
                                 </div>
                                 <div id="collegeDeptError" class="hint-error collegeDeptError">
@@ -185,9 +191,12 @@
 
                             <div class="Fields-wrapper">
                                 <div class="Fields">
-                                    <div class="Fieldset">
-                                        <input type="text" id="course" class="course" required="" autocomplete="off">
+                                    <div class="Fieldset field-courses">
+                                        <input type="text" name="course" id="course" class="course" required="" autocomplete="off">
                                         <label class="placeholder">Course</label>
+                                        <div class="autocom-box">
+                                            <!-- here list are inserted from javascript -->
+                                        </div>
                                     </div>
                                 </div>
                                 <div id="courseError" class="hint-error courseError">
@@ -220,7 +229,7 @@
                         <h1>EVS Verification</h1>
                     </div>
                     <div class="registration-form">
-                        <form method="post" id="register-form-3">
+                        <form method="post" id="register-form-3" enctype="multipart/form-data">
                             <div class="Fields-wrapper">
                                 <div class="Fields univ-id-container">
                                     <div class="Fieldset">
@@ -229,7 +238,7 @@
                                         </div>
                                     </div>
                                     <div class="Fieldset">
-                                        <input type="file" id="university-id-img" class="university-id-img" required="">
+                                        <input type="file" name="university-id-img" id="university-id-img" class="university-id-img" required="">
                                         <label class="placeholder">University ID</label>
                                     </div>
                                 </div>
@@ -254,6 +263,11 @@
                             </div>
                         </form>
                     </div>
+                </div>
+            </div>
+            <div class="pre-loading">
+                <div class="pre-loading-img">
+                    <img src="../vendor/img/loader/loading.gif" alt="">
                 </div>
             </div>
         </div>

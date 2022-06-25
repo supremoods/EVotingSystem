@@ -12,7 +12,7 @@
 
 <div class="facilitator-list-content-items-container request-modal">
     <div class="facilitator-list-content-item-row">
-        <p><?=$row['last_name'].", ".$row['first_name']." ".$row['middle_name']?></p>
+        <p><?=$row['first_name']." ".$row['last_name']?></p>
     </div>
     <div class="facilitator-list-content-item-row">
         <p><?=$row['user_level']?></p>

@@ -197,7 +197,6 @@
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     column-gap: 5px;
-
     background: var(--gray1);
     border-radius: 10px;
     font-size: 14px;
@@ -394,16 +393,36 @@
 }
 
 .facilitator-profile-card{
+    position: relative;
     background: var(--gray1);
     border-radius: 10px;
     padding: 2em;
-    width: 340px;
+    width: 440px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
 }
 
+.facilitator-id-img.zoom{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    transform: scale(.6);
+    transition: all .3s;
+}
+
+.facilitator-id-img{
+    width: 200px;
+    height: 200px;
+    transition: all .3s;
+}
+.facilitator-id-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
 .facilitator-profile-card .facilitator-avatar{
     position: relative;
     height:150px;
@@ -458,6 +477,37 @@
     color:var(--gray7);
 }
 
+.facilitator-info-list .approve-btn{
+    background: none;
+    border: none;
+    box-shadow: none;
+
+}
+
+.approve-btn button{
+    background: var(--green1);
+    color: var(--gray1);
+    gap: 5px ;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    height: 40px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+}
+
+.approve-btn button:hover{
+    background: linear-gradient(to right, #00e673, var(--green2));
+    opacity: .9;
+}
+
 .close-btn-card{
     position: absolute;
     top: 0;
@@ -465,4 +515,52 @@
     padding: 2rem;
     cursor: pointer;
     color: var(--gray1);
+}
+
+.pre-loading-img.active{
+    opacity: 1;
+    z-index: 55;
+}
+
+.pre-loading-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: -2;
+    border-radius: 10px;
+    background: rgba(250, 250, 250, 0.568);
+}
+
+
+.success-message.active{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #f3f3f3bd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    color: var(--green1);
+    font-size: 1.5rem;
+    font-weight: bold;
+    opacity: 1;
+    z-index: 55;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.success-message{
+    opacity: 0;
+    z-index: -3;
+    transition: all 0.3s ease-in-out;
 }

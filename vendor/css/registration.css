@@ -80,6 +80,7 @@
 
 
 .evs-logo-container{
+    display: flex;
     margin-bottom: 1rem;
 }
 .evs-logo-container .evs-logo{
@@ -130,6 +131,7 @@
 	box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.5);
 	left: 10px;
 	top: 49px;
+    
 }
 
 
@@ -137,6 +139,7 @@
     padding: 10px 8px;
     opacity: 1;
     pointer-events: auto;
+    z-index: 1;
 }
 
 .autocom-box li{
@@ -385,8 +388,33 @@ hr{
 .univ-id-container .Fieldset {
     position: relative;
     display: flex;
-
     justify-content: center;
     height: 100%;
     width: 100%;
 }
+
+.pre-loading{
+    position: absolute;
+    display: flex;
+    top: 40px;
+    right: 0;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.pre-loading.active{
+    opacity: 1;
+}
+
+.pre-loading-img{
+    display: flex;
+    height: 100px;
+    width: 200px;
+}
+
+.pre-loading-img img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+

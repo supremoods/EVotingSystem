@@ -8,6 +8,9 @@
         public $userLevel;
         public $university;
         public $universityID;
+        public $universityIDImg;
+        public $college_dept;
+        public $course;
         public $userID;
         public $first_name;
         public $middle_name;
@@ -75,6 +78,8 @@
             return $this->time_stamp_out;
         }
 
+      
+
         // Methods to set properties
 
         public function setId($id) {
@@ -133,6 +138,66 @@
             $this->time_stamp_out = $time_stamp_out;
         }
 
+
+        /**
+         * Get the value of college_dept
+         */ 
+        public function getCollege_dept()
+        {
+                return $this->college_dept;
+        }
+
+        /**
+         * Set the value of college_dept
+         *
+         * @return  self
+         */ 
+        public function setCollege_dept($college_dept)
+        {
+                $this->college_dept = $college_dept;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of universityIDImg
+         */ 
+        public function getUniversityIDImg()
+        {
+                return $this->universityIDImg;
+        }
+
+        /**
+         * Set the value of universityIDImg
+         *
+         * @return  self
+         */ 
+        public function setUniversityIDImg($universityIDImg)
+        {
+                $this->universityIDImg = $universityIDImg;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of course
+         */ 
+        public function getCourse()
+        {
+                return $this->course;
+        }
+
+        /**
+         * Set the value of course
+         *
+         * @return  self
+         */ 
+        public function setCourse($course)
+        {
+                $this->course = $course;
+
+                return $this;
+        }
     }
 
 ?>

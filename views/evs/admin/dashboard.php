@@ -1,5 +1,14 @@
 <!-- dashboard layout for total users and elections-->
+<?php 
+    require_once ('model/SqlQuery.php');
 
+
+    $sqlQuery = new SqlQuery();
+
+
+
+    
+?>
 <div class="dashboard_wrappper">
     <div class="dashboard_header">
         <div class="dashboard_header_title">

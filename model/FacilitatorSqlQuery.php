@@ -23,10 +23,10 @@
                         $this->setImageSrc($row['image_src']);
                         $this->setUserLevel($row['user_level']);
                         $this->setUniversity($row['university']);
+                        $this->setUniversityIDImg($row['university_id_img']);
                         $this->setUniversityID($row['university_id']);
                         $this->setUserID($row['user_id']);
                         $this->setFirstName($row['first_name']);
-                        $this->setMiddleName($row['middle_name']);
                         $this->setLastName($row['last_name']);
                         $this->setEmail($row['email']);
                         $this->setPassw($row['passw']);
@@ -47,6 +47,18 @@
             if ($result) {
                 // if the query is successful, return true
                 return $result;
+            }
+        }
+
+        public function updateUserID($evsUserID,$facilitatorID){
+            $database = new Database();
+            $sql = "UPDATE user_account SET user_id = '$evsUserID' WHERE id = '$facilitatorID'";
+
+            $result = $database->dbConnection()->query($sql);
+
+            if ($result) {
+                // if the query is successful, return true
+                return true;
             }
         }
 

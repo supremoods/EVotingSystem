@@ -1,3 +1,4 @@
+var isOnDiv = false;
 const optionSelectPrivillage = document.querySelector(".select-privillage"),
   selectBtnPrivillage = optionSelectPrivillage.querySelector(".select-btn-privillage"),
   optionPrivillage = optionSelectPrivillage.querySelectorAll(".option-privillage"),
@@ -31,3 +32,39 @@ options.forEach((option) => {
         optionMenu.classList.remove("active");
     });
 });
+window.onload = function(){
+  //hide the preloader
+  preloader()
+  
+}
+
+setInterval(function(){
+  if(!isOnDiv){
+    $(".load-user-info").load("/loadUserList");
+  }
+}, 500);
+
+$(".load-user-info").mouseenter(
+  function(){
+    isOnDiv = true;
+  }
+);
+
+$(".load-user-info").mouseleave(
+  function(){
+    isOnDiv = false;
+  }
+);
+
+
+function preloader(){
+  try{
+    let userWrapper = document.querySelector('.load-user-info');
+    let loading = document.querySelector('.loading');
+  
+    userWrapper.classList.toggle('hide');
+    loading.classList.toggle('hide');
+  }catch(err){
+  
+  }
+}

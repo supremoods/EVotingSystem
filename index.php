@@ -29,11 +29,11 @@ post('/login', 'controller/LoginController.php');
 
 #---------------------- registration routing --------------------#
 
-post('/form1','controller/registrationController/form1.php');
+post('/form1','controller/registrationController/form1Controller.php');
 
-post('/form2','controller/registrationController/form2.php');
+post('/form2','controller/registrationController/form2Controller.php');
 
-post('/form3','controller/registrationController/form3.php');
+post('/form3','controller/registrationController/form3Controller.php');
 
 #---------------------- admin routing --------------------#
 get('/admin', 'views/evs/admin/auth.php');
@@ -62,6 +62,8 @@ route('/loadFacilitatorProfile', 'controller/adminController/loadElement/loadFac
 
 route('/loadFacilitatorList', 'controller/adminController/loadElement/loadFacilitator.php');
 
+route('/loadUserList', 'controller/adminController/loadElement/loadUserList.php');
+
 route('/loadFacilitatorListRequest', 'controller/adminController/loadElement/loadFacilitatorRequest.php');
 
 route('/loadAdminList', 'controller/adminController/loadElement/loadAdminList.php');
@@ -74,6 +76,7 @@ route('/preloader', 'controller/adminController/loadElement/preloader.php');
 
 route('/loadUserNameNavbar', 'controller/adminController/loadElement/loadUserNameNavbar.php');
 
+post('/sendEmail', 'controller/adminController/SendEmail.php');
 // #---------------------- end --------------------#
 
 

@@ -13,7 +13,7 @@
 
     // Class SqlQuery
 
-    class SqlQuery extends UserAccount {
+        class SqlQuery extends UserAccount {
     
         // Insert a new userAccount into the database
         public function insertUserAccount() {
@@ -22,9 +22,9 @@
 
             $sql = "INSERT INTO user_account (
                 id, 
-                image_src,
+                university_id_img,
+                image_src, 
                 user_level, 
-                university, 
                 university_id, 
                 user_id, 
                 first_name, 
@@ -62,6 +62,105 @@
             }
         }
 
+        public function insertStudentForm1($token){
+            $database = new Database();
+
+            $sql = "INSERT INTO user_account(
+                user_token,
+                user_level, 
+                first_name,
+                last_name,
+                email,
+                passw
+            )VALUES(
+                '$token',
+                '$this->userLevel',
+                '$this->first_name',
+                '$this->last_name',
+                '$this->email',
+                '$this->passw'
+            )";
+
+            $result = $database->dbConnection()->query($sql);
+            if ($result) {
+                // if the query is successful, return true
+                $_SESSION['user_token'] = $token;
+                return true;
+            } else {
+                // if the query is not successful, return false
+                return false;
+            }
+        }
+
+        public function insertStudentForm2(){
+            $database = new Database();
+
+            $sql = "INSERT INTO student_university_info(
+                universityId,
+                collegeDept, 
+                course
+            )VALUES(
+                '$this->universityID',
+                '$this->college_dept',
+                '$this->course'
+            )";
+
+            $result = $database->dbConnection()->query($sql);
+            if ($result) {
+                // if the query is successful, return true
+                return true;
+            } else {
+                // if the query is not successful, return false
+                return false;
+            }
+        }
+
+        public function updateform2($privillage){
+            $database = new Database();
+            $session = $_SESSION['user_token'];
+            $sql = "UPDATE user_account SET
+                university_id = '$this->universityID',
+                university = '$this->university'
+            WHERE
+                user_token = '$session'
+            ";
+
+            $result = $database->dbConnection()->query($sql);
+            if ($result) {
+                // if the query is successful, return true
+                if($privillage == "student"){
+                    if($this->insertStudentForm2()){
+                        return true;
+                    }
+                }
+                
+                return true;
+                
+            } else {
+                // if the query is not successful, return false
+                return false;
+            }
+        }
+
+        public function updateform3(){
+            $database = new Database();
+            $session = $_SESSION['user_token'];
+            
+            $sql = "UPDATE user_account SET
+                university_id_img = '$this->universityIDImg'
+            WHERE
+                user_token = '$session'
+            ";
+
+            $result = $database->dbConnection()->query($sql);
+            if ($result) {
+                // if the query is successful, return true
+                return true;
+            } else {
+                // if the query is not successful, return false
+                return false;
+            }
+        }
         // Delete a userAccount from the database
         public function deleteUserAccount() {
 
@@ -106,7 +205,17 @@
         }
 
 
+        public function selectAllVerifiedUsers(){
+            $database = new Database();
+            $sql = "SELECT * FROM user_account WHERE user_id IS NOT NULL";
 
+            $result = $database->dbConnection()->query($sql);
+
+            if($result){
+                return $result;
+            }
+
+        }
 
         // Select a userAccount from the database
         public function fetchUserInfo($user_id) {
@@ -141,7 +250,21 @@
             }
         }
 
- 
+        
+        // fetch all university field with no duplicate
+        public function universityList() {
+            // create a new database object
+            $database = new Database();
+
+            $sql = "SELECT DISTINCT university FROM user_account WHERE user_id IS NOT NULL";
+            
+            $result = $database->dbConnection()->query($sql);
+            if ($result) {
+                // if the query is successful, return true
+                return $result;
+            }
+        }
+
 
 
    

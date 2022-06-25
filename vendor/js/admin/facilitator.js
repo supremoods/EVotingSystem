@@ -1,3 +1,5 @@
+
+
 var isOnDiv = false;
 const optionMenu = document.querySelector(".select-menu-univ"),
     selectBtn = optionMenu.querySelector(".select-btn-univ"),
@@ -86,14 +88,12 @@ $(document).ready(function(){
 $(".load-facilitators").mouseenter(
   function(){
     isOnDiv = true;
-    console.log(isOnDiv);
   }
 );
 
 $(".load-facilitators").mouseleave(
   function(){
     isOnDiv = false;
-    console.log(isOnDiv);
   }
 );
 
@@ -102,14 +102,18 @@ setInterval(function(){
   if(!isOnDiv){
     $(".load-facilitators").load("/loadFacilitatorList");
   }
-}, 100000);
+}, 500);
 
 function preloader(){
-  let facilitatorWrapper = document.querySelector('.load-facilitators');
-  let loading = document.querySelector('.loading');
-
-  facilitatorWrapper.classList.toggle('hide');
-  loading.classList.toggle('hide');
+  try{
+    let facilitatorWrapper = document.querySelector('.load-facilitators');
+    let loading = document.querySelector('.loading');
+  
+    facilitatorWrapper.classList.toggle('hide');
+    loading.classList.toggle('hide');
+  }catch(err){
+  
+  }
 }
 
 
@@ -117,4 +121,41 @@ function preloaderProfile(){
   var preloader = '<div class="preloader"><img src="../vendor/img/loader/Eclipse-1s-200px.gif" alt="" srcset=""></div>';
 
   return preloader;
+}
+
+
+function zoomID(){
+  $(".facilitator-id-img").toggleClass("zoom");
+}
+
+function sendEmail(facilitatorID,email){
+  var values = {
+    'FacilitatorID': facilitatorID,
+    'Email': email
+  };
+
+  $.ajax({
+    url: "/sendEmail",
+    type: "POST",
+    data: values,
+    beforeSend: function(){
+      $(".pre-loading-img").addClass("active");
+    },
+    complete: function(){
+        $(".pre-loading-img").removeClass("active");
+        $(".success-message").addClass("active");
+    },
+    success:function(data){
+    },
+    error: function (request, status, error) {
+        console.log(request.responseText);
+    }    
+  });
+
+}
+
+function closeSuccess(){
+  $(".success-message").removeClass("active");
+  $(".facilitator-profile-wrapper").removeClass("modal");
+  $(".load-facilitator-req").load("/loadFacilitatorListRequest");
 }
