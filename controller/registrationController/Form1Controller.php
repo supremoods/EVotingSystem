@@ -15,10 +15,7 @@
 
         public function user_token(){
             //Generate a random string.
-            $token = openssl_random_pseudo_bytes(8);
-            
-            //Convert the binary data into hexadecimal representation.
-            $token = bin2hex($token);
+            $token = bin2hex(random_bytes(8));
 
             return $token;
         }
