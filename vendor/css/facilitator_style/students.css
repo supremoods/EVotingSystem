@@ -358,7 +358,7 @@
     z-index: 55;
 }
 
-.facilitator-list-content-modal {
+.student-list-content-modal {
     max-height: 500px;
     overflow-y: scroll;
 }
@@ -383,12 +383,12 @@
     width: 200px;
 }
 
-.facilitator-profile-wrapper {
+.student-profile-wrapper {
     opacity: 0;
     z-index: -1;
 }
 
-.facilitator-profile-wrapper.modal {
+.student-profile-wrapper.modal {
     position: absolute;
     background: rgba(14, 14, 14, 0.781);
     width: 100%;
@@ -402,7 +402,7 @@
     z-index: 99;
 }
 
-.facilitator-profile-card {
+.student-profile-card {
     background: var(--gray1);
     border-radius: 10px;
     padding: 2em;
@@ -413,7 +413,7 @@
     justify-content: flex-start;
 }
 
-.facilitator-profile-card .facilitator-avatar {
+.student-profile-card .student-avatar {
     position: relative;
     height: 150px;
     width: 150px;
@@ -421,7 +421,7 @@
     background: var(--gray1);
 }
 
-.facilitator-avatar .online-status {
+.student-avatar .online-status {
     position: absolute;
     bottom: 10px;
     right: 5px;
@@ -433,12 +433,12 @@
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-.facilitator-avatar .online-status.active {
+.student-avatar .online-status.active {
     background: var(--gray6);
 }
 
 
-.facilitator-avatar img {
+.student-avatar img {
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -447,7 +447,7 @@
     border: 5px solid var(--gray1);
 }
 
-.facilitator-info-list {
+.student-info-list {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -456,7 +456,7 @@
     width: 100%;
 }
 
-.facilitator-info-list .facilitator-info-list-item {
+.student-info-list .student-info-list-item {
     margin-bottom: 1em;
     padding: 10px;
     width: 100%;

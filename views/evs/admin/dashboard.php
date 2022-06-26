@@ -1,12 +1,8 @@
 <!-- dashboard layout for total users and elections-->
 <?php 
     require_once ('model/SqlQuery.php');
-
-
+    
     $sqlQuery = new SqlQuery();
-
-
-
     
 ?>
 <div class="dashboard_wrappper">

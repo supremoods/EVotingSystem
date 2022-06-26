@@ -8,9 +8,9 @@
     </div>
     
     <div class="student_request" onclick="student_request_modal()">
-      <div class="student_request_button" onclick="student_request_modal()">
+    <div class="student_request_button" onclick="student_request_modal()">
         <span class="material-symbols-outlined">notifications</span>Student Request
-      </div>
+    </div>
     </div>
 
     <div class="student_body">
@@ -40,10 +40,10 @@
                         <li class="option option-year">
                             <span class="option-text">2021</span>
                         </li>
-                         <li class="option option-year">
+                        <li class="option option-year">
                             <span class="option-text">2020</span>
                         </li>
-                         <li class="option option-year">
+                        <li class="option option-year">
                             <span class="option-text">2019</span>
                         </li>
                     </ul>
@@ -77,66 +77,39 @@
         </div>
         <!-- end of filter section -->
 
-    <!-- student list -->
+        <!-- student list -->
         <div class="student-list-content">
             <div class="student-list-content-items">
-                    <div class="student-list-content-items-wrapper header">
-                        <div class="student-list-content-item-header">
-                            <p>Student ID</p>
-                        </div>
-                        <div class="student-list-content-item-header">
-                            <p>Name</p>
-                        </div>
-                        <div class="student-list-content-item-header">
-                                <p>Course</p>
-                            </div>
-                        <div class="student-list-content-item-header">
-                            <p>College</p>
-                        </div>
-                        <div class="student-list-content-item-header">
-                            <p>Status</p>
-                        </div>
-                        <div class="student-list-content-item-header">
-                            <p>Action</p>
-                        </div>
+                <div class="student-list-content-items-wrapper header">
+                    <div class="student-list-content-item-header">
+                        <p>Student ID</p>
                     </div>
-                   
-                    <div class="student-list-content-items-wrapper load-facilitators hide">
-                        <div class="student-list-content-items-container">
-                            <div class="student-list-content-item-row">
-                                <p>TUPM-19-2306</p>
-                            </div>
-                            <div class="student-list-content-item-row">
-                                <p>Ma. Sandra P. Cueto</p>
-                            </div>
-                            <div class="student-list-content-item-row">
-                                <p>Bachelor of Science in Information Technology</p>
-                            </div>
-                            <div class="student-list-content-item-row">
-                                <p>College of Science</p>
-                            </div>
-                            <div class="student-list-content-item-row">
-                                <p>active</p>
-                            </div>
-                            <div class="student-list-content-item-row action-col">
-                                <button class="action-btn action-delete">
-                                    <span class="material-icons">delete</span>
-                                </button>
-                                <button class="action-btn action-view" >
-                                    <span>view</span>
-                                </button>
-                            </div>
-                        </div>                      
+                    <div class="student-list-content-item-header">
+                        <p>Name</p>
                     </div>
+                    <div class="student-list-content-item-header">
+                            <p>Course</p>
+                    </div>
+                    <div class="student-list-content-item-header">
+                        <p>College</p>
+                    </div>
+                    <div class="student-list-content-item-header">
+                        <p>Status</p>
+                    </div>
+                    <div class="student-list-content-item-header">
+                        <p>Action</p>
+                    </div>
+                </div>
+                
+                <div class="student-list-content-items-wrapper load-facilitators hide">
+                    
                 </div>
             </div>
         </div>
     </div>
-    <!-- end of student list -->
 
-      </div>
-        
-    </div>
-   
+    <?php require_once("views/evs/facilitator/modal/studentRequestModal.php");?>
+  
 </div>
+
  
