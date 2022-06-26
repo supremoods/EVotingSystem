@@ -1,75 +1,38 @@
-<!-- studunt lits layout-->
 
-<div class="account-setting-wrapper">
-    <div class="account-setting-container">
-        <div class="account-setting-header">
-            <p>Student Lists</p>
+<div class="Student-wrapper">
+    <div class="Student-header">
+        <div class="Student-header-title">
+            <h1>Student</h1>
         </div>
     </div>
-    
-    <div class="student_request" onclick="student_request_modal()">
-    <div class="student_request_button" onclick="student_request_modal()">
-        <span class="material-symbols-outlined">notifications</span>Student Request
+    <div class="request-Student-modal-btn">
+        <button class="btn btn-request-Student" onclick="loadRequestModal()">
+            <span class="material-icons">notifications</span>Student Request
+        </button>
     </div>
-    </div>
-
-    <div class="student_body">
+    <div class="Student-list-body">
         <!-- filter section -->
-        <div class="student-list-header">
-            <div class="search-student">
-                <div class="search-student-input">
+        <div class="Student-list-header">
+            <div class="search-Student">
+                <div class="search-Student-input">
                     <input type="text" placeholder="Search Student">
                 </div>
-                <div class="search-student-icon">
+                <div class="search-Student-icon">
                     <span class="material-icons">search</span>
                 </div>
             </div>
-            <div class="student-filter">
-                <div class="select-menu select-year">
+            <div class="Student-filter">
+                <div class="select-menu select-colleges">
                     <div class="filter-label">
-                        <label for="">Year</label>
+                        <label for="">Colleges</label>
                     </div>
-                    <div class="select-btn select-btn-year">
-                        <span class="sBtn-text sBtn-text-year">All</span>
-                        <span class="down material-icons">keyboard_arrow_down</span>
-                    </div>
-                    <ul class="options">
-                        <li class="option option-year">
-                            <span class="option-text">2022</span>
-                        </li>
-                        <li class="option option-year">
-                            <span class="option-text">2021</span>
-                        </li>
-                        <li class="option option-year">
-                            <span class="option-text">2020</span>
-                        </li>
-                        <li class="option option-year">
-                            <span class="option-text">2019</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="select-menu select-course">
-                    <div class="filter-label">
-                        <label for="">Course</label>
-                    </div>
-                    <div class="select-menu select-menu-course">
-                        <div class="select-btn select-btn-course">
-                            <span class="sBtn-text sBtn-text-course">All</span>
+                    <div class="select-menu select-menu-colleges">
+                        <div class="select-btn select-btn-colleges">
+                            <span class="sBtn-text sBtn-text-colleges">All</span>
                             <span class="down material-icons">keyboard_arrow_down</span>
                         </div>
-                        <ul class="options">
-                            <li class="option option-course">
-                                <span class="option-text">Technological University of the Philippines</span>
-                            </li>
-                            <li class="option option-course">
-                                <span class="option-text">University of the Philippines</span>
-                            </li>
-                            <li class="option option-course">
-                                <span class="option-text">Ateneo De Manila</span>
-                            </li>
-                            <li class="option option-course">
-                                <span class="option-text">Pamantasan ng Lungsod ng Maynila</span>
-                            </li>
+                        <ul class="options load-US">
+                          
                         </ul>
                     </div>
                 </div>
@@ -77,39 +40,43 @@
         </div>
         <!-- end of filter section -->
 
-        <!-- student list -->
-        <div class="student-list-content">
-            <div class="student-list-content-items">
-                <div class="student-list-content-items-wrapper header">
-                    <div class="student-list-content-item-header">
+        <!-- Student list -->
+        <div class="Student-list-content">
+            <div class="Student-list-content-items">
+                <div class="Student-list-content-items-wrapper header">
+                    <div class="Student-list-content-item-header">
+                        <p>EVS ID</p>
+                    </div>
+                    <div class="Student-list-content-item-header">
                         <p>Student ID</p>
                     </div>
-                    <div class="student-list-content-item-header">
+                    <div class="Student-list-content-item-header">
                         <p>Name</p>
                     </div>
-                    <div class="student-list-content-item-header">
-                            <p>Course</p>
+                    <div class="Student-list-content-item-header">
+                        <P>Course</P>
                     </div>
-                    <div class="student-list-content-item-header">
+                    <div class="Student-list-content-item-header">
                         <p>College</p>
                     </div>
-                    <div class="student-list-content-item-header">
+                    <div class="Student-list-content-item-header">
                         <p>Status</p>
                     </div>
-                    <div class="student-list-content-item-header">
+                    <div class="Student-list-content-item-header">
                         <p>Action</p>
                     </div>
                 </div>
-                
-                <div class="student-list-content-items-wrapper load-facilitators hide">
-                    
+                <div class="Student-list-content-items-wrapper load-Students hide">
+                    <div class="loading hide">
+                        <img src="../vendor/img/loader/loading.gif" alt="" srcset="">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- end of Student list -->
 
-    <?php require_once("views/evs/facilitator/modal/studentRequestModal.php");?>
-  
+    <!-- modal Student -->
+    <?php require_once("views/evs/facilitator/modal/studentRequestModal.php"); ?>
+    <?php require_once("views/evs/facilitator/modal/studentProfile.php"); ?>
 </div>
-
- 

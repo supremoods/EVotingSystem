@@ -11,8 +11,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../vendor/css/facilitator_style/header.css" />
-    <link rel="stylesheet" href="../vendor/css/admin_style/style.css"/>
-    <link rel="stylesheet" href="../vendor/css/admin_style/sidebar.css"/>
+    <link rel="stylesheet" href="../vendor/css/facilitator_style/style.css"/>
+    <link rel="stylesheet" href="../vendor/css/facilitator_style/sidebar.css"/>
     <link rel="stylesheet" href="<?php 
         if($page=="dashboard"){
             echo "../vendor/css/facilitator_style/dashboard.css";
@@ -50,7 +50,6 @@
          <?php require_once("views/evs/facilitator/routeContent.php"); ?>
         </div>
       </div>
-       
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>

@@ -1,0 +1,20 @@
+#root{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.layout_wrapper {
+    display: flex;
+    background-color: var(--gray1);
+    margin-top: 70px;
+}
+
+.layout_wrapper .content{
+    position: relative;
+    height: calc(100vh - 70px);
+    margin-left:300px;
+    background-color: var(--gray2);
+    width: 100%;
+}

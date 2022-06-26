@@ -3,17 +3,14 @@
 
     $facilitatorSqlQuery = new FacilitatorSqlQuery();
 
-    $result = $facilitatorSqlQuery->fetchAllStudent();
+    $result = $facilitatorSqlQuery->fetchAllStudentRequest();
 
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
 
 ?>
 
-<div class="Student-list-content-items-container">
-    <div class="Student-list-content-item-row">
-        <p><?=$row['user_id']?></p>
-    </div>
+<div class="Student-list-content-items-container request-modal">
     <div class="Student-list-content-item-row">
         <p><?=$row['university_id']?></p>
     </div>
@@ -25,9 +22,6 @@
     </div>
     <div class="Student-list-content-item-row">
         <p><?=$row['collegeDept']?></p>
-    </div>
-    <div class="Student-list-content-item-row">
-        <p><?=$row['status']?></p>
     </div>
     <div class="Student-list-content-item-row action-col">
         <button class="action-btn action-delete" data-id="<?=$row['id']?>" onclick="">

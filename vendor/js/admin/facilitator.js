@@ -1,5 +1,4 @@
 
-
 var isOnDiv = false;
 const optionMenu = document.querySelector(".select-menu-univ"),
     selectBtn = optionMenu.querySelector(".select-btn-univ"),
@@ -135,7 +134,7 @@ function sendEmail(facilitatorID,email){
   };
 
   $.ajax({
-    url: "/sendEmail",
+    url: "/adminMailer",
     type: "POST",
     data: values,
     beforeSend: function(){

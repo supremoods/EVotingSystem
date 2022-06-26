@@ -12,12 +12,12 @@
 
     use PHPMailer\PHPMailer\PHPMailer;
 
-    class SendEmail extends FacilitatorSqlQuery{
-        function sendmail($facilitatorID,$email){
+    class AdminMailerController extends FacilitatorSqlQuery{
+        function sendmail($StudentID,$email){
             $evsUserID =$this->generated_evs_user_id();
             $name = "EVS";  // Name of your website or yours
             $to = $email;  // mail of reciever
-            $subject = "FACILITATOR ACCOUNT'S USER ID";  // Subject of the email
+            $subject = "STUDENT ACCOUNT'S USER ID";  // Subject of the email
             $body = "
             <!DOCTYPE html>
             <html lang=\"en\">
@@ -26,7 +26,6 @@
                 <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
                 <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
                 <title>Email</title>
-
             <style>
                 * {
                     margin: 0;
@@ -73,7 +72,7 @@
                         <p class=\"content\">
                         Hi! This is your USER ID: <span>".$evsUserID."</span>. Kindly login this credential to your account to access the E-voting System.
                         </p>
-                        <p class=\"note\" \"content\">Note: This user ID is exclusive only for the FACILITATOR and cannot be used to other accounts.</p>
+                        <p class=\"note\" \"content\">Note: This user ID is exclusive only for the STUDENT and cannot be used to other accounts.</p>
                     </div>
                     
                 </body>
@@ -115,7 +114,7 @@
             $mail->Subject = ("$subject");
             $mail->Body = $body;
             if ($mail->send()) {
-                if($this->updateUserID($evsUserID,$facilitatorID)){
+                if($this->updateUserID($evsUserID,$StudentID)){
                    echo json_encode(array("status"=>"success","message"=>"Email has been sent to your email address"));
                 }
             } else {
@@ -138,11 +137,11 @@
     }
     
 
-    $sendEmail = new SendEmail();
+    $adminMailerController = new AdminMailerController();
 
-    $facilitatorID = $_POST['FacilitatorID'];
+    $studentID = $_POST['StudentID'];
     $email = $_POST['Email'];
 
-    $sendEmail->sendmail($facilitatorID,$email);
+    $adminMailerController->sendmail($studentID,$email);
         
 ?>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3308
--- Generation Time: Jun 23, 2022 at 05:05 PM
+-- Generation Time: Jun 26, 2022 at 10:52 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.6
 
@@ -43,8 +43,29 @@ CREATE TABLE `admin` (
 
 INSERT INTO `admin` (`id`, `username`, `password`, `img`, `status`, `timeStampIn`, `timeStampOut`) VALUES
 (1, 'admin', 'admin', 'avatar.svg', NULL, NULL, NULL),
-(6, 'supremo', '$2y$10$UwV.P8l.ZyGPs.T1x73sSuDIUulhiRYfjKDdeZxQPWz5M6nnkr15m', '278638696_4916507031801233_787450432618075058_n.jpg', 'active', '2022-06-23 12:50:54', NULL),
+(6, 'supremo', '$2y$10$UwV.P8l.ZyGPs.T1x73sSuDIUulhiRYfjKDdeZxQPWz5M6nnkr15m', '278638696_4916507031801233_787450432618075058_n.jpg', 'active', '2022-06-25 08:01:43', NULL),
 (10, 'Supremood', '$2y$10$JfQ2bXFiCVcWQ7jidbrF5eTeeDlOJ9TTgEPvh9CxSALGUaKk6nF1K', 'avatar.svg', NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `student_university_info`
+--
+
+CREATE TABLE `student_university_info` (
+  `id` int(11) NOT NULL,
+  `universityId` varchar(100) NOT NULL,
+  `collegeDept` varchar(255) NOT NULL,
+  `course` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `student_university_info`
+--
+
+INSERT INTO `student_university_info` (`id`, `universityId`, `collegeDept`, `course`) VALUES
+(2, 'TUPM-22-2322', 'College of Science (CS)', 'Bachelor of Science in Information Technology (BSIT)'),
+(3, 'PLM-22-2112', 'College of Science (CS)', 'Bachelor of Science in Nursing (BSN)');
 
 -- --------------------------------------------------------
 
@@ -2491,13 +2512,14 @@ INSERT INTO `university` (`id`, `university`) VALUES
 
 CREATE TABLE `user_account` (
   `id` int(11) NOT NULL,
-  `image_src` varchar(255) NOT NULL,
+  `user_token` varchar(255) NOT NULL,
+  `university_id_img` varchar(255) DEFAULT NULL,
+  `image_src` varchar(255) DEFAULT NULL,
   `user_level` varchar(50) NOT NULL,
-  `university` varchar(100) NOT NULL,
-  `university_id` varchar(100) NOT NULL,
+  `university` varchar(100) DEFAULT NULL,
+  `university_id` varchar(100) DEFAULT NULL,
   `user_id` varchar(100) DEFAULT NULL,
   `first_name` varchar(100) NOT NULL,
-  `middle_name` varchar(100) NOT NULL,
   `last_name` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `passw` varchar(100) NOT NULL,
@@ -2510,10 +2532,12 @@ CREATE TABLE `user_account` (
 -- Dumping data for table `user_account`
 --
 
-INSERT INTO `user_account` (`id`, `image_src`, `user_level`, `university`, `university_id`, `user_id`, `first_name`, `middle_name`, `last_name`, `email`, `passw`, `status`, `time_stamp_in`, `time_stamp_out`) VALUES
-(47, '264165739_4501303539988253_4768271605685310825_n.jpg', 'Facilitator', 'Technological University of the Philippines-Manila', 'TUPM-19-2343', 'T-EVS-99-2312', 'John', 'Along', 'Lappay', 'lappay.john@gmail.com', '$2y$10$jY62yzpanFfhvKNxu9bKAOe0A26AlZb3GE7V3hKgnGI/BboqF3uZu', 'inactive', '2022-06-23 13:54:04', '2022-06-23 14:16:33'),
-(48, 'nayeon.jpg', 'Facilitator', 'University of the Philippines-Diliman', 'UPD-19-2343', 'T-EVS-19-2312', 'Na-yeon', '', 'Im', 'im.nayeon@gmail.com', '$2y$10$.CVeTjhjxCypLNRFlyZNUOB0ofmHpnl9h.ZIROnIOVxmiGaP8Gd9K', NULL, '2022-06-20 16:09:02', NULL),
-(50, '278638696_4916507031801233_787450432618075058_n.jpg', 'Facilitator', 'Technological Institute of the Philippines-Manila', 'TUPM-19-2343', NULL, 'John', 'Along', 'Lappay', 'lappay.john@gmail.com', '$2y$10$cgrIGAuGaD3FkKx5nQmrGe5R1Fojp4ePmTKXtwoo./UE5ohItV6re', NULL, NULL, NULL);
+INSERT INTO `user_account` (`id`, `user_token`, `university_id_img`, `image_src`, `user_level`, `university`, `university_id`, `user_id`, `first_name`, `last_name`, `email`, `passw`, `status`, `time_stamp_in`, `time_stamp_out`) VALUES
+(47, '', '', '264165739_4501303539988253_4768271605685310825_n.jpg', 'Facilitator', 'Technological University of the Philippines-Manila', 'TUPM-19-2343', 'T-EVS-99-2312', 'John', 'Lappay', 'lappay.john@gmail.com', '$2y$10$jY62yzpanFfhvKNxu9bKAOe0A26AlZb3GE7V3hKgnGI/BboqF3uZu', 'inactive', '2022-06-23 13:54:04', '2022-06-23 14:16:33'),
+(48, '', 'IDCard-SAMPLE-02-767159.jpg', 'nayeon.jpg', 'Facilitator', 'University of the Philippines-Diliman', 'UPD-19-2343', 'EVS-c3c7c6', 'Na-yeon', 'Im', 'im.nayeon@gmail.com', '$2y$10$.CVeTjhjxCypLNRFlyZNUOB0ofmHpnl9h.ZIROnIOVxmiGaP8Gd9K', NULL, '2022-06-20 16:09:02', NULL),
+(63, '5d220ad91c339371', 'IDCard-SAMPLE-02-767159.jpg', NULL, 'student', 'University of the Philippines-Diliman', 'TUPM-22-2322', 'EVS-60a39b', 'Lee', 'Ji-eun', 'Lee.Ji-eun@tup.edu.ph', '$2y$10$.YK2XmEkLKsYCQEqNwHT0.0PWOk8FzQN58imfIQUshPmDyFSU0aNy', NULL, NULL, NULL),
+(64, '632f25ce5507fc48', 'IDCard-SAMPLE-02-767159.jpg', NULL, 'student', 'Technological University of the Philippines-Manila', 'PLM-22-2112', NULL, 'Oden', 'Kozuki', 'kozuki.oden@plm.edu.ph', '$2y$10$kG7jjStPOQtqJ0MYv1RK0.iO1elvEsHJcBNwjFnDr6IXxYC1VZG0.', NULL, NULL, NULL),
+(65, 'e4fedd77fd7a7f6c', 'IDCard-SAMPLE-02-767159.jpg', NULL, 'facilitator', 'University of the Philippines-Diliman', 'UPD-22-1029', 'EVS-1cfaa0', 'Hiyori', 'Kozuki', 'john.lappay@tup.edu.ph', '$2y$10$Ht3l13jaM00ytQnqAZqcDe8xNWbX18OqS1oydrNKKE8.W5iVvPKey', 'active', '2022-06-26 04:57:23', '2022-06-26 04:56:56');
 
 --
 -- Indexes for dumped tables
@@ -2525,6 +2549,12 @@ INSERT INTO `user_account` (`id`, `image_src`, `user_level`, `university`, `univ
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `username` (`username`);
+
+--
+-- Indexes for table `student_university_info`
+--
+ALTER TABLE `student_university_info`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `university`
@@ -2549,6 +2579,12 @@ ALTER TABLE `admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
+-- AUTO_INCREMENT for table `student_university_info`
+--
+ALTER TABLE `student_university_info`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `university`
 --
 ALTER TABLE `university`
@@ -2558,7 +2594,7 @@ ALTER TABLE `university`
 -- AUTO_INCREMENT for table `user_account`
 --
 ALTER TABLE `user_account`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

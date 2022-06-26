@@ -76,15 +76,34 @@ route('/preloader', 'controller/adminController/loadElement/preloader.php');
 
 route('/loadUserNameNavbar', 'controller/adminController/loadElement/loadUserNameNavbar.php');
 
-post('/sendEmail', 'controller/adminController/SendEmail.php');
+
 // #---------------------- end --------------------#
 
+// #---------------------- email routing --------------------#
+
+post('/adminMailer', 'controller/EmailController/AdminMailerController.php');
+
+post('/facilitatorMailer', 'controller/EmailController/FacilitatorMailerController.php');
+// #---------------------- end --------------------#
 
 // #---------------------- facilitator routing --------------------#
+route('/loadUSR', 'controller/facilitator/loadElement/loadUniversityItemStudentRequest.php');
+
+route('/loadUS', 'controller/facilitator/loadElement/loadUniversityItemStudent.php');
+
+route('/loadStudentProfile', 'controller/facilitator/loadElement/loadStudentProfile.php');
+
+route('/loadStudentList', 'controller/facilitator/loadElement/loadStudentList.php');
+
+
+
+route('/loadStudentListRequest', 'controller/facilitator/loadElement/loadStudentListRequest.php');
 
 post('/facilitatorLogin', 'controller/facilitator/LoginController.php');
 
 get('/facilitatorLogout', 'controller/facilitator/LogoutController.php');
+
+
 
 // #---------------------- end --------------------#
 
