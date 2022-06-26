@@ -83,7 +83,7 @@ route('/loadUserNameNavbar', 'controller/adminController/loadElement/loadUserNam
 
 post('/adminMailer', 'controller/EmailController/AdminMailerController.php');
 
-post('/facilitatorMailer', 'controller/EmailController/FacilitatorMailerController.php');
+post('/z', 'controller/EmailController/FacilitatorMailerController.php');
 // #---------------------- end --------------------#
 
 // #---------------------- facilitator routing --------------------#
@@ -95,14 +95,11 @@ route('/loadStudentProfile', 'controller/facilitator/loadElement/loadStudentProf
 
 route('/loadStudentList', 'controller/facilitator/loadElement/loadStudentList.php');
 
-
-
 route('/loadStudentListRequest', 'controller/facilitator/loadElement/loadStudentListRequest.php');
 
 post('/facilitatorLogin', 'controller/facilitator/LoginController.php');
 
 get('/facilitatorLogout', 'controller/facilitator/LogoutController.php');
-
 
 
 // #---------------------- end --------------------#

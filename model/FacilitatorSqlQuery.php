@@ -76,6 +76,7 @@
                 }
             }
         }
+        
         // fetch all facilitator
         public function fetchAllFacilitator() {
             $database = new Database();
@@ -262,8 +263,7 @@
             }
         }
 
-
-                // fetch all university field with no duplicate
+        // fetch all university field with no duplicate
         public function universityItemStudent() {
             // create a new database object
             $database = new Database();
@@ -284,7 +284,6 @@
             }
         }
         
-
         public function universityItemFaciRequest() {
             // create a new database object
             $database = new Database();
