@@ -129,12 +129,11 @@ function zoomID(){
 }
 
 function sendEmail(studentID,email){
+
   var values = {
     'StudentID': studentID,
     'Email': email
   };
-
-  alert(values);
 
   $.ajax({
     url: "/facilitatorMailer",
@@ -160,5 +159,6 @@ function closeSuccess(){
   $(".success-message").removeClass("active");
   $(".Student-profile-wrapper").removeClass("modal");
   $(".load-USR").load("/loadUSR");
-  $(".load-Student-req").load("/loadFacilitatorListRequest");
+  $(".load-Student-req").load("/loadStudentListRequest");
 }
+

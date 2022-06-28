@@ -83,7 +83,7 @@ route('/loadUserNameNavbar', 'controller/adminController/loadElement/loadUserNam
 
 post('/adminMailer', 'controller/EmailController/AdminMailerController.php');
 
-post('/z', 'controller/EmailController/FacilitatorMailerController.php');
+post('/facilitatorMailer', 'controller/EmailController/FacilitatorMailerController.php');
 // #---------------------- end --------------------#
 
 // #---------------------- facilitator routing --------------------#
@@ -100,6 +100,14 @@ route('/loadStudentListRequest', 'controller/facilitator/loadElement/loadStudent
 post('/facilitatorLogin', 'controller/facilitator/LoginController.php');
 
 get('/facilitatorLogout', 'controller/facilitator/LogoutController.php');
+
+post('/updatePassword', 'controller/facilitator/changePassword.php');
+
+post('/uploadFacilitatorAvatar', 'controller/facilitator/uploadAvatar.php');
+
+route('/loadUserNameSidebarFacilitator', 'controller/facilitator/loadElement/loadUsernameSidebar.php');
+
+route('/loadUserNameNavbarFacilitator', 'controller/facilitator/loadElement/loadUsernameNavbar.php');
 
 
 // #---------------------- end --------------------#

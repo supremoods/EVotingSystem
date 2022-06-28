@@ -296,8 +296,44 @@
                 return $result;
             }
         }
+        
 
+        //change password
 
+        public function updatePassword($encryptedPassword, $facilitatorID) {
+            // create a new database object
+            $database = new Database();
+
+            $sql = "UPDATE user_account SET passw = '$encryptedPassword' WHERE id = '$facilitatorID'";
+
+            $result = $database->dbConnection()->query($sql);
+            if ($result) {
+                // if the query is successful, return true
+                return true;
+            } else {
+                // if the query is not successful, return false
+                return false;
+            }
+        }
+        
+                // update avatar of userAdmin in the database
+        public function updateFacilitatorAvatar($facilitatorID, $imageSrc) {
+            // create a new database object
+            $database = new Database();
+            
+            $sql = "UPDATE user_account SET image_src = '$imageSrc' WHERE id = '$facilitatorID'";
+
+            $result = $database->dbConnection()->query($sql);
+            if ($result) {
+                // if the query is successful, return true
+                $this->fetchFacilitatorInfo($facilitatorID);
+                return true;
+            } else {
+                // if the query is not successful, return false
+                return false;
+            }
+        }
+            
 
     }
 

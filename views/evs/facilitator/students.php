@@ -67,6 +67,9 @@
                     </div>
                 </div>
                 <div class="Student-list-content-items-wrapper load-Students hide">
+                    
+                    <!-- load student here -->
+
                     <div class="loading hide">
                         <img src="../vendor/img/loader/loading.gif" alt="" srcset="">
                     </div>

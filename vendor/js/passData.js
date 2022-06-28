@@ -24,7 +24,6 @@ function loginClearInput(){
     $('#passWord').val("");
 }
 
-
 // function to change border color of password and confirm password
 
 function changeBorderColor(textbox, color){

@@ -265,11 +265,7 @@
                     </div>
                 </div>
             </div>
-            <div class="pre-loading">
-                <div class="pre-loading-img">
-                    <img src="../vendor/img/loader/loading.gif" alt="">
-                </div>
-            </div>
+
         </div>
 
     </div>
