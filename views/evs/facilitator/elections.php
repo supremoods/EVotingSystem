@@ -148,5 +148,5 @@
         </div>
     </div>
 
-    <?php require_once("views/evs/facilitator/modal/addElectionModal.php"); ?>
+    <?php require_once("views/evs/facilitator/modal/createElectionModal.php"); ?>
 </div>

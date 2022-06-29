@@ -285,71 +285,7 @@
     }
 }
 
-.request-elections-modal {
-    display: none;
-}
 
-.request-elections-modal.modal {
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    background: rgba(0, 0, 0, 0.548);
-    height: 100%;
-    opacity: 0;
-    animation-name: fadeInDown;
-    -webkit-animation-name: fadeInDown;
-    animation-duration: 0.4s;
-    animation-fill-mode: both;
-    -webkit-animation-duration: 0.4s;
-    -webkit-animation-fill-mode: both;
-}
-
-@keyframes fadeInDown {
-    from {
-        transform: translate3d(0, 0, 100%);
-    }
-
-    to {
-        transform: translate3d(-50%, -50%, 0);
-        opacity: 1;
-    }
-}
-
-
-
-.elections-modal-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 3rem;
-
-}
-
-.election-modal {
-    background: var(--gray1);
-    padding: 2rem;
-    border-radius: 10px;
-}
-
-.btn-modal-exit {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    padding: 10px 0;
-    color: var(--gray1);
-}
-
-.btn-modal-exit span {
-    font-size: 30px;
-    font-weight: bold;
-    cursor: pointer;
-}
 
 
 .election_list_item_content .timeframe {
@@ -386,3 +322,315 @@
     justify-content: center;
     align-items: center;
 }
+
+
+.student-candidates-wrapper{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background:var(--gray1);
+    padding: 20px;
+   
+}
+
+.student-candidate-container{
+    height: 100%;
+
+}
+
+
+.partylist-header-name{
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--blue3);
+
+}
+
+.student-candidate-wrapper-items{
+    margin:20px;
+}
+
+
+.student-candidate-wrapper-items{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.student-candidate-items{
+    width: 100%;
+    display: grid;
+    column-gap: 20px;
+
+}
+
+hr{
+    margin: 20px 0;
+
+    border: 1px solid var(--gray3);
+}
+
+.top-position-1{
+    grid-template-columns: 1fr 1fr;
+   
+}
+
+.top-position-2{
+    grid-template-columns: 1fr 1fr 1fr;
+    
+}
+
+
+
+.student-candidate-item{
+    display: flex;
+    justify-content: center;
+    background: var(--gray2);
+    border-radius: 10px;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+}
+
+.student-candidate-card{
+    display:flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
+    background: var(--gray1);
+    /* padding: 20px; */
+}
+.img-candidate{
+    width: 350px;
+    height:300px;
+}
+
+.img-candidate img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+}
+.candidate-info-input{
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    gap: 10px;
+}
+.Fields-wrapper{
+    background: var(--gray1);
+
+}
+.Fields,
+.register-btn-wrapper{
+    display:flex;
+    position: relative;
+    height: 36px;
+  
+}
+.Fieldset{
+    position: relative;
+    height:100%;
+    width: 100%;
+ 
+}
+
+.Fieldset input{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: solid 1px #20212452;
+    background:none;
+    z-index: 2;
+}
+
+
+.Fieldset .placeholder{
+    position: absolute;
+    top: 6px;
+    left: 10px;
+    color: var(--gray7);
+    font-size: 14px;
+    z-index: 0;
+    cursor: text;
+    transition: 0.1s;
+}
+
+.Fieldset input:focus{
+    outline: none;
+    border: solid 2px var(--blue4);
+    background:none;
+}
+
+.Fieldset input:focus ~ .placeholder{
+    top: -10px;
+    color: var(--blue4);
+    background: white;
+    font-size: 12px;
+    padding: 0 5px;
+    z-index: 66;
+}
+
+.Fieldset input:valid ~ .placeholder{
+    top: -10px;
+    background: white;
+    font-size: 12px;
+    padding: 0 5px;
+    z-index: 66;
+}
+
+
+.Fieldset input.active:focus{
+    outline: none;
+    border: solid 2px var(--red1);
+    background:none;
+}
+
+.Fieldset input.active:focus ~ .placeholder{
+    top: -10px;
+    color: var(--red1);
+    background: white;
+    font-size: 12px;
+    padding: 0 5px;
+    z-index: 55;
+}
+
+.Fieldset input.active:valid ~ .placeholder{
+    top: -10px;
+    background: white;
+    font-size: 12px;
+    padding: 0 5px;
+    z-index: 55;
+}
+
+.header-position{
+    display:flex;
+    padding: 10px 0;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--blue3);
+}
+
+.register-btn-wrapper button{
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--gray2);
+    width: 100%;
+    border: none;
+    background-color: #ff4e00;
+    background-image: linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%);
+}
+
+
+.senators{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.senator .student-candidate-card{
+    width: 319px;
+}
+
+.senators .img-candidate{
+
+    height:250px;
+}
+
+.senators .img-candidate img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+}
+
+
+
+h2 {
+    margin: 15px;
+    padding: 0;
+  }
+  
+  .o-wrapper {
+    max-width: 500px;
+    margin: auto;
+    overflow: hidden;
+    padding-bottom: 50px;
+  }
+  
+  .c-slider {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    width: 770px;
+  }
+  
+  .c-slide {
+    font-weight: normal;
+    margin-right: 20px;
+    background: #FFFFFF;
+    border-radius: 3px;
+    border-left: 10px solid #FCEDB7;
+    padding: 20px; 
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.15);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex: 1;
+    overflow: hidden;
+  }
+  
+  .c-slide--salad {
+    border-color: #A3CCB6;
+  }
+  
+  .c-slide--dinner {
+    border-color: #EC7871;
+  }
+  
+  .c-slide__content {
+    width: 100%;
+  }
+  
+  .c-slide__actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .c-slide__image-wrapper {
+    margin: 0;
+    padding: 0;
+    border-radius: 3px;
+    overflow: hidden;
+    height: 0;
+    padding-top: 66%;
+    position: relative;
+  }
+  
+  .c-slide__image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 100%;
+    min-height: 100%;
+    margin: auto;
+    padding: 0;
+    transform: translate3d(-50%, -50%, 0);
+  }
+  
+  .c-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .c-drag {
+    opacity: 0.2;
+  }

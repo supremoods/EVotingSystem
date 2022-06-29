@@ -89,3 +89,7 @@ filterIcon.addEventListener("click", () => {
 filterIconModal.addEventListener("click", () => {
   filterWrapperModal.classList.toggle("active")
 });
+
+
+// carousel
+

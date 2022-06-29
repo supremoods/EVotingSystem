@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="../vendor/css/facilitator_style/header.css" />
     <link rel="stylesheet" href="../vendor/css/facilitator_style/style.css"/>
     <link rel="stylesheet" href="../vendor/css/facilitator_style/sidebar.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="<?php 
         if($page=="dashboard"){
             echo "../vendor/css/facilitator_style/dashboard.css";
@@ -53,9 +55,10 @@
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="../vendor/js/facilitator/<?=$jsFile?>"></script>
   <script src="../vendor/js/facilitator/facilitator.js"></script>
+  <script src="../vendor/js/facilitator/<?=$jsFile?>"></script>
 </body>
 </html>
