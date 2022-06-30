@@ -109,7 +109,7 @@ route('/loadUserNameSidebarFacilitator', 'controller/facilitator/loadElement/loa
 
 route('/loadUserNameNavbarFacilitator', 'controller/facilitator/loadElement/loadUsernameNavbar.php');
 
-
+post('/RegisterElectionsController', 'controller/facilitator/RegisterElectionsController.php');
 // #---------------------- end --------------------#
 
 

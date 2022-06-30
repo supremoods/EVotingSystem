@@ -1,11 +1,19 @@
-.u_elections_wrapper {
+.u_elections_wrapper{
     position: relative;
     width: 100%;
     height: 100%;
     padding: 20px;
     box-sizing: border-box;
     overflow-y: scroll;
+
 }
+
+
+.u_elections_wrapper.active{
+    filter: blur(5px);
+}
+
+
 
 .u_elections_wrapper .u_elections_header {
     display: flex;
@@ -323,16 +331,112 @@
     align-items: center;
 }
 
+.register-candidates-wrapper{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -22;
+}
+
+.register-candidates-wrapper.modal{
+    opacity: 1;
+    z-index: 44;
+}
+
+.register-candidates-container{
+    background: var(--gray1);
+    padding: 4rem;
+    max-height: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+}
+
+.Fields-election-wrapper{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.Fields-election{
+    display: flex;
+    gap: 10px;
+}
+.Fields-election-wrapper .Fieldset{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    margin-bottom: 1rem;
+}
+
+.fields-btn-election{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+}
+
+.fields-btn-election .btn-election button{
+    border-radius: 10px;
+    padding: 15px;
+    width: 100px;
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.Fieldset .placeholder-elec{
+    margin-bottom: 5px;
+}
+.Fieldset textarea{
+    font-size: 14px;
+    padding: 20px;
+    resize: none;
+    height:296px;
+    width: 366px;
+}
+.Fieldset input[type="date"],
+.Fieldset input[type="time"]{
+    height: 40px;
+}
+
+.btn-back-btn{
+    background: none;
+    color: var(--gray7);
+}
+
+.btn-next-btn{
+    background: var(--blue4);
+    color: var(--gray1);
+}
+
+.btn-next-btn:hover{
+    background: var(--blue5);
+    color: var(--gray1);
+}
+
 
 .student-candidates-wrapper{
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    background:var(--gray1);
+    background:var(--gray2);
     padding: 20px;
+    z-index: 1;
    
 }
+
+
 
 .student-candidate-container{
     height: 100%;
@@ -360,35 +464,21 @@
 
 .student-candidate-items{
     width: 100%;
-    display: grid;
-    column-gap: 20px;
+    display: flex;
+    justify-content: space-evenly; 
+    background:var(--gray1);
+
 
 }
 
 hr{
     margin: 20px 0;
-
     border: 1px solid var(--gray3);
 }
-
-.top-position-1{
-    grid-template-columns: 1fr 1fr;
-   
-}
-
-.top-position-2{
-    grid-template-columns: 1fr 1fr 1fr;
-    
-}
-
-
 
 .student-candidate-item{
     display: flex;
     justify-content: center;
-    background: var(--gray2);
-    border-radius: 10px;
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
     padding: 20px;
 }
 
@@ -402,14 +492,16 @@ hr{
     /* padding: 20px; */
 }
 .img-candidate{
-    width: 350px;
     height:300px;
 }
 
 .img-candidate img{
     width:100%;
     height:100%;
+    border-radius: 0% 0% 10% 10%;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
     object-fit: cover;
+    cursor: pointer;
 }
 .candidate-info-input{
     display: flex;
@@ -417,16 +509,21 @@ hr{
     flex-direction: column;
     gap: 10px;
 }
-.Fields-wrapper{
-    background: var(--gray1);
 
-}
 .Fields,
 .register-btn-wrapper{
     display:flex;
     position: relative;
     height: 36px;
   
+}
+
+.Fields-party {
+	display: flex;
+	position: relative;
+	height: 50px;
+	margin: 0 20px;
+	background: var(--gray1);
 }
 .Fieldset{
     position: relative;
@@ -445,6 +542,7 @@ hr{
     background:none;
     z-index: 2;
 }
+
 
 
 .Fieldset .placeholder{
@@ -520,6 +618,7 @@ hr{
     font-size: 14px;
     font-weight: bold;
     color: var(--gray2);
+    height: 50px;
     width: 100%;
     border: none;
     background-color: #ff4e00;
@@ -527,110 +626,82 @@ hr{
 }
 
 
-.senators{
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 20px;
-}
+
 
 .senator .student-candidate-card{
     width: 319px;
 }
 
 .senators .img-candidate{
-
-    height:250px;
+    height:350px;
 }
 
 .senators .img-candidate img{
     width:100%;
     height:100%;
     object-fit: cover;
+    border-radius: 0% 0% 10% 10%;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.candidate-items-governors{
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    transform: scale(.9);
+}
+
+.candidate-item-wrapper{
+    display: flex;
+}
+
+.candidate-items-governors .img-candidate{
+    height:300px;
+}
+
+.candidate-items-governors .img-candidate img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    border-radius: 0% 0% 10% 10%;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.college-dept{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 20px;
+    color: var(--blue3);
 }
 
 
+.add-button-wrapper{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
 
-h2 {
-    margin: 15px;
-    padding: 0;
-  }
-  
-  .o-wrapper {
-    max-width: 500px;
-    margin: auto;
-    overflow: hidden;
-    padding-bottom: 50px;
-  }
-  
-  .c-slider {
-    display: flex;
-    justify-content: flex-start;
-    align-items: stretch;
-    width: 770px;
-  }
-  
-  .c-slide {
-    font-weight: normal;
-    margin-right: 20px;
-    background: #FFFFFF;
-    border-radius: 3px;
-    border-left: 10px solid #FCEDB7;
-    padding: 20px; 
-    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.15);
-    
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-    flex: 1;
-    overflow: hidden;
-  }
-  
-  .c-slide--salad {
-    border-color: #A3CCB6;
-  }
-  
-  .c-slide--dinner {
-    border-color: #EC7871;
-  }
-  
-  .c-slide__content {
-    width: 100%;
-  }
-  
-  .c-slide__actions {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-  }
-  
-  .c-slide__image-wrapper {
-    margin: 0;
-    padding: 0;
-    border-radius: 3px;
-    overflow: hidden;
-    height: 0;
-    padding-top: 66%;
-    position: relative;
-  }
-  
-  .c-slide__image {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    max-width: 100%;
-    min-height: 100%;
-    margin: auto;
-    padding: 0;
-    transform: translate3d(-50%, -50%, 0);
-  }
-  
-  .c-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .c-drag {
-    opacity: 0.2;
-  }
+.add-button-wrapper button{
+    height: 40px;
+    border: none;
+    padding: 0 10px;
+    background:  var(--gray1) ;
+    color:var(--blue3);
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.add-button-wrapper button:hover{
+    background: var(--blue3);
+    color: var(--gray1);
+}

@@ -9,6 +9,7 @@ else if ($page == "students") {
     include_once("views/evs/facilitator/students.php");
 }
 else if ($page == "report") {
+    
     echo "report";
 }
 else if ($page == "forum") {
