@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3308
--- Generation Time: Jun 26, 2022 at 02:36 PM
--- Server version: 10.4.20-MariaDB
--- PHP Version: 8.0.9
+-- Host: 127.0.0.1:3308
+-- Generation Time: Jul 02, 2022 at 01:10 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -45,6 +45,81 @@ INSERT INTO `admin` (`id`, `username`, `password`, `img`, `status`, `timeStampIn
 (1, 'admin', 'admin', 'avatar.svg', NULL, NULL, NULL),
 (6, 'supremo', '$2y$10$UwV.P8l.ZyGPs.T1x73sSuDIUulhiRYfjKDdeZxQPWz5M6nnkr15m', '278638696_4916507031801233_787450432618075058_n.jpg', 'active', '2022-06-25 08:01:43', NULL),
 (10, 'Supremood', '$2y$10$JfQ2bXFiCVcWQ7jidbrF5eTeeDlOJ9TTgEPvh9CxSALGUaKk6nF1K', 'avatar.svg', NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `candidates`
+--
+
+CREATE TABLE `candidates` (
+  `id` int(11) NOT NULL,
+  `evs_id` varchar(255) NOT NULL,
+  `partylist` varchar(255) NOT NULL,
+  `position` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `college` varchar(255) NOT NULL,
+  `course` varchar(255) NOT NULL,
+  `year` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `candidates`
+--
+
+INSERT INTO `candidates` (`id`, `evs_id`, `partylist`, `position`, `name`, `college`, `course`, `year`, `image`) VALUES
+(321, 'EVS-1cfaa0', 'KAKAMPENKKKKKK', 'President', 'Roronoa Zoro', 'COS', 'BSIT', '4th Year', 'roronoa_zoro___seppuku_punishement_by_mystig0_ddgz68r.png'),
+(322, 'EVS-1cfaa0', 'KAKAMPENKKKKKK', 'Vice-President', 'Luffy Taro', 'COS', 'BSIT', '4th Year', 'luffy__one_piece__phone_wallpaper_by_cdrwalls_ddewll2.jpg'),
+(323, 'EVS-1cfaa0', 'KAKAMPENKKKKKK', 'Secretary', 'Nami Swann', 'COE', 'BSCE', '4th Year', 'nami___whole_cake_island_by_mystig0_de41f3w.png'),
+(324, 'EVS-1cfaa0', 'KAKAMPENKKKKKK', 'Treasurer', 'IU BIBIBI', 'CLA', 'BSPS', '3rd Year', '2487791603214d6a2db8506cb6e78e3a.jpg'),
+(325, 'EVS-1cfaa0', 'KAKAMPENKKKKKK', 'Public Relation Officer', 'John Lappay', 'COS', 'BSCS', '4th Year', '278916317_4916460165139253_5743181954266378845_n.jpg'),
+(326, 'EVS-1cfaa0', 'KAKAMPENKKKKKK', 'Senator', 'Vinsmoke Zanji ', 'COS', 'BSIS', '4th Year', 'vinsmoke_sanji___germa_kingdom_prince_by_mystig0_ddld5dr.png'),
+(327, 'EVS-1cfaa0', 'KAKAMPENKKKKKK', 'Senator', 'IU Ulit', 'COS', 'BSCS', '4th Year', '2487791603214d6a2db8506cb6e78e3a.jpg'),
+(328, 'EVS-1cfaa0', 'KAKAMPENKKKKKK', 'Senator', 'Kilua Zoldik', 'COS', 'BSCS', '4th Year', 'killua_by_ariuemi_d8ta4wh.png'),
+(329, 'EVS-1cfaa0', 'KAKAMPENKKKKKK', 'Senator', 'Luffy', 'COS', 'BSCS', '4th Year', 'endimg.jpg'),
+(330, 'EVS-1cfaa0', 'KAKAMPENKKKKKK', 'Senator', 'Chris', 'COS', 'BSCS', '4th Year', '275745787_4994738907242867_7324403474439253685_n.jpg'),
+(331, 'EVS-1cfaa0', 'KAKAMPENKKKKKK', 'Senator', 'Angge', 'COS', 'BSCS', '4th Year', '258572574_3036506886666431_4678886428082228301_n.jpg'),
+(332, 'EVS-1cfaa0', 'KAKAMPENKKKKKK', 'Senator', 'IUU 222', 'COS', 'BSIT', '3rd Year', '2487791603214d6a2db8506cb6e78e3a.jpg'),
+(333, 'EVS-1cfaa0', 'KAKAMPENKKKKKK', 'Governor ( COS )', 'Nardo', 'COS', 'BSIT', '4th Year', '275745787_4994738907242867_7324403474439253685_n.jpg'),
+(334, 'EVS-1cfaa0', 'KAKAMPENKKKKKK', 'Vice Governor ( COS )', 'Anggeeeeee', 'COS', 'BSIT', '4th Year', '258572574_3036506886666431_4678886428082228301_n.jpg'),
+(339, 'EVS-1cfaa0', 'PWeeeNTes', 'President', 'Sandara Park', 'COS', 'BSIT', '3rd Year', 'sandra.png'),
+(340, 'EVS-1cfaa0', 'PWeeeNTes', 'Vice-President', 'Papi Jhon', 'COS', 'BSIT', '3rd Year', 'photo_2021-06-29_20-27-53.jpg'),
+(341, 'EVS-1cfaa0', 'PWeeeNTes', 'Sec', 'Kim Nerick', 'COS', 'BSIT', '4th Year', 'photo_2021-06-30_18-09-13.jpg'),
+(342, 'EVS-1cfaa0', 'PWeeeNTes', 'Treasurer', 'Angelo Malatik', 'COS', 'BSIT', '4th Year', 'gelo.png'),
+(343, 'EVS-1cfaa0', 'PWeeeNTes', 'Public Relation Officer', 'Renz Tigasin', 'COS', 'BSIT', '4th Year', 'renz1.png'),
+(344, 'EVS-1cfaa0', 'PWeeeNTes', 'Senator', 'Sharina SIlang Jane', 'COS', 'BSIT', '3rd Year', 'sha.png'),
+(345, 'EVS-1cfaa0', 'PWeeeNTes', 'Senator', 'Angelica', 'COS', 'BSIT', '3rd Year', '258572574_3036506886666431_4678886428082228301_n.jpg'),
+(346, 'EVS-1cfaa0', 'PWeeeNTes', 'Senator', 'Angelica', 'COS', 'BSIT', '3rd Year', 'killua_by_ariuemi_d8ta4wh.png'),
+(347, 'EVS-1cfaa0', 'PWeeeNTes', 'Senator', 'Mameee Jersey', 'COS', 'BSIT', '3rd Year', 'Bantaculo_Jersey Ann.jpg'),
+(348, 'EVS-1cfaa0', 'PWeeeNTes', 'Senator', 'Gon Fricks', 'COS', 'BSIT', '3rd Year', 'gon_by_ariuemi_d8ta4vx.png'),
+(349, 'EVS-1cfaa0', 'PWeeeNTes', 'Senator', 'Luff Taro', 'COS', 'BSIT', '3rd Year', 'luffy__one_piece__phone_wallpaper_by_cdrwalls_ddewll2.jpg'),
+(350, 'EVS-1cfaa0', 'PWeeeNTes', 'Senator', 'Nami', 'COS', 'BSIT', '3rd Year', 'nami___whole_cake_island_by_mystig0_de41f3w.png'),
+(351, 'EVS-1cfaa0', 'PWeeeNTes', 'Governor ( COS )', 'Zoro Juro', 'COS', 'BSIT', '4th Year', 'roronoa_zoro___seppuku_punishement_by_mystig0_ddgz68r.png'),
+(352, 'EVS-1cfaa0', 'PWeeeNTes', 'Vice Governor ( COS )', 'IU', 'COS', 'BSIT', '4th Year', '2487791603214d6a2db8506cb6e78e3a.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `election`
+--
+
+CREATE TABLE `election` (
+  `id` int(11) NOT NULL,
+  `election_id` varchar(255) NOT NULL,
+  `evs_id` varchar(255) NOT NULL,
+  `desc_election` longtext NOT NULL,
+  `date` date NOT NULL,
+  `start_time` time NOT NULL,
+  `end_time` time NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `election`
+--
+
+INSERT INTO `election` (`id`, `election_id`, `evs_id`, `desc_election`, `date`, `start_time`, `end_time`) VALUES
+(12, '2a8fd6c32589becf', 'EVS-1cfaa0', 'This is a test Election', '2022-07-04', '08:00:00', '20:00:00');
 
 -- --------------------------------------------------------
 
@@ -120,7 +195,8 @@ INSERT INTO `student_university_info` (`id`, `universityId`, `collegeDept`, `cou
 (55, 'ACLC-004245', 'College of Social Sciences and Philosophy (CSSP)', 'Bachelor of Arts in Philosophy (AB Philosophy)'),
 (56, 'ACLC-009573', 'College of Engineering (COE)', 'Bachelor of Science in Chemical Engineering (BSChE)'),
 (57, 'ACLC-001245', 'School of Economics (SE)', 'Bachelor of Arts in Economics (AB Economics)'),
-(58, 'ACLC-003523', 'College of Science (CS)', 'Bachelor of Science in Information Systems (BSIS)');
+(58, 'ACLC-003523', 'College of Science (CS)', 'Bachelor of Science in Information Systems (BSIS)'),
+(59, 'upd-92-2232', 'College of Architecture (Archi)', 'Bachelor of Science in Architecture (BS Architecture)');
 
 -- --------------------------------------------------------
 
@@ -2588,15 +2664,14 @@ CREATE TABLE `user_account` (
 --
 
 INSERT INTO `user_account` (`id`, `user_token`, `university_id_img`, `image_src`, `user_level`, `university`, `university_id`, `user_id`, `first_name`, `last_name`, `email`, `passw`, `status`, `time_stamp_in`, `time_stamp_out`) VALUES
-(47, '', '', '264165739_4501303539988253_4768271605685310825_n.jpg', 'Facilitator', 'Technological University of the Philippines-Manila', 'TUPM-19-2343', 'T-EVS-99-2312', 'John', 'Lappay', 'lappay.john@gmail.com', '$2y$10$jY62yzpanFfhvKNxu9bKAOe0A26AlZb3GE7V3hKgnGI/BboqF3uZu', 'inactive', '2022-06-23 13:54:04', '2022-06-23 14:16:33'),
 (48, '', 'IDCard-SAMPLE-02-767159.jpg', 'nayeon.jpg', 'Facilitator', 'University of the Philippines-Diliman', 'UPD-19-2343', 'EVS-c3c7c6', 'Na-yeon', 'Im', 'im.nayeon@gmail.com', '$2y$10$.CVeTjhjxCypLNRFlyZNUOB0ofmHpnl9h.ZIROnIOVxmiGaP8Gd9K', NULL, '2022-06-20 16:09:02', NULL),
-(63, '5d220ad91c339371', 'IDCard-SAMPLE-02-767159.jpg', NULL, 'student', 'University of the Philippines-Diliman', 'TUPM-22-2322', 'EVS-60a39b', 'Lee', 'Ji-eun', 'Lee.Ji-eun@tup.edu.ph', '$2y$10$.YK2XmEkLKsYCQEqNwHT0.0PWOk8FzQN58imfIQUshPmDyFSU0aNy', NULL, NULL, NULL),
-(64, '632f25ce5507fc48', 'IDCard-SAMPLE-02-767159.jpg', NULL, 'student', 'Technological University of the Philippines-Manila', 'PLM-22-2112', NULL, 'Oden', 'Kozuki', 'kozuki.oden@plm.edu.ph', '$2y$10$kG7jjStPOQtqJ0MYv1RK0.iO1elvEsHJcBNwjFnDr6IXxYC1VZG0.', NULL, NULL, NULL),
-(65, 'e4fedd77fd7a7f6c', 'IDCard-SAMPLE-02-767159.jpg', NULL, 'facilitator', 'University of the Philippines-Diliman', 'UPD-22-1029', 'EVS-1cfaa0', 'Hiyori', 'Kozuki', 'john.lappay@tup.edu.ph', '$2y$10$Ht3l13jaM00ytQnqAZqcDe8xNWbX18OqS1oydrNKKE8.W5iVvPKey', 'active', '2022-06-26 04:57:23', '2022-06-26 04:56:56'),
+(63, '5d220ad91c339371', 'IDCard-SAMPLE-02-767159.jpg', '264165739_4501303539988253_4768271605685310825_n.jpg', 'student', 'Technological University of the Philippines-Manila', 'TUPM-22-2322', 'EVS-60a39b', 'Lee', 'Ji-eun', 'Lee.Ji-eun@tup.edu.ph', '$2y$10$.YK2XmEkLKsYCQEqNwHT0.0PWOk8FzQN58imfIQUshPmDyFSU0aNy', NULL, NULL, NULL),
+(64, '632f25ce5507fc48', 'IDCard-SAMPLE-02-767159.jpg', NULL, 'student', 'Technological University of the Philippines-Manila', 'PLM-22-2112', 'EVS-368141', 'Oden', 'Kozuki', 'kozuki.oden@plm.edu.ph', '$2y$10$kG7jjStPOQtqJ0MYv1RK0.iO1elvEsHJcBNwjFnDr6IXxYC1VZG0.', NULL, NULL, NULL),
+(65, 'e4fedd77fd7a7f6c', 'IDCard-SAMPLE-02-767159.jpg', 'vinsmoke_sanji___germa_kingdom_prince_by_mystig0_ddld5dr.png', 'facilitator', 'Technological University of the Philippines-Manila', 'UPD-22-1029', 'EVS-1cfaa0', 'Hiyori', 'Kozuki', 'john.lappay@tup.edu.ph', '$2y$10$a1gr8z5dkKKX/Uhzt6aXM.QqJjad34NiIZTzSYP/oAusmkigdAFYy', 'active', '2022-07-02 01:52:04', '2022-07-01 14:19:56'),
 (66, 'd961b55dbd909ead', 'polIDfront.jpg', NULL, 'student', 'Technological University of the Philippines-Manila', 'TUPM-19-1123', NULL, 'Angelica', 'Perez', 'angeperez@tup.edu.ph', '$2y$10$0B5MaR0dNDPu71DKeVwIuOOgTpNkpIXCQx6t.6VtJhOIi02q07ZXW', NULL, NULL, NULL),
 (67, 'bb3b04fd55eca987', 'photo_2021-09-02_19-15-10.jpg', NULL, 'student', 'Technological University of the Philippines-Manila', 'TUPM-20-1222', NULL, 'Kristle', 'Cruz', 'kristlecruz@tup.edu.ph', '$2y$10$k2UUH146M5iqQ1rY6KQBxuOnNSq9Z7.zk732Q2Tt6PVHp4LXXrArW', NULL, NULL, NULL),
 (68, '3dad30ab865cba8c', 'photo_2021-09-02_19-15-10.jpg', NULL, 'student', 'Technological University of the Philippines-Manila', 'TUPM-21-2232', NULL, 'Sandara', 'Park', 'SandaraPark12@tup.edu.ph', '$2y$10$Ac5shsZUYHJXtxIPvB1xjuvtn7nDbKKKbEpCdwJHvM3jOEC9NEJpG', NULL, NULL, NULL),
-(69, '3f642331c2d868b1', 'photo_2021-09-02_19-15-10.jpg', NULL, 'student', 'Technological University of the Philippines-Manila', 'TUPM-19-0011', NULL, 'Althea', 'Dela Cruz', 'AltheaDelaCruz@tup.edu.ph', '$2y$10$H/Tm/k9K.HkeSo6KuFonf.crC/dieY0dyuco/77HgNzijmJweGSJO', NULL, NULL, NULL),
+(69, '3f642331c2d868b1', 'photo_2021-09-02_19-15-10.jpg', NULL, 'student', 'Technological University of the Philippines-Manila', 'TUPM-19-0011', 'EVS-6e23e4', 'Althea', 'Dela Cruz', 'AltheaDelaCruz@tup.edu.ph', '$2y$10$H/Tm/k9K.HkeSo6KuFonf.crC/dieY0dyuco/77HgNzijmJweGSJO', NULL, NULL, NULL),
 (70, '69adcc4a7cd56db0', 'photo_2021-09-02_19-15-10.jpg', NULL, 'student', 'Technological University of the Philippines-Manila', 'TUPV-20-1112', NULL, 'Juan Benjamin', 'Ongkiko', 'JuanBenjaminOngkiko@tup.edu.ph', '$2y$10$sgrMXVYXyCb2kjFjJHmFke/EAPLt/VlMEuuEo5kCFj2L9mf2z8S0O', NULL, NULL, NULL),
 (71, 'a90acc0130233df6', 'polIDfront.jpg', NULL, 'student', 'Technological Institute of the Philippines-Manila', 'TUPT-21-2423', NULL, 'Sonia', 'Arevalo', 'soniaarevalo@tup.edu.ph', '$2y$10$VD5lrtj8qibEWWzdsUZZ1ujCZPhPSPOwPRlmjrKQn2UX/R7lMs15G', NULL, NULL, NULL),
 (72, '6ee4a9645e10154f', 'polIDfront.jpg', NULL, 'student', 'Technological University of the Philippines-Manila', 'TUPM-22-2122', NULL, 'Tyra Marielle', 'Concepcion', 'TyraConcepcion@tup.edu.ph', '$2y$10$t6kv1XRJkE0oHcIvuly0HuRcVqDvSZq.KxCnDzOoZrcYvKVpPdpZO', NULL, NULL, NULL),
@@ -2618,8 +2693,8 @@ INSERT INTO `user_account` (`id`, `user_token`, `university_id_img`, `image_src`
 (89, 'a6633351795cc61f', 'images.jpg', NULL, 'student', 'Technological Institute of the Philippines-Manila', 'TIPM-1531', NULL, 'Kristian Ray', 'Cueto', 'kristiancueto@tup.edu.ph', '$2y$10$0FOsypH/EwQ3tN/KNhg1zeEvcgtmxr84SDTpw4ZnsVSv6U2OmbLu2', NULL, NULL, NULL),
 (90, '736a35c07f93b29e', 'girl.jpg', NULL, 'student', 'Technological Institute of the Philippines-Manila', 'TIPM-1633', NULL, 'Rose Tiffany', 'Go', 'rosego@tip.edu.ph', '$2y$10$GR2GMC4ABCDC3o7PSmuQvuIte3w85oex7aeZ86cYw1Xeu34944OZ2', NULL, NULL, NULL),
 (91, 'e7eb24615707b203', 'images (1).jpg', NULL, 'student', 'Technological Institute of the Philippines-Manila', 'TIPM-5633', NULL, 'Sharina Mae', 'Atienza', 'sharina@tip.edu.ph', '$2y$10$YK1cbo1z3A0OUJTK9PV2AeK7X1xU6YoeJaMnzWIMCc7HqcA.9biPi', NULL, NULL, NULL),
-(92, '074d08146c1c5f56', 'images (1).jpg', NULL, 'student', 'Polytechnic University of the Philippines', 'PUP-01-2311', NULL, 'Alyssa', 'Ebuenga', 'alyssa@pup.edu.ph', '$2y$10$ZFbM1TZYwxFQpjJJpCxRzO3almzMSX3SyWV6owF9GgpLv7qVVx.cC', NULL, NULL, NULL),
-(93, '0935fef9d4bccb6e', 'girl.jpg', NULL, 'student', 'Polytechnic University of the Philippines', 'PUP-01-2422', NULL, 'Chandy Mae', 'Fortunado', 'chandymae@pup.edu.ph', '$2y$10$HQGKJa.prTcm.8ucq7o1qeWAPfLxBjG3yXqT1I5d.qGi0u9JeRo9W', NULL, NULL, NULL),
+(92, '074d08146c1c5f56', 'images (1).jpg', NULL, 'student', 'Polytechnic University of the Philippines', 'PUP-01-2311', 'EVS-ee1f37', 'Alyssa', 'Ebuenga', 'alyssa@pup.edu.ph', '$2y$10$ZFbM1TZYwxFQpjJJpCxRzO3almzMSX3SyWV6owF9GgpLv7qVVx.cC', NULL, NULL, NULL),
+(93, '0935fef9d4bccb6e', 'girl.jpg', NULL, 'student', 'Polytechnic University of the Philippines', 'PUP-01-2422', 'EVS-968986', 'Chandy Mae', 'Fortunado', 'chandymae@pup.edu.ph', '$2y$10$HQGKJa.prTcm.8ucq7o1qeWAPfLxBjG3yXqT1I5d.qGi0u9JeRo9W', NULL, NULL, NULL),
 (94, '66d860fcfcfe5102', 'girl.jpg', NULL, 'student', 'Polytechnic University of the Philippines', 'PUP-01-2424', NULL, 'Julie Anne', 'Austria', 'julieastria@pup.edu.ph', '$2y$10$BdqEZzLknwLG8OEh0bOAeekPIVxrhEGBWObYvp8ifK3DeoNAjLSwq', NULL, NULL, NULL),
 (95, 'e07499278e5ff56c', 'sample-hcb-id-card-design-identity-document-115633449947amyankyx3.png', NULL, 'student', 'Polytechnic University of the Philippines', 'PUP-01-8533', NULL, 'Arnie ', 'Fraga', 'arniefraga@pup.edu.ph', '$2y$10$.vPQKfquEFUsKK3mWtnMXehsskXN0P8b/dEmaIUvZ/mbLQHxx2cq.', NULL, NULL, NULL),
 (96, '0e22e44bfec405db', 'images (1).jpg', NULL, 'student', 'Polytechnic University of the Philippines', 'PUP-01-0922', NULL, 'Erica', 'Ordonez', 'erica@pup.edu.ph', '$2y$10$8KCuT8IwyR9.TK5gUAVeQ.rEOTSVndvlZ3w.hW152i.5At6XvC0dG', NULL, NULL, NULL),
@@ -2628,7 +2703,7 @@ INSERT INTO `user_account` (`id`, `user_token`, `university_id_img`, `image_src`
 (99, '4e381c3fed3b7f4d', 'id.jpg', NULL, 'student', 'Polytechnic University of the Philippines', 'PUP-01-4342', NULL, 'James Irish', 'Sorrosa', 'JamesSorrosa@pup.edu.ph', '$2y$10$h9wwwt/B0lCUDtrsFmNU1eHRaYD5hqX5PdkttjA68zDo4jk3Jbgfq', NULL, NULL, NULL),
 (100, 'aa9c2c77dadfc7f5', 'girl.jpg', NULL, 'student', 'Polytechnic University of The Philippines-Open University', 'PUP-01-4563', NULL, 'Angela Mae', 'Miranda', 'angelamiranda@pup.edu.ph', '$2y$10$0Ry9x7DnDadn2qnP3w/vWePmvpPz6RMOjj79xjtTOX7u2vCil..J.', NULL, NULL, NULL),
 (101, '5611c237a1ae8b11', 'photo_2021-09-02_19-15-10.jpg', NULL, 'student', 'Polytechnic University of the Philippines', 'PUP-01-3423', NULL, 'Madeline', 'Domingsil', 'madelinedomingsil@pup.edu.ph', '$2y$10$BYS0EtIg.QPLt6BLzVGTWOwqqpiN12UwxMYs6NkCm8nNjMWFBt1Fq', NULL, NULL, NULL),
-(102, '1cb299674c3e3c0f', 'images (1).jpg', NULL, 'student', 'Polytechnic University of the Philippines', 'PUP-01-3745', NULL, 'Ricalyn', 'Lee', 'ricalyn@pup.edu.ph', '$2y$10$gw1O5gd.HhWZCGv1BHHX5.jp9k.yLlVo7uPX7wd8LK1cKZZInqOoq', NULL, NULL, NULL),
+(102, '1cb299674c3e3c0f', 'images (1).jpg', NULL, 'student', 'Polytechnic University of the Philippines', 'PUP-01-3745', 'EVS-3b8042', 'Ricalyn', 'Lee', 'ricalyn@pup.edu.ph', '$2y$10$gw1O5gd.HhWZCGv1BHHX5.jp9k.yLlVo7uPX7wd8LK1cKZZInqOoq', NULL, NULL, NULL),
 (103, '4cfad926e5b11f6d', 'staff-id-card-500x500.jpg', NULL, 'student', 'Polytechnic University of the Philippines', 'PUP-01-3458', NULL, 'Jhon Carlos', 'Drilon', 'jhondrilon@pup.edu.ph', '$2y$10$plaLq.RqW0UC7gqRRMyvSOMi.v/Wma4qXB6kav6tu/Hof2pzOVDG2', NULL, NULL, NULL),
 (104, '231319b192fcaa5c', 'images (2).jpg', NULL, 'student', 'St. Anthony College-Calapan City', 'STAC-0222-1455', NULL, 'Christian', 'Cemanes', 'Christiancemanes@stac.edu.ph', '$2y$10$Wj6NOrAKxSM0rUwjcisdb.pBWraAferjaT/fehrIt2bhNTYc4gW.m', NULL, NULL, NULL),
 (105, 'fe4c9e0ea280c93c', 'staff-id-card-500x500.jpg', NULL, 'student', 'St. Anthony College-Calapan City', 'STAC-0219-0231', NULL, 'Anthony Carl', 'Lopez', 'anthony@stac.edu.ph', '$2y$10$orZ3EOe9lPoGNhy2pSGsK.0ykYde./CjL1QKZRqI1b1ofLqGIfDCu', NULL, NULL, NULL),
@@ -2646,7 +2721,20 @@ INSERT INTO `user_account` (`id`, `user_token`, `university_id_img`, `image_src`
 (117, '843239f434abe098', 'images (2).jpg', NULL, 'student', 'ACLC College of Calapan', 'ACLC-004245', NULL, 'Karl Justine', 'Tuando', 'JustineTuando@aclc.edu.ph', '$2y$10$H3q9fynEy3T2QqQZUNKZX.fPKdXjcmVkRP.kv0KICQGmHyABXxKM.', NULL, NULL, NULL),
 (118, '28177a30d676bffe', 'd13n5n9-88aeca2e-b1c0-442e-92be-204945086946.jpg', NULL, 'student', 'ACLC College of Calapan', 'ACLC-009573', NULL, 'karla Kia', 'Borrero', 'Kiaborrero@aclc.edu.ph', '$2y$10$xaRy5w/yBFOgqL5u9oQFZ.5PEauhdw3ms2Ss13dc94ldP6dqMLGG.', NULL, NULL, NULL),
 (119, 'f6abd14b78e99b9e', '45ce71d327b12134eb887faa0bbf329d.jpg', NULL, 'student', 'ACLC College of Calapan', 'ACLC-001245', NULL, 'Rufia Mae', 'Cruz', 'rufiacruz@aclc.edu.ph', '$2y$10$7e3RbEhuFFXAuW299eyPZux0X.hL1YKdmOmif8ffhF3FkVf3JyCXa', NULL, NULL, NULL),
-(120, '1938f0be61f41780', 'images (1).jpg', NULL, 'student', 'ACLC College of Calapan', 'ACLC-003523', NULL, 'Sophia Anne', 'Sanchez', 'Sophiasanchez@aclc.edu.ph', '$2y$10$/xNSJl.7TuhW0fYChWFVjuY4QskbRHUcAlvr9Vy6EYL8dlX.BKe5S', NULL, NULL, NULL);
+(120, '1938f0be61f41780', 'images (1).jpg', NULL, 'student', 'ACLC College of Calapan', 'ACLC-003523', NULL, 'Sophia Anne', 'Sanchez', 'Sophiasanchez@aclc.edu.ph', '$2y$10$/xNSJl.7TuhW0fYChWFVjuY4QskbRHUcAlvr9Vy6EYL8dlX.BKe5S', NULL, NULL, NULL),
+(121, 'c28d7a15084bf88e', 'IDCard-SAMPLE-02-767159.jpg', NULL, 'student', 'University of the Philippines-Diliman', 'upd-92-2232', NULL, 'Luffy', 'Monkey', 'luffy.monkey@up.edu.ph', '$2y$10$YX.05MmJjUi8U.3.HiU6B.AHwFTMzH2F9ldP8lGnAiRz6CMMfwPUW', NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `vote_count`
+--
+
+CREATE TABLE `vote_count` (
+  `id` int(11) NOT NULL,
+  `election_id` varchar(255) NOT NULL,
+  `evs_id` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Indexes for dumped tables
@@ -2658,6 +2746,18 @@ INSERT INTO `user_account` (`id`, `user_token`, `university_id_img`, `image_src`
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `username` (`username`);
+
+--
+-- Indexes for table `candidates`
+--
+ALTER TABLE `candidates`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `election`
+--
+ALTER TABLE `election`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `student_university_info`
@@ -2678,6 +2778,12 @@ ALTER TABLE `user_account`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `vote_count`
+--
+ALTER TABLE `vote_count`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -2688,10 +2794,22 @@ ALTER TABLE `admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
+-- AUTO_INCREMENT for table `candidates`
+--
+ALTER TABLE `candidates`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=353;
+
+--
+-- AUTO_INCREMENT for table `election`
+--
+ALTER TABLE `election`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
 -- AUTO_INCREMENT for table `student_university_info`
 --
 ALTER TABLE `student_university_info`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT for table `university`
@@ -2703,7 +2821,13 @@ ALTER TABLE `university`
 -- AUTO_INCREMENT for table `user_account`
 --
 ALTER TABLE `user_account`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=122;
+
+--
+-- AUTO_INCREMENT for table `vote_count`
+--
+ALTER TABLE `vote_count`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
