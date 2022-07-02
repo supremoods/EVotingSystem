@@ -1,3 +1,8 @@
+<?php
+  if(isset($_SESSION['userAccount'])){
+    header("location:/student/forum");
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

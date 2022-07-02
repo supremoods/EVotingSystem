@@ -19,8 +19,6 @@ get('/facilitator/$page', 'views/evs/facilitator/index.php');
 
 get('/logout', 'controller/LogoutController.php');
 
-get('/forum', 'views/evs/forum.php');
-
 post('/populate', 'controller/populateUniversity.php');
 
 post('/register', 'controller/RegisterController.php');
@@ -34,6 +32,12 @@ post('/form1','controller/registrationController/form1Controller.php');
 post('/form2','controller/registrationController/form2Controller.php');
 
 post('/form3','controller/registrationController/form3Controller.php');
+
+#---------------------- student routing --------------------#
+
+get('/student/$page', 'views/evs/index.php');
+
+route('/loadVotingList', 'controller/studentController/loadElements/loadCandidates.php');
 
 #---------------------- admin routing --------------------#
 get('/admin', 'views/evs/admin/auth.php');
@@ -110,6 +114,12 @@ route('/loadUserNameSidebarFacilitator', 'controller/facilitator/loadElement/loa
 route('/loadUserNameNavbarFacilitator', 'controller/facilitator/loadElement/loadUsernameNavbar.php');
 
 post('/RegisterElectionsController', 'controller/facilitator/RegisterElectionsController.php');
+
+route('/loadCandidates', 'controller/facilitator/loadElement/loadCandidates.php');
+
+route('/loadCandidatesProfile', 'controller/facilitator/loadElement/loadCandidatesProfile.php');
+
+post('/updateCandidates', 'controller/facilitator/updateCandidates.php');
 // #---------------------- end --------------------#
 
 

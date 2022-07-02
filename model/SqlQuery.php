@@ -21,20 +21,15 @@
             $database = new Database();
 
             $sql = "INSERT INTO user_account (
-                id, 
                 university_id_img,
                 image_src, 
                 user_level, 
                 university_id, 
                 user_id, 
                 first_name, 
-                middle_name, 
                 last_name, 
                 email, 
                 passw, 
-                status, 
-                time_stamp_in, 
-                time_stamp_out
                 ) VALUES (
                     NULL,
                     '$this->image_src',
@@ -43,13 +38,10 @@
                     '$this->universityID', 
                     NULL, 
                     '$this->first_name', 
-                    '$this->middle_name', 
                     '$this->last_name', 
                     '$this->email', 
                     '$this->passw', 
-                    NULL, 
-                    NULL, 
-                    NULL
+
                     )";
           
             $result = $database->dbConnection()->query($sql);
@@ -62,7 +54,7 @@
             }
         }
 
-        public function insertStudentForm1($token){
+        public function insertForm1($token){
             $database = new Database();
 
             $sql = "INSERT INTO user_account(
@@ -237,8 +229,7 @@
                         $this->university = $row['university'];
                         $this->universityID = $row['university_id'];
                         $this->userID = $row['user_id'];
-                        $this->first_name = $row['first_name'];
-                        $this->middle_name = $row['middle_name'];
+                        $this->first_name = $row['first_name']; 
                         $this->last_name = $row['last_name'];
                         $this->email = $row['email'];
                         $this->passw = $row['passw'];

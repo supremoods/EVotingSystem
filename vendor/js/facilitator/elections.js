@@ -1,3 +1,6 @@
+
+
+
 function loadRequestModal() {
  
     let requestModal = document.querySelector('.register-candidates-wrapper');
@@ -7,56 +10,9 @@ function loadRequestModal() {
     for(let i=0; i<document.querySelectorAll(".reg-input").length; i++){
         document.querySelectorAll(".reg-input")[i].value = "";
     }
-  
 
     // window.location.href = "/facilitator/elections/2sadf";
 }
-
-const optionMenuStatus = document.querySelector(".select-menu-status"),
-    selectBtnStatus = optionMenuStatus.querySelector(".select-btn-status"),
-    optionsStatus = optionMenuStatus.querySelectorAll(".optionStatus"),
-    sBtn_text_Status = optionMenuStatus.querySelector(".sBtn-text-status");
-
-selectBtnStatus.addEventListener("click", () =>
-    optionMenuStatus.classList.toggle("active")
-);
-
-optionsStatus.forEach((optionStatus) => {
-    optionStatus.addEventListener("click", () => {
-        let selectedOption = optionStatus.querySelector(".option-text-status").innerText;
-        sBtn_text_Status.innerText = selectedOption;
-        optionMenuStatus.classList.remove("active");
-    });
-});
-
-
-const optionMenu = document.querySelector(".select-menu"),
-    selectBtn = optionMenu.querySelector(".select-btn"),
-    options = optionMenu.querySelectorAll(".option"),
-    sBtn_text = optionMenu.querySelector(".sBtn-text");
-
-
-selectBtn.addEventListener("click", () =>
-    optionMenu.classList.toggle("active")
-);
-
-
-options.forEach((option) => {
-    option.addEventListener("click", () => {
-        let selectedOption = option.querySelector(".option-text").innerText;
-        sBtn_text.innerText = selectedOption;
-        optionMenu.classList.remove("active");
-    });
-});
-
-
-const filterIcon = document.querySelector(".filter-icon"),
-    filterWrapper = document.querySelector(".filter-wrapper");
-
-filterIcon.addEventListener("click", () => {
-    filterWrapper.classList.toggle("active")
-});
-
 
 
 
@@ -347,3 +303,395 @@ $(document).ready(function(){
     });
 
 });
+
+
+
+function loadcandidateProfile(id){
+    isOnDiv = true;
+    let candidateProfile = document.querySelector('.candidate-profile-wrapper');
+    $(".pre-loading-img").addClass("active");
+    candidateProfile.classList.toggle('modal');
+    $('.candidate-profile-card').empty();
+    $('.candidate-profile-card').append(preloaderProfile());
+    $('.candidate-profile-card').load('/loadCandidatesProfile',{
+     id: id,
+    },function(){
+        $(".pre-loading-img").removeClass("active");
+    });
+
+}
+  
+function loadCandidateProfileNP(){
+    isOnDiv = false;
+    let candidateProfile = document.querySelector('.candidate-profile-wrapper');
+    candidateProfile.classList.toggle('modal');
+ 
+}
+
+  
+function preloaderProfile(){
+    var preloader = '<div class="preloader"><img src="../vendor/img/loader/loading.gif" alt="" srcset=""></div>';
+    return preloader;
+}
+  
+function editInfoSwitch(){
+    var btnSave = document.querySelector(".edit-fields").disabled;
+    var inputField = document.querySelector(".input-field").disabled;
+
+    if(btnSave && inputField){
+        $(".edit-fields").removeAttr("disabled");
+        $(".input-field").removeAttr("disabled");
+    }else{
+        $(".edit-fields").attr("disabled","disabled");
+        $(".input-field").attr("disabled","disabled");
+    }
+}
+
+function triggerUpload(){
+    let candidateImg = document.querySelector('.candidatesImg');
+    candidateImg.click();
+}
+
+function UploadImage() {  
+    let candidateContainer = document.querySelector('.candidateContainer');             
+    let candidateImg = document.querySelector('.candidatesImg');
+    candidateImg.addEventListener("change", function(){
+        const file = this.files[0];
+        if(file){
+          const reader = new FileReader();
+          reader.onload = function(){
+            const result = reader.result;
+            candidateContainer.src = result;
+          }
+          reader.readAsDataURL(file);
+        } 
+    });
+}   
+
+
+$(document).ready(function(){
+    $("#update-candidate").on("submit",function(e){
+        e.preventDefault();
+        console.log("updateCandidate");
+        var form_data = new FormData(this); 
+        $.ajax({
+            url : "/updateCandidates",
+            method: "POST",
+            data: form_data,
+            dataType: "JSON",
+            processData:false,
+            contentType:false,
+            beforeSend: function(){  
+                $(".pre-loading-img").addClass("active");
+            },
+            complete: function(){
+                $(".pre-loading-img").removeClass("active");
+            },
+            success:function(data){
+                console.log(data);
+                $('.edit-fields').prop('disabled', true);
+                $('.input-field').prop('disabled', true);
+            },
+            error: function (request, status, error) {
+                console.log(request.responseText);
+            } 
+        });
+        
+    });
+});
+
+
+var isOnDiv = false;
+
+$(document).ready(function(){
+    $(".candidate-list-content").load("/loadCandidates");
+});
+  
+$(".candidate-list-content").mouseenter(
+    function(){
+      isOnDiv = true;
+    }
+);
+  
+$(".candidate-list-content").mouseleave(
+    function(){
+        isOnDiv = false;
+    }
+);
+
+
+setInterval(function(){
+    if(!isOnDiv){
+        $(".candidate-list-content").load("/loadCandidates");
+    }
+}, 500);
+
+
+
+const presidentCanvas = document.getElementById('president-chart').getContext('2d');
+const presidentChart = new Chart(presidentCanvas, {
+    type: 'bar',
+    data: {
+        labels: ['Roronoa Zoro', 'Monkey D. Luffy'],
+        datasets: [{
+            label: 'Presidential Votes',
+            data: [120, 9512],
+            backgroundColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+            ],
+            borderWidth: 1,
+            borderRadius: 15
+        }]
+    },
+    options: {
+        plugins: {
+            legend: {
+                display: false
+            },
+        },
+        maintainAspectRatio: false,
+        indexAxis: 'y',
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+
+const vicePresidentCanvas = document.getElementById('vice-president-chart').getContext('2d');
+const vicePresidentChart = new Chart(vicePresidentCanvas, {
+    type: 'bar',
+    data: {
+        labels: ['Roronoa Zoro', 'Monkey D. Luffy'],
+        datasets: [{
+            label: 'Vice Presidential Votes',
+            data: [120, 9512],
+            backgroundColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+            ],
+            borderWidth: 1,
+            borderRadius: 15
+        }]
+    },
+    options: {
+        plugins: {
+            legend: {
+                display: false
+            },
+        },
+        maintainAspectRatio: false,
+        indexAxis: 'y',
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+
+const secretaryCanvas = document.getElementById('secretary-chart').getContext('2d');
+const secretaryChart = new Chart(secretaryCanvas, {
+    type: 'bar',
+    data: {
+        labels: ['Roronoa Zoro', 'Monkey D. Luffy'],
+        datasets: [{
+            label: 'Secretary Votes',
+            data: [120, 9512],
+            backgroundColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+            ],
+            borderWidth: 1,
+            borderRadius: 15
+        }]
+    },
+    options: {
+        plugins: {
+            legend: {
+                display: false
+            },
+        },
+        maintainAspectRatio: false,
+        indexAxis: 'y',
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+
+const proCanvas = document.getElementById('pro-chart').getContext('2d');
+const proChart = new Chart(proCanvas, {
+    type: 'bar',
+    data: {
+        labels: ['Roronoa Zoro', 'Monkey D. Luffy'],
+        datasets: [{
+            label: 'Public Relations Officer Votes',
+            data: [120, 9512],
+            backgroundColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+            ],
+            borderWidth: 1,
+            borderRadius: 15
+        }]
+    },
+    options: {
+        plugins: {
+            legend: {
+                display: false
+            },
+        },
+        maintainAspectRatio: false,
+        indexAxis: 'y',
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+const treasurerCanvas = document.getElementById('treasurer-chart').getContext('2d');
+const treasurerChart = new Chart(treasurerCanvas, {
+    type: 'bar',
+    data: {
+        labels: ['Roronoa Zoro', 'Monkey D. Luffy'],
+        datasets: [{
+            label: 'Treasurer Votes',
+            data: [120, 9512],
+            backgroundColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+            ],
+            borderWidth: 1,
+            borderRadius: 15
+        }]
+    },
+    options: {
+        plugins: {
+            legend: {
+                display: false
+            },
+        },
+        maintainAspectRatio: false,
+        indexAxis: 'y',
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+
+const senatorsCanvas = document.getElementById('senators-chart').getContext('2d');
+var senatorsChart = new Chart(senatorsCanvas, {
+    type: 'bar',
+    data: {
+        labels: ['Roronoa Zoro', 'Monkey D. Luffy', 'Nami', 'Usopp', 'Vinsmoke Sanji'],
+        datasets: [{
+            label: 'Senators Votes',
+            data: [120, 9512, 2212, 425, 377],
+            backgroundColor: [
+                'rgba(54, 162, 235, 1)',
+
+            ],
+            borderColor: [
+                'rgba(54, 162, 235, 1)',
+            ],
+            borderWidth: 1,
+            borderRadius: 15
+        }]
+    },
+    options: {
+        plugins: {
+            legend: {
+                display: false
+            },
+        },
+        maintainAspectRatio: false,
+        indexAxis: 'y',
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+var governorsChart;
+
+
+
+
+for(let i=0; i<document.querySelectorAll(".gov-chart").length; i++){
+    const governorsCanvas = document.querySelectorAll(".gov-chart")[i].getContext('2d');
+    var governorsChart = new Chart(governorsCanvas, {
+        type: 'bar',
+        data: {
+            labels: ['Roronoa Zoro', 'Monkey D. Luffy', 'Nami', 'Usopp', 'Vinsmoke Sanji'],
+            datasets: [{
+                label: 'Senators Votes',
+                data: [120, 9512, 2212, 425, 377],
+                backgroundColor: [
+                    'rgba(54, 162, 235, 1)',
+    
+                ],
+                borderColor: [
+                    'rgba(54, 162, 235, 1)',
+                ],
+                borderWidth: 1,
+                borderRadius: 15
+            }]
+        },
+        options: {
+            plugins: {
+                legend: {
+                    display: false
+                },
+            },
+            maintainAspectRatio: false,
+            indexAxis: 'y',
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+    
+}
+

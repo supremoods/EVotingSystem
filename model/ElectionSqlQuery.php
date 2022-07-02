@@ -63,6 +63,96 @@
 
         }
 
+        public function getFacilitatorId($evs_id){
+            $sql = "SELECT university FROM user_account WHERE user_id = '$evs_id'";
+            $result = $this->dbConnection()->query($sql);
 
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    $univ = $row['university'];
+                }
+            }
+            
+            $sql = "SELECT user_account.user_id
+                FROM user_account
+                WHERE user_account.university = '$univ'
+                AND user_account.user_level = 'Facilitator'";
+
+            $result = $this->dbConnection()->query($sql);
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    $user_id = $row['user_id'];
+                }
+            }
+
+
+            return $user_id;
+
+        }
+        public function selectPartylist($evs_id)
+        {
+            $sql = "SELECT DISTINCT candidates.partylist
+                FROM election,
+                    user_account
+                    INNER JOIN candidates
+                        ON user_account.user_id = candidates.evs_id
+                        WHERE user_account.user_id = '$evs_id' ";
+
+            $result = $this->dbConnection()->query($sql);
+            $partylist = array();
+            while ($row = $result->fetch_assoc()) {
+                $partylist[] = $row['partylist'];
+            }
+            return $partylist;
+        }
+
+        public function fetchPartyCandidates($partylist){
+            $sql = "SELECT election.election_id, candidates.*
+                    FROM user_account
+                    INNER JOIN candidates
+                        ON user_account.user_id = candidates.evs_id
+                    INNER JOIN election
+                        ON candidates.evs_id = election.evs_id
+                    WHERE candidates.partylist = '$partylist'";
+
+            $result = $this->dbConnection()->query($sql);
+    
+            return $result;
+        }
+
+        public function selectCandidate($candidate_id){
+            $sql = "SELECT * FROM candidates WHERE id = '$candidate_id'";
+            $result = $this->dbConnection()->query($sql);
+            $row = $result->fetch_assoc();
+            return $row;
+        }
+
+        public function updateCandidatesQuery(){
+            if(!empty($this->image)){
+                $sql = "UPDATE candidates SET
+                name = '$this->name',
+                college = '$this->college',
+                course = '$this->course',
+                year = '$this->year',
+                image = '$this->image'
+                WHERE id = '$this->id'";
+            }else{
+                $sql = "UPDATE candidates SET
+                name = '$this->name',
+                college = '$this->college',
+                course = '$this->course',
+                year = '$this->year'
+                WHERE id = '$this->id'";
+            }
+           
+            $result = $this->dbConnection()->query($sql);
+            if ($result) {
+                // if the query is successful, return true
+                return true;
+            } else {
+                // if the query is not successful, return false
+                return false;
+            }
+        }
     }
 ?>

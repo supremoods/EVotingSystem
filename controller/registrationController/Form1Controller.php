@@ -6,7 +6,7 @@
 
         public function register(){
             $token = $this->user_token();
-            if($this->insertStudentForm1($token)){
+            if($this->insertForm1($token)){
                 echo json_encode(array('message' => 'success'));
             }else{
                 echo json_encode(array('message' => 'failed'));
