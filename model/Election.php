@@ -1,6 +1,6 @@
 <?php
-    require_once('config/ConfigDB.php');
 
+    require_once('config/ConfigDB.php');
 
     class Election extends Database{
 

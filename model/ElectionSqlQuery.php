@@ -120,6 +120,20 @@
             return $result;
         }
 
+        public function fetchPosition($evs_id){
+            $sql = "SELECT DISTINCT candidates.position
+                FROM election,
+                    user_account
+                    INNER JOIN candidates
+                        ON user_account.user_id = candidates.evs_id
+                        WHERE user_account.user_id = '$evs_id' ";
+
+            $result = $this->dbConnection()->query($sql);
+
+
+            return $result;
+        }
+
         public function selectCandidate($candidate_id){
             $sql = "SELECT * FROM candidates WHERE id = '$candidate_id'";
             $result = $this->dbConnection()->query($sql);
@@ -145,6 +159,25 @@
                 WHERE id = '$this->id'";
             }
            
+            $result = $this->dbConnection()->query($sql);
+            if ($result) {
+                // if the query is successful, return true
+                return true;
+            } else {
+                // if the query is not successful, return false
+                return false;
+            }
+        }
+
+        public function insertVotes($evs_id, $candidate_id){
+            $sql = "INSERT INTO vote_count(
+                candidate_id,
+                evs_id
+            ) VALUES(
+                $candidate_id,
+                '$evs_id'
+            )";
+
             $result = $this->dbConnection()->query($sql);
             if ($result) {
                 // if the query is successful, return true

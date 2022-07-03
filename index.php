@@ -33,11 +33,24 @@ post('/form2','controller/registrationController/form2Controller.php');
 
 post('/form3','controller/registrationController/form3Controller.php');
 
+
+
+
 #---------------------- student routing --------------------#
 
 get('/student/$page', 'views/evs/index.php');
 
 route('/loadVotingList', 'controller/studentController/loadElements/loadCandidates.php');
+
+route('/loadVotedCandidates', 'controller/studentController/loadElements/loadVotedCandidates.php');
+
+post('/VotesController', 'controller/studentController/VotesController.php');
+
+get('/CheckVotedController', 'controller/studentController/CheckVotedController.php');
+
+post('/GetVoteCountsController', 'controller/facilitator/GetVoteCountsController.php');
+
+route('/loadCharts', 'controller/facilitator/loadElement/loadCharts.php');
 
 #---------------------- admin routing --------------------#
 get('/admin', 'views/evs/admin/auth.php');

@@ -11,7 +11,22 @@
             </div>
         </div>
         <div class="vote-btn-item">
-            <button><span class="material-icons">how_to_vote</span>Vote</button>
+            <button onclick="submitVote()"><span class="material-icons" >how_to_vote</span>Vote</button>
         </div>
     </div>
+    <div class="toast">
+        <div class="toast-content">
+            <span class="material-icons check"></span>
+            <div class="message">
+                <span class="text text-1"></span>
+                <span class="text text-2"></span>
+            </div>
+        </div>
+        <span class="material-icons close">close</span>
+        <div class="progress"></div>
+    </div>
+</div>
+
+<div class="loading">
+    <img src="../vendor/img/loader/loading.gif">
 </div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3308
--- Generation Time: Jul 02, 2022 at 01:10 PM
+-- Generation Time: Jul 03, 2022 at 11:23 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.6
 
@@ -85,7 +85,7 @@ INSERT INTO `candidates` (`id`, `evs_id`, `partylist`, `position`, `name`, `coll
 (334, 'EVS-1cfaa0', 'KAKAMPENKKKKKK', 'Vice Governor ( COS )', 'Anggeeeeee', 'COS', 'BSIT', '4th Year', '258572574_3036506886666431_4678886428082228301_n.jpg'),
 (339, 'EVS-1cfaa0', 'PWeeeNTes', 'President', 'Sandara Park', 'COS', 'BSIT', '3rd Year', 'sandra.png'),
 (340, 'EVS-1cfaa0', 'PWeeeNTes', 'Vice-President', 'Papi Jhon', 'COS', 'BSIT', '3rd Year', 'photo_2021-06-29_20-27-53.jpg'),
-(341, 'EVS-1cfaa0', 'PWeeeNTes', 'Sec', 'Kim Nerick', 'COS', 'BSIT', '4th Year', 'photo_2021-06-30_18-09-13.jpg'),
+(341, 'EVS-1cfaa0', 'PWeeeNTes', 'Secretary', 'Kim Nerick', 'COS', 'BSIT', '4th Year', 'photo_2021-06-30_18-09-13.jpg'),
 (342, 'EVS-1cfaa0', 'PWeeeNTes', 'Treasurer', 'Angelo Malatik', 'COS', 'BSIT', '4th Year', 'gelo.png'),
 (343, 'EVS-1cfaa0', 'PWeeeNTes', 'Public Relation Officer', 'Renz Tigasin', 'COS', 'BSIT', '4th Year', 'renz1.png'),
 (344, 'EVS-1cfaa0', 'PWeeeNTes', 'Senator', 'Sharina SIlang Jane', 'COS', 'BSIT', '3rd Year', 'sha.png'),
@@ -197,6 +197,56 @@ INSERT INTO `student_university_info` (`id`, `universityId`, `collegeDept`, `cou
 (57, 'ACLC-001245', 'School of Economics (SE)', 'Bachelor of Arts in Economics (AB Economics)'),
 (58, 'ACLC-003523', 'College of Science (CS)', 'Bachelor of Science in Information Systems (BSIS)'),
 (59, 'upd-92-2232', 'College of Architecture (Archi)', 'Bachelor of Science in Architecture (BS Architecture)');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `total_vote_counts`
+--
+
+CREATE TABLE `total_vote_counts` (
+  `id` int(11) NOT NULL,
+  `election_id` varchar(255) NOT NULL,
+  `candidate_id` int(11) NOT NULL,
+  `partylist` varchar(255) NOT NULL,
+  `position` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `votes` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `total_vote_counts`
+--
+
+INSERT INTO `total_vote_counts` (`id`, `election_id`, `candidate_id`, `partylist`, `position`, `name`, `votes`) VALUES
+(6, 'EVS-1cfaa0', 321, 'KAKAMPENKKKKKK', 'President', 'Roronoa Zoro', 0),
+(7, 'EVS-1cfaa0', 322, 'KAKAMPENKKKKKK', 'Vice-President', 'Luffy Taro', 0),
+(8, 'EVS-1cfaa0', 323, 'KAKAMPENKKKKKK', 'Secretary', 'Nami Swann', 1),
+(9, 'EVS-1cfaa0', 324, 'KAKAMPENKKKKKK', 'Treasurer', 'IU BIBIBI', 0),
+(10, 'EVS-1cfaa0', 325, 'KAKAMPENKKKKKK', 'Public Relation Officer', 'John Lappay', 1),
+(11, 'EVS-1cfaa0', 326, 'KAKAMPENKKKKKK', 'Senator', 'Vinsmoke Zanji ', 0),
+(12, 'EVS-1cfaa0', 327, 'KAKAMPENKKKKKK', 'Senator', 'IU Ulit', 0),
+(13, 'EVS-1cfaa0', 328, 'KAKAMPENKKKKKK', 'Senator', 'Kilua Zoldik', 1),
+(14, 'EVS-1cfaa0', 329, 'KAKAMPENKKKKKK', 'Senator', 'Luffy', 0),
+(15, 'EVS-1cfaa0', 330, 'KAKAMPENKKKKKK', 'Senator', 'Chris', 1),
+(16, 'EVS-1cfaa0', 331, 'KAKAMPENKKKKKK', 'Senator', 'Angge', 0),
+(17, 'EVS-1cfaa0', 332, 'KAKAMPENKKKKKK', 'Senator', 'IUU 222', 0),
+(18, 'EVS-1cfaa0', 333, 'KAKAMPENKKKKKK', 'Governor ( COS )', 'Nardo', 0),
+(19, 'EVS-1cfaa0', 334, 'KAKAMPENKKKKKK', 'Vice Governor ( COS )', 'Anggeeeeee', 0),
+(20, 'EVS-1cfaa0', 339, 'PWeeeNTes', 'President', 'Sandara Park', 2),
+(21, 'EVS-1cfaa0', 340, 'PWeeeNTes', 'Vice-President', 'Papi Jhon', 2),
+(22, 'EVS-1cfaa0', 341, 'PWeeeNTes', 'Secretary', 'Kim Nerick', 1),
+(23, 'EVS-1cfaa0', 342, 'PWeeeNTes', 'Treasurer', 'Angelo Malatik', 2),
+(24, 'EVS-1cfaa0', 343, 'PWeeeNTes', 'Public Relation Officer', 'Renz Tigasin', 1),
+(25, 'EVS-1cfaa0', 344, 'PWeeeNTes', 'Senator', 'Sharina SIlang Jane', 2),
+(26, 'EVS-1cfaa0', 345, 'PWeeeNTes', 'Senator', 'Angelica', 2),
+(27, 'EVS-1cfaa0', 346, 'PWeeeNTes', 'Senator', 'Angelica', 1),
+(28, 'EVS-1cfaa0', 347, 'PWeeeNTes', 'Senator', 'Mameee Jersey', 2),
+(29, 'EVS-1cfaa0', 348, 'PWeeeNTes', 'Senator', 'Gon Fricks', 1),
+(30, 'EVS-1cfaa0', 349, 'PWeeeNTes', 'Senator', 'Luff Taro', 2),
+(31, 'EVS-1cfaa0', 350, 'PWeeeNTes', 'Senator', 'Nami', 2),
+(32, 'EVS-1cfaa0', 351, 'PWeeeNTes', 'Governor ( COS )', 'Zoro Juro', 2),
+(33, 'EVS-1cfaa0', 352, 'PWeeeNTes', 'Vice Governor ( COS )', 'IU', 2);
 
 -- --------------------------------------------------------
 
@@ -2667,17 +2717,17 @@ INSERT INTO `user_account` (`id`, `user_token`, `university_id_img`, `image_src`
 (48, '', 'IDCard-SAMPLE-02-767159.jpg', 'nayeon.jpg', 'Facilitator', 'University of the Philippines-Diliman', 'UPD-19-2343', 'EVS-c3c7c6', 'Na-yeon', 'Im', 'im.nayeon@gmail.com', '$2y$10$.CVeTjhjxCypLNRFlyZNUOB0ofmHpnl9h.ZIROnIOVxmiGaP8Gd9K', NULL, '2022-06-20 16:09:02', NULL),
 (63, '5d220ad91c339371', 'IDCard-SAMPLE-02-767159.jpg', '264165739_4501303539988253_4768271605685310825_n.jpg', 'student', 'Technological University of the Philippines-Manila', 'TUPM-22-2322', 'EVS-60a39b', 'Lee', 'Ji-eun', 'Lee.Ji-eun@tup.edu.ph', '$2y$10$.YK2XmEkLKsYCQEqNwHT0.0PWOk8FzQN58imfIQUshPmDyFSU0aNy', NULL, NULL, NULL),
 (64, '632f25ce5507fc48', 'IDCard-SAMPLE-02-767159.jpg', NULL, 'student', 'Technological University of the Philippines-Manila', 'PLM-22-2112', 'EVS-368141', 'Oden', 'Kozuki', 'kozuki.oden@plm.edu.ph', '$2y$10$kG7jjStPOQtqJ0MYv1RK0.iO1elvEsHJcBNwjFnDr6IXxYC1VZG0.', NULL, NULL, NULL),
-(65, 'e4fedd77fd7a7f6c', 'IDCard-SAMPLE-02-767159.jpg', 'vinsmoke_sanji___germa_kingdom_prince_by_mystig0_ddld5dr.png', 'facilitator', 'Technological University of the Philippines-Manila', 'UPD-22-1029', 'EVS-1cfaa0', 'Hiyori', 'Kozuki', 'john.lappay@tup.edu.ph', '$2y$10$a1gr8z5dkKKX/Uhzt6aXM.QqJjad34NiIZTzSYP/oAusmkigdAFYy', 'active', '2022-07-02 01:52:04', '2022-07-01 14:19:56'),
-(66, 'd961b55dbd909ead', 'polIDfront.jpg', NULL, 'student', 'Technological University of the Philippines-Manila', 'TUPM-19-1123', NULL, 'Angelica', 'Perez', 'angeperez@tup.edu.ph', '$2y$10$0B5MaR0dNDPu71DKeVwIuOOgTpNkpIXCQx6t.6VtJhOIi02q07ZXW', NULL, NULL, NULL),
+(65, 'e4fedd77fd7a7f6c', 'IDCard-SAMPLE-02-767159.jpg', 'vinsmoke_sanji___germa_kingdom_prince_by_mystig0_ddld5dr.png', 'facilitator', 'Technological University of the Philippines-Manila', 'UPD-22-1029', 'EVS-1cfaa0', 'Hiyori', 'Kozuki', 'john.lappay@tup.edu.ph', '$2y$10$a1gr8z5dkKKX/Uhzt6aXM.QqJjad34NiIZTzSYP/oAusmkigdAFYy', 'active', '2022-07-03 07:33:29', '2022-07-03 07:03:14'),
+(66, 'd961b55dbd909ead', 'polIDfront.jpg', NULL, 'student', 'Technological University of the Philippines-Manila', 'TUPM-19-1123', 'EVS-b6d456', 'Angelica', 'Perez', 'angeperez@tup.edu.ph', '$2y$10$0B5MaR0dNDPu71DKeVwIuOOgTpNkpIXCQx6t.6VtJhOIi02q07ZXW', NULL, NULL, NULL),
 (67, 'bb3b04fd55eca987', 'photo_2021-09-02_19-15-10.jpg', NULL, 'student', 'Technological University of the Philippines-Manila', 'TUPM-20-1222', NULL, 'Kristle', 'Cruz', 'kristlecruz@tup.edu.ph', '$2y$10$k2UUH146M5iqQ1rY6KQBxuOnNSq9Z7.zk732Q2Tt6PVHp4LXXrArW', NULL, NULL, NULL),
-(68, '3dad30ab865cba8c', 'photo_2021-09-02_19-15-10.jpg', NULL, 'student', 'Technological University of the Philippines-Manila', 'TUPM-21-2232', NULL, 'Sandara', 'Park', 'SandaraPark12@tup.edu.ph', '$2y$10$Ac5shsZUYHJXtxIPvB1xjuvtn7nDbKKKbEpCdwJHvM3jOEC9NEJpG', NULL, NULL, NULL),
-(69, '3f642331c2d868b1', 'photo_2021-09-02_19-15-10.jpg', NULL, 'student', 'Technological University of the Philippines-Manila', 'TUPM-19-0011', 'EVS-6e23e4', 'Althea', 'Dela Cruz', 'AltheaDelaCruz@tup.edu.ph', '$2y$10$H/Tm/k9K.HkeSo6KuFonf.crC/dieY0dyuco/77HgNzijmJweGSJO', NULL, NULL, NULL),
+(68, '3dad30ab865cba8c', 'photo_2021-09-02_19-15-10.jpg', NULL, 'student', 'Technological University of the Philippines-Manila', 'TUPM-21-2232', 'EVS-a7590a', 'Sandara', 'Park', 'SandaraPark12@tup.edu.ph', '$2y$10$a1gr8z5dkKKX/Uhzt6aXM.QqJjad34NiIZTzSYP/oAusmkigdAFYy', NULL, NULL, NULL),
+(69, '3f642331c2d868b1', 'photo_2021-09-02_19-15-10.jpg', NULL, 'student', 'Technological University of the Philippines-Manila', 'TUPM-19-0011', 'EVS-6e23e4', 'Althea', 'Dela Cruz', 'AltheaDelaCruz@tup.edu.ph', '$2y$10$.YK2XmEkLKsYCQEqNwHT0.0PWOk8FzQN58imfIQUshPmDyFSU0aNy', NULL, NULL, NULL),
 (70, '69adcc4a7cd56db0', 'photo_2021-09-02_19-15-10.jpg', NULL, 'student', 'Technological University of the Philippines-Manila', 'TUPV-20-1112', NULL, 'Juan Benjamin', 'Ongkiko', 'JuanBenjaminOngkiko@tup.edu.ph', '$2y$10$sgrMXVYXyCb2kjFjJHmFke/EAPLt/VlMEuuEo5kCFj2L9mf2z8S0O', NULL, NULL, NULL),
 (71, 'a90acc0130233df6', 'polIDfront.jpg', NULL, 'student', 'Technological Institute of the Philippines-Manila', 'TUPT-21-2423', NULL, 'Sonia', 'Arevalo', 'soniaarevalo@tup.edu.ph', '$2y$10$VD5lrtj8qibEWWzdsUZZ1ujCZPhPSPOwPRlmjrKQn2UX/R7lMs15G', NULL, NULL, NULL),
 (72, '6ee4a9645e10154f', 'polIDfront.jpg', NULL, 'student', 'Technological University of the Philippines-Manila', 'TUPM-22-2122', NULL, 'Tyra Marielle', 'Concepcion', 'TyraConcepcion@tup.edu.ph', '$2y$10$t6kv1XRJkE0oHcIvuly0HuRcVqDvSZq.KxCnDzOoZrcYvKVpPdpZO', NULL, NULL, NULL),
 (73, '2d8f5a47bc720d84', 'polIDfront.jpg', NULL, 'student', 'Technological University of the Philippines-Visayas', 'TUPV-22-2222', NULL, 'Rejie Mei', 'Tenorio', 'RejieMei@tup.edu.ph', '$2y$10$/PE.J5kTMlDQ/zbXy34R7eoP6jx6ZpI4ipG4SKdazWtKC/cjEfGU6', NULL, NULL, NULL),
 (74, '82e2f4b3b0fe2992', 'polIDfront.jpg', NULL, 'student', 'Technological University of the Philippines-Manila', 'TUPM-19-2148', NULL, 'John Angelo', 'Silvestre', 'AngeloSilvestre@tup.edu.ph', '$2y$10$PWiSqIVHE/Rx3S1LBSXAl.Z1IP9AzbuPzqMUt4qTXw1KeOgWHnekS', NULL, NULL, NULL),
-(75, 'ec72c68a0af5f29e', 'polIDfront.jpg', NULL, 'student', 'Technological University of the Philippines-Manila', 'TUPM-21-2976', NULL, 'Meckal', 'Tanalgo', 'MeckalTanalgo@tup.edu.ph', '$2y$10$FvizF9x/fUIoJSeYUdvfceKWJAc4hFTmMil8PIG7EHGcRLqKaQwDC', NULL, NULL, NULL),
+(75, 'ec72c68a0af5f29e', 'polIDfront.jpg', NULL, 'student', 'Technological University of the Philippines-Manila', 'TUPM-21-2976', 'EVS-d82372', 'Meckal', 'Tanalgo', 'MeckalTanalgo@tup.edu.ph', '$2y$10$.YK2XmEkLKsYCQEqNwHT0.0PWOk8FzQN58imfIQUshPmDyFSU0aNy', NULL, NULL, NULL),
 (76, '9c8a9471cbe9202b', 'photo_2021-09-02_19-15-10.jpg', NULL, 'student', 'Technological University of the Philippines-Manila', 'TUPM-19-2020', NULL, 'Chrischelle', 'Dungao', 'Chrischelle@tup.edu.ph', '$2y$10$opd8r1nyob0i1tAo0splee6zVdTQ4YjDejM9GQ3IgZtZV56aLIpqy', NULL, NULL, NULL),
 (77, 'b3fa9eb31ecff833', 'girl.jpg', NULL, 'student', 'Technological University of the Philippines-Manila', 'TUP,-21-2076', NULL, 'Patricia Marielle', 'Lebajan', 'PatriciaLebajan@tup.edu.ph', '$2y$10$3yipb3KCLKislrMLt66jm.9U9iPwPGArGw4FbkE23Y.oLI67mNMMK', NULL, NULL, NULL),
 (78, '2cc1f049051fc6b7', 'images.jpg', NULL, 'student', 'Technological University of the Philippines-Manila', 'TUPM-19-2132', NULL, 'Russel', 'Icalina', 'RusselIcalina@tup.edu.ph', '$2y$10$Gn4V6Xfkwd7ZNPsICe3GgO1D3cSVard81cqIpuSVQ8k3ebUl6FpEO', NULL, NULL, NULL),
@@ -2732,9 +2782,43 @@ INSERT INTO `user_account` (`id`, `user_token`, `university_id_img`, `image_src`
 
 CREATE TABLE `vote_count` (
   `id` int(11) NOT NULL,
-  `election_id` varchar(255) NOT NULL,
+  `candidate_id` varchar(255) NOT NULL,
   `evs_id` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `vote_count`
+--
+
+INSERT INTO `vote_count` (`id`, `candidate_id`, `evs_id`) VALUES
+(43, '339', 'EVS-d82372'),
+(44, '340', 'EVS-d82372'),
+(45, '323', 'EVS-d82372'),
+(46, '342', 'EVS-d82372'),
+(47, '325', 'EVS-d82372'),
+(48, '344', 'EVS-d82372'),
+(49, '345', 'EVS-d82372'),
+(50, '328', 'EVS-d82372'),
+(51, '347', 'EVS-d82372'),
+(52, '330', 'EVS-d82372'),
+(53, '349', 'EVS-d82372'),
+(54, '350', 'EVS-d82372'),
+(55, '351', 'EVS-d82372'),
+(56, '352', 'EVS-d82372'),
+(57, '339', 'EVS-a7590a'),
+(58, '340', 'EVS-a7590a'),
+(59, '341', 'EVS-a7590a'),
+(60, '342', 'EVS-a7590a'),
+(61, '343', 'EVS-a7590a'),
+(62, '344', 'EVS-a7590a'),
+(63, '345', 'EVS-a7590a'),
+(64, '346', 'EVS-a7590a'),
+(65, '347', 'EVS-a7590a'),
+(66, '348', 'EVS-a7590a'),
+(67, '349', 'EVS-a7590a'),
+(68, '350', 'EVS-a7590a'),
+(69, '351', 'EVS-a7590a'),
+(70, '352', 'EVS-a7590a');
 
 --
 -- Indexes for dumped tables
@@ -2763,6 +2847,12 @@ ALTER TABLE `election`
 -- Indexes for table `student_university_info`
 --
 ALTER TABLE `student_university_info`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `total_vote_counts`
+--
+ALTER TABLE `total_vote_counts`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -2812,6 +2902,12 @@ ALTER TABLE `student_university_info`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
+-- AUTO_INCREMENT for table `total_vote_counts`
+--
+ALTER TABLE `total_vote_counts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+
+--
 -- AUTO_INCREMENT for table `university`
 --
 ALTER TABLE `university`
@@ -2827,7 +2923,7 @@ ALTER TABLE `user_account`
 -- AUTO_INCREMENT for table `vote_count`
 --
 ALTER TABLE `vote_count`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -7,76 +7,10 @@
             <h1>Elections</h1>
         </div>
     </div>
-    <div class="chart-items">
-        <div class="vote-chart-item">
-            <h1>President</h1>
-            <div class="vote-charts">
-                <canvas id="president-chart" ></canvas>
-            </div>
-        </div>
-        <div class="vote-chart-item">
-            <h1>Vice President</h1>
-            <div class="vote-charts">
-                <canvas id="vice-president-chart"></canvas>
-            </div>
-        </div>
+
+    <div class="chart-wrapper">
+
     </div>
-    <div class="chart-items">
-        <div class="vote-chart-item">
-            <h1>Secretary</h1>
-            <div class="vote-charts">
-                <canvas id="secretary-chart"></canvas>
-            </div>
-        </div>
-        <div class="vote-chart-item">
-            <h1>Treasurer</h1>
-            <div class="vote-charts">
-                <canvas id="treasurer-chart"></canvas>
-            </div>
-        </div>
-        <div class="vote-chart-item">
-            <h1>Public Relations Officer</h1>
-            <div class="vote-charts">
-                <canvas id="pro-chart"></canvas>
-            </div>
-        </div>
-    </div>
-    <div class="chart-items chart-senators">
-        <div class="vote-chart-item chart-senators-item">
-            <h1>Senator</h1>
-            <div class="vote-charts">
-                <canvas id="senators-chart"></canvas>
-            </div>
-        </div>
-    </div>
-    <div class="chart-items chart-governors">
-        <div class="vote-chart-item chart-governors-item">
-            <h1>Governor</h1>
-            <div class="vote-charts">
-                <canvas class="gov-chart"></canvas>
-            </div>
-        </div>
-        <div class="vote-chart-item chart-governors-item">
-            <h1>Vice Governor</h1>
-            <div class="vote-charts">
-                <canvas class="gov-chart"></canvas>
-            </div>
-        </div>
-    </div>
-    <!-- <div class="chart-items">
-        <div class="vote-charts">
-            <canvas id="president-chart" ></canvas>
-        </div>
-        <div class="vote-charts">
-            <canvas id="vice-president-chart"></canvas>
-        </div>
-        <div class="vote-charts">
-            <canvas id="secretary-chart"></canvas>
-        </div>
-        <div class="vote-charts">
-            <canvas id="pro-chart"></canvas>
-        </div>
-    </div> -->
 
     <div class="request-elections-modal-btn">
         <button class="btn btn-request-election" onclick="loadRequestModal()">

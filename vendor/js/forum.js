@@ -1,9 +1,4 @@
 
-function profileContent(){
-    let dropdown = document.querySelector('.profile_content');
-    dropdown.classList.toggle('active');
-}
-
 let slideIndex = 0;
 showSlides();
 
@@ -25,9 +20,3 @@ function showSlides() {
 }
 
 
-
-//onclick in logout button
-$('.logout').click(function(){
-  alert("Logout Successful");
-  window.location.href = "../../controller/LogoutController.php";
-});

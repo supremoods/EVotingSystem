@@ -1,6 +1,3 @@
-
-
-
 function loadRequestModal() {
  
     let requestModal = document.querySelector('.register-candidates-wrapper');
@@ -14,7 +11,9 @@ function loadRequestModal() {
     // window.location.href = "/facilitator/elections/2sadf";
 }
 
-
+$(document).ready(function(){
+    $(".chart-wrapper").load("/loadCharts");
+});
 
 $('#senators').owlCarousel({
     loop:false,
@@ -427,235 +426,145 @@ setInterval(function(){
 }, 500);
 
 
+var partylist_1;
+var partylist_2;
+presidentNames = [];   
+presidentVoteCounts = [];
+vicePresidentNames = [];   
+vicePresidentVoteCounts = [];
+secretaryNames = [];   
+secretaryVoteCounts = [];
+treasurerNames = [];   
+treasurerVoteCounts = [];
+proNames = [];   
+proVoteCounts = [];
 
-const presidentCanvas = document.getElementById('president-chart').getContext('2d');
-const presidentChart = new Chart(presidentCanvas, {
-    type: 'bar',
-    data: {
-        labels: ['Roronoa Zoro', 'Monkey D. Luffy'],
-        datasets: [{
-            label: 'Presidential Votes',
-            data: [120, 9512],
-            backgroundColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
+var candidateVoteCounts = [];
+var candidateNames = [];
 
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-            ],
-            borderWidth: 1,
-            borderRadius: 15
-        }]
-    },
-    options: {
-        plugins: {
-            legend: {
-                display: false
-            },
-        },
-        maintainAspectRatio: false,
-        indexAxis: 'y',
-        scales: {
-            y: {
-                beginAtZero: true
+
+var chartIsEmpty = true;
+
+// sort the array in descending order
+function sortVoteCountsDesc(){
+    for (let i = 0; i < candidateVoteCounts.length; ++i){
+        for (let j = i + 1; j < candidateVoteCounts.length; ++j){
+           if (candidateVoteCounts[i] < candidateVoteCounts[j]){
+              let temp = candidateVoteCounts[i];
+              candidateVoteCounts[i] = candidateVoteCounts[j];
+              candidateVoteCounts[j] = temp;
+
+              temp = candidateNames[i];
+              candidateNames[i] = candidateNames[j];
+              candidateNames[j] = temp;
+           }
+        }
+     }
+}
+
+
+function getVoteCount(index){
+    candidateNames.push(JSON.stringify(partylist_1[index].name));
+    candidateNames.push(JSON.stringify(partylist_2[index].name));
+    candidateVoteCounts.push(parseInt(partylist_1[index].votes));
+    candidateVoteCounts.push(parseInt(partylist_2[index].votes));
+    sortVoteCountsDesc();
+}
+
+
+var SenatorFilled = false;
+
+setInterval(function(){
+$(document).ready(function(){
+    $.ajax({
+        type: "POST",
+        url: "/GetVoteCountsController",
+        dataType: "JSON",
+        success: function(data){
+            if(data){
+                partylist_1 = data.partylist_1;
+                partylist_2 = data.partylist_2;
+            
+                let count = 0;
+                if(chartIsEmpty){
+                    for(let i=0; i<document.querySelectorAll(".vote-candidates-chart").length; i++){
+                        if(JSON.stringify(partylist_1[i].position) ==="\"Senator\"" && !SenatorFilled){
+                            for (let j = 0; j < partylist_1.length; j++){
+                                if(JSON.stringify(partylist_1[j].position) ==="\"Senator\""){
+                                    getVoteCount(j);
+                                    count++;
+                                }
+                            }
+                            SenatorFilled = true;
+                            console.log('####');
+                            console.log(i + " " + count);
+                        }else{
+
+                            console.log('----');
+                            if(SenatorFilled){
+                                getVoteCount((i+count)-1);
+                            }else{
+                                getVoteCount(i);
+                            }
+                          
+                          
+                            console.log(i);
+                        }
+         
+                        var chartDataCandidates = {
+                            labels: candidateNames,
+                            datasets: [
+                                {
+                                label: "Vote Counts",
+                                data: candidateVoteCounts,
+                                backgroundColor: [
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 99, 132, 1)',
+                    
+                                ],
+                                borderRadius: 15
+                                }
+        
+                            ]
+                        };
+        
+                        var voteCandidatesChart = document.querySelectorAll('.vote-candidates-chart')[i].getContext('2d');
+                        
+                        voteChart = new Chart(voteCandidatesChart, {
+                            type: 'bar',
+                            data: chartDataCandidates,
+                            options: {
+                                plugins: {
+                                    legend: {
+                                        display: false
+                                    },
+                                },
+                                maintainAspectRatio: false,
+                                indexAxis: 'y',
+                                scales: {
+                                    y: {
+                                        beginAtZero: true
+                                    }
+                                }
+                            }
+                        });
+
+
+                        candidateNames = [];
+                        candidateVoteCounts = [];
+                    }
+                }
+              
+                chartIsEmpty = false;
+
             }
         }
-    }
+    });
 });
 
-
-const vicePresidentCanvas = document.getElementById('vice-president-chart').getContext('2d');
-const vicePresidentChart = new Chart(vicePresidentCanvas, {
-    type: 'bar',
-    data: {
-        labels: ['Roronoa Zoro', 'Monkey D. Luffy'],
-        datasets: [{
-            label: 'Vice Presidential Votes',
-            data: [120, 9512],
-            backgroundColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-            ],
-            borderWidth: 1,
-            borderRadius: 15
-        }]
-    },
-    options: {
-        plugins: {
-            legend: {
-                display: false
-            },
-        },
-        maintainAspectRatio: false,
-        indexAxis: 'y',
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    }
-});
-
-
-const secretaryCanvas = document.getElementById('secretary-chart').getContext('2d');
-const secretaryChart = new Chart(secretaryCanvas, {
-    type: 'bar',
-    data: {
-        labels: ['Roronoa Zoro', 'Monkey D. Luffy'],
-        datasets: [{
-            label: 'Secretary Votes',
-            data: [120, 9512],
-            backgroundColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-            ],
-            borderWidth: 1,
-            borderRadius: 15
-        }]
-    },
-    options: {
-        plugins: {
-            legend: {
-                display: false
-            },
-        },
-        maintainAspectRatio: false,
-        indexAxis: 'y',
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    }
-});
-
-
-const proCanvas = document.getElementById('pro-chart').getContext('2d');
-const proChart = new Chart(proCanvas, {
-    type: 'bar',
-    data: {
-        labels: ['Roronoa Zoro', 'Monkey D. Luffy'],
-        datasets: [{
-            label: 'Public Relations Officer Votes',
-            data: [120, 9512],
-            backgroundColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-            ],
-            borderWidth: 1,
-            borderRadius: 15
-        }]
-    },
-    options: {
-        plugins: {
-            legend: {
-                display: false
-            },
-        },
-        maintainAspectRatio: false,
-        indexAxis: 'y',
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    }
-});
-
-const treasurerCanvas = document.getElementById('treasurer-chart').getContext('2d');
-const treasurerChart = new Chart(treasurerCanvas, {
-    type: 'bar',
-    data: {
-        labels: ['Roronoa Zoro', 'Monkey D. Luffy'],
-        datasets: [{
-            label: 'Treasurer Votes',
-            data: [120, 9512],
-            backgroundColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-            ],
-            borderWidth: 1,
-            borderRadius: 15
-        }]
-    },
-    options: {
-        plugins: {
-            legend: {
-                display: false
-            },
-        },
-        maintainAspectRatio: false,
-        indexAxis: 'y',
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    }
-});
-
-
-const senatorsCanvas = document.getElementById('senators-chart').getContext('2d');
-var senatorsChart = new Chart(senatorsCanvas, {
-    type: 'bar',
-    data: {
-        labels: ['Roronoa Zoro', 'Monkey D. Luffy', 'Nami', 'Usopp', 'Vinsmoke Sanji'],
-        datasets: [{
-            label: 'Senators Votes',
-            data: [120, 9512, 2212, 425, 377],
-            backgroundColor: [
-                'rgba(54, 162, 235, 1)',
-
-            ],
-            borderColor: [
-                'rgba(54, 162, 235, 1)',
-            ],
-            borderWidth: 1,
-            borderRadius: 15
-        }]
-    },
-    options: {
-        plugins: {
-            legend: {
-                display: false
-            },
-        },
-        maintainAspectRatio: false,
-        indexAxis: 'y',
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    }
-});
+}, 500);
 
 var governorsChart;
-
-
-
 
 for(let i=0; i<document.querySelectorAll(".gov-chart").length; i++){
     const governorsCanvas = document.querySelectorAll(".gov-chart")[i].getContext('2d');

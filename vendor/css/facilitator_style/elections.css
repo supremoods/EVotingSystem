@@ -1068,15 +1068,22 @@ hr{
     font-size: 12px;
     padding: 10px;
 }
-.chart-senators-item,
-.chart-senators .vote-charts{
+
+.vote-charts.senator{
+    height: 632px;
+    width: 100%;
+}
+
+.chart-senators-item{
+    height:100%;
     width: 100%;
 }
 
 .chart-governors{
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
 }
 
 .chart-governors-item .vote-charts{
     width: 100%;
 }
+
