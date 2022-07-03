@@ -425,7 +425,23 @@ setInterval(function(){
     }
 }, 500);
 
-
+$(document).ready(function(){
+    $.ajax({
+        type: "GET",
+        url: "/checkIfElectionExist",
+        dataType: "json",
+        success: function(data){
+            if(data.exist){
+                $(".btn-add-election").addClass("hide");
+                $(".btn-drop-election").removeClass("hide");
+            }else{
+                $(".btn-add-election").removeClass("hide");
+                $(".btn-drop-election").addClass("hide");
+            }
+        }
+    });
+});
+  
 var partylist_1;
 var partylist_2;
 presidentNames = [];   

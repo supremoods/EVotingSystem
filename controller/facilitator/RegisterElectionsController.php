@@ -64,7 +64,7 @@
 
             array_push($imageName, 'president-image','vice-president-image','sec-image','treasurer-image','pro-image');
 
-            array_push($position,'president','vice-president','sec','treasurer','pro');
+            array_push($position,'President','Vice-President','','Treasurer','Public Relation Officer');
 
             array_push($name, $_POST['president-candidate-name'], $_POST['vice-pres-candidate-name'], $_POST['sec-candidate-name'], $_POST['treasurer-candidate-name'], $_POST['pro-candidate-name']);
 

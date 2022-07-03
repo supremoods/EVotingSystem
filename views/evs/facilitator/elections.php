@@ -4,17 +4,25 @@
  
     <div class="u_elections_header">
         <div class="u_elections_header_title">
+            <h1>Elections </h1>
+        </div>
+        <div class="u_elections_header_status">
             <h1>Elections</h1>
         </div>
+
     </div>
 
     <div class="chart-wrapper">
 
     </div>
 
-    <div class="request-elections-modal-btn">
-        <button class="btn btn-request-election" onclick="loadRequestModal()">
+    <div class="elections-modal-btn">
+        <button class="btn btn-add-election" onclick="loadRequestModal()">
             <span class="material-symbols-outlined">add</span>Add Elections
+        </button>
+
+        <button class="btn btn-drop-election hide" onclick="loadRequestModal()">
+            <span class="material-symbols-outlined">delete</span>DROP Elections
         </button>
     </div>
 

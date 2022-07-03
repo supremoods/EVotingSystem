@@ -89,6 +89,7 @@
             return $user_id;
 
         }
+
         public function selectPartylist($evs_id)
         {
             $sql = "SELECT DISTINCT candidates.partylist
@@ -186,6 +187,13 @@
                 // if the query is not successful, return false
                 return false;
             }
+        }
+
+        public function selectElection($evs_id){
+            $sql = "SELECT * FROM election WHERE evs_id = '$evs_id'";
+            $result = $this->dbConnection()->query($sql);
+
+            return $result;
         }
     }
 ?>

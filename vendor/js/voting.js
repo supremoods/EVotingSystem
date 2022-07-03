@@ -9,10 +9,8 @@ $.ajax({
     dataType: "json",
     success: function(data){
         if(data.voted){
-
             $(".voting-wrapper-items").load("/loadVotedCandidates");
             $(".vote-btn-item").addClass("hide");
-        
         }else{
             $(".voting-wrapper-items").load("/loadVotingList");
             voteClick();

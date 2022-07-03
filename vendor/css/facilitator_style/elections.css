@@ -17,7 +17,6 @@
 
 .u_elections_wrapper .u_elections_header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
@@ -25,28 +24,60 @@
     font-size: 2rem;
     font-weight: bold;
     color: var(--blue3);
-    margin-bottom: 20px;
 }
+.u_elections_wrapper .u_elections_header .u_elections_header_status {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--blue3);
 
-.request-elections-modal-btn {
+}
+.elections-modal-btn {
+    position: fixed;
     display: flex;
     width: 100%;
     justify-content: flex-end;
     padding: 0 10px;
-    margin-bottom: 10px;
+    top:7em;
+    z-index: 999;
+    right: 5em;
 }
 
-.request-elections-modal-btn .btn {
+.elections-modal-btn .btn{
     display: flex;
     padding: 10px;
     border-radius: 5px;
     border: none;
     background-color: var(--gray1);
     box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.3);
-    color: rgb(255, 88, 88);
+    color: rgb(20, 201, 65);
     font-weight: bold;
     cursor: pointer;
 }
+
+.elections-modal-btn .btn-add-election.hide{
+    display: none;
+}
+
+.elections-modal-btn .btn-drop-election.hide{
+    display:none;
+}
+
+.elections-modal-btn .btn-drop-election{
+    display: flex;
+    color: rgb(255, 114, 109);
+}
+
+
+.elections-modal-btn .btn-drop-election:hover{
+    background-color: rgb(255, 114, 109);
+    color: white;
+}
+
+.elections-modal-btn .btn-add-election:hover{
+    background-color: rgb(20, 201, 65);
+    color: white;
+}
+
 
 .u_election_body {
     display: flex;
