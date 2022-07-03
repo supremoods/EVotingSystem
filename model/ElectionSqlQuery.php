@@ -195,5 +195,29 @@
 
             return $result;
         }
+
+        public function dropElectionUniv($evs_id){
+            $sql = "DELETE vote_count FROM vote_count INNER JOIN candidates
+              ON vote_count.candidate_id = candidates.id
+              WHERE candidates.evs_id = '$evs_id'";
+            $result = $this->dbConnection()->query($sql);
+
+            $sql = "DELETE FROM total_vote_counts WHERE election_id = '$evs_id'";
+            $result = $this->dbConnection()->query($sql);
+
+            $sql = "DELETE FROM candidates WHERE evs_id = '$evs_id'";
+            $result = $this->dbConnection()->query($sql);
+
+            $sql = "DELETE FROM election WHERE evs_id = '$evs_id'";
+            $result = $this->dbConnection()->query($sql);
+
+            if ($result) {
+                // if the query is successful, return true
+                return true;
+            } else {
+                // if the query is not successful, return false
+                return false;
+            }
+        }
     }
 ?>

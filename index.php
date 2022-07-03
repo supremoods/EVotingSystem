@@ -135,6 +135,10 @@ route('/loadCandidatesProfile', 'controller/facilitator/loadElement/loadCandidat
 post('/updateCandidates', 'controller/facilitator/updateCandidates.php');
 
 get('/checkIfElectionExist', 'controller/facilitator/checkIfElectionExist.php');
+
+post('/dropElection', 'controller/facilitator/dropElection.php');
+
+
 // #---------------------- end --------------------#
 
 

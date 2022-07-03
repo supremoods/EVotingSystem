@@ -54,6 +54,89 @@
     cursor: pointer;
 }
 
+
+.alert-drop-wrapper{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.alert-drop-wrapper.active{
+    display: flex;
+}
+
+.alert-drop-content{
+    display: flex;
+    background: var(--gray1);
+    flex-direction: column;
+    border-radius: 10px;
+
+}
+.question-text{
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--gray7);
+    padding: 20px;
+    margin-bottom: 10px;
+}
+.alert-drop-btn{
+    background: var(--gray2);
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    border-radius: 10px;
+}
+
+.alert-drop-btn button{
+    border-radius: 10px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    cursor: pointer;
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.3);
+
+}
+
+.btn-drop-election-yes{
+    background-color: var(--red1);
+    color: var(--gray1);
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-drop-election-yes:hover{
+    background-color: #f87373;
+
+}
+
+.btn-drop-election-no:hover{
+    background-color: var(--gray2);
+}
+
+.btn-drop-election-no{
+    background-color: var(--gray1);
+    color: var(--red1);
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
 .elections-modal-btn .btn-add-election.hide{
     display: none;
 }

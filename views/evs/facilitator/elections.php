@@ -21,10 +21,27 @@
             <span class="material-symbols-outlined">add</span>Add Elections
         </button>
 
-        <button class="btn btn-drop-election hide" onclick="loadRequestModal()">
+        <button class="btn btn-drop-election hide" onclick="loadDropElection()">
             <span class="material-symbols-outlined">delete</span>DROP Elections
         </button>
     </div>
+
+    <div class="alert-drop-wrapper">
+        <div class="alert-drop-content">
+            <div class="question-text">
+                <p>Are you sure you want to drop this election?</p>
+            </div>
+            <div class="alert-drop-btn">
+                <button class="btn btn-drop-election-yes" onclick="dropElection()">
+                    <span class="material-symbols-outlined">check</span>Confirm
+                </button>
+                <button class="btn btn-drop-election-no" onclick="loadDropElection()">
+                   Cancel
+                </button>
+            </div>
+        </div>
+
+    </div>  
 
             <!-- candidate list -->
     <div class="candidate-list-content">

@@ -12,8 +12,45 @@ function loadRequestModal() {
 }
 
 $(document).ready(function(){
-    $(".chart-wrapper").load("/loadCharts");
+    $.ajax({
+        type: "GET",
+        url: "/checkIfElectionExist",
+        dataType: "json",
+        success: function(data){
+            if(data.exist){
+                $(".btn-add-election").addClass("hide");
+                $(".btn-drop-election").removeClass("hide");
+                $(document).ready(function(){
+                    $(".chart-wrapper").load("/loadCharts");
+                });
+                $(document).ready(function(){
+                    $(".candidate-list-content").load("/loadCandidates");
+                });
+                $(".candidate-list-content").mouseenter(
+                    function(){
+                      isOnDiv = true;
+                    }
+                );
+                  
+                $(".candidate-list-content").mouseleave(
+                    function(){
+                        isOnDiv = false;
+                    }
+                );
+                
+                setInterval(function(){
+                    if(!isOnDiv){
+                        $(".candidate-list-content").load("/loadCandidates");
+                    }
+                }, 500);
+            }else{
+                $(".btn-add-election").removeClass("hide");
+                $(".btn-drop-election").addClass("hide");
+            }
+        }
+    });
 });
+
 
 $('#senators').owlCarousel({
     loop:false,
@@ -402,45 +439,13 @@ $(document).ready(function(){
 
 var isOnDiv = false;
 
-$(document).ready(function(){
-    $(".candidate-list-content").load("/loadCandidates");
-});
+
   
-$(".candidate-list-content").mouseenter(
-    function(){
-      isOnDiv = true;
-    }
-);
-  
-$(".candidate-list-content").mouseleave(
-    function(){
-        isOnDiv = false;
-    }
-);
 
 
-setInterval(function(){
-    if(!isOnDiv){
-        $(".candidate-list-content").load("/loadCandidates");
-    }
-}, 500);
 
-$(document).ready(function(){
-    $.ajax({
-        type: "GET",
-        url: "/checkIfElectionExist",
-        dataType: "json",
-        success: function(data){
-            if(data.exist){
-                $(".btn-add-election").addClass("hide");
-                $(".btn-drop-election").removeClass("hide");
-            }else{
-                $(".btn-add-election").removeClass("hide");
-                $(".btn-drop-election").addClass("hide");
-            }
-        }
-    });
-});
+
+
   
 var partylist_1;
 var partylist_2;
@@ -620,3 +625,25 @@ for(let i=0; i<document.querySelectorAll(".gov-chart").length; i++){
     
 }
 
+function loadDropElection(){
+    $(".alert-drop-wrapper").toggleClass("active");
+}
+
+function dropElection(){
+    alert("Election Dropped");
+    $.ajax({
+        type: "POST",
+        url: "/dropElection",
+        dataType: "JSON",
+        success: function(data){
+            if(data){
+                $(".btn-add-election").removeClass("hide");
+                $(".btn-drop-election").addClass("hide");
+                $(".alert-drop-wrapper").toggleClass("active");
+            }
+        },
+        error: function (request, status, error) {
+            console.log(request.responseText);
+        }  
+    });
+}
