@@ -1,5 +1,14 @@
 <!-- dashboard layout for total users and elections-->
+<?php
+    require_once ('model/FacilitatorSqlQuery.php');
+    $facilitatorSqlQuery = new FacilitatorSqlQuery();
+    
+    $evs_id = $_SESSION['userID'];
 
+    $result = $facilitatorSqlQuery->loadElectionbyFaciID($evs_id);
+
+
+?>
 <div class="u_elections_wrapper">
  
     <div class="u_elections_header">
@@ -7,13 +16,41 @@
             <h1>Elections </h1>
         </div>
         <div class="u_elections_header_status">
-            <h1>Elections</h1>
+            <h1>Status:
+                <?php
+                    if ($result->num_rows > 0) {
+                        while($row = $result->fetch_assoc()) {
+                            date_default_timezone_set('Asia/Manila');
+                                $today = date('Y-m-d');
+                                $time = date('H:i:s');
+                                $start_time =$row['start_time'];
+                                $end_time = $row['end_time'];
+                                $date = $row['date'];
+                                if($today == $date){
+                                    //check if time is between start and end time
+                                if($time > $start_time && $time < $end_time){
+                                    echo '<p class="u_election_list_item_status_active">Ongoing</p>';
+                                
+                                }else{
+                                    echo '<p class="u_election_list_item_status_inactive">Closed</p>';
+                                }
+                            }else{
+                                echo 'Upcoming';
+                            }
+                        }
+                    }else{
+                        echo 'No Election';
+                    }
+                ?>
+            </h1>
         </div>
 
     </div>
 
     <div class="chart-wrapper">
+        <div class="status-chart">
 
+        </div>
     </div>
 
     <div class="elections-modal-btn">

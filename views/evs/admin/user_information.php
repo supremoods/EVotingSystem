@@ -16,12 +16,7 @@
         <!-- filter section -->
         <div class="user-list-header">
             <div class="search-user">
-                <div class="search-user-input">
-                    <input type="text" placeholder="Search user">
-                </div>
-                <div class="search-user-icon">
-                    <span class="material-icons">search</span>
-                </div>
+
             </div>
             <div class="user-filter">
                 <div class="select-menu select-privillage">
@@ -33,6 +28,9 @@
                         <span class="down material-icons">keyboard_arrow_down</span>
                     </div>
                     <ul class="options">
+                        <li class="option option-privillage">
+                            <span class="option-text">All</span>
+                        </li>
                         <li class="option option-privillage">
                             <span class="option-text">Student</span>
                         </li>
@@ -51,6 +49,9 @@
                             <span class="down material-icons">keyboard_arrow_down</span>
                         </div>
                         <ul class="options">
+                            <li class="option option-univ">
+                                <span class="option-text">All</span>
+                            </li>
                             <?php
                                 if ($result->num_rows > 0) {
                                     while($row = $result->fetch_assoc()) {

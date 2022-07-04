@@ -40,11 +40,9 @@
 
     $facilitatorLoginController = new FacilitatorLoginController();
      
-
     $facilitatorLoginController->setUserID($username);
     $facilitatorLoginController->setPassw($passw);
 
-   
     if($facilitatorLoginController->login()){
         echo json_encode(array(
             "status" => "success"

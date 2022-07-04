@@ -54,7 +54,7 @@
      if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()){
 
-            if(strpos($row['position'], 'Governor') !== false){
+            if(strpos($row['position'], 'Governor') == true){
  
     ?>
     <div class="vote-chart-item chart-governors-item">

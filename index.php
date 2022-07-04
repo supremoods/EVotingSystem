@@ -93,7 +93,11 @@ route('/preloader', 'controller/adminController/loadElement/preloader.php');
 
 route('/loadUserNameNavbar', 'controller/adminController/loadElement/loadUserNameNavbar.php');
 
+route('/loadElectionRequest', 'controller/adminController/loadElement/loadElectionRequest.php');
 
+route('/loadElection', 'controller/adminController/loadElement/loadElection.php');
+
+post('/electionConfirmation', 'controller/adminController/electionConfirmation.php');
 // #---------------------- end --------------------#
 
 // #---------------------- email routing --------------------#

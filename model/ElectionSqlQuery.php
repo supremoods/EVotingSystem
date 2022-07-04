@@ -11,14 +11,16 @@
                 desc_election,
                 date,
                 start_time,
-                end_time) VALUES(
+                end_time,
+                status) VALUES(
 
                 '$this->election_id',
                 '$this->evs_id',
                 '$this->desc_election',
                 '$this->date',
                 '$this->start_time',
-                '$this->end_time')";
+                '$this->end_time',
+                'pending')";
             
             $result = $this->dbConnection()->query($sql);
 

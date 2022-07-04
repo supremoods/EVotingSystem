@@ -13,12 +13,7 @@
         <!-- filter section -->
         <div class="facilitator-list-header">
             <div class="search-facilitator">
-                <div class="search-facilitator-input">
-                    <input type="text" placeholder="Search facilitator">
-                </div>
-                <div class="search-facilitator-icon">
-                    <span class="material-icons">search</span>
-                </div>
+
             </div>
             <div class="facilitator-filter">
                 <div class="select-menu select-univ">
@@ -31,7 +26,26 @@
                             <span class="down material-icons">keyboard_arrow_down</span>
                         </div>
                         <ul class="options load-UF">
-                          
+                            <li class="option option-univ">
+                                <span class="option-text">All</span>
+                            </li>
+                            <?php 
+                                require_once ('model/FacilitatorSqlQuery.php');
+
+                                $facilitatorSqlQuery = new FacilitatorSqlQuery();
+
+                                $result = $facilitatorSqlQuery->universityItemFaci();
+
+                                if ($result->num_rows > 0) {
+                                    while($row = $result->fetch_assoc()) {
+                            ?>
+                            <li class="option option-univ">
+                                <span class="option-text"><?=$row['university']?></span>
+                            </li>
+                            <?php
+                                    }
+                                }    
+                            ?>
                         </ul>
                     </div>
                 </div>

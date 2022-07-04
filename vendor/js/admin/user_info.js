@@ -13,6 +13,11 @@ optionPrivillage.forEach((option) => {
     let selectedOption = option.querySelector(".option-text").innerText;
     sBtnTextPrivillage.innerText = selectedOption;
     optionSelectPrivillage.classList.remove("active");
+    $(".load-user-info").load("/loadUserList",{
+      privillage: sBtnTextPrivillage.innerText,
+      university: sBtn_text.innerText
+    });
+
   });
 });
 
@@ -30,6 +35,10 @@ options.forEach((option) => {
         let selectedOption = option.querySelector(".option-text").innerText;
         sBtn_text.innerText = selectedOption;
         optionMenu.classList.remove("active");
+        $(".load-user-info").load("/loadUserList",{
+          privillage: sBtnTextPrivillage.innerText,
+          university: sBtn_text.innerText
+        });
     });
 });
 window.onload = function(){
@@ -38,24 +47,10 @@ window.onload = function(){
   
 }
 
-setInterval(function(){
-  if(!isOnDiv){
-    $(".load-user-info").load("/loadUserList");
-  }
-}, 500);
-
-$(".load-user-info").mouseenter(
-  function(){
-    isOnDiv = true;
-  }
-);
-
-$(".load-user-info").mouseleave(
-  function(){
-    isOnDiv = false;
-  }
-);
-
+$(".load-user-info").load("/loadUserList",{
+  privillage: sBtnTextPrivillage.innerText,
+  university: sBtn_text.innerText
+});
 
 function preloader(){
   try{

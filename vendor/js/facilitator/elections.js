@@ -11,39 +11,112 @@ function loadRequestModal() {
     // window.location.href = "/facilitator/elections/2sadf";
 }
 
-$(document).ready(function(){
+var electionStatus;
+var SenatorFilled = false;
+
+window.addEventListener('load',function(){
     $.ajax({
         type: "GET",
         url: "/checkIfElectionExist",
         dataType: "json",
         success: function(data){
-            if(data.exist){
-                $(".btn-add-election").addClass("hide");
-                $(".btn-drop-election").removeClass("hide");
+            if(data.exist === 'confirmed'){
                 $(document).ready(function(){
                     $(".chart-wrapper").load("/loadCharts");
                 });
+                setInterval(() => {
+                    $(document).ready(function(){
+                        $.ajax({
+                            type: "POST",
+                            url: "/GetVoteCountsController",
+                            dataType: "JSON",
+                            success: function(data){
+                                if(data){
+                                    partylist_1 = data.partylist_1;
+                                    partylist_2 = data.partylist_2;
+                                    let count = 0;
+                                    if(chartIsEmpty){
+                                        for(let i=0; i<document.querySelectorAll(".vote-candidates-chart").length; i++){
+                                            if(JSON.stringify(partylist_1[i].position) ==="\"Senator\"" && !SenatorFilled){
+                                                for (let j = 0; j < partylist_1.length; j++){
+                                                    if(JSON.stringify(partylist_1[j].position) ==="\"Senator\""){
+                                                        getVoteCount(j);
+                                                        count++;
+                                                    }
+                                                }
+                                                SenatorFilled = true;
+                                                console.log('####');
+                                                console.log(i + " " + count);
+                                            }else{
+            
+                                                console.log('----');
+                                                if(SenatorFilled){
+                                                    getVoteCount((i+count)-1);
+                                                }else{
+                                                    getVoteCount(i);
+                                                }
+                                                console.log(i);
+                                            }
+                                
+                                            var chartDataCandidates = {
+                                                labels: candidateNames,
+                                                datasets: [
+                                                    {
+                                                    label: "Vote Counts",
+                                                    data: candidateVoteCounts,
+                                                    backgroundColor: [
+                                                        'rgba(54, 162, 235, 1)',
+                                                        'rgba(255, 99, 132, 1)',
+                                                    ],
+                                                    borderRadius: 15
+                                                    }
+                            
+                                                ]
+                                            };
+                            
+                                            var voteCandidatesChart = document.querySelectorAll('.vote-candidates-chart')[i].getContext('2d');
+                                            
+                                            voteChart = new Chart(voteCandidatesChart, {
+                                                type: 'bar',
+                                                data: chartDataCandidates,
+                                                options: {
+                                                    plugins: {
+                                                        legend: {
+                                                            display: false
+                                                        },
+                                                    },
+                                                    maintainAspectRatio: false,
+                                                    indexAxis: 'y',
+                                                    scales: {
+                                                        y: {
+                                                            beginAtZero: true
+                                                        }
+                                                    }
+                                                }
+                                            });
+                                            candidateNames = [];
+                                            candidateVoteCounts = [];
+                                        }
+                                    }         
+                                    chartIsEmpty = false;
+                                }
+                            }
+                        });
+                    });
+                }, 1000);
+
+                $(".btn-add-election").addClass("hide");
+                $(".btn-drop-election").removeClass("hide");
+                
                 $(document).ready(function(){
                     $(".candidate-list-content").load("/loadCandidates");
                 });
-                $(".candidate-list-content").mouseenter(
-                    function(){
-                      isOnDiv = true;
-                    }
-                );
-                  
-                $(".candidate-list-content").mouseleave(
-                    function(){
-                        isOnDiv = false;
-                    }
-                );
-                
-                setInterval(function(){
-                    if(!isOnDiv){
-                        $(".candidate-list-content").load("/loadCandidates");
-                    }
-                }, 500);
+            }else if(data.exist === 'pending'){
+                $('.status-chart').text('You\'re election request is pending');
+                $(".btn-add-election").removeClass("hide");
+                $(".btn-drop-election").addClass("hide");
             }else{
+                $('.status-chart').text('Please Create Election First!!');
                 $(".btn-add-election").removeClass("hide");
                 $(".btn-drop-election").addClass("hide");
             }
@@ -204,16 +277,14 @@ function addCandidate(){
     </div>
     `;
 
-
-        $('#slide-governor')
-        .trigger('add.owl.carousel', [candidateCard])
-        .trigger('refresh.owl.carousel');
+$('#slide-governor')
+.trigger('add.owl.carousel', [candidateCard])
+.trigger('refresh.owl.carousel');
    
 
     // $("#slide-governor").append(candidateCard);
   console.log(document.querySelectorAll(".gov-container").length);
   loadContainers();
-
 }
 
 
@@ -267,7 +338,6 @@ loadCandidates();
 
 loadContainers();
 
-
 $(document).ready(function(){
     $("#election-reg").on("submit",function(e){
         e.preventDefault();
@@ -282,7 +352,7 @@ $(document).ready(function(){
             processData:false,
             contentType:false,
             beforeSend: function(){  
-               console.log("before send");
+            console.log("before send");
             },
             complete: function(){
                 console.log("complete");
@@ -439,26 +509,9 @@ $(document).ready(function(){
 
 var isOnDiv = false;
 
-
-  
-
-
-
-
-
   
 var partylist_1;
 var partylist_2;
-presidentNames = [];   
-presidentVoteCounts = [];
-vicePresidentNames = [];   
-vicePresidentVoteCounts = [];
-secretaryNames = [];   
-secretaryVoteCounts = [];
-treasurerNames = [];   
-treasurerVoteCounts = [];
-proNames = [];   
-proVoteCounts = [];
 
 var candidateVoteCounts = [];
 var candidateNames = [];
@@ -493,137 +546,6 @@ function getVoteCount(index){
 }
 
 
-var SenatorFilled = false;
-
-setInterval(function(){
-$(document).ready(function(){
-    $.ajax({
-        type: "POST",
-        url: "/GetVoteCountsController",
-        dataType: "JSON",
-        success: function(data){
-            if(data){
-                partylist_1 = data.partylist_1;
-                partylist_2 = data.partylist_2;
-            
-                let count = 0;
-                if(chartIsEmpty){
-                    for(let i=0; i<document.querySelectorAll(".vote-candidates-chart").length; i++){
-                        if(JSON.stringify(partylist_1[i].position) ==="\"Senator\"" && !SenatorFilled){
-                            for (let j = 0; j < partylist_1.length; j++){
-                                if(JSON.stringify(partylist_1[j].position) ==="\"Senator\""){
-                                    getVoteCount(j);
-                                    count++;
-                                }
-                            }
-                            SenatorFilled = true;
-                            console.log('####');
-                            console.log(i + " " + count);
-                        }else{
-
-                            console.log('----');
-                            if(SenatorFilled){
-                                getVoteCount((i+count)-1);
-                            }else{
-                                getVoteCount(i);
-                            }
-                          
-                          
-                            console.log(i);
-                        }
-         
-                        var chartDataCandidates = {
-                            labels: candidateNames,
-                            datasets: [
-                                {
-                                label: "Vote Counts",
-                                data: candidateVoteCounts,
-                                backgroundColor: [
-                                    'rgba(54, 162, 235, 1)',
-                                    'rgba(255, 99, 132, 1)',
-                    
-                                ],
-                                borderRadius: 15
-                                }
-        
-                            ]
-                        };
-        
-                        var voteCandidatesChart = document.querySelectorAll('.vote-candidates-chart')[i].getContext('2d');
-                        
-                        voteChart = new Chart(voteCandidatesChart, {
-                            type: 'bar',
-                            data: chartDataCandidates,
-                            options: {
-                                plugins: {
-                                    legend: {
-                                        display: false
-                                    },
-                                },
-                                maintainAspectRatio: false,
-                                indexAxis: 'y',
-                                scales: {
-                                    y: {
-                                        beginAtZero: true
-                                    }
-                                }
-                            }
-                        });
-
-
-                        candidateNames = [];
-                        candidateVoteCounts = [];
-                    }
-                }
-              
-                chartIsEmpty = false;
-
-            }
-        }
-    });
-});
-
-}, 500);
-
-var governorsChart;
-
-for(let i=0; i<document.querySelectorAll(".gov-chart").length; i++){
-    const governorsCanvas = document.querySelectorAll(".gov-chart")[i].getContext('2d');
-    var governorsChart = new Chart(governorsCanvas, {
-        type: 'bar',
-        data: {
-            labels: ['Roronoa Zoro', 'Monkey D. Luffy', 'Nami', 'Usopp', 'Vinsmoke Sanji'],
-            datasets: [{
-                label: 'Senators Votes',
-                data: [120, 9512, 2212, 425, 377],
-                backgroundColor: [
-                    'rgba(54, 162, 235, 1)',
-    
-                ],
-                borderColor: [
-                    'rgba(54, 162, 235, 1)',
-                ],
-                borderWidth: 1,
-                borderRadius: 15
-            }]
-        },
-        options: {
-            plugins: {
-                legend: {
-                    display: false
-                },
-            },
-            maintainAspectRatio: false,
-            indexAxis: 'y',
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-    
-}
 
 function loadDropElection(){
     $(".alert-drop-wrapper").toggleClass("active");

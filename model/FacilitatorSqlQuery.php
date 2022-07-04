@@ -90,6 +90,18 @@
             }
         }
 
+        public function fetchFacilitatorByUniversity($university){
+            $database = new Database();
+            $sql = "SELECT * FROM user_account WHERE user_level = 'Facilitator' AND university = '$university'";
+
+            $result = $database->dbConnection()->query($sql);
+
+            if ($result) {
+                // if the query is successful, return true
+                return $result;
+            }
+        }
+
         public function fetchAllStudent() {
             $database = new Database();
 
@@ -296,8 +308,148 @@
                 return $result;
             }
         }
-        
 
+        public function loadElectionRequest(){
+            $database = new Database();
+            $sql = "SELECT
+                        election.id,
+                        user_account.university,
+                        election.desc_election,
+                        election.date,
+                        election.start_time,
+                        election.end_time
+                    FROM user_account
+                    INNER JOIN election
+                        ON user_account.user_id = election.evs_id
+                    WHERE election.status = 'pending'";
+
+
+            $result = $database->dbConnection()->query($sql);
+            if ($result) {
+                // if the query is successful, return true
+                return $result;
+            }
+
+        }
+
+        public function loadElection(){
+            $database = new Database();
+            $sql = "SELECT
+                        election.id,
+                        user_account.university,
+                        election.desc_election,
+                        election.date,
+                        election.start_time,
+                        election.end_time
+                    FROM user_account
+                    INNER JOIN election
+                        ON user_account.user_id = election.evs_id
+                    WHERE election.status = 'confirmed'";
+
+
+            $result = $database->dbConnection()->query($sql);
+            if ($result) {
+                // if the query is successful, return true
+                return $result;
+            }
+        }
+
+        public function loadElectionbyFaciID($evs_id){
+            $database = new Database();
+            $sql = "SELECT
+                        election.id,
+                        election.evs_id,
+                        user_account.university,
+                        election.desc_election,
+                        election.date,
+                        election.start_time,
+                        election.end_time
+                    FROM user_account
+                    INNER JOIN election
+                        ON user_account.user_id = election.evs_id
+                    WHERE election.status = 'confirmed'
+                    AND  election.evs_id = '$evs_id'";
+
+
+            $result = $database->dbConnection()->query($sql);
+            if ($result) {
+                // if the query is successful, return true
+                return $result;
+            }
+        }
+
+        public function confirmElection($id){
+            $database = new Database();
+            $sql = "UPDATE election SET status = 'confirmed' WHERE id = '$id'";
+
+            $result = $database->dbConnection()->query($sql);
+            if ($result) {
+                // if the query is successful, return true
+                return true;
+            }
+        }
+
+        public function rejectElection($id){
+            $database = new Database();
+            $sql = "UPDATE election SET status = 'rejected' WHERE id = '$id'";
+
+            $result = $database->dbConnection()->query($sql);
+            if ($result) {
+                // if the query is successful, return true
+                return true;
+            }
+        }
+
+        public function loadElectionRequestByUniversity($university){
+            $database = new Database();
+            $sql = "SELECT
+                        election.id,
+                        user_account.university,
+                        election.desc_election,
+                        election.date,
+                        election.start_time,
+                        election.end_time
+                    FROM user_account
+                    INNER JOIN election
+                        ON user_account.user_id = election.evs_id
+                    WHERE election.status = 'confirmed'
+                    AND user_account.university = '$university'
+                    ";
+
+
+            $result = $database->dbConnection()->query($sql);
+            if ($result) {
+                // if the query is successful, return true
+                return $result;
+            }
+
+        }
+
+        public function loadElectionByUniversity($university){
+            $database = new Database();
+            $sql = "SELECT
+                        election.id,
+                        user_account.university,
+                        election.desc_election,
+                        election.date,
+                        election.start_time,
+                        election.end_time
+                    FROM user_account
+                    INNER JOIN election
+                        ON user_account.user_id = election.evs_id
+                    WHERE election.status = 'pending'
+                    AND user_account.university = '$university'
+                    ";
+
+
+            $result = $database->dbConnection()->query($sql);
+            if ($result) {
+                // if the query is successful, return true
+                return $result;
+            }
+
+        }
+        
         //change password
 
         public function updatePassword($encryptedPassword, $facilitatorID) {

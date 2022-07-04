@@ -14,7 +14,6 @@
 }
 
 
-
 .u_elections_wrapper .u_elections_header {
     display: flex;
     align-items: center;
@@ -28,8 +27,8 @@
 .u_elections_wrapper .u_elections_header .u_elections_header_status {
     font-size: 1.5rem;
     font-weight: bold;
-    color: var(--blue3);
-
+    color: var(--gray6);
+    padding: 0 4rem;
 }
 .elections-modal-btn {
     position: fixed;
@@ -607,6 +606,7 @@ hr{
 }
 .img-candidate{
     height: 360px;
+    width: 400px;
 }
 
 .img-candidate img{
@@ -650,15 +650,13 @@ hr{
 .Fieldset input{
     position: relative;
     height: 100%;
-    width: 300px;
+    width: 100%;
     padding: 10px;
     border-radius: 4px;
     border: solid 1px #20212452;
     background:none;
     z-index: 2;
 }
-
-
 
 .Fieldset .placeholder{
     position: absolute;
@@ -1176,10 +1174,10 @@ hr{
     padding: 10px;
 }
 
-
 .chart-governor{
     flex-direction: column;
 }
+
 .vote-charts{
     height: 200px;
     width: 400px;
@@ -1205,3 +1203,11 @@ hr{
     width: 100%;
 }
 
+.status-chart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 100%;
+    font-size: 20px;
+}

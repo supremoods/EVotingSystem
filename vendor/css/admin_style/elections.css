@@ -1,4 +1,4 @@
-.u_elections_wrapper{
+    .u_elections_wrapper{
     position: relative;
     width: 100%;
     height: 100%;
@@ -58,7 +58,7 @@
 
 .u_election_body .u_election_list_content .u_election_list_item{
     display: grid;
-    grid-template-columns: 2fr 2fr 1fr 1fr;
+    grid-template-columns: 2fr 2fr 2fr 1fr;
     justify-content: center;
     padding: 10px;
     border-radius: 10px;
@@ -69,8 +69,49 @@
 
 .u_election_list_item .u_items{
     padding: 0px 10px;
+    display: flex;
+    gap: 10px;
 }
 
+.u_items button{
+    border: none;
+    width: 100%;
+    cursor: pointer;
+}
+
+.btn-confirm-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background: var(--blue3);
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.3);
+    color: var(--gray1);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.btn-confirm-btn:hover{
+    background: var(--blue2);
+
+}
+
+.btn-cancel-btn{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background: var(--gray1);
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.3);
+    color: var(--blue3);
+    font-weight: bold;
+    cursor: pointer;
+}
 .u_election_list_item_content{
     font-size:14px;
 }
@@ -80,8 +121,8 @@
     justify-content: flex-end;
 }
 .election_filter .filter-wrapper{
-    display: none;
-    opacity: 0;
+    display: flex;
+    opacity: 1;
     width: 100%;
     justify-content: flex-end;
     margin-bottom: 20px;
@@ -89,6 +130,39 @@
     transition: all 0.3s ease-in-out;
 }
 
+.timeframe{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.timeframe .date_event{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:0 10px;
+    border-radius: 10px;
+    background: var(--gray2);
+    padding: 10px;
+    box-shadow: 0px 0px 2px rgba(0,0,0,0.3);
+    gap: 10px;
+}
+.timeframe .date_event .date_event_content{
+    font-size: 14px;
+}
+.timeframe .date_event .date_event_icon span{
+    background-image: linear-gradient(60deg, #CB218E,#6617CB);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 40px;
+}
+
+.timeframe .date_event .date_event_icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .select-menu{
     position: relative;

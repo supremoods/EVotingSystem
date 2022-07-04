@@ -1,8 +1,21 @@
 <?php
     require_once("model/SqlQuery.php");
 
+    $privillage = $_POST['privillage'];
+    $university = $_POST['university'];
+
     $sqlquery = new SqlQuery();
-    $result = $sqlquery->selectAllVerifiedUsers();
+
+    if($privillage == "All" && $university == "All"){
+        $result = $sqlquery->selectAllVerifiedUsers();
+    }else if($privillage == "All" && $university != "All"){
+        $result = $sqlquery->selectAllVerifiedUsersByUniversity($university);
+    }else if($privillage != "All" && $university == "All"){
+        $result = $sqlquery->selectAllVerifiedUsersByPrivillage($privillage);
+    }else if($privillage != "All" && $university != "All"){
+        $result = $sqlquery->selectAllVerifiedUsersByUniversityAndPrivillage($university, $privillage);
+    }
+  
     if($result){
         if($result->num_rows > 0){
             while($row = $result->fetch_assoc()){

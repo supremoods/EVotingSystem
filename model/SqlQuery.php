@@ -199,15 +199,59 @@
 
         public function selectAllVerifiedUsers(){
             $database = new Database();
-            $sql = "SELECT * FROM user_account WHERE user_id IS NOT NULL";
+            $sql = "SELECT * FROM user_account WHERE user_id IS NOT NULL ";
 
             $result = $database->dbConnection()->query($sql);
 
             if($result){
                 return $result;
             }
-
         }
+
+        public function selectAllVerifiedUsersByUniversity($university){
+            $database = new Database();
+            $sql = "SELECT * FROM user_account WHERE user_id IS NOT NULL AND university = '$university'";
+
+            $result = $database->dbConnection()->query($sql);
+
+            if($result){
+                return $result;
+            }
+        }
+
+        public function selectAllVerifiedUsersByPrivillage($privillage){
+            $priv=strtolower($privillage);
+            $database = new Database();
+            $sql = "SELECT * FROM user_account WHERE user_id IS NOT NULL AND user_level = '$priv'";
+
+            $result = $database->dbConnection()->query($sql);
+
+            if($result){
+                return $result;
+            }
+        }
+
+        public function selectAllVerifiedUsersByUniversityAndPrivillage($university, $privillage){
+            $database = new Database();
+            $sql = "SELECT * FROM user_account WHERE user_id IS NOT NULL AND university = '$university' AND user_level = '$privillage'";
+
+            $result = $database->dbConnection()->query($sql);
+
+            if($result){
+                return $result;
+            }
+        }
+        
+        // public function selectAllVerifiedUsers($privillage, $university){
+        //     $database = new Database();
+        //     $sql = "SELECT * FROM user_account WHERE user_id IS NOT NULL OR user_level = '$privillage' OR university = '$university'";
+
+        //     $result = $database->dbConnection()->query($sql);
+
+        //     if($result){
+        //         return $result;
+        //     }
+        // }
 
         // Select a userAccount from the database
         public function fetchUserInfo($user_id) {

@@ -14,6 +14,12 @@ options.forEach((option) => {
         let selectedOption = option.querySelector(".option-text").innerText;
         sBtn_text.innerText = selectedOption;
         optionMenu.classList.remove("active");
+        $(document).ready(function(){
+          $(".load-facilitators").load("/loadFacilitatorList",{
+            university:sBtn_text.innerText
+          });
+        });
+        
     });
 });
 
@@ -45,7 +51,6 @@ function loadRequestModal(){
     contentModal.classList.toggle('modal');
     $(".load-facilitator-req").empty();
     $(".load-facilitator-req").append(preloaderProfile());
-    $(".load-UFR").load("/loadUFR");
     $(".load-facilitator-req").load("/loadFacilitatorListRequest");
 }
 
@@ -75,33 +80,10 @@ window.onload = function(){
 }
 
 $(document).ready(function(){
-  $(".load-facilitators").load("/loadFacilitatorList");
+  $(".load-facilitators").load("/loadFacilitatorList",{
+    university:sBtn_text.innerText
+  });
 });
-
-
-$(document).ready(function(){
-  $(".load-UF").load("/loadUF");
-});
-
-
-$(".load-facilitators").mouseenter(
-  function(){
-    isOnDiv = true;
-  }
-);
-
-$(".load-facilitators").mouseleave(
-  function(){
-    isOnDiv = false;
-  }
-);
-
-
-setInterval(function(){
-  if(!isOnDiv){
-    $(".load-facilitators").load("/loadFacilitatorList");
-  }
-}, 500);
 
 function preloader(){
   try{
