@@ -1,0 +1,56 @@
+.about_layout_wrapper {
+    margin-top: 100px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 50px;
+}
+
+.headertext {
+    background-color: var(--blue5);
+    background-image: linear-gradient(315deg, var(--blue5) 0%, var(--blue2) 74%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    font-size: 1.5rem;
+}
+
+.title1 {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.title2 {
+    background-color: var(--blue5);
+    background-image: linear-gradient(315deg, var(--blue5) 0%, var(--blue2) 74%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    font-weight: 700;
+    font-size: 1.1rem;
+
+
+}
+
+.title3 {
+    font-weight: 600;
+    background-color: var(--blue5);
+    background-image: linear-gradient(315deg, var(--blue5) 0%, var(--blue2) 74%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    margin-left: 20px;
+}
+
+ul {
+    margin-left: 50px;
+}
+
+.content1 {
+    margin-left: 20px;
+}

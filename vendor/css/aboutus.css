@@ -1,0 +1,17 @@
+.about_layout_wrapper{
+    margin-top: 140px;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-bottom: 140px;
+}
+
+.headertext{
+    background-color: var(--blue5);
+    background-image: linear-gradient(315deg, var(--blue5) 0%, var(--blue2) 74%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    font-size: 2rem;
+}
