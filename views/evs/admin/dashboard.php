@@ -1,9 +1,10 @@
 <!-- dashboard layout for total users and elections-->
 <?php 
     require_once ('model/SqlQuery.php');
-    
+
     $sqlQuery = new SqlQuery();
     
+    $result = $sqlQuery->universityList();
 ?>
 <div class="dashboard_wrappper">
     <div class="dashboard_header">
@@ -21,17 +22,19 @@
                 </div>
                 <ul class="options">
                     <li class="option option-univ">
-                        <span class="option-text">Technological University of the Philippines</span>
+                        <span class="option-text">All</span>
                     </li>
+                    <?php
+                        if ($result->num_rows > 0) {
+                            while($row = $result->fetch_assoc()) {
+                    ?>
                     <li class="option option-univ">
-                        <span class="option-text">University of the Philippines</span>
+                        <span class="option-text"><?=$row['university']?></span>
                     </li>
-                    <li class="option option-univ">
-                        <span class="option-text">Ateneo De Manila</span>
-                    </li>
-                    <li class="option option-univ">
-                        <span class="option-text">Pamantasan ng Lungsod ng Maynila</span>
-                    </li>
+                    <?php
+                            }
+                        }
+                    ?>
                 </ul>
             </div>
         </div>
@@ -43,7 +46,7 @@
                     </div>
                     <div class="total_users_content items_content">
                         <p>Total Users</p>
-                        <p>22</p>
+                        <p><?=$sqlQuery->totalUser()?></p>
                     </div>
                 </div>
                 <div class="items total_facilitator">
@@ -52,7 +55,7 @@
                     </div>
                     <div class="total_facilitator_content items_content">
                         <p>Total Facilitator</p>
-                        <p>22</p>
+                        <p><?=$sqlQuery->totalUserFacilitator()?></p>
                     </div>
                 </div>
                 <div class="items total_students">
@@ -61,7 +64,7 @@
                     </div>
                     <div class="total_students_content items_content">
                         <p>Total Students</p>
-                        <p>22</p>
+                        <p><?=$sqlQuery->totalUserStudent()?></p>
                     </div>
                 </div>
             </div>
@@ -72,7 +75,7 @@
                     </div>
                     <div class="facilitator_request_content items_content">
                         <p>Facilitator Request</p>
-                        <p>22</p>
+                        <p><?=$sqlQuery->totalUserFacilitatorRequest()?></p>
                     </div>
                 </div>
             </div>
@@ -86,7 +89,7 @@
                         </div>
                         <div class="total_users_content items_content">
                             <p>Total Elections</p>
-                            <p>22</p>
+                            <p><?=$sqlQuery->totalElection()?></p>
                         </div>
                     </div>
                     <div class="items filter">
@@ -97,17 +100,19 @@
                                 <option value="">End</option>
                             </select>
                         </div>
-                        <div class="items_content date_picker">
-                            <input type="date">
-                        </div>
                     </div>
                 </div>
                 <div class="election_list_wrapper">
                     <div class="election_list">
+                        <?php
+                            $result = $sqlQuery->fetchElectionConfirmed();
+                            if ($result->num_rows > 0) {
+                                while($row = $result->fetch_assoc()) {
+                        ?>
                         <div class="election_list_item">
                             <div class="election_list_item_content">
                                 <div class="university_name">
-                                    <p>Technological University of the Philippines</p>
+                                    <p><?=$row['university']?></p>
                                 </div>
                                 <div class="timeframe">
                                     <div class="date_event">
@@ -115,49 +120,25 @@
                                             <span class="material-icons">date_range</span>
                                         </div>
                                         <div class="date_event_content">
-                                            <p>Date : 07/10/22</p>
-                                            <p>8:00 AM - 8:00 PM</p>
+                                            <p><?=$row['date']?></p>
+                                            <p><?=date('h:i a', strtotime($row['start_time']))?> -  <?=date('h:i a', strtotime($row['end_time']))?></p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <?php
+                                }
+                            }else{
+                        ?>
+
                         <div class="election_list_item">
-                            <div class="election_list_item_content">
-                                <div class="university_name">
-                                    <p>Technological University of the Philippines</p>
-                                </div>
-                                <div class="timeframe">
-                                    <div class="date_event">
-                                        <div class="date_event_icon">
-                                            <span class="material-icons">date_range</span>
-                                        </div>
-                                        <div class="date_event_content">
-                                            <p>Date : 07/10/22</p>
-                                            <p>8:00 AM - 8:00 PM</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <h3>No Results</h3>
                         </div>
-                        <div class="election_list_item">
-                            <div class="election_list_item_content">
-                                <div class="university_name">
-                                    <p>Technological University of the Philippines</p>
-                                </div>
-                                <div class="timeframe">
-                                    <div class="date_event">
-                                        <div class="date_event_icon">
-                                            <span class="material-icons">date_range</span>
-                                        </div>
-                                        <div class="date_event_content">
-                                            <p>Date : 07/10/22</p>
-                                            <p>8:00 AM - 8:00 PM</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
+                        <?php
+                            }
+                        ?>
                     </div>
                     <div class="btn_view_more_wrapper">
                         <div class="btn_view_more">  
@@ -174,12 +155,12 @@
                         </div>
                         <div class="election_request_content items_content">
                             <p>Election Request</p>
-                            <p>22</p>
+                            <p><?=$sqlQuery->totalElectionRequest()?></p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="forum_wrapper">
+                <!-- <div class="forum_wrapper">
                     <div class="header_title">
                         <h1>Forum</h1>
                     </div>
@@ -192,7 +173,7 @@
                             <p>22</p>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

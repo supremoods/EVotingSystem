@@ -10,7 +10,6 @@
 
 ?>
 <div class="u_elections_wrapper">
- 
     <div class="u_elections_header">
         <div class="u_elections_header_title">
             <h1>Elections </h1>
@@ -44,20 +43,22 @@
                 ?>
             </h1>
         </div>
-
     </div>
 
     <div class="chart-wrapper">
         <div class="status-chart">
-
+            
         </div>
-    </div>
+        <div class="img-pending">
+            <img src="../vendor/img/undraw_pending_approval_xuu9.svg" alt="">
+        </div>
+      
+    </div>      
 
     <div class="elections-modal-btn">
         <button class="btn btn-add-election" onclick="loadRequestModal()">
             <span class="material-symbols-outlined">add</span>Add Elections
         </button>
-
         <button class="btn btn-drop-election hide" onclick="loadDropElection()">
             <span class="material-symbols-outlined">delete</span>DROP Elections
         </button>

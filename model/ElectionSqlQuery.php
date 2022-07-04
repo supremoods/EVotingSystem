@@ -86,10 +86,7 @@
                     $user_id = $row['user_id'];
                 }
             }
-
-
             return $user_id;
-
         }
 
         public function selectPartylist($evs_id)

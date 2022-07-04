@@ -1,5 +1,15 @@
 <!-- dashboard layout for total users and elections-->
+<?php 
+    require_once ('model/SqlQuery.php');
 
+    $sqlQuery = new SqlQuery();
+
+    $evs_id = $_SESSION['userID'];
+
+    $result = $sqlQuery->universityList();
+    $university = $sqlQuery->fetchFacilitatorInfo($evs_id);
+
+?>
 <div class="dashboard_wrappper">
     <div class="dashboard_header">
         <div class="dashboard_header_title">
@@ -8,7 +18,7 @@
     </div>
 
     <div class="dashboard_body">
-          <div class="dashboard_filter">
+        <!-- <div class="dashboard_filter">
             <div class="select-menu select-menu-univ">
                 <div class="select-btn select-btn-univ">
                     <span class="sBtn-text sBtn-text-univ">All</span>
@@ -38,7 +48,7 @@
                     </li>
                 </ul>
             </div>
-        </div>
+        </div> -->
 
         <div class="dashboard_users">
             <div class="left_item">
@@ -47,26 +57,8 @@
                         <span class="material-icons">groups</span>
                     </div>
                     <div class="total_users_content items_content">
-                        <p> Registered Students</p>
-                        <p>22</p>
-                    </div>
-                </div>
-                <div class="items total_facilitator">
-                    <div class="icon total_facilitator_icon">
-                        <span class="material-icons">supervisor_account</span>
-                    </div>
-                    <div class="total_facilitator_content items_content">
-                        <p> Active Voters</p>
-                        <p>22</p>
-                    </div>
-                </div>
-                <div class="items total_students">
-                    <div class="icon total_students_icon">
-                        <span class="material-icons">person</span>
-                    </div>
-                    <div class="total_students_content items_content">
-                        <p>On Going Elections</p>
-                        <p>22</p>
+                        <p>Registered Students</p>
+                        <p><?=$sqlQuery->fetchFaciStudent($university)?></p>
                     </div>
                 </div>
             </div>
@@ -77,42 +69,24 @@
                     </div>
                     <div class="facilitator_request_content items_content">
                         <p>Student Request</p>
-                        <p>22</p>
+                        <p><?=$sqlQuery->fetchFaciStudentRequest($university)?></p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="dashboard_elections">
             <div class="left_item"> 
-                <div class="items_wrapper">
-                    <div class="items total_elections">
-                        <div class="icon total_elections_icon">
-                            <span class="material-icons">poll</span>
-                        </div>
-                        <div class="total_users_content items_content">
-                            <p>Total Elections</p>
-                            <p>22</p>
-                        </div>
-                    </div>
-                    <div class="items filter">
-                        <div class="items_content">
-                            <select class="status" name="" id="">
-                                <option value="" selected>All</option>
-                                <option value="">Ongoing</option>
-                                <option value="">End</option>
-                            </select>
-                        </div>
-                        <div class="items_content date_picker">
-                            <input type="date">
-                        </div>
-                    </div>
-                </div>
                 <div class="election_list_wrapper">
                     <div class="election_list">
+                        <?php
+                            $result = $sqlQuery->fetchElectionFacilitator($evs_id);
+                            if ($result->num_rows > 0) {
+                                while($row = $result->fetch_assoc()) {
+                        ?>
                         <div class="election_list_item">
                             <div class="election_list_item_content">
                                 <div class="university_name">
-                                    <p>School Year 2021-2022 USG Election</p>
+                                    <p><?=$row['university']?></p>
                                 </div>
                                 <div class="timeframe">
                                     <div class="date_event">
@@ -120,59 +94,25 @@
                                             <span class="material-icons">date_range</span>
                                         </div>
                                         <div class="date_event_content">
-                                            <p>Date : 07/10/22</p>
-                                            <p>8:00 AM - 8:00 PM</p>
+                                            <p>Date : <?=$row['date']?></p>
+                                            <p><?=date('h:i a', strtotime($row['start_time']))?> - <?=date('h:i a', strtotime($row['end_time']))?></p>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="election_list_item">
-                            <div class="election_list_item_content">
-                                <div class="university_name">
-                                    <p>School Year 2020-2021 USG Election</p>
-                                </div>
-                                <div class="timeframe">
-                                    <div class="date_event">
-                                        <div class="date_event_icon">
-                                            <span class="material-icons">date_range</span>
-                                        </div>
-                                        <div class="date_event_content">
-                                            <p>Date : 07/10/22</p>
-                                            <p>8:00 AM - 8:00 PM</p>
-                                        </div>
-                                    </div>
+                                <div class="status">
+                                    <h3><?=$row['status']?></h3>
                                 </div>
                             </div>
                         </div>
-                        <div class="election_list_item">
-                            <div class="election_list_item_content">
-                                <div class="university_name">
-                                    <p>School Year 2019-2020 USG Election</p>
-                                </div>
-                                <div class="timeframe">
-                                    <div class="date_event">
-                                        <div class="date_event_icon">
-                                            <span class="material-icons">date_range</span>
-                                        </div>
-                                        <div class="date_event_content">
-                                            <p>Date : 07/10/22</p>
-                                            <p>8:00 AM - 8:00 PM</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="btn_view_more_wrapper">
-                        <div class="btn_view_more">  
-                            <a href="">View more</a>
-                        </div>
+                        <?php
+                                }
+                            }
+                        ?>
                     </div>
                 </div>
             </div>
             <div class="right_item">                
-                <div class="forum_wrapper">
+                <!-- <div class="forum_wrapper">
                     <div class="header_title">
                         <h1>Forum</h1>
                     </div>
@@ -185,7 +125,7 @@
                             <p>22</p>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

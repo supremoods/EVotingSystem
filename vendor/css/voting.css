@@ -43,6 +43,12 @@ hr{
     justify-content:center;
 }
 
+
+.header-position h1{
+    text-align: center;
+    font-size: 13px;
+}
+
 .header-partylist{
     position: fixed;
     top:70px;

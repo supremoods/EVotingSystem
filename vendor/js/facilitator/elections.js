@@ -112,7 +112,7 @@ window.addEventListener('load',function(){
                     $(".candidate-list-content").load("/loadCandidates");
                 });
             }else if(data.exist === 'pending'){
-                $('.status-chart').text('You\'re election request is pending');
+                $('.status-chart').append('Your election request is pending');
                 $(".btn-add-election").removeClass("hide");
                 $(".btn-drop-election").addClass("hide");
             }else{

@@ -153,6 +153,7 @@
                 return false;
             }
         }
+
         // Delete a userAccount from the database
         public function deleteUserAccount() {
 
@@ -300,10 +301,160 @@
             }
         }
 
+        public function totalUser(){
+            $database = new Database();
+            $sql = "SELECT * FROM user_account WHERE user_id IS NOT NULL";
+
+            $result = $database->dbConnection()->query($sql);
+            if ($result) {
+                // if the query is successful, return true
+                return $result->num_rows;
+            }
+        }
+
+        public function totalUserFacilitator(){
+            $database = new Database();
+            $sql = "SELECT * FROM user_account WHERE user_id IS NOT NULL AND user_level = 'facilitator'";
+
+            $result = $database->dbConnection()->query($sql);
+            if ($result) {
+                // if the query is successful, return true
+                return $result->num_rows;
+            }
+        }
+
+        public function totalUserStudent(){
+            $database = new Database();
+            $sql = "SELECT * FROM user_account WHERE user_id IS NOT NULL AND user_level = 'student'";
+
+            $result = $database->dbConnection()->query($sql);
+            if ($result) {
+                // if the query is successful, return true
+                return $result->num_rows;
+            }
+        }
+        
+        public function totalUserFacilitatorRequest(){
+            $database = new Database();
+            $sql = "SELECT * FROM user_account WHERE user_id IS NOT NULL AND user_level = 'facilitator'";
+
+            $result = $database->dbConnection()->query($sql);
+            if ($result) {
+                // if the query is successful, return true
+                return $result->num_rows;
+            }
+        }
+
+        public function totalElection(){
+            $database = new Database();
+            $sql = "SELECT * FROM election WHERE status = 'confirmed'";
+
+            $result = $database->dbConnection()->query($sql);
+            if ($result) {
+                // if the query is successful, return true
+                return $result->num_rows;
+            }
+        }
+
+        public function totalElectionRequest(){
+            $database = new Database();
+            $sql = "SELECT * FROM election WHERE status = 'pending'";
+
+            $result = $database->dbConnection()->query($sql);
+            if ($result) {
+                // if the query is successful, return true
+                return $result->num_rows;
+            }
+        }
 
 
-   
+        public function fetchElectionConfirmed(){
+            $database = new Database();
+            $sql = "SELECT
+                        election.id,
+                        election.evs_id,
+                        user_account.university,
+                        election.desc_election,
+                        election.date,
+                        election.start_time,
+                        election.end_time
+                    FROM user_account
+                    INNER JOIN election
+                        ON user_account.user_id = election.evs_id
+                    WHERE election.status = 'confirmed'
+            ";
+            $result = $database->dbConnection()->query($sql);
+            if ($result) {
+                // if the query is successful, return true
+                return $result;
+            }
+        }
 
+        public function fetchElectionFacilitator($evs_id){
+            $database = new Database();
+            $sql = "SELECT
+                        election.id,
+                        election.evs_id,
+                        user_account.university,
+                        election.desc_election,
+                        election.date,
+                        election.start_time,
+                        election.end_time,
+                        election.status
+                    FROM user_account
+                    INNER JOIN election
+                        ON user_account.user_id = election.evs_id
+                    WHERE election.evs_id = '$evs_id';
+            ";
+            $result = $database->dbConnection()->query($sql);
+            if ($result) {
+                // if the query is successful, return true
+                return $result;
+            }
+        }
+
+        public function fetchFaciStudent($university){
+            $database = new Database();
+            $sql = "SELECT * FROM 
+                        user_account
+                    WHERE user_level = 'student' 
+                    AND university = '$university'
+                    AND user_id IS NOT NULL";
+
+            $result = $database->dbConnection()->query($sql);
+            if ($result) {
+                // if the query is successful, return true
+                return $result->num_rows;
+            }
+        }
+        
+        public function fetchFaciStudentRequest($university){
+            $database = new Database();
+            $sql = "SELECT * FROM 
+                        user_account
+                    WHERE user_level = 'student' 
+                    AND university = '$university'
+                    AND user_id IS NULL";
+
+            $result = $database->dbConnection()->query($sql);
+            if ($result) {
+                // if the query is successful, return true
+                return $result->num_rows;
+            }
+        }
+
+        public function fetchFacilitatorInfo($evs_id){
+            $database = new Database();
+            $sql = "SELECT * FROM user_account WHERE user_id = '$evs_id'";
+            $result = $database->dbConnection()->query($sql);
+            if ($result) {
+                // if the query is successful, return true
+                if ($result->num_rows > 0) {
+                    $row = $result->fetch_assoc(); 
+                }
+                return $row['university'];
+            }
+        }
     }
 
 ?>

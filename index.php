@@ -52,6 +52,8 @@ post('/GetVoteCountsController', 'controller/facilitator/GetVoteCountsController
 
 route('/loadCharts', 'controller/facilitator/loadElement/loadCharts.php');
 
+post('/statusElection', 'controller/studentController/StatusElectionController.php');
+
 #---------------------- admin routing --------------------#
 get('/admin', 'views/evs/admin/auth.php');
 

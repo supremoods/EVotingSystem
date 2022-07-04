@@ -451,7 +451,6 @@
         }
         
         //change password
-
         public function updatePassword($encryptedPassword, $facilitatorID) {
             // create a new database object
             $database = new Database();
@@ -484,9 +483,50 @@
                 // if the query is not successful, return false
                 return false;
             }
+        }   
+
+
+        public function getStatusElectionQuery($university){
+            $database = new Database();
+
+            $sql = "SELECT election.status
+                    FROM user_account
+                    INNER JOIN election
+                        ON user_account.user_id = election.evs_id
+                    WHERE user_account.university = '$university'";
+
+            $result = $database->dbConnection()->query($sql);
+
+            if ($result) {
+                // if the query is successful, return true
+                $row = $result->fetch_assoc();
+
+
+                return $row['status'];
+            }
         }
-            
+
+
+        public function getStudentUniversity($evs_id){
+            $database = new Database();
+
+            $sql = "SELECT
+                        user_account.university
+                    FROM user_account
+                    WHERE user_account.user_id = '$evs_id'";
+
+            $result = $database->dbConnection()->query($sql);
+
+            if ($result) {
+                // if the query is successful, return true
+                $row = $result->fetch_assoc();
+
+                return $row['university'];
+            }
+        }
+
 
     }
+
 
 ?>

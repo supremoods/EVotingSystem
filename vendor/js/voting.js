@@ -55,11 +55,33 @@ function voteClick() {
         }
     }   
 }
-
+var clickable = false;
+$(document).ready(function(){
+    $.ajax({
+        type: "POST",
+        url: "/statusElection",
+        dataType: "json",
+        success: function(data){
+            if(data.election=="confirmed"){
+                clickable = true;
+            }else if(data.election=="pending"){
+                clickable = false;
+            }else{
+                clickable = false;
+            }
+        },error: function (request, status, error) {
+            console.log(request.responseText);
+        }    
+    });
+    
+    
+});
 
 
 setInterval(function(){
-    voteClick();
+    if(clickable){
+        voteClick();
+    }
 }, 500);
 
 
@@ -72,7 +94,7 @@ for(let i=0; i<document.querySelectorAll(".navigate").length; i++){
         previousLink = i;
     }
 }  
-
+ 
 
 function pushVotes(id,index){
     if(!votes.includes(id)){
