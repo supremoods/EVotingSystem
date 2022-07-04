@@ -1,7 +1,7 @@
 <?php
-  if(isset($_SESSION['userAccount'])){
+if (isset($_SESSION['userAccount'])) {
     header("location:/student/forum");
-  }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -72,12 +72,12 @@
                 </div>
             </div>
 
-            <?php require_once("views/templates/footer.php") ; ?>
+            <?php require_once("views/templates/footer.php"); ?>
 
         </div>
-        <?php   require_once("views/evs/modal/cpmModal.php"); ?>
-        <?php   require_once("views/evs/modal/modal_load.php"); ?>
-        <?php   require_once("views/evs/modal/RegisterModal.php"); ?>
+        <?php require_once("views/evs/modal/cpmModal.php"); ?>
+        <?php require_once("views/evs/modal/modal_load.php"); ?>
+        <?php require_once("views/evs/modal/RegisterModal.php"); ?>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
