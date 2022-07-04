@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3308
--- Generation Time: Jul 03, 2022 at 03:50 PM
--- Server version: 10.4.20-MariaDB
--- PHP Version: 8.0.9
+-- Host: 127.0.0.1:3308
+-- Generation Time: Jul 04, 2022 at 12:59 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -43,7 +43,7 @@ CREATE TABLE `admin` (
 
 INSERT INTO `admin` (`id`, `username`, `password`, `img`, `status`, `timeStampIn`, `timeStampOut`) VALUES
 (1, 'admin', 'admin', 'avatar.svg', NULL, NULL, NULL),
-(6, 'supremo', '$2y$10$UwV.P8l.ZyGPs.T1x73sSuDIUulhiRYfjKDdeZxQPWz5M6nnkr15m', '278638696_4916507031801233_787450432618075058_n.jpg', 'active', '2022-06-25 08:01:43', NULL),
+(6, 'supremo', '$2y$10$UwV.P8l.ZyGPs.T1x73sSuDIUulhiRYfjKDdeZxQPWz5M6nnkr15m', 'gon_by_ariuemi_d8ta4vx.png', 'active', '2022-07-04 08:44:19', NULL),
 (10, 'Supremood', '$2y$10$JfQ2bXFiCVcWQ7jidbrF5eTeeDlOJ9TTgEPvh9CxSALGUaKk6nF1K', 'avatar.svg', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
@@ -71,7 +71,7 @@ CREATE TABLE `candidates` (
 INSERT INTO `candidates` (`id`, `evs_id`, `partylist`, `position`, `name`, `college`, `course`, `year`, `image`) VALUES
 (353, 'EVS-1cfaa0', 'Lead Party', 'President', 'Irene Ongkiko', 'College of Architecture (Archi)', 'Bachelor in Landscape Architecture (BLA)', '3rd Year', '640px-Irene_at_a_fansigning_event_on_April_13,_2019_(1).jpg'),
 (354, 'EVS-1cfaa0', 'Lead Party', 'Vice-President', 'Yeri Lappay', 'College of Home Economics (CHE)', 'Bachelor of Science in Business Administration Major in Business Economics (BSBA)', '4th Year', '20211210—Yeri_예리_interview,_BEAUTY+_screenshot.jpg'),
-(355, 'EVS-1cfaa0', 'Lead Party', '', 'Hwasa Tupaz', 'College of Science (CS)', 'Bachelor of Science in Information Technology (BSIT)', '3rd Year', 'hwasa.jpg'),
+(355, 'EVS-1cfaa0', 'Lead Party', 'Secretary', 'Hwasa Tupaz', 'College of Science (CS)', 'Bachelor of Science in Information Technology (BSIT)', '3rd Year', 'hwasa.jpg'),
 (356, 'EVS-1cfaa0', 'Lead Party', 'Treasurer', 'Althea Perez', 'College of Science (CS)', 'BSIS', '3rd Year', 'hyoyeon.jpeg'),
 (357, 'EVS-1cfaa0', 'Lead Party', 'Public Relation Officer', 'Jessica Lee', 'College of Science (CS)', 'BSCS', '4th Year', 'jessica.jpg'),
 (358, 'EVS-1cfaa0', 'Lead Party', 'Senator', 'Joy Pineda', 'College of Architecture (Archi)', 'Bachelor of Science in Architecture (BS Architecture)', '2nd Year', 'Joy_Red_Velvet-p2.jpg'),
@@ -91,7 +91,7 @@ INSERT INTO `candidates` (`id`, `evs_id`, `partylist`, `position`, `name`, `coll
 (372, 'EVS-1cfaa0', 'Lead Party', 'Vice Governor ( College of Engineering(COE) )', 'Yeji Tenorio', 'College of Engineering(COE)', 'BSEE', '2nd Year', 'yeji.jpg'),
 (373, 'EVS-1cfaa0', 'YoungZ Party', 'President', 'Yuna Lim', 'College of Law (LAW)', 'Bachelor of Science in Islamic Studies (ABIS)', '3rd Year', 'yuna.jpg'),
 (374, 'EVS-1cfaa0', 'YoungZ Party', 'Vice-President', 'Yoona Sanchez', 'College of Law (LAW)', 'Bachelor of Science in Islamic Studies (ABIS)', '4th Year', 'yoona.png'),
-(375, 'EVS-1cfaa0', 'YoungZ Party', '', 'Jessie Alamil', 'College of Architecture (Archi)', 'Bachelor of Science in Architecture (BS Architecture)', '2nd Year', 'yuri.jpg'),
+(375, 'EVS-1cfaa0', 'YoungZ Party', 'Secretary', 'Jessie Alamil', 'College of Architecture (Archi)', 'Bachelor of Science in Architecture (BS Architecture)', '2nd Year', 'yuri.jpg'),
 (376, 'EVS-1cfaa0', 'YoungZ Party', 'Treasurer', 'John Cruz', 'School of Economics (SE)', 'Bachelor of Arts in Economics (AB Economics)', '3rd Year', 'ab6761610000e5ebb3a578a479adc87460c56606.jpg'),
 (377, 'EVS-1cfaa0', 'YoungZ Party', 'Public Relation Officer', 'Madeline Horca', 'College of Architecture (Archi)', 'Bachelor of Science in Architecture (BS Architecture)', '2nd Year', 'download.png'),
 (378, 'EVS-1cfaa0', 'YoungZ Party', 'Senator', 'RM Mandap', 'College of Science (CS)', 'Bachelor of Science in Information Technology (BSIT)', '3rd Year', 'dbfdcedda40567e83bb00736b1a92e0b-e1591225241753.jpg'),
@@ -123,15 +123,16 @@ CREATE TABLE `election` (
   `desc_election` longtext NOT NULL,
   `date` date NOT NULL,
   `start_time` time NOT NULL,
-  `end_time` time NOT NULL
+  `end_time` time NOT NULL,
+  `status` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `election`
 --
 
-INSERT INTO `election` (`id`, `election_id`, `evs_id`, `desc_election`, `date`, `start_time`, `end_time`) VALUES
-(14, '5870ab65cd75797a', 'EVS-1cfaa0', 'GG 2022 Officers', '2022-07-12', '12:20:00', '16:20:00');
+INSERT INTO `election` (`id`, `election_id`, `evs_id`, `desc_election`, `date`, `start_time`, `end_time`, `status`) VALUES
+(14, '5870ab65cd75797a', 'EVS-1cfaa0', 'GG 2022 Officers', '2022-07-12', '08:00:00', '20:00:00', 'pending');
 
 -- --------------------------------------------------------
 
@@ -231,46 +232,46 @@ CREATE TABLE `total_vote_counts` (
 --
 
 INSERT INTO `total_vote_counts` (`id`, `election_id`, `candidate_id`, `partylist`, `position`, `name`, `votes`) VALUES
-(34, 'EVS-1cfaa0', 353, 'Lead Party', 'President', 'Irene Ongkiko', 0),
-(35, 'EVS-1cfaa0', 354, 'Lead Party', 'Vice-President', 'Yeri Lappay', 0),
-(36, 'EVS-1cfaa0', 355, 'Lead Party', '', 'Hwasa Tupaz', 0),
-(37, 'EVS-1cfaa0', 356, 'Lead Party', 'Treasurer', 'Althea Perez', 0),
-(38, 'EVS-1cfaa0', 357, 'Lead Party', 'Public Relation Officer', 'Jessica Lee', 0),
-(39, 'EVS-1cfaa0', 358, 'Lead Party', 'Senator', 'Joy Pineda', 0),
-(40, 'EVS-1cfaa0', 359, 'Lead Party', 'Senator', 'Lia Santiago', 0),
-(41, 'EVS-1cfaa0', 360, 'Lead Party', 'Senator', 'Moon Silvia Arez', 0),
-(42, 'EVS-1cfaa0', 361, 'Lead Party', 'Senator', 'Carla Cruz', 0),
-(43, 'EVS-1cfaa0', 362, 'Lead Party', 'Senator', 'Ryujin Arevalo', 0),
-(44, 'EVS-1cfaa0', 363, 'Lead Party', 'Senator', 'Sonia Ortega', 0),
-(45, 'EVS-1cfaa0', 364, 'Lead Party', 'Senator', 'Solar Pacis', 0),
-(46, 'EVS-1cfaa0', 365, 'Lead Party', 'Governor ( College of Education(CEd) )', 'Yuri Silvestre', 0),
-(47, 'EVS-1cfaa0', 366, 'Lead Party', 'Vice Governor ( College of Education(CEd) )', 'Yoona Cemanes', 0),
-(48, 'EVS-1cfaa0', 367, 'Lead Party', 'Governor ( College of Architecture (Archi) )', 'Tiffany Go', 0),
-(49, 'EVS-1cfaa0', 368, 'Lead Party', 'Vice Governor ( College of Architecture (Archi) )', 'Angela Miranda', 0),
-(50, 'EVS-1cfaa0', 369, 'Lead Party', 'Governor ( College of Science(CS) )', 'Wendy May Santos', 0),
-(51, 'EVS-1cfaa0', 370, 'Lead Party', 'Vice Governor ( College of Science(CS) )', 'Wheein Lee', 0),
-(52, 'EVS-1cfaa0', 371, 'Lead Party', 'Governor ( College of Engineering(COE) )', 'Ricalyn Silva', 0),
-(53, 'EVS-1cfaa0', 372, 'Lead Party', 'Vice Governor ( College of Engineering(COE) )', 'Yeji Tenorio', 0),
-(54, 'EVS-1cfaa0', 373, 'YoungZ Party', 'President', 'Yuna Lim', 0),
-(55, 'EVS-1cfaa0', 374, 'YoungZ Party', 'Vice-President', 'Yoona Sanchez', 0),
-(56, 'EVS-1cfaa0', 375, 'YoungZ Party', '', 'Jessie Alamil', 0),
-(57, 'EVS-1cfaa0', 376, 'YoungZ Party', 'Treasurer', 'John Cruz', 0),
-(58, 'EVS-1cfaa0', 377, 'YoungZ Party', 'Public Relation Officer', 'Madeline Horca', 0),
-(59, 'EVS-1cfaa0', 378, 'YoungZ Party', 'Senator', 'RM Mandap', 0),
-(60, 'EVS-1cfaa0', 379, 'YoungZ Party', 'Senator', 'Jimin Dela Cruz', 0),
-(61, 'EVS-1cfaa0', 380, 'YoungZ Party', 'Senator', 'Lalisa Manoban', 0),
-(62, 'EVS-1cfaa0', 381, 'YoungZ Party', 'Senator', 'Annie Mae Nandz', 0),
-(63, 'EVS-1cfaa0', 382, 'YoungZ Party', 'Senator', 'Tyra Concepcion', 0),
-(64, 'EVS-1cfaa0', 383, 'YoungZ Party', 'Senator', 'Taehyung Kim', 0),
-(65, 'EVS-1cfaa0', 384, 'YoungZ Party', 'Senator', 'Kim Chui', 0),
-(66, 'EVS-1cfaa0', 385, 'YoungZ Party', 'Governor ( College of Science(CS) )', 'Suga Martinez', 0),
-(67, 'EVS-1cfaa0', 386, 'YoungZ Party', 'Vice Governor ( College of Science(CS) )', 'Kimberly Alpaz', 0),
-(68, 'EVS-1cfaa0', 387, 'YoungZ Party', 'Governor ( College of Engineering (COE) )', 'Jungkook Lopez', 0),
-(69, 'EVS-1cfaa0', 388, 'YoungZ Party', 'Vice Governor ( College of Engineering (COE) )', 'Nancy Jewel', 0),
-(70, 'EVS-1cfaa0', 389, 'YoungZ Party', 'Governor ( College of Architecture (Archi) )', 'Chandy Lee', 0),
-(71, 'EVS-1cfaa0', 390, 'YoungZ Party', 'Vice Governor ( College of Architecture (Archi) )', 'Jhope Pacle', 0),
-(72, 'EVS-1cfaa0', 391, 'YoungZ Party', 'Governor ( College of Education (CEd) )', 'Jeongyeon Soo', 0),
-(73, 'EVS-1cfaa0', 392, 'YoungZ Party', 'Vice Governor ( College of Education (CEd) )', 'Sana Bi', 0);
+(74, 'EVS-1cfaa0', 353, 'Lead Party', 'President', 'Irene Ongkiko', 0),
+(75, 'EVS-1cfaa0', 354, 'Lead Party', 'Vice-President', 'Yeri Lappay', 0),
+(76, 'EVS-1cfaa0', 355, 'Lead Party', 'Secretary', 'Hwasa Tupaz', 0),
+(77, 'EVS-1cfaa0', 356, 'Lead Party', 'Treasurer', 'Althea Perez', 0),
+(78, 'EVS-1cfaa0', 357, 'Lead Party', 'Public Relation Officer', 'Jessica Lee', 0),
+(79, 'EVS-1cfaa0', 358, 'Lead Party', 'Senator', 'Joy Pineda', 0),
+(80, 'EVS-1cfaa0', 359, 'Lead Party', 'Senator', 'Lia Santiago', 0),
+(81, 'EVS-1cfaa0', 360, 'Lead Party', 'Senator', 'Moon Silvia Arez', 0),
+(82, 'EVS-1cfaa0', 361, 'Lead Party', 'Senator', 'Carla Cruz', 0),
+(83, 'EVS-1cfaa0', 362, 'Lead Party', 'Senator', 'Ryujin Arevalo', 0),
+(84, 'EVS-1cfaa0', 363, 'Lead Party', 'Senator', 'Sonia Ortega', 0),
+(85, 'EVS-1cfaa0', 364, 'Lead Party', 'Senator', 'Solar Pacis', 0),
+(86, 'EVS-1cfaa0', 365, 'Lead Party', 'Governor ( College of Education(CEd) )', 'Yuri Silvestre', 0),
+(87, 'EVS-1cfaa0', 366, 'Lead Party', 'Vice Governor ( College of Education(CEd) )', 'Yoona Cemanes', 0),
+(88, 'EVS-1cfaa0', 367, 'Lead Party', 'Governor ( College of Architecture (Archi) )', 'Tiffany Go', 0),
+(89, 'EVS-1cfaa0', 368, 'Lead Party', 'Vice Governor ( College of Architecture (Archi) )', 'Angela Miranda', 0),
+(90, 'EVS-1cfaa0', 369, 'Lead Party', 'Governor ( College of Science(CS) )', 'Wendy May Santos', 0),
+(91, 'EVS-1cfaa0', 370, 'Lead Party', 'Vice Governor ( College of Science(CS) )', 'Wheein Lee', 0),
+(92, 'EVS-1cfaa0', 371, 'Lead Party', 'Governor ( College of Engineering(COE) )', 'Ricalyn Silva', 0),
+(93, 'EVS-1cfaa0', 372, 'Lead Party', 'Vice Governor ( College of Engineering(COE) )', 'Yeji Tenorio', 0),
+(94, 'EVS-1cfaa0', 373, 'YoungZ Party', 'President', 'Yuna Lim', 0),
+(95, 'EVS-1cfaa0', 374, 'YoungZ Party', 'Vice-President', 'Yoona Sanchez', 0),
+(96, 'EVS-1cfaa0', 375, 'YoungZ Party', 'Secretary', 'Jessie Alamil', 0),
+(97, 'EVS-1cfaa0', 376, 'YoungZ Party', 'Treasurer', 'John Cruz', 0),
+(98, 'EVS-1cfaa0', 377, 'YoungZ Party', 'Public Relation Officer', 'Madeline Horca', 0),
+(99, 'EVS-1cfaa0', 378, 'YoungZ Party', 'Senator', 'RM Mandap', 0),
+(100, 'EVS-1cfaa0', 379, 'YoungZ Party', 'Senator', 'Jimin Dela Cruz', 0),
+(101, 'EVS-1cfaa0', 380, 'YoungZ Party', 'Senator', 'Lalisa Manoban', 0),
+(102, 'EVS-1cfaa0', 381, 'YoungZ Party', 'Senator', 'Annie Mae Nandz', 0),
+(103, 'EVS-1cfaa0', 382, 'YoungZ Party', 'Senator', 'Tyra Concepcion', 0),
+(104, 'EVS-1cfaa0', 383, 'YoungZ Party', 'Senator', 'Taehyung Kim', 0),
+(105, 'EVS-1cfaa0', 384, 'YoungZ Party', 'Senator', 'Kim Chui', 0),
+(106, 'EVS-1cfaa0', 385, 'YoungZ Party', 'Governor ( College of Science(CS) )', 'Suga Martinez', 0),
+(107, 'EVS-1cfaa0', 386, 'YoungZ Party', 'Vice Governor ( College of Science(CS) )', 'Kimberly Alpaz', 0),
+(108, 'EVS-1cfaa0', 387, 'YoungZ Party', 'Governor ( College of Engineering (COE) )', 'Jungkook Lopez', 0),
+(109, 'EVS-1cfaa0', 388, 'YoungZ Party', 'Vice Governor ( College of Engineering (COE) )', 'Nancy Jewel', 0),
+(110, 'EVS-1cfaa0', 389, 'YoungZ Party', 'Governor ( College of Architecture (Archi) )', 'Chandy Lee', 0),
+(111, 'EVS-1cfaa0', 390, 'YoungZ Party', 'Vice Governor ( College of Architecture (Archi) )', 'Jhope Pacle', 0),
+(112, 'EVS-1cfaa0', 391, 'YoungZ Party', 'Governor ( College of Education (CEd) )', 'Jeongyeon Soo', 0),
+(113, 'EVS-1cfaa0', 392, 'YoungZ Party', 'Vice Governor ( College of Education (CEd) )', 'Sana Bi', 0);
 
 -- --------------------------------------------------------
 
@@ -2738,10 +2739,10 @@ CREATE TABLE `user_account` (
 --
 
 INSERT INTO `user_account` (`id`, `user_token`, `university_id_img`, `image_src`, `user_level`, `university`, `university_id`, `user_id`, `first_name`, `last_name`, `email`, `passw`, `status`, `time_stamp_in`, `time_stamp_out`) VALUES
-(48, '', 'IDCard-SAMPLE-02-767159.jpg', 'nayeon.jpg', 'Facilitator', 'University of the Philippines-Diliman', 'UPD-19-2343', 'EVS-c3c7c6', 'Na-yeon', 'Im', 'im.nayeon@gmail.com', '$2y$10$.CVeTjhjxCypLNRFlyZNUOB0ofmHpnl9h.ZIROnIOVxmiGaP8Gd9K', NULL, '2022-06-20 16:09:02', NULL),
+(48, '', 'IDCard-SAMPLE-02-767159.jpg', 'nayeon.jpg', 'facilitator', 'University of the Philippines-Diliman', 'UPD-19-2343', 'EVS-c3c7c6', 'Na-yeon', 'Im', 'im.nayeon@gmail.com', '$2y$10$.CVeTjhjxCypLNRFlyZNUOB0ofmHpnl9h.ZIROnIOVxmiGaP8Gd9K', NULL, '2022-06-20 16:09:02', NULL),
 (63, '5d220ad91c339371', 'IDCard-SAMPLE-02-767159.jpg', '264165739_4501303539988253_4768271605685310825_n.jpg', 'student', 'Technological University of the Philippines-Manila', 'TUPM-22-2322', 'EVS-60a39b', 'Lee', 'Ji-eun', 'Lee.Ji-eun@tup.edu.ph', '$2y$10$.YK2XmEkLKsYCQEqNwHT0.0PWOk8FzQN58imfIQUshPmDyFSU0aNy', NULL, NULL, NULL),
 (64, '632f25ce5507fc48', 'IDCard-SAMPLE-02-767159.jpg', NULL, 'student', 'Technological University of the Philippines-Manila', 'PLM-22-2112', 'EVS-368141', 'Oden', 'Kozuki', 'kozuki.oden@plm.edu.ph', '$2y$10$kG7jjStPOQtqJ0MYv1RK0.iO1elvEsHJcBNwjFnDr6IXxYC1VZG0.', NULL, NULL, NULL),
-(65, 'e4fedd77fd7a7f6c', 'IDCard-SAMPLE-02-767159.jpg', 'vinsmoke_sanji___germa_kingdom_prince_by_mystig0_ddld5dr.png', 'facilitator', 'Technological University of the Philippines-Manila', 'UPD-22-1029', 'EVS-1cfaa0', 'Hiyori', 'Kozuki', 'john.lappay@tup.edu.ph', '$2y$10$a1gr8z5dkKKX/Uhzt6aXM.QqJjad34NiIZTzSYP/oAusmkigdAFYy', 'active', '2022-07-03 12:08:29', '2022-07-03 07:03:14'),
+(65, 'e4fedd77fd7a7f6c', 'IDCard-SAMPLE-02-767159.jpg', 'vinsmoke_sanji___germa_kingdom_prince_by_mystig0_ddld5dr.png', 'facilitator', 'Technological University of the Philippines-Manila', 'UPD-22-1029', 'EVS-1cfaa0', 'Hiyori', 'Kozuki', 'john.lappay@tup.edu.ph', '$2y$10$a1gr8z5dkKKX/Uhzt6aXM.QqJjad34NiIZTzSYP/oAusmkigdAFYy', 'active', '2022-07-04 09:33:24', '2022-07-04 08:21:28'),
 (66, 'd961b55dbd909ead', 'polIDfront.jpg', NULL, 'student', 'Technological University of the Philippines-Manila', 'TUPM-19-1123', 'EVS-b6d456', 'Angelica', 'Perez', 'angeperez@tup.edu.ph', '$2y$10$0B5MaR0dNDPu71DKeVwIuOOgTpNkpIXCQx6t.6VtJhOIi02q07ZXW', NULL, NULL, NULL),
 (67, 'bb3b04fd55eca987', 'photo_2021-09-02_19-15-10.jpg', NULL, 'student', 'Technological University of the Philippines-Manila', 'TUPM-20-1222', NULL, 'Kristle', 'Cruz', 'kristlecruz@tup.edu.ph', '$2y$10$k2UUH146M5iqQ1rY6KQBxuOnNSq9Z7.zk732Q2Tt6PVHp4LXXrArW', NULL, NULL, NULL),
 (68, '3dad30ab865cba8c', 'photo_2021-09-02_19-15-10.jpg', NULL, 'student', 'Technological University of the Philippines-Manila', 'TUPM-21-2232', 'EVS-a7590a', 'Sandara', 'Park', 'SandaraPark12@tup.edu.ph', '$2y$10$a1gr8z5dkKKX/Uhzt6aXM.QqJjad34NiIZTzSYP/oAusmkigdAFYy', NULL, NULL, NULL),
@@ -2895,7 +2896,7 @@ ALTER TABLE `student_university_info`
 -- AUTO_INCREMENT for table `total_vote_counts`
 --
 ALTER TABLE `total_vote_counts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=114;
 
 --
 -- AUTO_INCREMENT for table `university`
@@ -2913,7 +2914,7 @@ ALTER TABLE `user_account`
 -- AUTO_INCREMENT for table `vote_count`
 --
 ALTER TABLE `vote_count`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
