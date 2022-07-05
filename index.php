@@ -41,9 +41,6 @@ route('/aboutus', 'views/evs/aboutus.php');
 
 route('/termsofservices', 'views/evs/termsofservices.php');
 
-
-
-
 #---------------------- student routing --------------------#
 
 get('/student/$page', 'views/evs/index.php');
@@ -61,6 +58,24 @@ post('/GetVoteCountsController', 'controller/facilitator/GetVoteCountsController
 route('/loadCharts', 'controller/facilitator/loadElement/loadCharts.php');
 
 post('/statusElection', 'controller/studentController/StatusElectionController.php');
+
+route('/loadCandidateList', 'controller/studentController/loadElements/loadCandidateList.php');
+
+route('/loadCandidateProfileCard', 'controller/studentController/loadElements/loadCandidatesProfile.php');
+
+route('/loadChartLeaderboards', 'controller/studentController/loadElements/loadCharts.php');
+
+post('/GetVoteCountsControllerLeaderBoard', 'controller/studentController/GetVoteCountsController.php');
+
+post('/uploadStudentAvatar', 'controller/studentController/uploadAvatar.php');
+
+route('/loadUserNameSidebarStudent', 'controller/studentController/loadElements/loadUsernameSidebar.php');
+
+route('/loadUserNameNavbarStudent', 'controller/studentController/loadElements/loadUsernameNavbar.php');
+
+post('/updatePasswordStudent', 'controller/studentController/changePassword.php');
+
+post('/logoutStudent', 'controller/LogoutController.php');
 
 #---------------------- admin routing --------------------#
 get('/admin', 'views/evs/admin/auth.php');
@@ -108,6 +123,7 @@ route('/loadElectionRequest', 'controller/adminController/loadElement/loadElecti
 route('/loadElection', 'controller/adminController/loadElement/loadElection.php');
 
 post('/electionConfirmation', 'controller/adminController/electionConfirmation.php');
+
 // #---------------------- end --------------------#
 
 // #---------------------- email routing --------------------#
@@ -152,9 +168,7 @@ get('/checkIfElectionExist', 'controller/facilitator/checkIfElectionExist.php');
 
 post('/dropElection', 'controller/facilitator/dropElection.php');
 
-
 // #---------------------- end --------------------#
-
 
 // The 404.php has access to $_GET and $_POST
 any('/404','views/evs/404.php');

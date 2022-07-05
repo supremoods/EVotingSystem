@@ -35,7 +35,7 @@
                     </div>
                 </div>
                 <div class="line"></div>
-                <div class="profile_content_item">
+                <div class="profile_content_item" data-page="account_setting" onclick="loadContent(this.dataset.page)">
                     <span class="material-icons">settings</span>
                     <p>Settings & Privacy</p>
                 </div>

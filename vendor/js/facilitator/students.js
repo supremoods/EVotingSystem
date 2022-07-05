@@ -2,7 +2,7 @@
 var isOnDiv = false;
 const optionMenu = document.querySelector(".select-menu-colleges"),
     selectBtn = optionMenu.querySelector(".select-btn-colleges"),
-    options = optionMenu.querySelectorAll(".option-colleges"),
+    options = optionMenu.querySelectorAll(".option-univ"),
     sBtn_text = optionMenu.querySelector(".sBtn-text-colleges");
 
 selectBtn.addEventListener("click", () =>
@@ -20,7 +20,7 @@ options.forEach((option) => {
 
 const optionMenuModal = document.querySelector(".select-menu-colleges-modal"),
     selectBtnModal = optionMenuModal.querySelector(".select-btn-colleges-modal"),
-    optionsModal = optionMenuModal.querySelectorAll(".option-colleges-modal"),
+    optionsModal = optionMenuModal.querySelectorAll(".option-univ-modal"),
     sBtnTextModal = optionMenuModal.querySelector(".sBtn-text-colleges-modal");
 
 selectBtnModal.addEventListener("click", () =>
@@ -80,9 +80,9 @@ $(document).ready(function(){
 });
 
 
-$(document).ready(function(){
-  $(".load-US").load("/loadUS");
-});
+// $(document).ready(function(){
+//   $(".load-US").load("/loadUS");
+// });
 
 
 $(".load-Students").mouseenter(

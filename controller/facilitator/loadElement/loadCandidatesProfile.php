@@ -64,9 +64,11 @@
                 </div>
             </div>
         </div>
+
         <div class="pre-loading-img">
             <img src="../vendor/img/loader/loading.gif" alt="">
         </div>
+        
         <div class="success-message" onclick="closeSuccess()">
             <p>Successfully Edited</p>
         </div>

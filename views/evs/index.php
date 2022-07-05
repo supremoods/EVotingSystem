@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="../vendor/img/logo/evs_logo_blue.png" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet" />
     <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js" integrity="sha512-sW/w8s4RWTdFFSduOTGtk4isV1+190E/GghVffMA9XczdJ2MDzSzLEubKAs5h0wzgSJOQTRYyaz73L3d6RtJSg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <?php
         if($page=="voting"){
             echo "<link rel=\"stylesheet\" href=\"../vendor/css/voting.css\"/>";
@@ -31,10 +31,14 @@
             echo "<link rel=\"stylesheet\" href=\"../vendor/css/leaderboard.css\"/>";
             echo "<title>Leaderboard | EVS</title>";
             $jsfile = "leaderboard.js";
-        }else if($page=="candidate"){
+        }else if($page=="candidates"){
             echo "<link rel=\"stylesheet\" href=\"../vendor/css/candidate.css\"/>";
             echo "<title>Candidate | EVS</title>";
             $jsfile = "candidate.js";
+        }else if($page=="account_settings"){
+            echo "<link rel=\"stylesheet\" href=\"../vendor/css/account_settings.css\"/>";
+            echo "<title>Account Settings | EVS</title>";
+            $jsfile = "account_settings.js";
         }
     ?>
 </head>

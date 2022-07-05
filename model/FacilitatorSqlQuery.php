@@ -39,6 +39,53 @@
             }
         }
 
+        public function fetchStudentInfoAccount($evs_id) {
+            $database = new Database();
+            // $this->setId($id);
+            $sql = "SELECT * FROM user_account WHERE user_id = '$evs_id'";
+
+            $result = $database->dbConnection()->query($sql);
+
+            if($result){
+                if($result->num_rows > 0){
+                    $row = $result->fetch_assoc();
+
+                    $this->setId($row['id']);
+                }
+            }
+
+            $sql = "SELECT * FROM user_account CROSS JOIN  student_university_info 
+            WHERE user_account.university_id = student_university_info.universityId 
+            AND user_account.id = '$this->id'
+            AND user_account.user_level = 'student'";
+
+            $result = $database->dbConnection()->query($sql);
+
+            if ($result) {
+                // if the query is successful, return true
+                if ($result->num_rows > 0) {
+                    while($row = $result->fetch_assoc()) {
+                        // set value to the object UserAccount properties
+                        $this->setId($row['id']);
+                        $this->setImageSrc($row['image_src']);
+                        $this->setUserLevel($row['user_level']);
+                        $this->setUniversity($row['university']);
+                        $this->setUniversityIDImg($row['university_id_img']);
+                        $this->setUniversityID($row['university_id']);
+                        $this->setUserID($row['user_id']);
+                        $this->setFirstName($row['first_name']);
+                        $this->setLastName($row['last_name']);
+                        $this->setEmail($row['email']);
+                        $this->setPassw($row['passw']);
+                        $this->setStatus($row['status']);
+                        $this->setTimeStampIn($row['time_stamp_in']);
+                        $this->setTimeStampOut($row['time_stamp_out']);
+                        $this->setCourse($row['course']);
+                        $this->setCollege_Dept($row['collegeDept']);
+                    }
+                }
+            }
+        }
         // fetch facilitator info from the database
         public function fetchStudentInfo($id) {
             $database = new Database();
@@ -466,12 +513,40 @@
                 return false;
             }
         }
+
+        //change password
+        public function updatePasswordStudent($encryptedPassword, $evs_id) {
+            // create a new database object
+            $database = new Database();
+            $sql = "SELECT * FROM user_account WHERE user_id = '$evs_id'";
+
+            $result = $database->dbConnection()->query($sql);
+
+            if($result){
+                if($result->num_rows > 0){
+                    $row = $result->fetch_assoc();
+
+                    $this->setId($row['id']);
+                }
+            }
+
+            $sql = "UPDATE user_account SET passw = '$encryptedPassword' WHERE id = '$this->id'";
+
+            $result = $database->dbConnection()->query($sql);
+            if ($result) {
+                // if the query is successful, return true
+                return true;
+            } else {
+                // if the query is not successful, return false
+                return false;
+            }
+        }
         
                 // update avatar of userAdmin in the database
         public function updateFacilitatorAvatar($facilitatorID, $imageSrc) {
             // create a new database object
             $database = new Database();
-            
+
             $sql = "UPDATE user_account SET image_src = '$imageSrc' WHERE id = '$facilitatorID'";
 
             $result = $database->dbConnection()->query($sql);
@@ -484,6 +559,36 @@
                 return false;
             }
         }   
+
+        public function updateStudentAvatar($evs_id, $imageSrc) {
+            // create a new database object
+            $database = new Database();
+
+            $sql = "SELECT * FROM user_account WHERE user_id = '$evs_id'";
+
+            $result = $database->dbConnection()->query($sql);
+
+            if($result){
+                if($result->num_rows > 0){
+                    $row = $result->fetch_assoc();
+
+                    $this->setId($row['id']);
+                }
+            }
+
+            $sql = "UPDATE user_account SET image_src = '$imageSrc' WHERE id = '$this->id'";
+
+            $result = $database->dbConnection()->query($sql);
+            if ($result) {
+                // if the query is successful, return true
+                $this->fetchStudentInfoAccount($evs_id);
+                return true;
+            } else {
+                // if the query is not successful, return false
+                return false;
+            }
+        }   
+
 
 
         public function getStatusElectionQuery($university){

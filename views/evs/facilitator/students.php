@@ -13,14 +13,6 @@
     <div class="Student-list-body">
         <!-- filter section -->
         <div class="Student-list-header">
-            <div class="search-Student">
-                <div class="search-Student-input">
-                    <input type="text" placeholder="Search Student">
-                </div>
-                <div class="search-Student-icon">
-                    <span class="material-icons">search</span>
-                </div>
-            </div>
             <div class="Student-filter">
                 <div class="select-menu select-colleges">
                     <div class="filter-label">
@@ -32,7 +24,23 @@
                             <span class="down material-icons">keyboard_arrow_down</span>
                         </div>
                         <ul class="options load-US">
-                          
+                        <?php 
+                            require_once ('model/FacilitatorSqlQuery.php');
+
+                            $facilitatorSqlQuery = new FacilitatorSqlQuery();
+
+                            $result = $facilitatorSqlQuery->universityItemStudent();
+
+                            if ($result->num_rows > 0) {
+                                while($row = $result->fetch_assoc()) {
+                            ?>
+                            <li class="option option-univ">
+                                <span class="option-text"><?=$row['collegeDept']?></span>
+                            </li>
+                        <?php
+                                }
+                            }    
+                        ?>
                         </ul>
                     </div>
                 </div>

@@ -22,12 +22,12 @@
                 if($this->verifyUserAccount()){
                     // set session variables
                     $_SESSION['userAccount'] = $this->getUserID();
+                    $this->updateLogInStudent($_SESSION['userAccount']);
                     return true;
                 }
             }
             return false;
         }
-        
 
     }
 

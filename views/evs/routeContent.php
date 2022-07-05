@@ -11,4 +11,7 @@ else if ($page == "leaderboard") {
 else if ($page == "forum") {
     include_once("views/evs/forum.php");
 }
+else if ($page == "account_settings") {
+    include_once("views/evs/account_settings.php");
+}
 ?>

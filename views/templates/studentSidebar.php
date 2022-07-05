@@ -1,5 +1,5 @@
 <div class="sidebar">
-    <div class="sidebar_item">
+    <div class="sidebar_item load_avatar">
         <div class="profile_icon">
             <img src="../vendor/img/profile_pic/<?= $sqlQuery->getImageSrc()?>" alt="" />
         </div>

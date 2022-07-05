@@ -1,13 +1,26 @@
 <?php
-    // destroy the session
-    session_start();
+    require_once ('model/SqlQuery.php');
 
-    if(isset($_SESSION['userAdmin'])){
-        unset($_SESSION['userAdmin']);
-        header("location:/admin");
-    }else if(isset($_SESSION['userAccount'])){
-        unset($_SESSION['userAccount']);
-        header("location:/");
+    class LogoutController extends SqlQuery{
+
+        public function logout(){
+            if(isset($_SESSION['userAccount'])){
+                if($this->updateLogOutStudent($_SESSION['userAccount'])){
+                    unset($_SESSION['userAccount']);
+                    return true;
+                }
+            }
+        }
+
+    }
+
+
+    $logoutController = new LogoutController();
+    
+    if($logoutController->logout()){
+        echo json_encode(array(
+            "status" => "success"
+        ));
     }
 
 ?>

@@ -188,6 +188,8 @@
                     while($row = $result->fetch_assoc()) {
                         if(password_verify($this->passw, $row['passw'])){
                             // decrypt the password
+
+
                             return true;
                         }
                     }
@@ -197,6 +199,43 @@
             return false;
         }
 
+        public function updateLogInStudent($evs_id) {
+            // create a new database object
+            $database = new Database();
+
+            $sql = "UPDATE user_account SET time_stamp_in = NOW(), status = 'active' WHERE user_id = '$evs_id'";
+
+            $result = $database->dbConnection()->query($sql);
+            if ($result) {
+                // if the query is successful, return true
+                return true;
+            } else {
+                // if the query is not successful, return false
+                return false;
+            }
+        }
+
+        // update logs of facilitator out the database
+        public function updateLogOutStudent($evs_id) {
+            // create a new database object
+            $database = new Database();
+
+            $sql = "UPDATE user_account SET time_stamp_out = NOW(), status = 'inactive' WHERE user_id = '$evs_id'";
+
+            $result = $database->dbConnection()->query($sql);
+            if ($result) {
+                // if the query is successful, return true
+                echo "updated";
+
+                return true;
+            } else {
+                // if the query is not successful, return false
+                // show error message
+                echo "error";
+
+                return false;
+            }
+        }
 
         public function selectAllVerifiedUsers(){
             $database = new Database();
@@ -451,8 +490,9 @@
                 // if the query is successful, return true
                 if ($result->num_rows > 0) {
                     $row = $result->fetch_assoc(); 
+                    return $row['university'];
                 }
-                return $row['university'];
+                
             }
         }
     }

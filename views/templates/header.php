@@ -15,7 +15,7 @@
         //login session
         if(isset($_SESSION['userAccount'])){
             // object of SqlQuery class
-            $sqlQuery = new SqlQuery('', '', '', '', '', '', '', '', '', '', '', '', '', '');
+            $sqlQuery = new SqlQuery();
             // call the fetchUserInfo method
             $sqlQuery->fetchUserInfo($_SESSION['userAccount']);
     ?>
@@ -45,7 +45,7 @@
     </div>
 
     <div class="profile_wrapper">
-        <div class="pwpc">
+        <div class="pwpc" id="pwpc">
             <div class="profile_icon" onclick="profileContent()">
                 <img src="../vendor/img/profile_pic/<?= $sqlQuery->getImageSrc()?>" alt="" />
             </div>
@@ -60,7 +60,7 @@
                     </div>
                 </div>
                 <div class="line"></div>
-                <div class="profile_content_item">
+                <div class="profile_content_item" data-page="account_settings" onclick="loadContent(this.dataset.page)">
                     <span class="material-icons">settings</span>
                     <p>Settings & Privacy</p>
                 </div>

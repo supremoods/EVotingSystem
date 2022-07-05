@@ -1,0 +1,61 @@
+
+.vote-chart-item h1{
+    color: var(--gray7);
+}
+.vote-chart-item{
+    padding:10px;
+    background: var(--gray1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.chart-items{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+.chart-governor{
+    flex-direction: column;
+}
+
+.vote-charts{
+    height: 200px;
+    width: 400px;
+    font-size: 12px;
+    padding: 10px;
+}
+
+.vote-charts.senator{
+    height: 632px;
+    width: 100%;
+}
+
+.chart-senators-item{
+    height:100%;
+    width: 100%;
+}
+
+.chart-governors{
+    flex-wrap: wrap;
+}
+
+.chart-governors-item .vote-charts{
+    width: 100%;
+}
+
+.status-chart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 100%;
+    font-size: 20px;
+    color: var(--gray7);
+}

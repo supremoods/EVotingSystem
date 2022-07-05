@@ -838,7 +838,12 @@ hr{
     padding: 0 2.5rem;
 }
 
-
+.candidate-list-content-items{
+    background: var(--gray1);
+    padding: 1rem;
+    border-radius: .5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+}
 .candidate-list-content-items .candidate-list-content-items-wrapper.header{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
