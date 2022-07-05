@@ -19,6 +19,8 @@ get('/facilitator/$page', 'views/evs/facilitator/index.php');
 
 get('/logout', 'controller/LogoutController.php');
 
+get('/logoutAdmin', 'controller/adminController/LogoutController.php');
+
 post('/populate', 'controller/populateUniversity.php');
 
 post('/register', 'controller/RegisterController.php');
@@ -110,7 +112,7 @@ route('/loadFacilitatorListRequest', 'controller/adminController/loadElement/loa
 
 route('/loadAdminList', 'controller/adminController/loadElement/loadAdminList.php');
 
-route('/deleteAdmin', 'controller/adminController/loadElement/deleteAdmin.php');
+route('/deleteAdmin', 'controller/adminController/deleteAdmin.php');
 
 route('/loadUserNameSidebar', 'controller/adminController/loadElement/loadUserNameSidebar.php');
 

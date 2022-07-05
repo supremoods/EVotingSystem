@@ -188,8 +188,6 @@
                     while($row = $result->fetch_assoc()) {
                         if(password_verify($this->passw, $row['passw'])){
                             // decrypt the password
-
-
                             return true;
                         }
                     }

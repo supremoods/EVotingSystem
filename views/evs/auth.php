@@ -1,6 +1,6 @@
 <?php
 if (isset($_SESSION['userAccount'])) {
-    header("location:/student/forum");
+    header("location:/student/voting");
 }
 ?>
 <!DOCTYPE html>
@@ -61,10 +61,16 @@ if (isset($_SESSION['userAccount'])) {
                 </div>
                 <div class="desc_wrapper">
                     <div class="desc_header">
-                        <h1>Lorem ipsum</h1>
+                        <h1>Vote Wisely. Vote Securely. Vote Virtually.</h1>
                     </div>
                     <div class="desc_about">
-                        <pre>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore nisi quibusdam amet deserunt consequatur. Nam, sequi dicta, harum tempore necessitatibus quaerat magnam error maiores unde, non quia aperiam facere possimus.Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore nisi quibusdam amet deserunt consequatur. Nam, sequi dicta, harum tempore necessitatibus quaerat magnam error maiores unde, non quia aperiam facere possimus.Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore nisi quibusdam amet deserunt consequatur. Nam, sequi dicta, harum tempore necessitatibus quaerat magnam error maiores unde, non quia aperiam facere possimus.Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore nisi quibusdam amet deserunt consequatur. Nam, sequi dicta, harum tempore necessitatibus quaerat magnam error maiores unde, non quia aperiam facere possimus.</pre>
+                        <pre>The E-Voting System is a web-based system software that allows university students to securely conduct online elections. The E-Voting System is a high-quality online voting system that has the overall requirements of a university election. The system is run by HTML, CSS, JavaScript, and PHP, and was developed by BSIT - 3D NS students from Technological University of the Philippines - Manila. </pre>
+                        <pre>Online voting system helps individual to make important decisions on electing people in an organization, by gathering the inputted data of group of people in a systematic and verifiable approach. </pre>
+                        <pre>E-Voting System can be use to:
+•	Conduct secured online university election.
+•	Vote and elect leaders in a university organization. 
+•	Engage in a leadership fora and discussion.
+</pre>
                     </div>
                     <div class="shape"></div>
                     <div class="shape2"></div>

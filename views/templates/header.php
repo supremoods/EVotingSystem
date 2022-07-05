@@ -36,11 +36,11 @@
                     <span class="material-icons">leaderboard</span>
                 </div>
             </div>
-            <div class="navbar_item <?=($page == "forum")?"active":''?>" data-page="forum" onclick="loadContent(this.dataset.page)">
+            <!-- <div class="navbar_item <?=($page == "forum")?"active":''?>" data-page="forum" onclick="loadContent(this.dataset.page)">
                 <div class="navbar_item_icon">
                     <span class="material-icons">forum</span>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 

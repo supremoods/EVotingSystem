@@ -53,7 +53,7 @@
                     <p>Name</p>
                 </div>
                 <div class="facilitator-list-content-item-header">
-                    <P>Privillage</P>
+                    <P>Privileged</P>
                 </div>
                 <div class="facilitator-list-content-item-header">
                     <p>University</p>

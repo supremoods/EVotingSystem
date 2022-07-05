@@ -9,6 +9,8 @@
 
     $partylist = $electionSqlQuery->selectPartylist($getFaciId);
 
+    echo $partylist[0];
+
     $result = $electionSqlQuery->fetchPartyCandidates($partylist[0]);
 
 ?>

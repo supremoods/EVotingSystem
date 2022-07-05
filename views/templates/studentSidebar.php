@@ -31,14 +31,14 @@
             <p>Leaderboard</p>
         </div>
     </div>
-    <div class="sidebar_item s_last" data-page="forum" onclick="loadContent(this.dataset.page)">
+    <!-- <div class="sidebar_item s_last" data-page="forum" onclick="loadContent(this.dataset.page)">
         <div class="sidebar_item_icon">
             <span class="material-icons">forum</span>
         </div>
         <div class="sidebar_item_content">
             <p>Forum</p>
         </div>
-    </div>
+    </div> -->
 
     <footer class="footer_wrapper">
         <ul class="nav_footer">

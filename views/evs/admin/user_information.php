@@ -21,7 +21,7 @@
             <div class="user-filter">
                 <div class="select-menu select-privillage">
                     <div class="filter-label">
-                        <label for="">Privillage</label>
+                        <label for="">Privileged</label>
                     </div>
                     <div class="select-btn select-btn-privillage">
                         <span class="sBtn-text sBtn-text-privillage">All</span>
@@ -82,7 +82,7 @@
                         <p>Name</p>
                     </div>
                     <div class="user-list-content-item-header">
-                        <P>Privillage</P>
+                        <P>Privileged</P>
                     </div>
                     <div class="user-list-content-item-header">
                         <p>University</p>

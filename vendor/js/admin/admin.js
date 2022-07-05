@@ -18,7 +18,7 @@ $(document).ready(function(){
 
 function logout(){
     $.ajax({
-        url: '/logout',
+        url: '/logoutAdmin',
         type: 'GET',
         success: function (data) {
             console.log(data);

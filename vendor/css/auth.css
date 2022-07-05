@@ -143,7 +143,7 @@
     position: absolute;
     left: 50%;
     bottom:0;
-    height: 600px;
+    height: 450px;
     transform: translate(-50%, 0%);
     transition: all .5s ease-in-out;
 }
@@ -182,9 +182,9 @@
 }
 .desc_wrapper .desc_about pre{
     position: relative;
-    color: var(--gray6);
+    color: var(--gray7);
     padding:20px 0;
-    font-size: 14px;
+    font-size: 16px;
     z-index:1;
     white-space: pre-wrap;       /* Since CSS 2.1 */
     white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
