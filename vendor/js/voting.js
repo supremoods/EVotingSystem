@@ -3,21 +3,7 @@
 //     $(".voting-wrapper-items").load("/loadVotingList");
 // });
 
-$.ajax({
-    type: "GET",
-    url: "/CheckVotedController",
-    dataType: "json",
-    success: function(data){
-        if(data.voted){
-            $(".voting-wrapper-items").load("/loadVotedCandidates");
-            $(".vote-btn-item").addClass("hide");
-        }else{
-            $(".voting-wrapper-items").load("/loadVotingList");
-            voteClick();
-            $(".vote-btn-item").removeClass("hide");
-        }
-    }
-});
+
 
 var votes = [];
 var previousLink = 0;
@@ -62,12 +48,68 @@ $(document).ready(function(){
         url: "/statusElection",
         dataType: "json",
         success: function(data){
-            if(data.election=="confirmed"){
-                clickable = true;
+            if(data.election==="confirmed"){
+                if(data.status ==="Ongoing"){
+                    clickable = true;
+                    $.ajax({
+                        type: "GET",
+                        url: "/CheckVotedController",
+                        dataType: "json",
+                        success: function(data){
+                            if(data.voted){
+                                $(".voting-wrapper-items").load("/loadVotedCandidates");
+                                $(".vote-btn-item").addClass("hide");
+                            }else{
+                                $(".voting-wrapper-items").load("/loadVotingList");
+                                voteClick();
+                                $(".vote-btn-item").removeClass("hide");
+                            }
+                        }
+                    });
+                }else if(data.status ==="Closed"){
+                    clickable = false;
+                    $.ajax({
+                        type: "GET",
+                        url: "/CheckVotedController",
+                        dataType: "json",
+                        success: function(data){
+                            if(data.voted){
+                                $(".voting-wrapper-items").load("/loadVotedCandidates");
+                                $(".vote-btn-item").addClass("hide");
+                            }else{
+                                $(".voting-wrapper-items").load("/loadVotingList");
+                                voteClick();
+                                $(".vote-btn-item").removeClass("hide");
+                            }
+                        }
+                    });
+                }else if(data.status === "Upcoming"){
+                    clickable = false;
+                    $(".text").text("Voting will start soon...");
+                    $.ajax({
+                        type: "GET",
+                        url: "/CheckVotedController",
+                        dataType: "json",
+                        success: function(data){
+                            if(data.voted){
+                                $(".voting-wrapper-items").load("/loadVotedCandidates");
+                                $(".vote-btn-item").addClass("hide");
+                            }else{
+                                $(".voting-wrapper-items").load("/loadVotingList");
+                                voteClick();
+                                $(".vote-btn-item").removeClass("hide");
+                            }
+                        }
+                    });
+                }
             }else if(data.election=="pending"){
                 clickable = false;
+                $(".text").text("Voting is Closed...");
+                $(".vote-btn-item").addClass("hide");
             }else{
                 clickable = false;
+                $(".text").text("Voting is Closed...");
+                $(".vote-btn-item").addClass("hide");
             }
         },error: function (request, status, error) {
             console.log(request.responseText);

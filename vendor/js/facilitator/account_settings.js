@@ -267,7 +267,7 @@ $(document).ready(function(){
                 $(".pre-loading-update-avatar").removeClass("active");
             },
             success:function(data){
-                console.log(data);
+                console.log(data.message);
                 $(".load_avatar").load("/loadUserNameSidebarFacilitator");
                 $("#pwpc").load("/loadUserNameNavbarFacilitator");
             },

@@ -19,12 +19,6 @@
             // call the fetchUserInfo method
             $sqlQuery->fetchUserInfo($_SESSION['userAccount']);
     ?>
-    <div class="search_bar_wrapper">
-        <div class="search_bar">
-            <input type="text" placeholder="Search" />
-            <i class="material-icons">search</i>
-        </div>
-    </div>
     <div class="nav_links">
         <div class="navbar_item_wrapper">
             <div class="navbar_item <?=($page == "voting")?"active":''?>" data-page="voting" onclick="loadContent(this.dataset.page)">

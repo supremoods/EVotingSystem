@@ -58,6 +58,7 @@
     flex-direction: row;
     align-items: center;
     width: 100%;
+    justify-content: center;
 }
 .navbar .nav_links .navbar_item_wrapper{
     display: flex;
@@ -138,6 +139,7 @@
 .logo_section{
     display: flex;
     justify-content: flex-start; 
+    cursor: pointer;
 
 }
 /* .logo_img{
@@ -151,7 +153,6 @@
 
 .profile_wrapper{
     position: relative;
-    width: 34%;
     display: flex;
     align-items: center;
     justify-content: flex-end;

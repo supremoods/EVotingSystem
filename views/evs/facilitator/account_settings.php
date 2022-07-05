@@ -147,7 +147,7 @@
                   </div>
                   <div class="fields-button">
                         <div class="cancel-btn-container">
-                              <button type="button" id="cancel-btn" onclick="changePasswordModal()">cancel</button>
+                              <button type="button" id="cancel-btn" onclick="changePasswordModal()">Cancel</button>
                         </div>
                         <div class="next-btn">
                               <button type="submit" id="change-btn">Change</button>

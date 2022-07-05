@@ -18,7 +18,7 @@
 
 <body>
     <div id="root">
-        <?php require_once('views/templates/header.php'); ?>
+        <?php require_once('views/templates/headerFacts.php'); ?>
         <div class="about_layout_wrapper">
             
             <div class="about_content_wrapper">
@@ -86,7 +86,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="../vendor/js/global.js"></script>
-    <script src="../vendor/js/<?=$jsfile?>"></script>
 
 </body>
 </html>

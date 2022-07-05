@@ -11,5 +11,10 @@ function profileContent(){
 $('.logout').click(function(){
     alert("Logout Successful");
     window.location.href = "../../controller/LogoutController.php";
-  });
+});
+
+
+$('.logo_section').click(function(){
+    window.location.href = "/";
+});
   

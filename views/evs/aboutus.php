@@ -18,7 +18,7 @@
 
 <body>
     <div id="root">
-        <?php require_once('views/templates/header.php'); ?>
+        <?php require_once('views/templates/headerFacts.php'); ?>
         <div class="about_layout_wrapper">
             
             <div class="about_content_wrapper">

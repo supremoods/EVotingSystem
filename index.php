@@ -33,6 +33,14 @@ post('/form2','controller/registrationController/form2Controller.php');
 
 post('/form3','controller/registrationController/form3Controller.php');
 
+route('/developers', 'views/evs/developers.php');
+
+route('/privacypolicy', 'views/evs/privacypolicy.php');
+
+route('/aboutus', 'views/evs/aboutus.php');
+
+route('/termsofservices', 'views/evs/termsofservices.php');
+
 
 
 

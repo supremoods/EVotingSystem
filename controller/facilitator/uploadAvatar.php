@@ -7,6 +7,8 @@
             if($this->updateFacilitatorAvatar($_SESSION['facilitatorID'], $img_src)){
                 move_uploaded_file( $_FILES['image']['tmp_name'], $path);
                 echo json_encode(array('message' => 'success'));
+
+                
             }else{
                 echo json_encode(array('message' => 'error'));
             }

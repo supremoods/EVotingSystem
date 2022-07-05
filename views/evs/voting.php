@@ -30,3 +30,10 @@
 <div class="loading">
     <img src="../vendor/img/loader/loading.gif">
 </div>
+
+
+<div class="status-voting">
+    <div class="status-voting-content-item-content">
+        <marquee class="text">Voting is open</marquee>
+    </div>
+</div>

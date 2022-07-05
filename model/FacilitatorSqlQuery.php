@@ -489,7 +489,10 @@
         public function getStatusElectionQuery($university){
             $database = new Database();
 
-            $sql = "SELECT election.status
+            $sql = "SELECT election.status,
+                        election.date,
+                        election.start_time,
+                        election.end_time
                     FROM user_account
                     INNER JOIN election
                         ON user_account.user_id = election.evs_id
@@ -498,11 +501,7 @@
             $result = $database->dbConnection()->query($sql);
 
             if ($result) {
-                // if the query is successful, return true
-                $row = $result->fetch_assoc();
-
-
-                return $row['status'];
+                return $result;
             }
         }
 
