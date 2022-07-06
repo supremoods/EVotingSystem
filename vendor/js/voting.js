@@ -113,6 +113,7 @@ $(document).ready(function(){
             }
         },error: function (request, status, error) {
             console.log(request.responseText);
+            $(".text").text("Voting is Closed...");
         }    
     });
     

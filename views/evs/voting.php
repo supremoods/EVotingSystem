@@ -34,6 +34,6 @@
 
 <div class="status-voting">
     <div class="status-voting-content-item-content">
-        <marquee class="text">Voting is open</marquee>
+        <marquee class="text"></marquee>
     </div>
 </div>
