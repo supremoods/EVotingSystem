@@ -104,7 +104,7 @@ $(document).ready(function(){
                 }
             }else if(data.election=="pending"){
                 clickable = false;
-                $(".text").text("Voting is Closed...");
+                $(".text").text("No Election exist...");
                 $(".vote-btn-item").addClass("hide");
             }else{
                 clickable = false;
@@ -113,7 +113,7 @@ $(document).ready(function(){
             }
         },error: function (request, status, error) {
             console.log(request.responseText);
-            $(".text").text("Voting is Closed...");
+            $(".text").text("No election exist...");
         }    
     });
     
