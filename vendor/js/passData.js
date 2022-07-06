@@ -112,7 +112,7 @@ $(document).ready(function(){
                 const status = {status: "success"};
                 if(JSON.stringify(data) == JSON.stringify(status)){
                     loginClearInput();
-                    window.location.href = "/student/forum";
+                    window.location.href = "/student/voting";
                 }else{
                    console.log(data);
                    loginClearInput();
