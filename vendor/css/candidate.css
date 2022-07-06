@@ -8,7 +8,19 @@ hr{
 .candidate-list-content{
     padding: 2.5rem;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    flex-direction: column;
     height: 100%;
+    
+}
+
+.candidate-list-content .text{ 
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000;
+    text-align: center;
 }
 
 .candidate-list-content-items{

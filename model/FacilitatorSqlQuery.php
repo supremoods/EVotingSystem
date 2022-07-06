@@ -463,7 +463,6 @@
                     AND user_account.university = '$university'
                     ";
 
-
             $result = $database->dbConnection()->query($sql);
             if ($result) {
                 // if the query is successful, return true

@@ -1,9 +1,10 @@
 <?php
     require_once ('model/FacilitatorSqlQuery.php');
+
     $facilitatorSqlQuery = new FacilitatorSqlQuery();
 
     $university = $_POST['university'];
-
+    
     if($university == "All"){
         $result = $facilitatorSqlQuery->loadElectionRequest();
     }else{

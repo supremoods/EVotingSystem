@@ -7,9 +7,7 @@
 
     $getFaciId = $electionSqlQuery->getFacilitatorId($evs_id);
 
-    $partylist = $electionSqlQuery->selectPartylist($getFaciId);
-
-    echo $partylist[0];
+    $partylist = $electionSqlQuery->selectPartylist($getFaciId);    
 
     $result = $electionSqlQuery->fetchPartyCandidates($partylist[0]);
 

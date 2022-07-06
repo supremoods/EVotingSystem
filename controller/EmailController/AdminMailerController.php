@@ -1,13 +1,5 @@
 <?php
 
-    // Subscribe my channel if you are using this code
-    // Subscribe my channel if you are using this code
-    // Subscribe my channel if you are using this code
-    // Subscribe my channel if you are using this code
-    // Subscribe my channel if you are using this code
-
-
-
     require_once ('model/FacilitatorSqlQuery.php');
 
     use PHPMailer\PHPMailer\PHPMailer;
@@ -137,7 +129,7 @@
 
     }
     
-
+    //create object of class
     $adminMailerController = new AdminMailerController();
 
     $facilitatorID = $_POST['FacilitatorID'];

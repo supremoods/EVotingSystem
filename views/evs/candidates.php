@@ -1,6 +1,6 @@
 <div class="candidates-list-wrapper">
     <div class="candidate-list-content">
-            
+
     </div>
 </div>
 

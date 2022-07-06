@@ -65,7 +65,6 @@ function validateField() {
             if(university.includes(".edu.ph")){
                 fieldHintEmail.style.display = "none";
             }else{
-                alert("Please enter a valid univer email");
                 universityClass.classList.add("active");
                 emailError.classList.add("active");
                 emailErrorText.innerHTML = "Please enter a valid university email";

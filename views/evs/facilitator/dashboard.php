@@ -6,7 +6,7 @@
 
     $evs_id = $_SESSION['userID'];
 
-    $result = $sqlQuery->universityList();
+    //get the university of faciitator
     $university = $sqlQuery->fetchFacilitatorInfo($evs_id);
 
 ?>
@@ -18,38 +18,6 @@
     </div>
 
     <div class="dashboard_body">
-        <!-- <div class="dashboard_filter">
-            <div class="select-menu select-menu-univ">
-                <div class="select-btn select-btn-univ">
-                    <span class="sBtn-text sBtn-text-univ">All</span>
-                    <span class="down material-icons">keyboard_arrow_down</span>
-                </div>
-                <ul class="options">
-                    <li class="option option-univ">
-                        <span class="option-text">All</span>
-                    </li>
-                    <li class="option option-univ">
-                        <span class="option-text">College of Science</span>
-                    </li>
-                    <li class="option option-univ">
-                        <span class="option-text">College of Architecture and Fine Arts</span>
-                    </li>
-                    <li class="option option-univ">
-                        <span class="option-text">College of Engineering</span>
-                    </li>
-                    <li class="option option-univ">
-                        <span class="option-text">College of Industrial Technology</span>
-                    </li>
-                    <li class="option option-univ">
-                        <span class="option-text">College of Liberal Arts</span>
-                    </li>
-                     <li class="option option-univ">
-                        <span class="option-text">College of Industrial Education</span>
-                    </li>
-                </ul>
-            </div>
-        </div> -->
-
         <div class="dashboard_users">
             <div class="left_item">
                 <div class="items total_users">

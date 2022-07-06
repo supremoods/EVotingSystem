@@ -60,6 +60,7 @@ $(document).ready(function(){
                                 $(".voting-wrapper-items").load("/loadVotedCandidates");
                                 $(".vote-btn-item").addClass("hide");
                             }else{
+                                $(".text").text("Voting is open");
                                 $(".voting-wrapper-items").load("/loadVotingList");
                                 voteClick();
                                 $(".vote-btn-item").removeClass("hide");

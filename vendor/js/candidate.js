@@ -38,13 +38,15 @@ $(document).ready(function(){
                 if(data.status ==="Ongoing"){
                     $(".candidate-list-content").load("/loadCandidateList");
                 }else if(data.status ==="Closed"){
-
                     $(".candidate-list-content").text("Election is closed");
                 }else if(data.status === "Upcoming"){
+                    $(".candidate-list-content").load("/loadCandidateList");
                     $(".candidate-list-content").text("Election will start soon...");
                 }
             }else{
-                $(".candidate-list-content").text("No Election");
+                $(".candidate-list-content").append(`<div class="text">No election Exist</div><div class="img-pending">
+                <img src="../vendor/img/undraw_pending_approval_xuu9.svg" alt="">
+            </div>`);
             }
         },error: function (request, status, error) {
             console.log(request.responseText);
